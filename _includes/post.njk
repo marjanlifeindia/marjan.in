@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ seo_title or title }} | MARJAN.IN</title>
+  <meta name="description" content="{{ seo_description or excerpt }}">
+  <link rel="canonical" href="https://marjan.in/{{ page.fileSlug }}.html">
+  <meta name="robots" content="index, follow">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: auto;
+      padding: 18px;
+      color: #222;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    h1 { line-height: 1.4; }
+    .date { color: #666; }
+    .back { display: inline-block; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← MARJAN.IN Home</a>
+
+  <article>
+    <h1>{{ title }}</h1>
+    {% if date %}
+      <p class="date">प्रकाशित: {{ date }}</p>
+    {% endif %}
+
+    {% if image %}
+      <img src="{{ image }}" alt="{{ title }}">
+    {% endif %}
+
+    {% if excerpt %}
+      <p><strong>{{ excerpt }}</strong></p>
+    {% endif %}
+
+    <div class="article-content">
+      {{ content | safe }}
+    </div>
+  </article>
+
+  <hr>
+  <p>MARJAN.IN — Parenting, Kids & Education</p>
+  <a href="/">मुख्य पेज पर जाएँ</a>
+</body>
+</html>
