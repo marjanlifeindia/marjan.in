@@ -1,6 +1,5 @@
 {
   "layout": "post.njk",
   "tags": "posts",
-  "permalink": "/{{ page.fileSlug }}.html",
-  "eleventyAllowMissingExtensions": true
+  "permalink": "/articles/{{ page.fileSlug | slug }}/index.html"
 }
