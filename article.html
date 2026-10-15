@@ -55,9 +55,15 @@ function renderBody(text){
  const filename=new URLSearchParams(location.search).get("post")||"";
  if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){document.getElementById("status").textContent="यह लेख नहीं मिला।";return;}
  try{
-  const response=await fetch("posts/"+encodeURIComponent(filename),{cache:"no-store"});
-  if(!response.ok)throw new Error("not found");
-  const parsed=parseFrontMatter(await response.text());if(!parsed||!parsed.meta.title)throw new Error("invalid post");
+  const postUrl=new URL("posts/"+encodeURIComponent(filename),document.baseURI);
+  const controller=new AbortController();
+  const timeout=setTimeout(function(){controller.abort();},10000);
+  let response;
+  try{response=await fetch(postUrl.href,{cache:"no-store",signal:controller.signal});}
+  finally{clearTimeout(timeout);}
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const markdown=await response.text();
+  const parsed=parseFrontMatter(markdown);if(!parsed||!parsed.meta.title)throw new Error("invalid post");
   document.title=parsed.meta.seo_title||parsed.meta.title+" | MARJAN.IN";
   document.querySelector('meta[name="description"]').content=parsed.meta.seo_description||parsed.meta.excerpt||"MARJAN.IN पर बच्चों की शिक्षा और परवरिश से जुड़े उपयोगी सुझाव।";
   document.getElementById("articleTitle").textContent=parsed.meta.title.trim();
@@ -65,7 +71,7 @@ function renderBody(text){
   if(parsed.meta.image){const img=document.getElementById("articleImage");img.src=parsed.meta.image;img.alt=parsed.meta.title;img.hidden=false;img.onerror=function(){img.hidden=true;};}
   document.getElementById("articleBody").innerHTML=renderBody(parsed.body);
   document.getElementById("status").remove();
- }catch(error){document.getElementById("status").textContent="लेख अभी नहीं खुल सका। कृपया Homepage से दोबारा कोशिश करें।";}
+ }catch(error){const status=document.getElementById("status");status.textContent=error.name==="AbortError"?"लेख लोड होने में समय लग रहा है। कृपया फिर कोशिश करें।":"लेख अभी नहीं खुल सका ("+(error.message||"Network error")+"). Homepage पर वापस जाएँ और दोबारा खोलें।";}
 })();
 </script>
 </body>
