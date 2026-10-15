@@ -99,9 +99,10 @@ footer a{color:white;margin:5px}
 <h2>माता-पिता के लिए उपयोगी सुझाव</h2>
 <div class="grid">
 <div class="card search-item">
-<h3>📖 पढ़ने की आदत</h3>
-<p>रोज़ 10–15 मिनट बच्चे के साथ किताब पढ़ें। उसे अपनी पसंद की कहानी चुनने दें।</p>
-<a href="reading-habit.html">पूरा लेख पढ़ें →</a>
+<h3>🌱 अच्छी दिनचर्या</h3>
+<p>बच्चे के सोने, खेलने और पढ़ने का नियमित समय रखें। छोटे और आसान नियम रोज़ निभाने में मदद करते हैं।</p>
+<a href="parenting.html">Parenting Tips पढ़ें →</a>
+</div>
 
 <div class="card search-item">
 <h3>💡 खेल-खेल में सीखें</h3>
@@ -119,16 +120,10 @@ footer a{color:white;margin:5px}
 
 <section style="margin:30px 0;padding:20px;background:#f2f7fc;border-radius:10px;">
   <h2>हमारे नए लेख</h2>
-  <h3>बच्चों को मोबाइल की आदत से कैसे बचाएँ?</h3>
-  <p>बच्चों में मोबाइल का इस्तेमाल संतुलित रखने और अच्छी आदतें विकसित करने के आसान सुझाव पढ़ें।</p>
-  <a href="mobile-habit.html">पूरा लेख पढ़ें</a>
+  <p class="section-intro">Pages CMS में प्रकाशित नए लेख यहाँ अपने-आप दिखाई देंगे।</p>
+  <div class="grid" id="recentArticles" aria-live="polite"><article class="card"><p>नए लेख लोड हो रहे हैं…</p></article></div>
+  <p id="articlesMessage" class="section-intro"></p>
 </section>
- <section style="margin:30px 0;padding:20px;background:#f2f7fc;border-radius:10px;">
-  <h2>हमारे नए लेख</h2>
-  <h3>बच्चों में पढ़ने की आदत कैसे विकसित करें?</h3>
-  <p>बच्चों में पढ़ने की आदत विकसित करने के आसान तरीके जानें।</p>
-  <a href="reading-habit.html">पूरा लेख पढ़ें</a>
- </section>
 <section style="margin-top:35px" class="notice">
 <h2>MARJAN.IN के बारे में</h2>
 <p>हमारा उद्देश्य माता-पिता और बच्चों के लिए Parenting, Education और Learning से जुड़ी जानकारी आसान भाषा में उपलब्ध कराना है।</p>
@@ -150,6 +145,44 @@ footer a{color:white;margin:5px}
 </footer>
 
 <script>
+const recentArticles=document.getElementById("recentArticles");
+const articlesMessage=document.getElementById("articlesMessage");
+const POSTS_API="https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main";
+function parseFrontMatter(markdown){
+  const match=markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
+  if(!match)return null;
+  const meta={}; let currentKey="";
+  match[1].split("\n").forEach(function(line){
+    const item=line.match(/^([a-zA-Z_]+):\s*(.*)$/);
+    if(item){currentKey=item[1];meta[currentKey]=item[2].trim().replace(/^["\']|["\']$/g,"");}
+    else if(currentKey && /^\s{2,}\S/.test(line)){meta[currentKey]+=" "+line.trim();}
+  });
+  return {meta:meta,body:match[2].trim()};
+}
+function escapeHtml(value){return String(value||"").replace(/[&<>"\']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[ch];});}
+async function loadRecentArticles(){
+ try{
+  const response=await fetch(POSTS_API,{headers:{"Accept":"application/vnd.github+json"}});
+  if(!response.ok)throw new Error("posts list unavailable");
+  const files=await response.json();
+  const posts=await Promise.all(files.filter(function(file){return file.type==="file" && /\.md$/i.test(file.name);}).map(async function(file){
+   const fileResponse=await fetch(file.download_url); if(!fileResponse.ok)return null;
+   const parsed=parseFrontMatter(await fileResponse.text()); if(!parsed||!parsed.meta.title)return null;
+   const plainBody=parsed.body.replace(/[#>*_\[\]()!-]/g," ").replace(/\s+/g," ").trim();
+   return {file:file.name,title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
+  }));
+  const valid=posts.filter(Boolean).sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
+  recentArticles.innerHTML="";
+  if(!valid.length){recentArticles.innerHTML="<article class=\"card\"><p>अभी कोई लेख उपलब्ध नहीं है।</p></article>";return;}
+  valid.slice(0,6).forEach(function(post){
+   const article=document.createElement("article");article.className="card";
+   article.innerHTML=(post.image?"<img src=\""+escapeHtml(post.image)+"\" alt=\"\" loading=\"lazy\" style=\"width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px\">":"")+"<h3>"+escapeHtml(post.title)+"</h3><p>"+escapeHtml(post.excerpt)+"</p><a href=\"article.html?post="+encodeURIComponent(post.file)+"\">पूरा लेख पढ़ें →</a>";
+   recentArticles.appendChild(article);
+  });
+ }catch(error){recentArticles.innerHTML="<article class=\"card\"><p>नए लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";articlesMessage.textContent="लेख दिखाने के लिए इंटरनेट कनेक्शन आवश्यक है।";}
+}
+loadRecentArticles();
+
 const searchBox=document.getElementById("siteSearch");
 const items=document.querySelectorAll(".search-item");
 const message=document.getElementById("searchMessage");

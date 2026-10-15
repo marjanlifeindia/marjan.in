@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MARJAN.IN पर बच्चों की परवरिश, शिक्षा और सीखने से जुड़े उपयोगी लेख।">
+<title>लेख | MARJAN.IN</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fffaf8;color:#303747;line-height:1.8}header{background:#243047;color:white;padding:16px 5%}header a{color:white;text-decoration:none;font-size:26px;font-weight:bold}main{max-width:850px;margin:auto;padding:24px 5%}.article{background:white;padding:clamp(18px,4vw,36px);border:1px solid #eee5e2;border-radius:14px}h1,h2,h3{color:#243047;line-height:1.4}#articleImage{max-width:100%;width:100%;max-height:420px;object-fit:cover;border-radius:10px}#articleBody p{margin:0 0 18px}#articleBody li{margin-bottom:8px}.meta{color:#687080;font-size:14px}.back{display:inline-block;margin:18px 0;color:#2464a5;font-weight:bold}footer{text-align:center;background:#243047;color:white;padding:20px}
+</style>
+</head>
+<body>
+<header><a href="index.html">marjan.in</a><p>Parenting • Education • Learning</p></header>
+<main><a class="back" href="index.html">← Homepage पर वापस जाएँ</a><article class="article"><p id="status">लेख लोड हो रहा है…</p><h1 id="articleTitle"></h1><p class="meta" id="articleMeta"></p><img id="articleImage" alt="" hidden><div id="articleBody"></div></article></main>
+<footer>© 2026 MARJAN.IN. All rights reserved.</footer>
+<script>
+function escapeHtml(value){return String(value||"").replace(/[&<>"']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;',"'":"&#39;"}[ch];});}
+function parseFrontMatter(markdown){
+ const match=markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
+ if(!match)return null;const meta={};let key="";
+ match[1].split("\n").forEach(function(line){const item=line.match(/^([a-zA-Z_]+):\s*(.*)$/);if(item){key=item[1];meta[key]=item[2].trim().replace(/^["']|["']$/g,"");}else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}});
+ return {meta:meta,body:match[2].trim()};
+}
+function renderBody(text){
+ return text.split(/\n\s*\n/).map(function(block){
+  const trimmed=block.trim();if(!trimmed)return "";
+  if(/^#{1,3}\s/.test(trimmed)){const level=trimmed.match(/^#+/)[0].length;return "<h"+level+">"+escapeHtml(trimmed.replace(/^#{1,3}\s*/,""))+"</h"+level+">";}
+  if(/^\d+\.\s/m.test(trimmed)){return "<ol>"+trimmed.split("\n").map(function(line){return line.trim()? "<li>"+escapeHtml(line.replace(/^\d+\.\s*/,""))+"</li>":"";}).join("")+"</ol>";}
+  if(/^[-*]\s/m.test(trimmed)){return "<ul>"+trimmed.split("\n").map(function(line){return line.trim()? "<li>"+escapeHtml(line.replace(/^[-*]\s*/,""))+"</li>":"";}).join("")+"</ul>";}
+  return "<p>"+escapeHtml(trimmed).replace(/\n/g,"<br>")+"</p>";
+ }).join("\n");
+}
+(async function(){
+ const filename=new URLSearchParams(location.search).get("post")||"";
+ if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){document.getElementById("status").textContent="यह लेख नहीं मिला।";return;}
+ try{
+  const response=await fetch("https://raw.githubusercontent.com/marjanlifeindia/marjan.in/main/posts/"+encodeURIComponent(filename));
+  if(!response.ok)throw new Error("not found");
+  const parsed=parseFrontMatter(await response.text());if(!parsed||!parsed.meta.title)throw new Error("invalid post");
+  document.title=parsed.meta.seo_title||parsed.meta.title+" | MARJAN.IN";
+  document.querySelector('meta[name="description"]').content=parsed.meta.seo_description||parsed.meta.excerpt||"MARJAN.IN पर बच्चों की शिक्षा और परवरिश से जुड़े उपयोगी सुझाव।";
+  document.getElementById("articleTitle").textContent=parsed.meta.title.trim();
+  document.getElementById("articleMeta").textContent=[parsed.meta.category,parsed.meta.date].filter(Boolean).join(" • ");
+  if(parsed.meta.image){const img=document.getElementById("articleImage");img.src=parsed.meta.image;img.alt=parsed.meta.title;img.hidden=false;}
+  document.getElementById("articleBody").innerHTML=renderBody(parsed.body);
+  document.getElementById("status").remove();
+ }catch(error){document.getElementById("status").textContent="लेख अभी नहीं खुल सका। कृपया Homepage से दोबारा कोशिश करें।";}
+})();
+</script>
+</body>
+</html>
