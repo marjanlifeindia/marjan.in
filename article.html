@@ -55,7 +55,7 @@ function renderBody(text){
  const filename=new URLSearchParams(location.search).get("post")||"";
  if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){document.getElementById("status").textContent="यह लेख नहीं मिला।";return;}
  try{
-  const response=await fetch("https://raw.githubusercontent.com/marjanlifeindia/marjan.in/main/posts/"+encodeURIComponent(filename));
+  const response=await fetch("posts/"+encodeURIComponent(filename),{cache:"no-store"});
   if(!response.ok)throw new Error("not found");
   const parsed=parseFrontMatter(await response.text());if(!parsed||!parsed.meta.title)throw new Error("invalid post");
   document.title=parsed.meta.seo_title||parsed.meta.title+" | MARJAN.IN";
