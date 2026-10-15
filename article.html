@@ -17,7 +17,7 @@ h1{font-size:clamp(26px,3.2vw,36px);margin-top:8px}
 h2{font-size:clamp(21px,2.4vw,27px);margin:28px 0 10px}
 #articleImage{display:block;width:auto;max-width:100%;height:auto;max-height:560px;object-fit:contain;object-position:center;margin:20px auto 28px;border-radius:10px}
 #articleBody{font-size:17px;overflow-wrap:anywhere}
-#articleBody p{margin:0 0 18px}
+#articleBody p{margin:0 0 18px}#articleBody h2{font-size:clamp(20px,2.5vw,25px);margin:30px 0 12px;padding-left:12px;border-left:4px solid #e97885}#articleBody h3{font-size:19px;margin:24px 0 10px}#articleBody strong{color:#243047}#articleBody ol,#articleBody ul{padding-left:26px;margin:8px 0 22px}#articleBody li{padding-left:3px;margin-bottom:9px}#articleImage[hidden]{display:none}
 #articleBody li{margin-bottom:8px}
 .meta{color:#687080;font-size:14px}
 .back{display:inline-block;margin:18px 0;color:#2464a5;font-weight:bold}
@@ -63,15 +63,19 @@ function inlineMarkdown(text){
   .replace(/\*(.+?)\*/g,"<em>$1</em>")
   .replace(/\`([^\`]+)\`/g,"<code>$1</code>");
 }
-function renderBody(text){
+function renderBody(text,title){
  const lines=text.replace(/\r/g,"").split("\n");let html="",paragraph=[],list="";
  function flush(){if(paragraph.length){html+="<p>"+paragraph.map(inlineMarkdown).join(" ")+"</p>";paragraph=[];}}
  function closeList(){if(list){html+="</"+list+">";list="";}}
  lines.forEach(function(raw){
   const line=raw.trim();
   if(!line){flush();closeList();return;}
+  if(!html && title && line.replace(/^#+\\s*/, "").trim()===title.trim()){flush();closeList();return;}
   const heading=line.match(/^(#{1,3})\s+(.+)$/);
   if(heading){flush();closeList();const n=heading[1].length;html+="<h"+n+">"+inlineMarkdown(heading[2])+"</h"+n+">";return;}
+  if(/^\\d+[.)]\\s+/.test(line)){flush();closeList();html+="<h2>"+inlineMarkdown(line)+"</h2>";return;}
+  const index=lines.indexOf(raw);const prev=index>0?lines[index-1].trim():"";const next=index<lines.length-1?lines[index+1].trim():"";
+  if(!prev&&!next&&line.length<85&&!/[.!?।:]$/.test(line)){flush();closeList();html+="<h2>"+inlineMarkdown(line)+"</h2>";return;}
   const bullet=line.match(/^[-*]\s+(.+)$/);
   if(bullet){flush();if(list!=="ul"){closeList();list="ul";html+="<ul>";}html+="<li>"+inlineMarkdown(bullet[1])+"</li>";return;}
   const numbered=line.match(/^\d+[.)]\s+(.+)$/);
@@ -101,7 +105,7 @@ function renderBody(text){
   const img=document.getElementById("articleImage");
   if(meta.image){img.src=meta.image.startsWith("http")?meta.image:(meta.image.startsWith("/")?meta.image:"/"+meta.image);img.alt=meta.image_alt||meta.title;img.hidden=false;img.onerror=function(){img.hidden=true;};}
   else img.hidden=true;
-  document.getElementById("articleBody").innerHTML=renderBody(parsed.body);
+  document.getElementById("articleBody").innerHTML=renderBody(parsed.body,meta.title);
  }catch(error){
   document.getElementById("articleTitle").textContent="लेख अभी नहीं खुल सका";
   document.getElementById("articleBody").innerHTML='<p>लेख लोड नहीं हो सका। इंटरनेट कनेक्शन जाँचें और कुछ देर बाद फिर कोशिश करें।</p><p><a href="index.html">Home Page पर वापस जाएँ</a></p>';
