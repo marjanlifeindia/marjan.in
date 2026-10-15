@@ -45,47 +45,67 @@ footer{text-align:center;background:#243047;color:white;padding:20px}
 </div></article></main>
 <footer>© 2026 MARJAN.IN. All rights reserved.</footer>
 <script>
-function escapeHtml(value){return String(value||"").replace(/[&<>"']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;',"'":"&#39;"}[ch];});}
+function escapeHtml(value){return String(value||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function parseFrontMatter(markdown){
- const match=markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
- if(!match)return null;const meta={};let key="";
- match[1].split("\n").forEach(function(line){const item=line.match(/^([a-zA-Z_]+):\s*(.*)$/);if(item){key=item[1];meta[key]=item[2].trim().replace(/^["']|["']$/g,"");}else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}});
+ const match=markdown.match(/^---\\s*\\n([\\s\\S]*?)\\n---\\s*\\n?([\\s\\S]*)$/);
+ if(!match)return null;
+ const meta={};let key="";
+ match[1].split("\\n").forEach(function(line){
+  const item=line.match(/^([a-zA-Z_]+):\\s*(.*)$/);
+  if(item){key=item[1];meta[key]=item[2].trim().replace(/^["']|["']$/g,"");}
+  else if(key&&/^\\s{2,}\\S/.test(line)){meta[key]+=" "+line.trim();}
+ });
  return {meta:meta,body:match[2].trim()};
 }
+function inlineMarkdown(text){
+ return escapeHtml(text)
+  .replace(/\\*\\*(.+?)\\*\\*/g,"<strong>$1</strong>")
+  .replace(/\\*(.+?)\\*/g,"<em>$1</em>")
+  .replace(/\\`([^\\`]+)\\`/g,"<code>$1</code>");
+}
 function renderBody(text){
- const blocks=text.replace(/\r/g,"").split(/\n\s*\n/).map(function(block){return block.trim();}).filter(Boolean);
- let firstTextBlock=true;
- return blocks.map(function(block){
-  if(/^#{1,3}\s/.test(block)){const level=block.match(/^#+/)[0].length;return "<h"+level+">"+escapeHtml(block.replace(/^#{1,3}\s*/,""))+"</h"+level+">";}
-  if(/^\d+\.\s/.test(block)){return "<h2>"+escapeHtml(block.replace(/\s+/g," "))+"</h2>";}
-  if(/^निष्कर्ष\s*$/.test(block)){return "<h2>निष्कर्ष</h2>";}
-  if(/^[-*]\s/m.test(block)){return "<ul>"+block.split("\n").map(function(line){return line.trim()?"<li>"+escapeHtml(line.replace(/^[-*]\s*/,""))+"</li>":"";}).join("")+"</ul>";}
-  if(/^\d+\.\s/m.test(block)){return "<ol>"+block.split("\n").map(function(line){return line.trim()?"<li>"+escapeHtml(line.replace(/^\d+\.\s*/,""))+"</li>":"";}).join("")+"</ol>";}
-  if(firstTextBlock){firstTextBlock=false;return "<h2>"+escapeHtml(block)+"</h2>";}
-  return "<p>"+escapeHtml(block).replace(/\n/g,"<br>")+"</p>";
- }).join("\n");
+ const lines=text.replace(/\\r/g,"").split("\\n");let html="",paragraph=[],list="";
+ function flush(){if(paragraph.length){html+="<p>"+paragraph.map(inlineMarkdown).join(" ")+"</p>";paragraph=[];}}
+ function closeList(){if(list){html+="</"+list+">";list="";}}
+ lines.forEach(function(raw){
+  const line=raw.trim();
+  if(!line){flush();closeList();return;}
+  const heading=line.match(/^(#{1,3})\\s+(.+)$/);
+  if(heading){flush();closeList();const n=heading[1].length;html+="<h"+n+">"+inlineMarkdown(heading[2])+"</h"+n+">";return;}
+  const bullet=line.match(/^[-*]\\s+(.+)$/);
+  if(bullet){flush();if(list!=="ul"){closeList();list="ul";html+="<ul>";}html+="<li>"+inlineMarkdown(bullet[1])+"</li>";return;}
+  const numbered=line.match(/^\\d+[.)]\\s+(.+)$/);
+  if(numbered){flush();if(list!=="ol"){closeList();list="ol";html+="<ol>";}html+="<li>"+inlineMarkdown(numbered[1])+"</li>";return;}
+  if(/^---+$/.test(line)){flush();closeList();html+="<hr>";return;}
+  paragraph.push(line);
+ });
+ flush();closeList();return html;
 }
 (async function(){
  const filename=new URLSearchParams(location.search).get("post")||"";
- if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){document.getElementById("status").textContent="यह लेख नहीं मिला।";return;}
+ if(!/^[a-zA-Z0-9._-]+\\.md$/.test(filename)){document.getElementById("articleTitle").textContent="लेख नहीं मिला";document.getElementById("articleBody").innerHTML="<p>कृपया Home Page से लेख का लिंक खोलें।</p>";return;}
  try{
-  const postUrl=new URL("posts/"+encodeURIComponent(filename),document.baseURI);
-  const controller=new AbortController();
-  const timeout=setTimeout(function(){controller.abort();},10000);
-  let response;
-  try{response=await fetch(postUrl.href,{cache:"no-store",signal:controller.signal});}
-  finally{clearTimeout(timeout);}
-  if(!response.ok)throw new Error("HTTP "+response.status);
-  const markdown=await response.text();
-  const parsed=parseFrontMatter(markdown);if(!parsed||!parsed.meta.title)throw new Error("invalid post");
-  document.title=parsed.meta.seo_title||parsed.meta.title+" | MARJAN.IN";
-  document.querySelector('meta[name="description"]').content=parsed.meta.seo_description||parsed.meta.excerpt||"MARJAN.IN पर बच्चों की शिक्षा और परवरिश से जुड़े उपयोगी सुझाव।";
-  document.getElementById("articleTitle").textContent=parsed.meta.title.trim();
-  document.getElementById("articleMeta").textContent=[parsed.meta.category,parsed.meta.date].filter(Boolean).join(" • ");
-  if(parsed.meta.image){const img=document.getElementById("articleImage");img.src=parsed.meta.image;img.alt=parsed.meta.title;img.hidden=false;img.onerror=function(){img.hidden=true;};}
+  const api="https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts/"+encodeURIComponent(filename)+"?ref=main";
+  const response=await fetch(api,{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
+  if(!response.ok)throw new Error("Post not found");
+  const file=await response.json();
+  const raw=await fetch(file.download_url,{cache:"no-store"});
+  if(!raw.ok)throw new Error("Post content unavailable");
+  const parsed=parseFrontMatter(await raw.text());
+  if(!parsed||!parsed.meta.title)throw new Error("Invalid post");
+  const meta=parsed.meta;
+  document.getElementById("articleTitle").textContent=meta.title;
+  document.title=(meta.seo_title||meta.title)+" | MARJAN.IN";
+  document.querySelector('meta[name="description"]').content=meta.seo_description||meta.excerpt||"MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।";
+  document.getElementById("articleMeta").textContent=[meta.category,meta.date].filter(Boolean).join(" • ");
+  const img=document.getElementById("articleImage");
+  if(meta.image){img.src=meta.image.startsWith("http")?meta.image:(meta.image.startsWith("/")?meta.image:"/"+meta.image);img.alt=meta.image_alt||meta.title;img.hidden=false;img.onerror=function(){img.hidden=true;};}
+  else img.hidden=true;
   document.getElementById("articleBody").innerHTML=renderBody(parsed.body);
-  const status=document.getElementById("status");if(status)status.remove();
- }catch(error){const status=document.getElementById("status");if(status){status.hidden=false;status.textContent="लेख का सुरक्षित संस्करण दिखाया जा रहा है।";}}
+ }catch(error){
+  document.getElementById("articleTitle").textContent="लेख अभी नहीं खुल सका";
+  document.getElementById("articleBody").innerHTML='<p>लेख लोड नहीं हो सका। इंटरनेट कनेक्शन जाँचें और कुछ देर बाद फिर कोशिश करें।</p><p><a href="index.html">Home Page पर वापस जाएँ</a></p>';
+ }
 })();
 </script>
 </body>
