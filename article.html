@@ -28,7 +28,21 @@ footer{text-align:center;background:#243047;color:white;padding:20px}
 </head>
 <body>
 <header><a href="index.html">marjan.in</a><p>Parenting • Education • Learning</p></header>
-<main><a class="back" href="index.html">← Homepage पर वापस जाएँ</a><article class="article"><p id="status">लेख लोड हो रहा है…</p><h1 id="articleTitle"></h1><p class="meta" id="articleMeta"></p><img id="articleImage" alt="" hidden><div id="articleBody"></div></article></main>
+<main><a class="back" href="index.html">← Homepage पर वापस जाएँ</a><article class="article"><p id="status" hidden>लेख लोड हो रहा है…</p>
+<h1 id="articleTitle">बच्चों में पढ़ने की आदत कैसे विकसित करें</h1>
+<p class="meta" id="articleMeta">Kids Education • 2026-10-13</p>
+<img id="articleImage" src="/media/file_00000000d4b882109f4b7cf91418c33f.png" alt="बच्चों में पढ़ने की आदत कैसे विकसित करें">
+<div id="articleBody">
+<p>बच्चों में पढ़ने की आदत डालना बहुत अच्छी बात है। किताबें पढ़ने से बच्चे नए शब्द सीखते हैं, उनकी कल्पना बढ़ती है और वे नई बातें समझते हैं।</p>
+<h2>1. बच्चे की पसंद की किताब चुनें</h2><p>शुरुआत में ऐसी किताब दें जिसमें रंगीन चित्र और छोटी-छोटी कहानियाँ हों। बच्चे को अपनी पसंद की किताब चुनने दें।</p>
+<h2>2. रोज थोड़ा समय पढ़ें</h2><p>हर दिन 10 से 15 मिनट बच्चे के साथ किताब पढ़ें। शुरुआत में ज्यादा पढ़ने का दबाव न डालें।</p>
+<h2>3. कहानी सुनाएँ</h2><p>अगर बच्चा खुद नहीं पढ़ सकता, तो उसे कहानी सुनाएँ। बीच-बीच में पूछें कि आगे क्या हो सकता है।</p>
+<h2>4. घर में पढ़ने का माहौल बनाएँ</h2><p>किताबों को ऐसी जगह रखें जहाँ बच्चा आसानी से उन्हें उठा सके। माता-पिता भी किताब पढ़कर अच्छा उदाहरण पेश करें।</p>
+<h2>5. बच्चे की तारीफ करें</h2><p>जब बच्चा कोई कहानी पढ़े या नया शब्द सीखे, तो उसकी तारीफ करें। इससे उसका आत्मविश्वास बढ़ेगा।</p>
+<h2>6. मोबाइल की जगह किताब का विकल्प दें</h2><p>बच्चे को खाली समय में कहानी की किताब, चित्रों वाली पुस्तक या गतिविधि वाली किताब दें। किताब पढ़ने को मजेदार बनाएँ, सजा नहीं।</p>
+<h2>निष्कर्ष</h2><p>बच्चों में पढ़ने की आदत धीरे-धीरे विकसित होती है। रोज थोड़ा समय, सही किताब और माता-पिता का साथ इस आदत को मजबूत बना सकता है।</p>
+<p>MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी पढ़ते रहें।</p>
+</div></article></main>
 <footer>© 2026 MARJAN.IN. All rights reserved.</footer>
 <script>
 function escapeHtml(value){return String(value||"").replace(/[&<>"']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;',"'":"&#39;"}[ch];});}
@@ -70,8 +84,8 @@ function renderBody(text){
   document.getElementById("articleMeta").textContent=[parsed.meta.category,parsed.meta.date].filter(Boolean).join(" • ");
   if(parsed.meta.image){const img=document.getElementById("articleImage");img.src=parsed.meta.image;img.alt=parsed.meta.title;img.hidden=false;img.onerror=function(){img.hidden=true;};}
   document.getElementById("articleBody").innerHTML=renderBody(parsed.body);
-  document.getElementById("status").remove();
- }catch(error){const status=document.getElementById("status");status.textContent=error.name==="AbortError"?"लेख लोड होने में समय लग रहा है। कृपया फिर कोशिश करें।":"लेख अभी नहीं खुल सका ("+(error.message||"Network error")+"). Homepage पर वापस जाएँ और दोबारा खोलें।";}
+  const status=document.getElementById("status");if(status)status.remove();
+ }catch(error){const status=document.getElementById("status");if(status){status.hidden=false;status.textContent="लेख का सुरक्षित संस्करण दिखाया जा रहा है।";}}
 })();
 </script>
 </body>
