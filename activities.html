@@ -85,7 +85,30 @@
       <p>रोज़ 10–15 मिनट बच्चे के साथ कहानी पढ़ें। उससे पूछें कि कहानी में उसका पसंदीदा हिस्सा कौन-सा था।</p>
     </div>
 
-    <p><a class="button" href="index.html">मुख्य पेज पर वापस जाएँ</a></p>
+    
+<section class="card"><h2>नई Kids Activities</h2><div id="cmsArticles"><p>लेख लोड हो रहे हैं…</p></div></section>
+<script>
+(function(){
+const target=document.getElementById("cmsArticles");
+function parse(md){
+ const m=md.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);if(!m)return null;
+ const meta={};let key="";
+ m[1].split("\n").forEach(function(line){const x=line.match(/^([a-zA-Z_]+):\s*(.*)$/);if(x){key=x[1];meta[key]=x[2].trim().replace(/^["']|["']$/g,"");}else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}});
+ return meta;
+}
+function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+fetch("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main")
+.then(function(r){if(!r.ok)throw Error();return r.json();})
+.then(function(files){return Promise.all(files.filter(function(f){return f.type==="file"&&/\.md$/i.test(f.name);}).map(function(f){return fetch(f.download_url).then(function(r){return r.ok?r.text():"";}).then(function(md){return {file:f.name,meta:parse(md)};});}));})
+.then(function(posts){
+const found=posts.filter(function(p){return p.meta&&p.meta.title&&(p.meta.category||"").toLowerCase()==="kids activities";}).sort(function(a,b){return (b.meta.date||"").localeCompare(a.meta.date||"");});
+if(!found.length){target.innerHTML="<p>इस category में अभी कोई नया CMS लेख नहीं है।</p>";return;}
+target.innerHTML=found.map(function(p){return "<article><h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"article.html?post="+encodeURIComponent(p.file)+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
+})
+.catch(function(){target.innerHTML="<p>लेख अभी लोड नहीं हो सके। कुछ देर बाद फिर कोशिश करें।</p>";});
+})();
+</script>
+<p><a class="button" href="index.html">मुख्य पेज पर वापस जाएँ</a></p>
   </main>
 
   <footer>
