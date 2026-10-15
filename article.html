@@ -47,34 +47,34 @@ footer{text-align:center;background:#243047;color:white;padding:20px}
 <script>
 function escapeHtml(value){return String(value||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function parseFrontMatter(markdown){
- const match=markdown.match(/^---\\s*\\n([\\s\\S]*?)\\n---\\s*\\n?([\\s\\S]*)$/);
+ const match=markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
  if(!match)return null;
  const meta={};let key="";
- match[1].split("\\n").forEach(function(line){
-  const item=line.match(/^([a-zA-Z_]+):\\s*(.*)$/);
+ match[1].split("\n").forEach(function(line){
+  const item=line.match(/^([a-zA-Z_]+):\s*(.*)$/);
   if(item){key=item[1];meta[key]=item[2].trim().replace(/^["']|["']$/g,"");}
-  else if(key&&/^\\s{2,}\\S/.test(line)){meta[key]+=" "+line.trim();}
+  else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}
  });
  return {meta:meta,body:match[2].trim()};
 }
 function inlineMarkdown(text){
  return escapeHtml(text)
-  .replace(/\\*\\*(.+?)\\*\\*/g,"<strong>$1</strong>")
-  .replace(/\\*(.+?)\\*/g,"<em>$1</em>")
-  .replace(/\\`([^\\`]+)\\`/g,"<code>$1</code>");
+  .replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>")
+  .replace(/\*(.+?)\*/g,"<em>$1</em>")
+  .replace(/\`([^\`]+)\`/g,"<code>$1</code>");
 }
 function renderBody(text){
- const lines=text.replace(/\\r/g,"").split("\\n");let html="",paragraph=[],list="";
+ const lines=text.replace(/\r/g,"").split("\n");let html="",paragraph=[],list="";
  function flush(){if(paragraph.length){html+="<p>"+paragraph.map(inlineMarkdown).join(" ")+"</p>";paragraph=[];}}
  function closeList(){if(list){html+="</"+list+">";list="";}}
  lines.forEach(function(raw){
   const line=raw.trim();
   if(!line){flush();closeList();return;}
-  const heading=line.match(/^(#{1,3})\\s+(.+)$/);
+  const heading=line.match(/^(#{1,3})\s+(.+)$/);
   if(heading){flush();closeList();const n=heading[1].length;html+="<h"+n+">"+inlineMarkdown(heading[2])+"</h"+n+">";return;}
-  const bullet=line.match(/^[-*]\\s+(.+)$/);
+  const bullet=line.match(/^[-*]\s+(.+)$/);
   if(bullet){flush();if(list!=="ul"){closeList();list="ul";html+="<ul>";}html+="<li>"+inlineMarkdown(bullet[1])+"</li>";return;}
-  const numbered=line.match(/^\\d+[.)]\\s+(.+)$/);
+  const numbered=line.match(/^\d+[.)]\s+(.+)$/);
   if(numbered){flush();if(list!=="ol"){closeList();list="ol";html+="<ol>";}html+="<li>"+inlineMarkdown(numbered[1])+"</li>";return;}
   if(/^---+$/.test(line)){flush();closeList();html+="<hr>";return;}
   paragraph.push(line);
@@ -83,7 +83,7 @@ function renderBody(text){
 }
 (async function(){
  const filename=new URLSearchParams(location.search).get("post")||"";
- if(!/^[a-zA-Z0-9._-]+\\.md$/.test(filename)){document.getElementById("articleTitle").textContent="लेख नहीं मिला";document.getElementById("articleBody").innerHTML="<p>कृपया Home Page से लेख का लिंक खोलें।</p>";return;}
+ if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){document.getElementById("articleTitle").textContent="लेख का लिंक नहीं मिला";document.getElementById("articleBody").innerHTML="<p>कृपया नीचे से सही विषय चुनें।</p><p><a href=\"index.html\">Home</a> · <a href=\"parenting.html\">Parenting</a> · <a href=\"kids-education.html\">Kids Education</a> · <a href=\"activities.html\">Activities</a></p>";return;}
  try{
   const api="https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts/"+encodeURIComponent(filename)+"?ref=main";
   const response=await fetch(api,{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
