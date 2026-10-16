@@ -54,15 +54,108 @@ jobs:
               encoding="utf-8"
           )
 
-          # Generate a real static page for every clean article URL. This avoids
-          # relying on runtime path rewrites on static hosting.
-          template_path = Path("article.html")
-          if template_path.exists():
-              template = template_path.read_text(encoding="utf-8")
-              for slug in slug_index:
-                  route_file = Path("articles") / slug / "index.html"
-                  route_file.parent.mkdir(parents=True, exist_ok=True)
-                  route_file.write_text(template, encoding="utf-8")
+          # Generate complete static article pages. The clean URLs must not
+          # depend on browser-side JavaScript or a GitHub API request to show text.
+          import html
+          import re
+
+          def parse_post(content):
+              match = re.match(r"^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$", content)
+              if not match:
+                  return {}, content
+              meta = {}
+              current = None
+              for line in match.group(1).splitlines():
+                  item = re.match(r"^([a-zA-Z_]+):\s*(.*)$", line)
+                  if item:
+                      current = item.group(1)
+                      meta[current] = item.group(2).strip().strip('"\'')
+                  elif current and re.match(r"^\s{2,}\S", line):
+                      meta[current] += " " + line.strip()
+              return meta, match.group(2).strip()
+
+          def inline(text):
+              value = html.escape(text, quote=False)
+              value = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", value)
+              value = re.sub(r"\*(.+?)\*", r"<em>\1</em>", value)
+              return value
+
+          def render_markdown(body, title):
+              lines = body.replace("\r", "").splitlines()
+              blocks, paragraph = [], []
+              def flush():
+                  if paragraph:
+                      blocks.append("<p>" + " ".join(inline(x) for x in paragraph) + "</p>")
+                      paragraph.clear()
+              i = 0
+              while i < len(lines):
+                  line = lines[i].strip()
+                  if not line:
+                      flush()
+                      i += 1
+                      continue
+                  if not blocks and line.lstrip("# ").strip() == title.strip():
+                      i += 1
+                      continue
+                  heading = re.match(r"^(#{1,3})\s+(.+)$", line)
+                  if heading:
+                      flush()
+                      level = len(heading.group(1))
+                      blocks.append(f"<h{level}>{inline(heading.group(2))}</h{level}>")
+                      i += 1
+                      continue
+                  if re.match(r"^\d+[.)]\s+\S+", line):
+                      flush()
+                      blocks.append("<h2>" + inline(line) + "</h2>")
+                      i += 1
+                      continue
+                  if line.startswith(("- ", "* ")):
+                      flush()
+                      items = []
+                      while i < len(lines) and lines[i].strip().startswith(("- ", "* ")):
+                          items.append("<li>" + inline(lines[i].strip()[2:]) + "</li>")
+                          i += 1
+                      blocks.append("<ul>" + "".join(items) + "</ul>")
+                      continue
+                  paragraph.append(line)
+                  i += 1
+              flush()
+              return "\n".join(blocks)
+
+          template = Path("article.html").read_text(encoding="utf-8")
+          # Clean article routes are fully rendered HTML: no JS redirect or
+          # client-side replacement can make the article text disappear.
+          template = re.sub(r"<script>[\s\S]*?</script>", "", template, flags=re.I)
+          template = template.replace('href="index.html"', 'href="/index.html"')
+
+          for post in sorted(posts_dir.glob("*.md")) if posts_dir.exists() else []:
+              raw = post.read_text(encoding="utf-8")
+              meta, body = parse_post(raw)
+              slug = str(meta.get("slug") or post.stem).strip()
+              if not re.fullmatch(r"[a-zA-Z0-9-]+", slug):
+                  continue
+              title = str(meta.get("title") or slug)
+              category = str(meta.get("category") or "MARJAN.IN")
+              date = str(meta.get("date") or "")
+              image_path = str(meta.get("image") or "").strip()
+              image_html = (
+                  '<img id="articleImage" src="' + html.escape(image_path, quote=True) +
+                  '" alt="' + html.escape(str(meta.get("image_alt") or title), quote=True) + '">'
+                  if image_path else ""
+              )
+              description = str(meta.get("seo_description") or meta.get("excerpt") or "MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।")
+              canonical = base + "articles/" + quote(slug, safe="-") + "/"
+              page = template
+              page = page.replace('<link rel="canonical" href="https://marjan.in/article.html">', '<link rel="canonical" href="' + html.escape(canonical, quote=True) + '">')
+              page = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="' + html.escape(description, quote=True) + '">', page, count=1)
+              page = re.sub(r"<title>[\s\S]*?</title>", "<title>" + html.escape(str(meta.get("seo_title") or title)) + "</title>", page, count=1)
+              page = re.sub(r'<h1 id="articleTitle">[\s\S]*?</h1>', '<h1 id="articleTitle">' + html.escape(title) + '</h1>', page, count=1)
+              page = re.sub(r'<p class="meta" id="articleMeta">[\s\S]*?</p>', '<p class="meta" id="articleMeta">' + html.escape(" • ".join(x for x in [category, date] if x)) + '</p>', page, count=1)
+              page = re.sub(r'<img id="articleImage"[\s\S]*?>', image_html, page, count=1)
+              page = re.sub(r'<div id="articleBody">[\s\S]*?</div>', '<div id="articleBody">' + render_markdown(body, title) + '</div>', page, count=1)
+              route_file = Path("articles") / slug / "index.html"
+              route_file.parent.mkdir(parents=True, exist_ok=True)
+              route_file.write_text(page, encoding="utf-8")
 
           ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
           ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
