@@ -50,7 +50,7 @@ jobs:
                   urls.append(base + "articles/" + quote(slug, safe="-") + "/")
 
           Path("posts/index.json").write_text(
-              json.dumps(slug_index, ensure_ascii=False, indent=2) + "\\n",
+              json.dumps(slug_index, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8"
           )
 
@@ -62,7 +62,7 @@ jobs:
               ET.SubElement(entry, ns + "loc").text = url
           ET.indent(root, space="  ")
           Path("sitemap.xml").write_bytes(
-              b'<?xml version="1.0" encoding="UTF-8"?>\\n' +
+              b'<?xml version="1.0" encoding="UTF-8"?>\n' +
               ET.tostring(root, encoding="utf-8")
           )
           PY
