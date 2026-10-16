@@ -98,7 +98,7 @@
       posts.slice(0,5).forEach(post => {
         const li = document.createElement("li");
         const link = document.createElement("a");
-        link.href = "/article-" + post.slug + ".html";
+        link.href = "/article.html?post=" + encodeURIComponent(post.filename);
         link.textContent = post.title || post.slug;
         li.appendChild(link);
         list.appendChild(li);
@@ -122,7 +122,8 @@
             title: field(front, "title"),
             slug: field(front, "slug") || file.name.replace(/\.md$/, ""),
             date: field(front, "date"),
-            category: field(front, "category")
+            category: field(front, "category"),
+            filename: file.name
           };
         }));
         const posts = records.filter(Boolean);
