@@ -7,6 +7,7 @@ on:
       - 'posts/**/*.md'
       - 'posts/*.md'
       - '.pages.yml'
+      - 'article.html'
       - '.github/workflows/update-sitemap.yml'
   workflow_dispatch:
 
@@ -47,7 +48,7 @@ jobs:
                   if slug in slug_index:
                       raise ValueError(f"Duplicate article slug: {slug}")
                   slug_index[slug] = post.name
-                  urls.append(base + "articles/" + quote(slug, safe="-") + "/")
+                  urls.append(base + "article-" + quote(slug, safe="-") + ".html")
 
           Path("posts/index.json").write_text(
               json.dumps(slug_index, ensure_ascii=False, indent=2) + "\n",
@@ -144,7 +145,7 @@ jobs:
                   if image_path else ""
               )
               description = str(meta.get("seo_description") or meta.get("excerpt") or "MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।")
-              canonical = base + "articles/" + quote(slug, safe="-") + "/"
+              canonical = base + "article-" + quote(slug, safe="-") + ".html"
               page = template
               page = page.replace('<link rel="canonical" href="https://marjan.in/article.html">', '<link rel="canonical" href="' + html.escape(canonical, quote=True) + '">')
               page = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="' + html.escape(description, quote=True) + '">', page, count=1)
@@ -156,6 +157,8 @@ jobs:
               route_file = Path("articles") / slug / "index.html"
               route_file.parent.mkdir(parents=True, exist_ok=True)
               route_file.write_text(page, encoding="utf-8")
+              top_level_file = Path("article-" + slug + ".html")
+              top_level_file.write_text(page, encoding="utf-8")
 
           ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
           ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
@@ -171,12 +174,12 @@ jobs:
           PY
       - name: Commit updated slug index and sitemap
         run: |
-          if [ -z "$(git status --porcelain -- sitemap.xml posts/index.json articles)" ]; then
+          if [ -z "$(git status --porcelain -- sitemap.xml posts/index.json articles article-*.html)" ]; then
             echo "Sitemap, article slug index, and static article pages are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml posts/index.json articles/
+          git add sitemap.xml posts/index.json articles/ article-*.html
           git commit -m "Update clean article URLs and sitemap"
           git push
