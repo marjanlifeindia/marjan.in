@@ -115,12 +115,12 @@
           const res = await fetch(file.download_url);
           if (!res.ok) return null;
           const md = await res.text();
-          const match = md.match(/^---\\s*\\n([\\s\\S]*?)\\n---/);
+          const match = md.match(/^---\s*\n([\s\S]*?)\n---/);
           if (!match) return null;
           const front = match[1];
           return {
             title: field(front, "title"),
-            slug: field(front, "slug") || file.name.replace(/\\.md$/, ""),
+            slug: field(front, "slug") || file.name.replace(/\.md$/, ""),
             date: field(front, "date"),
             category: field(front, "category")
           };
