@@ -139,6 +139,11 @@ function renderBody(text,title){
     }
    }
   }
+  if(!filename&&!requestedSlug){
+   // A bare /article URL has no post identifier; send it to the known, fully rendered reading-habit article.
+   location.replace("/article-reading-habit.html");
+   return;
+  }
   if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){
    document.getElementById("articleTitle").textContent="लेख का लिंक नहीं मिला";
    document.getElementById("articleBody").innerHTML="<p>कृपया नीचे से सही विषय चुनें।</p><p><a href=\"/index.html\">Home</a> · <a href=\"/parenting.html\">Parenting</a> · <a href=\"/kids-education.html\">Kids Education</a> · <a href=\"/activities.html\">Activities</a></p>";
