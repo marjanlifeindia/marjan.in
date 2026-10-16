@@ -91,6 +91,22 @@ function renderBody(text,title){
 (async function(){
  const params=new URLSearchParams(location.search);
  let filename=params.get("post")||"";
+ // Older homepage cards and saved links may still use ?post=filename.md.
+ // Send those requests to the fully rendered static article page instead of
+ // allowing the old JavaScript loader to replace the body after it appears.
+ if(filename){
+  try{
+   const indexResponse=await fetch("/posts/index.json?refresh="+Date.now(),{cache:"no-store"});
+   if(indexResponse.ok){
+    const index=await indexResponse.json();
+    const entry=Object.entries(index).find(function(pair){return pair[1]===filename;});
+    if(entry&&entry[0]){
+     location.replace("/articles/"+encodeURIComponent(entry[0])+"/");
+     return;
+    }
+   }
+  }catch(legacyRedirectError){}
+ }
  let requestedSlug="";
  const pathMatch=location.pathname.match(/^\/articles\/([^/]+)\/?$/);
  if(!filename&&pathMatch){
