@@ -98,10 +98,30 @@ function renderBody(text,title){
  }
  try{
   if(requestedSlug){
-   const indexResponse=await fetch("/posts/index.json",{cache:"no-store"});
-   if(!indexResponse.ok)throw new Error("Article index unavailable");
-   const index=await indexResponse.json();
-   filename=index[requestedSlug]||"";
+   // First use the generated slug index. If it is missing or stale, search
+   // Markdown front matter so a newly published CMS article can still open.
+   try{
+    const indexResponse=await fetch("/posts/index.json?refresh="+Date.now(),{cache:"no-store"});
+    if(indexResponse.ok){
+     const index=await indexResponse.json();
+     filename=index[requestedSlug]||"";
+    }
+   }catch(indexError){}
+   if(!filename){
+    const listingResponse=await fetch("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main",{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
+    if(!listingResponse.ok)throw new Error("Post list unavailable");
+    const files=await listingResponse.json();
+    for(const item of files){
+     if(item.type!=="file"||!/\.md$/i.test(item.name))continue;
+     const rawResponse=await fetch(item.download_url,{cache:"no-store"});
+     if(!rawResponse.ok)continue;
+     const candidate=parseFrontMatter(await rawResponse.text());
+     if(candidate&&String(candidate.meta.slug||"").trim()===requestedSlug){
+      filename=item.name;
+      break;
+     }
+    }
+   }
   }
   if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){
    document.getElementById("articleTitle").textContent="लेख का लिंक नहीं मिला";
