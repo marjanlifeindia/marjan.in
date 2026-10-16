@@ -1,4 +1,3 @@
-
 media:
   input: media
   output: /media
@@ -26,7 +25,16 @@ content:
 
       - name: category
         label: श्रेणी (Category)
-        type: string
+        type: select
+        required: true
+        options:
+          values:
+            - Parenting
+            - Kids Education
+            - Kids Activities
+            - Toys & Learning
+            - Kids Books
+            - School Supplies
 
       - name: excerpt
         label: लेख का छोटा परिचय
