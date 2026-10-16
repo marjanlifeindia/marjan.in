@@ -89,14 +89,25 @@ function renderBody(text,title){
  flush();closeList();return html;
 }
 (async function(){
- const filename=new URLSearchParams(location.search).get("post")||"";
- if(/^[a-zA-Z0-9._-]+\.md$/.test(filename)){
-  const canonical=new URL("article.html", "https://marjan.in/");
-  canonical.searchParams.set("post",filename);
-  document.querySelector('link[rel="canonical"]').href=canonical.href;
+ const params=new URLSearchParams(location.search);
+ let filename=params.get("post")||"";
+ let requestedSlug="";
+ const pathMatch=location.pathname.match(/^\/articles\/([^/]+)\/?$/);
+ if(!filename&&pathMatch){
+  try{requestedSlug=decodeURIComponent(pathMatch[1]);}catch(error){requestedSlug=pathMatch[1];}
  }
- if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){document.getElementById("articleTitle").textContent="लेख का लिंक नहीं मिला";document.getElementById("articleBody").innerHTML="<p>कृपया नीचे से सही विषय चुनें।</p><p><a href=\"index.html\">Home</a> · <a href=\"parenting.html\">Parenting</a> · <a href=\"kids-education.html\">Kids Education</a> · <a href=\"activities.html\">Activities</a></p>";return;}
  try{
+  if(requestedSlug){
+   const indexResponse=await fetch("/posts/index.json",{cache:"no-store"});
+   if(!indexResponse.ok)throw new Error("Article index unavailable");
+   const index=await indexResponse.json();
+   filename=index[requestedSlug]||"";
+  }
+  if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){
+   document.getElementById("articleTitle").textContent="लेख का लिंक नहीं मिला";
+   document.getElementById("articleBody").innerHTML="<p>कृपया नीचे से सही विषय चुनें।</p><p><a href=\"/index.html\">Home</a> · <a href=\"/parenting.html\">Parenting</a> · <a href=\"/kids-education.html\">Kids Education</a> · <a href=\"/activities.html\">Activities</a></p>";
+   return;
+  }
   const api="https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts/"+encodeURIComponent(filename)+"?ref=main";
   const response=await fetch(api,{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
   if(!response.ok)throw new Error("Post not found");
@@ -106,6 +117,11 @@ function renderBody(text,title){
   const parsed=parseFrontMatter(await raw.text());
   if(!parsed||!parsed.meta.title)throw new Error("Invalid post");
   const meta=parsed.meta;
+  const slug=(meta.slug||requestedSlug||"").trim();
+  const canonicalUrl=slug
+   ? new URL("articles/"+encodeURIComponent(slug)+"/","https://marjan.in/")
+   : new URL("article.html?post="+encodeURIComponent(filename),"https://marjan.in/");
+  document.querySelector('link[rel="canonical"]').href=canonicalUrl.href;
   document.getElementById("articleTitle").textContent=meta.title.trim();
   document.title=(meta.seo_title||meta.title).trim();
   document.querySelector('meta[name="description"]').content=meta.seo_description||meta.excerpt||"MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।";
@@ -116,9 +132,9 @@ function renderBody(text,title){
   document.getElementById("articleBody").innerHTML=renderBody(parsed.body,meta.title);
  }catch(error){
   document.getElementById("articleTitle").textContent="लेख अभी नहीं खुल सका";
-  document.getElementById("articleBody").innerHTML='<p>लेख लोड नहीं हो सका। इंटरनेट कनेक्शन जाँचें और कुछ देर बाद फिर कोशिश करें।</p><p><a href="index.html">Home Page पर वापस जाएँ</a></p>';
+  document.getElementById("articleBody").innerHTML='<p>लेख लोड नहीं हो सका। इंटरनेट कनेक्शन जाँचें और कुछ देर बाद फिर कोशिश करें।</p><p><a href="/index.html">Home Page पर वापस जाएँ</a></p>';
  }
-})();
+})();;
 </script>
 </body>
 </html>
