@@ -194,7 +194,7 @@ async function loadRecentArticles(){
    const fileResponse=await fetch(file.download_url); if(!fileResponse.ok)return null;
    const parsed=parseFrontMatter(await fileResponse.text()); if(!parsed||!parsed.meta.title)return null;
    const plainBody=parsed.body.replace(/[#>*_\[\]()!-]/g," ").replace(/\s+/g," ").trim();
-   return {file:file.name,title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
+   return {file:file.name,slug:parsed.meta.slug||"",title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
   }));
   const valid=posts.filter(Boolean).sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
   recentArticles.innerHTML="";
