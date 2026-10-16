@@ -107,7 +107,7 @@ function renderBody(text,title){
   if(!parsed||!parsed.meta.title)throw new Error("Invalid post");
   const meta=parsed.meta;
   document.getElementById("articleTitle").textContent=meta.title.trim();
-  document.title=(meta.seo_title||meta.title).trim()+" | MARJAN.IN";
+  document.title=(meta.seo_title||meta.title).trim();
   document.querySelector('meta[name="description"]').content=meta.seo_description||meta.excerpt||"MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।";
   document.getElementById("articleMeta").textContent=[meta.category,meta.date].filter(Boolean).join(" • ");
   const img=document.getElementById("articleImage");
