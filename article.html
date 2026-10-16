@@ -70,10 +70,10 @@ function renderBody(text,title){
  lines.forEach(function(raw){
   const line=raw.trim();
   if(!line){flush();closeList();return;}
-  if(!html && title && line.replace(/^#+\\s*/, "").trim()===title.trim()){flush();closeList();return;}
+  if(!html && title && line.replace(/^#+\s*/, "").trim()===title.trim()){flush();closeList();return;}
   const heading=line.match(/^(#{1,3})\s+(.+)$/);
   if(heading){flush();closeList();const n=heading[1].length;html+="<h"+n+">"+inlineMarkdown(heading[2])+"</h"+n+">";return;}
-  if(/^\\d+[.)]\\s+/.test(line)){flush();closeList();html+="<h2>"+inlineMarkdown(line)+"</h2>";return;}
+  if(/^\d+[.)]\s+/.test(line)){flush();closeList();html+="<h2>"+inlineMarkdown(line)+"</h2>";return;}
   const index=lines.indexOf(raw);const prev=index>0?lines[index-1].trim():"";const next=index<lines.length-1?lines[index+1].trim():"";
   if(!prev&&!next&&line.length<85&&!/[.!?।:]$/.test(line)){flush();closeList();html+="<h2>"+inlineMarkdown(line)+"</h2>";return;}
   const bullet=line.match(/^[-*]\s+(.+)$/);
@@ -98,8 +98,8 @@ function renderBody(text,title){
   const parsed=parseFrontMatter(await raw.text());
   if(!parsed||!parsed.meta.title)throw new Error("Invalid post");
   const meta=parsed.meta;
-  document.getElementById("articleTitle").textContent=meta.title;
-  document.title=(meta.seo_title||meta.title)+" | MARJAN.IN";
+  document.getElementById("articleTitle").textContent=meta.title.trim();
+  document.title=(meta.seo_title||meta.title).trim()+" | MARJAN.IN";
   document.querySelector('meta[name="description"]').content=meta.seo_description||meta.excerpt||"MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।";
   document.getElementById("articleMeta").textContent=[meta.category,meta.date].filter(Boolean).join(" • ");
   const img=document.getElementById("articleImage");
