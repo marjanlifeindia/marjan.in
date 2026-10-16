@@ -101,7 +101,7 @@ function renderBody(text,title){
     const index=await indexResponse.json();
     const entry=Object.entries(index).find(function(pair){return pair[1]===filename;});
     if(entry&&entry[0]){
-     location.replace("/articles/"+encodeURIComponent(entry[0])+"/index.html");
+     location.replace("/article-"+encodeURIComponent(entry[0])+".html");
      return;
     }
    }
