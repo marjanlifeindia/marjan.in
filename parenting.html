@@ -94,7 +94,7 @@ fetch("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref
 .then(function(posts){
 const found=posts.filter(function(p){return p.meta&&p.meta.title&&(p.meta.category||"").toLowerCase()==="parenting";}).sort(function(a,b){return (b.meta.date||"").localeCompare(a.meta.date||"");});
 if(!found.length){target.innerHTML="<p>इस category में अभी कोई नया CMS लेख नहीं है।</p>";return;}
-target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"article.html?post="+encodeURIComponent(p.file)+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
+target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"/articles/"+encodeURIComponent(p.meta.slug||p.file.replace(/\.md$/i,""))+"/"+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
 })
 .catch(function(){target.innerHTML="<p>लेख अभी लोड नहीं हो सके। कुछ देर बाद फिर कोशिश करें।</p>";});
 })();

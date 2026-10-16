@@ -1,4 +1,4 @@
-name: Update sitemap for CMS articles
+name: Update sitemap and article slug index
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'posts/**/*.md'
       - 'posts/*.md'
+      - '.pages.yml'
       - '.github/workflows/update-sitemap.yml'
   workflow_dispatch:
 
@@ -18,11 +19,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Build sitemap from CMS posts
+      - name: Build article slug index and sitemap
         run: |
           python3 <<'PY'
           from pathlib import Path
           from urllib.parse import quote
+          import json
+          import re
           import xml.etree.ElementTree as ET
 
           base = "https://marjan.in/"
@@ -32,9 +35,24 @@ jobs:
           ]
           urls = [base + page for page in static_pages]
           posts_dir = Path("posts")
+          slug_index = {}
+
           if posts_dir.exists():
               for post in sorted(posts_dir.glob("*.md")):
-                  urls.append(base + "article.html?post=" + quote(post.name, safe="._-"))
+                  content = post.read_text(encoding="utf-8")
+                  match = re.search(r"^slug:\s*[\"']?([a-zA-Z0-9-]+)[\"']?\s*$", content, re.MULTILINE)
+                  slug = match.group(1) if match else post.stem
+                  if not re.fullmatch(r"[a-zA-Z0-9-]+", slug):
+                      raise ValueError(f"Invalid article slug in {post.name}: {slug}")
+                  if slug in slug_index:
+                      raise ValueError(f"Duplicate article slug: {slug}")
+                  slug_index[slug] = post.name
+                  urls.append(base + "articles/" + quote(slug, safe="-") + "/")
+
+          Path("posts/index.json").write_text(
+              json.dumps(slug_index, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8"
+          )
 
           ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
           ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
@@ -48,14 +66,14 @@ jobs:
               ET.tostring(root, encoding="utf-8")
           )
           PY
-      - name: Commit updated sitemap
+      - name: Commit updated slug index and sitemap
         run: |
-          if git diff --quiet -- sitemap.xml; then
-            echo "Sitemap is already up to date."
+          if git diff --quiet -- sitemap.xml posts/index.json; then
+            echo "Sitemap and article slug index are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          git commit -m "Update sitemap for CMS articles"
+          git add sitemap.xml posts/index.json
+          git commit -m "Update clean article URLs and sitemap"
           git push
