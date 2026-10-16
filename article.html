@@ -112,7 +112,7 @@ function renderBody(text,title){
     if(!listingResponse.ok)throw new Error("Post list unavailable");
     const files=await listingResponse.json();
     for(const item of files){
-     if(item.type!=="file"||!/\\.md$/i.test(item.name))continue;
+     if(item.type!=="file"||!/\.md$/i.test(item.name))continue;
      const rawResponse=await fetch(item.download_url,{cache:"no-store"});
      if(!rawResponse.ok)continue;
      const candidate=parseFrontMatter(await rawResponse.text());
