@@ -54,6 +54,16 @@ jobs:
               encoding="utf-8"
           )
 
+          # Generate a real static page for every clean article URL. This avoids
+          # relying on runtime path rewrites on static hosting.
+          template_path = Path("article.html")
+          if template_path.exists():
+              template = template_path.read_text(encoding="utf-8")
+              for slug in slug_index:
+                  route_file = Path("articles") / slug / "index.html"
+                  route_file.parent.mkdir(parents=True, exist_ok=True)
+                  route_file.write_text(template, encoding="utf-8")
+
           ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
           ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
           root = ET.Element(ns + "urlset")
