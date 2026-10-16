@@ -1,0 +1,61 @@
+name: Update sitemap for CMS articles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'posts/**/*.md'
+      - 'posts/*.md'
+      - '.github/workflows/update-sitemap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Build sitemap from CMS posts
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          from urllib.parse import quote
+          import xml.etree.ElementTree as ET
+
+          base = "https://marjan.in/"
+          static_pages = [
+              "", "about.html", "parenting.html", "kids-education.html",
+              "activities.html", "reading-habit.html", "mobile-habit.html"
+          ]
+          urls = [base + page for page in static_pages]
+          posts_dir = Path("posts")
+          if posts_dir.exists():
+              for post in sorted(posts_dir.glob("*.md")):
+                  urls.append(base + "article.html?post=" + quote(post.name, safe="._-"))
+
+          ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
+          ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+          root = ET.Element(ns + "urlset")
+          for url in dict.fromkeys(urls):
+              entry = ET.SubElement(root, ns + "url")
+              ET.SubElement(entry, ns + "loc").text = url
+          ET.indent(root, space="  ")
+          Path("sitemap.xml").write_bytes(
+              b'<?xml version="1.0" encoding="UTF-8"?>\n' +
+              ET.tostring(root, encoding="utf-8")
+          )
+          PY
+      - name: Commit updated sitemap
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "Sitemap is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Update sitemap for CMS articles"
+          git push
