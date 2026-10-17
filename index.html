@@ -191,26 +191,26 @@ async function loadRecentArticles(){
   const indexResponse=await fetch("/posts/index.json",{cache:"no-store"});
   if(!indexResponse.ok)throw new Error("स्थानीय लेख सूची उपलब्ध नहीं है");
   const index=await indexResponse.json();
-  const entries=Object.entries(index).filter(function(pair){return /^[a-zA-Z0-9._-]+\\.md$/i.test(pair[1]);});
+  const entries=Object.entries(index).filter(function(pair){return /^[a-zA-Z0-9._-]+\.md$/i.test(pair[1]);});
   const posts=await Promise.all(entries.map(async function(pair){
    const file=pair[1];
    const response=await fetch("/posts/"+encodeURIComponent(file),{cache:"no-store"});
    if(!response.ok)return null;
    const parsed=parseFrontMatter(await response.text());
    if(!parsed||!parsed.meta.title)return null;
-   const plainBody=parsed.body.replace(/[#>*_\\[\\]()!-]/g," ").replace(/\\s+/g," ").trim();
+   const plainBody=parsed.body.replace(/[#>*_\[\]()!-]/g," ").replace(/\s+/g," ").trim();
    return {slug:pair[0],file:file,title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
   }));
   const valid=posts.filter(Boolean).sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
   recentArticles.innerHTML="";
-  if(!valid.length){recentArticles.innerHTML="<article class=\\"card\\"><p>अभी कोई लेख उपलब्ध नहीं है।</p></article>";return;}
+  if(!valid.length){recentArticles.innerHTML="<article class=\"card\"><p>अभी कोई लेख उपलब्ध नहीं है।</p></article>";return;}
   valid.slice(0,6).forEach(function(post){
    const article=document.createElement("article");article.className="card";
-   article.innerHTML=(post.image?"<img src=\\""+escapeHtml(post.image)+"\\" alt=\\"\\" loading=\\"lazy\\" style=\\"width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px\\">":"")+"<h3>"+escapeHtml(post.title)+"</h3><p>"+escapeHtml(post.excerpt)+"</p><a href=\\"/article.html?post="+encodeURIComponent(post.file)+"\\">पूरा लेख पढ़ें →</a>";
+   article.innerHTML=(post.image?"<img src=\""+escapeHtml(post.image)+"\" alt=\"\" loading=\"lazy\" style=\"width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px\">":"")+"<h3>"+escapeHtml(post.title)+"</h3><p>"+escapeHtml(post.excerpt)+"</p><a href=\"/article.html?post="+encodeURIComponent(post.file)+"\">पूरा लेख पढ़ें →</a>";
    recentArticles.appendChild(article);
   });
  }catch(error){
-  recentArticles.innerHTML="<article class=\\"card\\"><p>लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";
+  recentArticles.innerHTML="<article class=\"card\"><p>लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";
   articlesMessage.textContent="लेखों की सूची अभी उपलब्ध नहीं है। कुछ देर बाद फिर कोशिश करें।";
  }
 }
