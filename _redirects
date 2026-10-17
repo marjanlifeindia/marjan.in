@@ -1,2 +1,14 @@
-# Keep the old article URL working while using the CMS article as the single main page.
-/reading-habit.html /article-reading-habit.html 301
+# Keep legacy article links pointed at the single clean canonical URL.
+/reading-habit.html /article-reading-habit 301
+/article-reading-habit.html /article-reading-habit 301
+/article-kids-sleep-routine.html /article-kids-sleep-routine 301
+/article-kids-science-experiments-home.html /article-kids-science-experiments-home 301
+/article-kids-activities-ghar-par.html /article-kids-activities-ghar-par 301
+/article-bachon-ke-liye-educational-toys.html /article-bachon-ke-liye-educational-toys 301
+/article-bachon-ke-liye-hindi-story-books.html /article-bachon-ke-liye-hindi-story-books 301
+/about.html /about 301
+/parenting.html /parenting 301
+/kids-education.html /kids-education 301
+/activities.html /activities 301
+/mobile-habit.html /mobile-habit 301
+/kids-corner.html /kids-corner 301
