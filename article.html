@@ -91,7 +91,7 @@ function renderBody(text,title){
 (async function(){
  const params=new URLSearchParams(window.location.search);
  let filename=params.get("post")||"";
- const pathMatch=window.location.pathname.match(/^\\/articles\\/([^/]+)\\/?$/);
+ const pathMatch=window.location.pathname.match(/^\/articles\/([^/]+)\/?$/);
  let requestedSlug="";
  if(!filename&&pathMatch){try{requestedSlug=decodeURIComponent(pathMatch[1]);}catch(error){requestedSlug=pathMatch[1];}}
  try{
@@ -100,7 +100,7 @@ function renderBody(text,title){
   const index=await indexResponse.json();
   if(!filename&&requestedSlug)filename=index[requestedSlug]||"";
   if(!filename&&!requestedSlug)filename=index["reading-habit"]||"";
-  if(!/^[a-zA-Z0-9._-]+\\.md$/i.test(filename))throw new Error("लेख का लिंक नहीं मिला");
+  if(!/^[a-zA-Z0-9._-]+\.md$/i.test(filename))throw new Error("लेख का लिंक नहीं मिला");
   const response=await fetch("/posts/"+encodeURIComponent(filename),{cache:"no-store"});
   if(!response.ok)throw new Error("लेख की फ़ाइल नहीं मिली");
   const parsed=parseFrontMatter(await response.text());
