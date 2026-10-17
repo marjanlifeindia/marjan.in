@@ -89,79 +89,24 @@ function renderBody(text,title){
  flush();closeList();return html;
 }
 (async function(){
- const params=new URLSearchParams(location.search);
+ const params=new URLSearchParams(window.location.search);
  let filename=params.get("post")||"";
- // Older homepage cards and saved links may still use ?post=filename.md.
- // Send those requests to the fully rendered static article page instead of
- // allowing the old JavaScript loader to replace the body after it appears.
- if(filename){
-  try{
-   const indexResponse=await fetch("/posts/index.json?refresh="+Date.now(),{cache:"no-store"});
-   if(indexResponse.ok){
-    const index=await indexResponse.json();
-    const entry=Object.entries(index).find(function(pair){return pair[1]===filename;});
-    if(entry&&entry[0]){
-     location.replace("/article-"+encodeURIComponent(entry[0])+".html");
-     return;
-    }
-   }
-  }catch(legacyRedirectError){}
- }
+ const pathMatch=window.location.pathname.match(/^\\/articles\\/([^/]+)\\/?$/);
  let requestedSlug="";
- const pathMatch=location.pathname.match(/^\/articles\/([^/]+)\/?$/);
- if(!filename&&pathMatch){
-  try{requestedSlug=decodeURIComponent(pathMatch[1]);}catch(error){requestedSlug=pathMatch[1];}
- }
+ if(!filename&&pathMatch){try{requestedSlug=decodeURIComponent(pathMatch[1]);}catch(error){requestedSlug=pathMatch[1];}}
  try{
-  if(requestedSlug){
-   // First use the generated slug index. If it is missing or stale, search
-   // Markdown front matter so a newly published CMS article can still open.
-   try{
-    const indexResponse=await fetch("/posts/index.json?refresh="+Date.now(),{cache:"no-store"});
-    if(indexResponse.ok){
-     const index=await indexResponse.json();
-     filename=index[requestedSlug]||"";
-    }
-   }catch(indexError){}
-   if(!filename){
-    const listingResponse=await fetch("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main",{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
-    if(!listingResponse.ok)throw new Error("Post list unavailable");
-    const files=await listingResponse.json();
-    for(const item of files){
-     if(item.type!=="file"||!/\.md$/i.test(item.name))continue;
-     const rawResponse=await fetch(item.download_url,{cache:"no-store"});
-     if(!rawResponse.ok)continue;
-     const candidate=parseFrontMatter(await rawResponse.text());
-     if(candidate&&String(candidate.meta.slug||"").trim()===requestedSlug){
-      filename=item.name;
-      break;
-     }
-    }
-   }
-  }
-  if(!filename&&!requestedSlug){
-   // A bare /article URL has no post identifier; send it to the known, fully rendered reading-habit article.
-   location.replace("/article-reading-habit.html");
-   return;
-  }
-  if(!/^[a-zA-Z0-9._-]+\.md$/.test(filename)){
-   document.getElementById("articleTitle").textContent="लेख का लिंक नहीं मिला";
-   document.getElementById("articleBody").innerHTML="<p>कृपया नीचे से सही विषय चुनें।</p><p><a href=\"/index.html\">Home</a> · <a href=\"/parenting.html\">Parenting</a> · <a href=\"/kids-education.html\">Kids Education</a> · <a href=\"/activities.html\">Activities</a></p>";
-   return;
-  }
-  const api="https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts/"+encodeURIComponent(filename)+"?ref=main";
-  const response=await fetch(api,{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
-  if(!response.ok)throw new Error("Post not found");
-  const file=await response.json();
-  const raw=await fetch(file.download_url,{cache:"no-store"});
-  if(!raw.ok)throw new Error("Post content unavailable");
-  const parsed=parseFrontMatter(await raw.text());
-  if(!parsed||!parsed.meta.title)throw new Error("Invalid post");
+  const indexResponse=await fetch("/posts/index.json",{cache:"no-store"});
+  if(!indexResponse.ok)throw new Error("लेख सूची उपलब्ध नहीं है");
+  const index=await indexResponse.json();
+  if(!filename&&requestedSlug)filename=index[requestedSlug]||"";
+  if(!filename&&!requestedSlug)filename=index["reading-habit"]||"";
+  if(!/^[a-zA-Z0-9._-]+\\.md$/i.test(filename))throw new Error("लेख का लिंक नहीं मिला");
+  const response=await fetch("/posts/"+encodeURIComponent(filename),{cache:"no-store"});
+  if(!response.ok)throw new Error("लेख की फ़ाइल नहीं मिली");
+  const parsed=parseFrontMatter(await response.text());
+  if(!parsed||!parsed.meta.title)throw new Error("लेख का format सही नहीं है");
   const meta=parsed.meta;
-  const slug=(meta.slug||requestedSlug||"").trim();
-  const canonicalUrl=requestedSlug && slug
-   ? new URL("articles/"+encodeURIComponent(slug)+"/","https://marjan.in/")
-   : new URL("article.html?post="+encodeURIComponent(filename),"https://marjan.in/");
+  const canonicalUrl=new URL("/article.html?post="+encodeURIComponent(filename),"https://marjan.in/");
   document.querySelector('link[rel="canonical"]').href=canonicalUrl.href;
   document.getElementById("articleTitle").textContent=meta.title.trim();
   document.title=(meta.seo_title||meta.title).trim();
@@ -173,7 +118,7 @@ function renderBody(text,title){
   document.getElementById("articleBody").innerHTML=renderBody(parsed.body,meta.title);
  }catch(error){
   document.getElementById("articleTitle").textContent="लेख अभी नहीं खुल सका";
-  document.getElementById("articleBody").innerHTML='<p>लेख लोड नहीं हो सका। इंटरनेट कनेक्शन जाँचें और कुछ देर बाद फिर कोशिश करें।</p><p><a href="/index.html">Home Page पर वापस जाएँ</a></p>';
+  document.getElementById("articleBody").innerHTML='<p>लेख लोड नहीं हो सका। कुछ देर बाद फिर कोशिश करें।</p><p><a href="/index.html">Home Page पर वापस जाएँ</a> · <a href="/kids-education.html">Kids Education</a></p>';
  }
 })();
 </script>
