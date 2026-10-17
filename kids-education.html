@@ -51,14 +51,15 @@
       padding: 20px;
     }
   </style>
+  <link rel="canonical" href="https://marjan.in/kids-education">
 </head>
 <body>
   <header>
-    <a href="index"><strong>marjan.in</strong></a>
+    <a href="index.html"><strong>marjan.in</strong></a>
     <p>Parenting • Education • Learning</p>
-    <a href="index">Home</a>
-    <a href="parenting">Parenting</a>
-    <a href="kids-corner">Kids Corner</a>
+    <a href="index.html">Home</a>
+    <a href="parenting.html">Parenting</a>
+    <a href="kids-corner.html">Kids Corner</a>
   </header>
 
   <main>
@@ -104,12 +105,12 @@ fetchWithTimeout("https://api.github.com/repos/marjanlifeindia/marjan.in/content
 .then(function(posts){
 const found=posts.filter(function(p){return p.meta&&p.meta.title&&(p.meta.category||"").toLowerCase()==="kids education";}).sort(function(a,b){return (b.meta.date||"").localeCompare(a.meta.date||"");});
 if(!found.length){target.innerHTML="<p>इस category में अभी कोई नया CMS लेख नहीं है।</p>";return;}
-target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"/article-"+encodeURIComponent(p.meta.slug||p.file.replace(/\.md$/i,""))+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
+target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"/article-"+encodeURIComponent(p.meta.slug||p.file.replace(/\.md$/i,""))+".html\">पूरा लेख पढ़ें →</a></article>";}).join("");
 })
 .catch(function(){target.innerHTML="<p>लेख अभी लोड नहीं हो सके। कुछ देर बाद फिर कोशिश करें।</p>";});
 })();
 </script>
-<p><a class="button" href="index">मुख्य पेज पर वापस जाएँ</a></p>
+<p><a class="button" href="index.html">मुख्य पेज पर वापस जाएँ</a></p>
   </main>
 
   <footer>
