@@ -32,7 +32,7 @@ jobs:
           base = "https://marjan.in/"
           static_pages = [
               "", "about.html", "parenting.html", "kids-education.html",
-              "activities.html", "reading-habit.html", "mobile-habit.html"
+              "activities.html", "mobile-habit.html"
           ]
           urls = [base + page for page in static_pages]
           posts_dir = Path("posts")
