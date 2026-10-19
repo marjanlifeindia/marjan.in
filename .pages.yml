@@ -7,6 +7,7 @@ content:
     label: नए लेख (Articles)
     type: collection
     path: posts
+    filename: "{slug}.md" # यह लाइन जोड़ी गई है
     format: yaml-frontmatter
     fields:
       - name: title
