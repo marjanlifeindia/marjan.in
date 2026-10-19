@@ -7,25 +7,22 @@ content:
     label: नए लेख (Articles)
     type: collection
     path: posts
-    filename: "{slug}.md" # यह लाइन जोड़ी गई है
+    filename: "{slug}.md"
     format: yaml-frontmatter
     fields:
       - name: title
-        label: लेख का शीर्षक
+        label: टाइटल (Title)
         type: string
         required: true
-
       - name: slug
         label: SEO URL Slug (English letters, numbers, hyphens)
         type: string
         required: true
-
       - name: date
-        label: प्रकाशित करने की तारीख
+        label: तारीख (Date)
         type: date
-
       - name: category
-        label: श्रेणी (Category)
+        label: कैटेगरी (Category)
         type: select
         required: true
         options:
@@ -33,52 +30,21 @@ content:
             - Parenting
             - Kids Education
             - Kids Activities
-            - Toys & Learning
-            - Kids Books
-            - School Supplies
-
-      - name: excerpt
-        label: लेख का छोटा परिचय
-        type: text
-
-      - name: image
-        label: मुख्य फोटो
-        type: image
-
-      - name: seo_title
-        label: SEO Title
-        type: string
-
-      - name: seo_description
-        label: SEO Description
-        type: text
-
+            - Kids Corner
       - name: body
-        label: लेख की सामग्री
+        label: कंटेंट (Content)
         type: rich-text
 
-  # 👇 यहाँ से 'Baby Names' का नया सेक्शन शुरू होता है 👇
   - name: baby-names
     label: बेबी नेम्स (Baby Names)
     type: collection
     path: baby-names
-    filename: "{slug}.md"
     format: yaml-frontmatter
     fields:
       - name: title
-        label: पेज का शीर्षक
+        label: टाइटल (Title)
         type: string
         required: true
-
-      - name: slug
-        label: SEO URL Slug (English letters only)
-        type: string
-        required: true
-
-      - name: excerpt
-        label: छोटा परिचय
-        type: text
-
       - name: body
-        label: नामों की सामग्री
+        label: कंटेंट (Content)
         type: rich-text
