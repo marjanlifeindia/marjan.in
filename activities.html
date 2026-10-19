@@ -73,6 +73,19 @@
 }
 @media(min-width:761px){.primary-navigation{display:flex!important}}
 
+
+/* Mobile navigation hardening: override legacy page-level nav rules */
+@media(max-width:760px){
+  .site-header .menu-toggle{display:inline-flex!important;visibility:visible!important}
+  .site-header .primary-navigation{display:none!important;flex-direction:column!important;align-items:stretch!important;width:100%}
+  .site-header .primary-navigation.is-open{display:flex!important;visibility:visible!important}
+  .site-header .primary-navigation a{display:flex!important;width:100%;min-height:44px}
+}
+@media(min-width:761px){
+  .site-header .menu-toggle{display:none!important}
+  .site-header .primary-navigation{display:flex!important;visibility:visible!important}
+}
+
 </style>
   <link rel="canonical" href="https://marjan.in/activities">
 </head>
