@@ -13,9 +13,16 @@ body{margin:0;font-family:Arial,sans-serif;background:#fffaf8;color:#303747;line
 header{background:#243047;color:white;padding:16px 5%}
 .brand{font-size:27px;font-weight:bold;color:white;text-decoration:none}
 .tagline{margin:2px 0 12px;color:#f5dfe4}
-nav{display:flex;flex-wrap:wrap;gap:8px}
-nav a{color:white;text-decoration:none;padding:7px 10px;border-radius:6px}
-nav a:hover{background:#40516e}
+nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+nav a,nav .nav-dropdown-toggle{color:white;text-decoration:none;padding:7px 10px;border-radius:6px;font:inherit;display:inline-flex;align-items:center;gap:5px}
+nav a:hover,nav .nav-dropdown-toggle:hover,nav a:focus-visible,nav .nav-dropdown-toggle:focus-visible{background:#40516e}
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{background:transparent;border:0;cursor:pointer}
+.nav-dropdown-menu{display:none;position:absolute;z-index:20;top:100%;left:0;min-width:220px;padding:8px;background:#243047;border:1px solid #526079;border-radius:10px;box-shadow:0 8px 22px #0002}
+.nav-dropdown-menu a{display:block;width:100%;white-space:nowrap}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block}
+.nav-dropdown-menu .submenu-heading{display:block;color:#f5dfe4;font-size:12px;padding:8px 10px 3px}
+@media(max-width:600px){nav{align-items:stretch;gap:4px}.nav-dropdown{position:static}.nav-dropdown-menu{position:static;min-width:0;width:100%;box-shadow:none;margin:2px 0 6px}.nav-dropdown-menu a{white-space:normal}.nav-dropdown-toggle{width:100%;justify-content:flex-start}}
 .hero{padding:42px 5%;background:linear-gradient(135deg,#fff0f1,#f0f5ff);text-align:left}
 .hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:28px}
 .hero-copy{padding:8px 0}
@@ -59,7 +66,17 @@ footer a{color:white;margin:5px}
 <p class="tagline">Parenting • Education • Learning</p>
 <nav aria-label="Main navigation">
 <a href="/">Home</a>
-<a href="/baby-names/">Baby Names</a>
+<div class="nav-dropdown" id="babyNamesDropdown">
+<button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="babyNamesMenu">Baby Names <span aria-hidden="true">▾</span></button>
+<div class="nav-dropdown-menu" id="babyNamesMenu">
+<a href="/baby-names/">All Baby Names</a>
+<span class="submenu-heading">Browse by religion</span>
+<a href="/baby-names/#hindu">Hindu Names · Boy & Girl</a>
+<a href="/baby-names/#muslim">Muslim Names · Boy & Girl</a>
+<a href="/baby-names/#sikh">Sikh Names · Boy & Girl</a>
+<a href="/baby-names/#christian">Christian Names · Boy & Girl</a>
+</div>
+</div>
 <a href="/parenting.html">Parenting</a>
 <a href="/kids-education.html">Kids Education</a>
 <a href="/activities.html">Kids Activities</a>
@@ -215,6 +232,28 @@ async function loadRecentArticles(){
  }catch(error){recentArticles.innerHTML="<article class=\"card\"><p>नए लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";articlesMessage.textContent="लेख दिखाने के लिए इंटरनेट कनेक्शन आवश्यक है।";}
 }
 loadRecentArticles();
+
+const babyNamesDropdown=document.getElementById("babyNamesDropdown");
+const babyNamesToggle=babyNamesDropdown&&babyNamesDropdown.querySelector(".nav-dropdown-toggle");
+if(babyNamesToggle){
+  babyNamesToggle.addEventListener("click",function(){
+    const isOpen=babyNamesDropdown.classList.toggle("open");
+    babyNamesToggle.setAttribute("aria-expanded",String(isOpen));
+  });
+  document.addEventListener("click",function(event){
+    if(!babyNamesDropdown.contains(event.target)){
+      babyNamesDropdown.classList.remove("open");
+      babyNamesToggle.setAttribute("aria-expanded","false");
+    }
+  });
+  document.addEventListener("keydown",function(event){
+    if(event.key==="Escape"){
+      babyNamesDropdown.classList.remove("open");
+      babyNamesToggle.setAttribute("aria-expanded","false");
+      babyNamesToggle.focus();
+    }
+  });
+}
 
 const searchBox=document.getElementById("siteSearch");
 const items=document.querySelectorAll(".search-item");
