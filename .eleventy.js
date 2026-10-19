@@ -7,12 +7,16 @@ module.exports = function (eleventyConfig) {
     // यह सिर्फ HTML फाइलों में बदलाव करेगा
     if (outputPath && outputPath.endsWith(".html")) {
       
-      // ⬇️ यहाँ नीचे अपना पूरा MailerLite वाला कोड पेस्ट करें ⬇️
-      // (सिर्फ [ यहाँ अपना कोड डालें ] वाले हिस्से को हटाकर)
-      
+      // आपका MailerLite कोड यहाँ पेस्ट हो चुका है
       const mailerliteCode = `
         <!-- MailerLite Universal -->
-        [ यहाँ अपना MailerLite स्क्रिप्ट कोड पेस्ट करें ]
+        <script>
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '2723810');
+        </script>
         <!-- End MailerLite Universal -->
       `;
       
