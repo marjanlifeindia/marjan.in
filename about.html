@@ -50,20 +50,50 @@
       text-align: center;
       padding: 20px;
     }
-  </style>
+  
+/* Shared responsive navigation */
+.site-header{background:#243047;color:#fff;padding:16px 5%;position:relative;z-index:20}
+.site-header-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:18px}
+.site-brand{font-size:27px;font-weight:800;letter-spacing:-.4px;color:#fff;text-decoration:none;line-height:1.2}
+.site-tagline{grid-column:1;margin:4px 0 0;color:#dce5f4;font-size:14px}
+.primary-navigation{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.primary-navigation a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:8px;color:#fff;text-decoration:none;font-weight:600;line-height:1.3;transition:background .18s ease}
+.primary-navigation a:hover,.primary-navigation a:focus-visible{background:#40516e;outline-offset:3px}
+.menu-toggle{display:none;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:9px 13px;border:1px solid #77849a;border-radius:9px;background:#303e57;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.menu-toggle:focus-visible{outline:3px solid #f5b6c0;outline-offset:3px}
+@media(max-width:760px){
+.site-header{padding:14px 4%}
+.site-header-inner{grid-template-columns:minmax(0,1fr) auto;column-gap:10px}
+.site-brand{font-size:25px}
+.site-tagline{font-size:12px}
+.menu-toggle{display:inline-flex;grid-column:2;grid-row:1/3}
+.primary-navigation{display:none;grid-column:1/-1;flex-direction:column;align-items:stretch;gap:4px;margin-top:12px;padding-top:10px;border-top:1px solid #536078}
+.primary-navigation.is-open{display:flex}
+.primary-navigation a{width:100%;min-height:44px;padding:11px 12px}
+}
+@media(min-width:761px){.primary-navigation{display:flex!important}}
+
+</style>
   <link rel="canonical" href="https://marjan.in/about">
 </head>
 <body>
-  <header>
-    <a href="index.html"><strong>marjan.in</strong></a>
-    <p>Parenting • Education • Learning</p>
-    <a href="index.html">Home</a>
-    <a href="parenting.html">Parenting</a>
-    <a href="kids-education.html">Kids Education</a>
-    <a href="activities.html">Activities</a>
-    <a href="about.html">About Us</a>
-    <a href="kids-corner.html">Kids Corner</a>
-  </header>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/" aria-label="MARJAN.IN Home">marjan.in</a>
+    <p class="site-tagline">Parenting • Education • Learning</p>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Menu</span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/parenting">Parenting</a>
+      <a href="/kids-education">Kids Education</a>
+      <a href="/activities">Kids Activities</a>
+      <a href="/kids-corner">Kids Corner</a>
+      <a href="/about">About Us</a>
+    </nav>
+  </div>
+</header>
 
   <main>
     <h1>About Us | MARJAN.IN के बारे में</h1>
@@ -101,5 +131,26 @@
     <p>© 2026 MARJAN.IN</p>
     <p>Parenting • Education • Learning</p>
   </footer>
+
+<script>
+(function(){
+  var header=document.querySelector('.site-header');
+  if(!header)return;
+  var toggle=header.querySelector('.menu-toggle');
+  var nav=header.querySelector('.primary-navigation');
+  if(!toggle||!nav)return;
+  function setOpen(open){
+    nav.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.querySelector('.menu-icon').textContent=open?'✕':'☰';
+    toggle.querySelector('.menu-label').textContent=open?'Close':'Menu';
+  }
+  toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true');});
+  nav.addEventListener('click',function(event){if(event.target.closest('a'))setOpen(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>760)setOpen(false);});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape')setOpen(false);});
+})();
+</script>
+
 </body>
 </html>
