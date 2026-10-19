@@ -1,3 +1,9 @@
+# Baby Names: explicitly serve the directory HTML files on Cloudflare Pages.
+/baby-names /baby-names/index.html 200
+/baby-names/ /baby-names/index.html 200
+/baby-names/a-letter-hindu-boy-names /baby-names/a-letter-hindu-boy-names/index.html 200
+/baby-names/a-letter-hindu-boy-names/ /baby-names/a-letter-hindu-boy-names/index.html 200
+
 # Keep legacy article links pointed at the single clean canonical URL.
 /reading-habit.html /article-reading-habit 301
 /article-reading-habit.html /article-reading-habit 301
