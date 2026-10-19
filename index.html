@@ -279,5 +279,43 @@ message.textContent=query?(visible+" परिणाम मिले"):"";
     ml('account', '2723810');
 </script>
 <!-- End MailerLite Universal -->
+
+<script>
+(function () {
+  var dropdown = document.getElementById("babyNamesDropdown");
+  if (!dropdown) return;
+  var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+  var menu = document.getElementById("babyNamesMenu");
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    dropdown.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var isOpen = dropdown.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!dropdown.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  menu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", closeMenu);
+  });
+})();
+</script>
+
 </body>
 </html>
