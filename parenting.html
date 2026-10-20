@@ -49,6 +49,21 @@
       text-align: center;
       padding: 20px;
     }
+  
+    nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:10px}
+    nav>a{display:inline-block;color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;margin:0;line-height:1.6}
+    nav>a:hover,nav>a:focus-visible{background:#40516e}
+    nav .nav-dropdown{position:relative}
+    nav .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.6}
+    nav .nav-dropdown summary::-webkit-details-marker{display:none}
+    nav .nav-dropdown summary::after{content:" ▾";font-size:.8em}
+    nav .nav-dropdown[open] summary,nav .nav-dropdown summary:hover,nav .nav-dropdown summary:focus-visible{background:#40516e}
+    nav .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:30;min-width:220px;padding:8px;background:#fff;border:1px solid #e1e7f0;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}
+    nav .nav-dropdown .nav-menu a{display:block;color:#243047;text-decoration:none;padding:9px 10px;border-radius:6px;margin:0;white-space:normal;line-height:1.5}
+    nav .nav-dropdown .nav-menu a:hover,nav .nav-dropdown .nav-menu a:focus-visible{background:#f0f5ff;color:#243047}
+    nav .nav-dropdown summary:focus-visible,nav .nav-dropdown .nav-menu a:focus-visible{outline:2px solid #f5c4cc;outline-offset:2px}
+    @media(max-width:600px){nav .nav-dropdown .nav-menu{position:static;min-width:0;width:100%;box-shadow:none;margin-top:4px}nav .nav-dropdown[open]{flex-basis:100%}}
+
   </style>
   <link rel="canonical" href="https://marjan.in/parenting">
 </head>
@@ -56,8 +71,21 @@
   <header>
     <a href="index.html"><strong>marjan.in</strong></a>
     <p>Parenting • Education • Learning</p>
-    <a href="index.html">Home</a>
-    <a href="kids-corner.html">Kids Corner</a>
+    <nav aria-label="Main navigation">
+<a href="/">Home</a>
+<a href="/parenting.html">Parenting</a>
+<a href="/kids-education.html">Kids Education</a>
+<a href="/activities.html">Kids Activities</a>
+<a href="/kids-corner.html">Kids Corner</a>
+<details class="nav-dropdown">
+<summary>Baby Names</summary>
+<div class="nav-menu">
+<a href="/baby-names/">Baby Names Directory</a>
+<a href="/baby-names/a-letter-hindu-boy-names/">Hindu Boy Names: A</a>
+</div>
+</details>
+<a href="/about.html">About Us</a>
+</nav>
   </header>
 
   <main>
