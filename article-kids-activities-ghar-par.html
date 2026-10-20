@@ -41,10 +41,30 @@ header>nav>a,header>nav>.nav-dropdown>summary{color:#fff;text-decoration:none;pa
 header>nav>a:hover,header>nav>.nav-dropdown>summary:hover{background:#40516e}
 @media(max-width:600px){header{padding:12px 4% 0!important}header>.brand{font-size:24px}header>.tagline{font-size:12px;margin-bottom:10px}header>nav{gap:4px 5px;margin:0 -4.35%;padding:8px 4.35%}header>nav>a,header>nav>.nav-dropdown>summary{font-size:14px!important;padding:7px 8px;line-height:1.4}header>nav>.nav-dropdown{position:relative}header>nav>.nav-dropdown[open]{flex-basis:auto!important;width:auto!important;align-self:center}header>nav>.nav-dropdown .nav-menu{position:absolute!important;top:100%;left:0;z-index:100;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}header>nav>.nav-dropdown .nav-menu a{font-size:15px!important;line-height:1.4;padding:7px 10px;color:#243047}}
 
+
+/* Accessible shared mobile navigation */
+header>.menu-toggle{display:none}
+header>nav.primary-navigation{min-width:0}
+@media(max-width:760px){
+ header{position:relative}
+ header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}
+ header>.menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}
+ header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}
+ header>nav.primary-navigation.is-open{display:flex}
+ header>nav.primary-navigation>a{display:block;width:100%;font-size:15px!important;padding:9px 10px;line-height:1.4}
+ header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;flex-basis:auto!important;align-self:stretch}
+ header>nav.primary-navigation>.nav-dropdown[open]{flex-basis:auto!important;width:100%!important}
+ header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px!important;padding:9px 10px;line-height:1.4}
+ header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static!important;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}
+ header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px!important;padding:8px 10px;line-height:1.4}
+}
+@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+
 </style>
 </head>
 <body>
-<header><a class="brand" href="/">marjan.in</a><p class="tagline">Parenting • Education • Learning</p><nav aria-label="Main navigation"><a href="/">Home</a><a href="/parenting.html">Parenting</a><a href="/kids-education.html">Kids Education</a><a href="/activities.html">Kids Activities</a><a href="/kids-corner.html">Kids Corner</a><details class="nav-dropdown">
+<header><a class="brand" href="/">marjan.in</a><p class="tagline">Parenting • Education • Learning</p><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/parenting.html">Parenting</a><a href="/kids-education.html">Kids Education</a><a href="/activities.html">Kids Activities</a><a href="/kids-corner.html">Kids Corner</a><details class="nav-dropdown">
 <summary>Baby Names</summary>
 <div class="nav-menu">
 <a href="/baby-names/">Baby Names Directory</a>
@@ -142,6 +162,38 @@ header>nav>a:hover,header>nav>.nav-dropdown>summary:hover{background:#40516e}
 <p><strong>5. क्या activities से पढ़ाई में मदद मिलती है?</strong></p>
 <p>बिल्कुल। खेल-खेल में बच्चे की एकाग्रता, सोचने की शक्ति और भाषा — तीनों बेहतर होते हैं।</p></div></article></main>
 <footer>© 2026 MARJAN.IN. All rights reserved.</footer>
+
+
+<script>
+(function(){
+  var menu=document.getElementById('primary-navigation');
+  var toggle=document.querySelector('.menu-toggle');
+  if(!menu||!toggle)return;
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open main menu');
+  }
+  toggle.addEventListener('click',function(){
+    var open=!menu.classList.contains('is-open');
+    menu.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){closeMenu();});
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){
+      closeMenu();
+      var dropdown=menu.querySelector('.nav-dropdown[open]');
+      if(dropdown)dropdown.removeAttribute('open');
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
+})();
+</script>
 
 </body>
 </html>
