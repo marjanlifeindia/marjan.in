@@ -93,6 +93,11 @@ header>nav>a:hover,header>nav>.nav-dropdown>summary:hover{background:#40516e}
 /* Accessible shared mobile navigation */
 header>.menu-toggle{display:none}header>nav.primary-navigation{min-width:0}@media(max-width:760px){header{position:relative}header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}header>.menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{display:block;width:100%;font-size:15px!important;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;flex-basis:auto!important;align-self:stretch}header>nav.primary-navigation>.nav-dropdown[open]{flex-basis:auto!important;width:100%!important}header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px!important;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static!important;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px!important;padding:8px 10px;line-height:1.4}}@media(min-width:761px){header>nav.primary-navigation{display:flex}}
 /* Original MARJAN.IN logo sizing */ .brand{display:inline-flex!important;align-items:center;max-width:100%;text-decoration:none}.brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;object-position:left center}@media(max-width:480px){.brand img{width:180px;max-height:62px}}
+
+/* Original MARJAN.IN footer logo */
+.footer-brand{display:inline-flex;align-items:center;justify-content:center;max-width:100%;margin:0 auto 12px;text-decoration:none}
+.footer-brand img{display:block;width:180px;height:auto;max-height:62px;object-fit:contain}
+@media(max-width:480px){.footer-brand img{width:160px;max-height:56px}}
 </style>
   <link rel="canonical" href="https://marjan.in/kids-education">
 </head>
@@ -179,6 +184,7 @@ target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;b
   </main>
 
   <footer>
+<a class="footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan%20logo.jpg" alt="MARJAN.IN" width="220" height="120" loading="lazy" decoding="async"></a>
     <p>© 2026 MARJAN.IN</p>
     <p>Parenting • Education • Learning</p>
   </footer>
