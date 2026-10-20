@@ -66,8 +66,8 @@
     @media(max-width:600px){nav .nav-dropdown .nav-menu{position:static;min-width:0;width:100%;box-shadow:none;margin-top:4px;align-content:start;gap:2px;padding:8px}nav .nav-dropdown[open]{flex-basis:100%}nav .nav-dropdown .nav-menu a{white-space:normal;padding:7px 10px;line-height:1.45}nav .nav-dropdown .nav-menu strong{margin:5px 10px 0;font-size:12px;line-height:1.4;color:#68748a}nav .nav-dropdown .nav-menu strong:first-child{margin-top:2px}}
 
   
-/* Keep all primary navigation labels consistent on mobile. */
-@media(max-width:600px){nav{align-items:center;gap:4px 6px}nav>a,nav>.nav-dropdown>summary{font-size:16px!important;line-height:1.4;padding:7px 8px}nav>.nav-dropdown{font-size:16px}nav>.nav-dropdown>summary{display:block}nav>.nav-dropdown .nav-menu a{font-size:16px!important}}
+/* Consistent mobile main navigation; dropdown overlays instead of reflowing the menu. */
+@media(max-width:600px){nav{align-items:center;gap:4px 6px}nav>a,nav>.nav-dropdown>summary{font-size:16px!important;line-height:1.4;padding:7px 8px}nav>.nav-dropdown{position:relative;font-size:16px}nav>.nav-dropdown>summary{display:block}nav>.nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:0;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}nav>.nav-dropdown .nav-menu a{font-size:16px!important;line-height:1.4;padding:7px 10px}nav>.nav-dropdown .nav-menu strong{margin:5px 10px 0;font-size:12px;line-height:1.4;color:#68748a}nav>.nav-dropdown .nav-menu strong:first-child{margin-top:2px}}
 </style>
   <link rel="canonical" href="https://marjan.in/activities">
 </head>
