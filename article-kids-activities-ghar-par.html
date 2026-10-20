@@ -164,36 +164,7 @@ header>nav.primary-navigation{min-width:0}
 <footer>© 2026 MARJAN.IN. All rights reserved.</footer>
 
 
-<script>
-(function(){
-  var menu=document.getElementById('primary-navigation');
-  var toggle=document.querySelector('.menu-toggle');
-  if(!menu||!toggle)return;
-  function closeMenu(){
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded','false');
-    toggle.setAttribute('aria-label','Open main menu');
-  }
-  toggle.addEventListener('click',function(){
-    var open=!menu.classList.contains('is-open');
-    menu.classList.toggle('is-open',open);
-    toggle.setAttribute('aria-expanded',String(open));
-    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
-  });
-  menu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click',function(){closeMenu();});
-  });
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'){
-      closeMenu();
-      var dropdown=menu.querySelector('.nav-dropdown[open]');
-      if(dropdown)dropdown.removeAttribute('open');
-      toggle.focus();
-    }
-  });
-  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
-})();
-</script>
+
 
 </body>
 </html>
