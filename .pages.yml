@@ -31,6 +31,9 @@ content:
             - Kids Education
             - Kids Activities
             - Kids Corner
+            - Toys & Learning
+            - Kids Books
+            - School Supplies
       - name: body
         label: कंटेंट (Content)
         type: rich-text
