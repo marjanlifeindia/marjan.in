@@ -68,13 +68,32 @@
   
 /* Consistent mobile main navigation; dropdown overlays instead of reflowing the menu. */
 @media(max-width:600px){nav{align-items:center;gap:4px 6px}nav>a,nav>.nav-dropdown>summary{font-size:16px!important;line-height:1.4;padding:7px 8px}nav>.nav-dropdown{position:relative;font-size:16px}nav>.nav-dropdown>summary{display:block}nav>.nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:0;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}nav>.nav-dropdown .nav-menu a{font-size:16px!important;line-height:1.4;padding:7px 10px}nav>.nav-dropdown .nav-menu strong{margin:5px 10px 0;font-size:12px;line-height:1.4;color:#68748a}nav>.nav-dropdown .nav-menu strong:first-child{margin-top:2px}}
+
+/* Shared MARJAN.IN brand/header treatment */
+header{background:#fff!important;color:#243047!important;padding:14px 5% 0!important;border-bottom:1px solid #e9eaf0}
+header>.brand,header>a.brand,header>a:first-child.brand{display:inline-block;font-size:27px;font-weight:800;letter-spacing:-.5px;color:#176fc1;text-decoration:none}
+header>.tagline,header>p.tagline{margin:0 0 12px;color:#5c6576;font-size:13px;line-height:1.35;letter-spacing:.15px}
+header>nav{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:0 -5.56%;padding:9px 5.56%;align-items:center}
+header>nav>a,header>nav>.nav-dropdown>summary{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.4}
+header>nav>a:hover,header>nav>.nav-dropdown>summary:hover{background:#40516e}
+@media(max-width:600px){
+ header{padding:12px 4% 0!important}
+ header>.brand,header>a.brand,header>a:first-child.brand{font-size:24px}
+ header>.tagline,header>p.tagline{font-size:12px;margin-bottom:10px}
+ header>nav{gap:4px 5px;margin:0 -4.35%;padding:8px 4.35%}
+ header>nav>a,header>nav>.nav-dropdown>summary{font-size:14px!important;padding:7px 8px;line-height:1.4}
+ header>nav>.nav-dropdown{position:relative}
+ header>nav>.nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}
+ header>nav>.nav-dropdown .nav-menu a{font-size:15px!important;line-height:1.4;padding:7px 10px;color:#243047}
+}
+
 </style>
   <link rel="canonical" href="https://marjan.in/about">
 </head>
 <body>
   <header>
-    <a href="index.html"><strong>marjan.in</strong></a>
-    <p>Parenting • Education • Learning</p>
+    <a class="brand" href="index.html">marjan.in</a>
+    <p class="tagline">Parenting • Education • Learning</p>
     <nav aria-label="Main navigation">
 <a href="/">Home</a>
 <a href="/parenting.html">Parenting</a>
