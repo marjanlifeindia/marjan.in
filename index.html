@@ -16,6 +16,16 @@ header{background:#243047;color:white;padding:16px 5%}
 nav{display:flex;flex-wrap:wrap;gap:8px}
 nav a{color:white;text-decoration:none;padding:7px 10px;border-radius:6px}
 nav a:hover{background:#40516e}
+nav .nav-dropdown{position:relative}
+nav .nav-dropdown summary{list-style:none;cursor:pointer;color:white;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.7}
+nav .nav-dropdown summary::-webkit-details-marker{display:none}
+nav .nav-dropdown summary::after{content:" ▾";font-size:.8em}
+nav .nav-dropdown[open] summary,nav .nav-dropdown summary:hover,nav .nav-dropdown summary:focus-visible{background:#40516e}
+nav .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:20;min-width:220px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}
+nav .nav-dropdown .nav-menu a{display:block;color:#243047;padding:9px 10px;border-radius:6px;white-space:normal}
+nav .nav-dropdown .nav-menu a:hover,nav .nav-dropdown .nav-menu a:focus-visible{background:#f0f5ff;color:#243047}
+nav .nav-dropdown summary:focus-visible,nav .nav-dropdown .nav-menu a:focus-visible{outline:2px solid #f5c4cc;outline-offset:2px}
+@media(max-width:600px){nav .nav-dropdown .nav-menu{position:static;min-width:0;width:100%;box-shadow:none;margin-top:4px}nav .nav-dropdown{width:auto}nav .nav-dropdown[open]{flex-basis:100%}nav .nav-dropdown .nav-menu a{white-space:normal}}
 .hero{padding:42px 5%;background:linear-gradient(135deg,#fff0f1,#f0f5ff);text-align:left}
 .hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:28px}
 .hero-copy{padding:8px 0}
@@ -63,6 +73,13 @@ footer a{color:white;margin:5px}
 <a href="/kids-education.html">Kids Education</a>
 <a href="/activities.html">Kids Activities</a>
 <a href="/kids-corner.html">Kids Corner</a>
+<details class="nav-dropdown">
+  <summary>Baby Names</summary>
+  <div class="nav-menu">
+    <a href="/baby-names/">Baby Names Directory</a>
+    <a href="/baby-names/a-letter-hindu-boy-names/">Hindu Boy Names: A</a>
+  </div>
+</details>
 <a href="/about.html">About Us</a>
 </nav>
 </header>
