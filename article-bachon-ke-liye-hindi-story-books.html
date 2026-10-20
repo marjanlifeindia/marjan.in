@@ -31,10 +31,52 @@ footer{text-align:center;background:#243047;color:white;padding:20px}
 nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:10px}nav>a{display:inline-block;color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;margin:0;line-height:1.6}nav>a:hover,nav>a:focus-visible{background:#40516e}nav .nav-dropdown{position:relative}nav .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.6}nav .nav-dropdown summary::-webkit-details-marker{display:none}nav .nav-dropdown summary::after{content:" ▾";font-size:.8em}nav .nav-dropdown[open] summary,nav .nav-dropdown summary:hover,nav .nav-dropdown summary:focus-visible{background:#40516e}nav .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:30;min-width:220px;padding:8px;background:#fff;border:1px solid #e1e7f0;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}nav .nav-dropdown .nav-menu a{display:block;color:#243047;text-decoration:none;padding:9px 10px;border-radius:6px;margin:0;white-space:normal;line-height:1.5}nav .nav-dropdown .nav-menu a:hover,nav .nav-dropdown .nav-menu a:focus-visible{background:#f0f5ff;color:#243047}nav .nav-dropdown summary:focus-visible,nav .nav-dropdown .nav-menu a:focus-visible{outline:2px solid #f5c4cc;outline-offset:2px}@media(max-width:600px){nav .nav-dropdown .nav-menu{position:static;min-width:0;width:100%;box-shadow:none;margin-top:4px}nav .nav-dropdown[open]{flex-basis:100%}}
 /* Consistent mobile main navigation; dropdown overlays instead of reflowing the menu. */
 @media(max-width:600px){nav{align-items:center;gap:4px 6px}nav>a,nav>.nav-dropdown>summary{font-size:16px!important;line-height:1.4;padding:7px 8px}nav>.nav-dropdown{position:relative;font-size:16px}nav>.nav-dropdown>summary{display:block}nav>.nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:0;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}nav>.nav-dropdown .nav-menu a{font-size:16px!important;line-height:1.4;padding:7px 10px}nav>.nav-dropdown .nav-menu strong{margin:5px 10px 0;font-size:12px;line-height:1.4;color:#68748a}nav>.nav-dropdown .nav-menu strong:first-child{margin-top:2px}}
+
+/* Shared MARJAN.IN brand/header treatment */
+header{background:#fff!important;color:#243047!important;padding:14px 5% 0!important;border-bottom:1px solid #e9eaf0}
+header>.brand,header>a.brand,header>a:first-child.brand{display:inline-block;font-size:27px;font-weight:800;letter-spacing:-.5px;color:#176fc1;text-decoration:none}
+header>.tagline,header>p.tagline{margin:0 0 12px;color:#5c6576;font-size:13px;line-height:1.35;letter-spacing:.15px}
+header>nav{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:0 -5.56%;padding:9px 5.56%;align-items:center}
+header>nav>a,header>nav>.nav-dropdown>summary{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.4}
+header>nav>a:hover,header>nav>.nav-dropdown>summary:hover{background:#40516e}
+@media(max-width:600px){
+ header{padding:12px 4% 0!important}
+ header>.brand,header>a.brand,header>a:first-child.brand{font-size:24px}
+ header>.tagline,header>p.tagline{font-size:12px;margin-bottom:10px}
+ header>nav{gap:4px 5px;margin:0 -4.35%;padding:8px 4.35%}
+ header>nav>a,header>nav>.nav-dropdown>summary{font-size:14px!important;padding:7px 8px;line-height:1.4}
+ header>nav>.nav-dropdown{position:relative}
+ header>nav>.nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}
+ header>nav>.nav-dropdown .nav-menu a{font-size:15px!important;line-height:1.4;padding:7px 10px;color:#243047}
+}
+
+
+/* Keep the Baby Names dropdown floating on mobile; do not expand/reflow the nav row. */
+@media(max-width:600px){header>nav>.nav-dropdown[open]{flex-basis:auto!important;width:auto!important;align-self:center}header>nav>.nav-dropdown .nav-menu{position:absolute!important;left:0;top:100%;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto}}
+
+/* Accessible shared mobile navigation */
+header>.menu-toggle{display:none}
+header>nav.primary-navigation{min-width:0}
+@media(max-width:760px){
+ header{position:relative}
+ header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}
+ header>.menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}
+ header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}
+ header>nav.primary-navigation.is-open{display:flex}
+ header>nav.primary-navigation>a{display:block;width:100%;font-size:15px!important;padding:9px 10px;line-height:1.4}
+ header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;flex-basis:auto!important;align-self:stretch}
+ header>nav.primary-navigation>.nav-dropdown[open]{flex-basis:auto!important;width:100%!important}
+ header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px!important;padding:9px 10px;line-height:1.4}
+ header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static!important;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}
+ header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px!important;padding:8px 10px;line-height:1.4}
+}
+@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+
 </style>
 </head>
 <body>
-<header><a href="/index.html">marjan.in</a><p>Parenting • Education • Learning</p><nav aria-label="Main navigation"><a href="/">Home</a><a href="/parenting.html">Parenting</a><a href="/kids-education.html">Kids Education</a><a href="/activities.html">Kids Activities</a><a href="/kids-corner.html">Kids Corner</a><details class="nav-dropdown">
+<header><a class="brand" href="/index.html">marjan.in</a><p class="tagline">Parenting • Education • Learning</p><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/parenting.html">Parenting</a><a href="/kids-education.html">Kids Education</a><a href="/activities.html">Kids Activities</a><a href="/kids-corner.html">Kids Corner</a><details class="nav-dropdown">
 <summary>Baby Names</summary>
 <div class="nav-menu">
 <a href="/baby-names/">Baby Names Directory</a>
@@ -168,6 +210,38 @@ nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:10px}n
 <p><em>इस लेख में इस्तेमाल की गई तस्वीरें मूल हैं और AI की मदद से बनाई गई हैं।</em></p>
 <p><em>इस लेख की जानकारी सामान्य जागरूकता के लिए है। किसी भी स्वास्थ्य, पढ़ाई या बच्चों की देखभाल से जुड़े मामले में विशेषज्ञ या डॉक्टर से सलाह जरूर लें।</em></p></div></article></main>
 <footer>© 2026 MARJAN.IN. All rights reserved.</footer>
+
+
+<script>
+(function(){
+  var menu=document.getElementById('primary-navigation');
+  var toggle=document.querySelector('.menu-toggle');
+  if(!menu||!toggle)return;
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open main menu');
+  }
+  toggle.addEventListener('click',function(){
+    var open=!menu.classList.contains('is-open');
+    menu.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){closeMenu();});
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){
+      closeMenu();
+      var dropdown=menu.querySelector('.nav-dropdown[open]');
+      if(dropdown)dropdown.removeAttribute('open');
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
+})();
+</script>
 
 </body>
 </html>
