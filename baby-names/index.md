@@ -1,7 +1,7 @@
 ---
 title: Baby Names in Hindi: Meaning, Religion, Boy & Girl Names | MARJAN.IN
 description: अपने बच्चे के लिए नाम खोजें। Hindu, Muslim, Sikh और Christian baby names, boy names, girl names, A–Z names और नामों के अर्थ की कैटेगरी देखें।
-permalink: /baby-names/index.html
+permalink: /baby-names/
 ---
 <h1>Baby Names – Find Meaningful Names for Your Baby</h1>
 <p>अपने बच्चे के लिए सुंदर नाम खोजें। MARJAN.IN पर नामों की कैटेगरी, अक्षर, लड़का/लड़की और नाम के अर्थ के अनुसार खोजने की सुविधा विकसित की जा रही है। हर कैटेगरी में उपयोगी और अलग जानकारी जोड़ी जाएगी।</p>
