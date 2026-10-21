@@ -2,13 +2,12 @@
  * MARJAN.IN — Baby Names PDF email capture
  *
  * Deploy as a Google Apps Script Web App owned by the site owner.
- * Create a spreadsheet with a sheet named "Leads" and set SHEET_ID below.
- * The form submits to this endpoint; each valid email is appended with timestamp,
- * source and optional marketing consent.
+ * Set the SHEET_ID script property in Apps Script → Project Settings.
+ * The form submits email, optional marketing_consent=yes, and source.
  */
-const SHEET_ID = '13OwZiSd2bldhPgc7Z8OOgXtho9mC4uRd0ku9TteR2t4';
 const SHEET_NAME = 'Leads';
 const PDF_URL = 'https://drive.google.com/file/d/1XpLVPMbSQVqJIP7mNNaXKwnYajgu4n3I/view?usp=drivesdk';
+const PDF_TITLE = 'MARJAN.IN — 120 Baby Names PDF';
 
 function doPost(e) {
   const params = (e && e.parameter) ? e.parameter : {};
@@ -20,21 +19,54 @@ function doPost(e) {
     return renderPage_('ईमेल सही नहीं लग रहा है', 'कृपया वापस जाकर सही ईमेल पता दर्ज करें।', '');
   }
 
-  if (SHEET_ID === 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE') {
-    return renderPage_('सेटअप बाकी है', 'Google Sheet ID अभी सेट नहीं की गई है।', '');
+  const sheetId = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
+  if (!sheetId) {
+    return renderPage_(
+      'सेटअप बाकी है',
+      'Google Apps Script में Project Settings → Script Properties के अंदर SHEET_ID सेट करें।',
+      ''
+    );
   }
 
+  let sheet;
   try {
-    const spreadsheet = SpreadsheetApp.openById(SHEET_ID);
-    let sheet = spreadsheet.getSheetByName(SHEET_NAME);
+    const spreadsheet = SpreadsheetApp.openById(sheetId);
+    sheet = spreadsheet.getSheetByName(SHEET_NAME);
     if (!sheet) {
       sheet = spreadsheet.insertSheet(SHEET_NAME);
       sheet.appendRow(['Timestamp', 'Email', 'Source', 'Marketing consent']);
+    } else if (sheet.getLastRow() === 0) {
+      sheet.appendRow(['Timestamp', 'Email', 'Source', 'Marketing consent']);
     }
     sheet.appendRow([new Date(), email, source, consent ? 'Yes' : 'No']);
-    return renderPage_('धन्यवाद!', 'आपकी ईमेल आईडी सेव हो गई है। अब PDF खोलें या डाउनलोड करें।', PDF_URL);
   } catch (err) {
-    return renderPage_('अभी सेव नहीं हो पाया', 'कृपया थोड़ी देर बाद फिर कोशिश करें।', '');
+    console.error('Could not save lead: ' + err);
+    return renderPage_('अभी सेव नहीं हो पाया', 'Google Sheet में जानकारी सेव नहीं हो सकी। कृपया थोड़ी देर बाद फिर कोशिश करें।', '');
+  }
+
+  try {
+    const textBody = 'नमस्ते!\n\nआपकी MARJAN.IN 120 Baby Names PDF की रिक्वेस्ट मिल गई है। PDF यहाँ खोलें: ' + PDF_URL +
+      '\n\nधन्यवाद,\nMARJAN.IN';
+    const htmlBody = '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#303747">' +
+      '<h2>आपकी Baby Names PDF तैयार है!</h2>' +
+      '<p>नमस्ते! आपकी MARJAN.IN 120 Baby Names PDF की रिक्वेस्ट मिल गई है।</p>' +
+      '<p><a href="' + PDF_URL + '" style="display:inline-block;background:#e97885;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:bold">120 Baby Names PDF खोलें</a></p>' +
+      '<p>धन्यवाद,<br>MARJAN.IN</p></div>';
+    MailApp.sendEmail({
+      to: email,
+      subject: PDF_TITLE,
+      body: textBody,
+      htmlBody: htmlBody,
+      name: 'MARJAN.IN'
+    });
+    return renderPage_('धन्यवाद!', 'आपकी ईमेल आईडी सेव हो गई है और PDF का लिंक आपके ईमेल पर भेज दिया गया है।', PDF_URL);
+  } catch (err) {
+    console.error('Could not send PDF email: ' + err);
+    return renderPage_(
+      'आपकी जानकारी सेव हो गई है',
+      'आपकी ईमेल आईडी सेव हो गई है, लेकिन PDF ईमेल नहीं भेजा जा सका। नीचे दिए गए बटन से PDF खोलें।',
+      PDF_URL
+    );
   }
 }
 
