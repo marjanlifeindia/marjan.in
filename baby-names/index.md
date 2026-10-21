@@ -1,6 +1,22 @@
 <h1>Baby Names – Find Meaningful Names for Your Baby</h1>
 <p>अपने बच्चे के लिए नाम खोजें। यहाँ Baby Names को धर्म, लड़का/लड़की, अक्षर और अर्थ के अनुसार व्यवस्थित किया जाएगा। नामों के अर्थ और सांस्कृतिक संदर्भ की जाँच करके उपयोगी सामग्री जोड़ी जाएगी।</p>
 
+<section aria-labelledby="baby-pdf-title" style="margin:24px 0;padding:22px;background:#fff5f5;border:1px solid #f2d7dc;border-radius:14px;max-width:680px">
+  <h2 id="baby-pdf-title" style="margin-top:0">🎁 Free 120 Baby Names PDF</h2>
+  <p>अपनी ईमेल आईडी दर्ज करें। सफलतापूर्वक सेव होने के बाद PDF खोलने का लिंक मिलेगा।</p>
+  <form action="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" method="post" target="_blank">
+    <label for="baby-pdf-email" style="display:block;font-weight:700;margin:0 0 6px">ईमेल पता</label>
+    <input id="baby-pdf-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" style="display:block;width:100%;max-width:440px;padding:12px;border:1px solid #b9c1ce;border-radius:8px;font:inherit;margin-bottom:12px">
+    <input type="hidden" name="source" value="baby-names-120-pdf">
+    <label style="display:flex;gap:9px;align-items:flex-start;margin:12px 0;font-weight:400">
+      <input type="checkbox" name="marketing_consent" value="yes" style="margin-top:6px">
+      <span>मैं MARJAN.IN से उपयोगी अपडेट और ईमेल प्राप्त करना चाहता/चाहती हूँ। (वैकल्पिक)</span>
+    </label>
+    <button type="submit" style="display:inline-block;background:#e97885;color:#fff;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer">PDF पाने के लिए सबमिट करें</button>
+  </form>
+  <p style="font-size:13px;color:#626a78;margin-bottom:0">आपकी ईमेल आईडी PDF अनुरोध पूरा करने के लिए सेव की जाएगी। मार्केटिंग अपडेट के लिए सहमति देना वैकल्पिक है।</p>
+</section>
+
 <h2>Browse Baby Names by Religion</h2>
 <ul>
 <li><a href="#hindu-names">Hindu Baby Names</a></li>
