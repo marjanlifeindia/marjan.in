@@ -4,7 +4,7 @@
 <section aria-labelledby="baby-pdf-title" style="margin:24px 0;padding:22px;background:#fff5f5;border:1px solid #f2d7dc;border-radius:14px;max-width:680px">
   <h2 id="baby-pdf-title" style="margin-top:0">🎁 Free 120 Baby Names PDF</h2>
   <p>अपनी ईमेल आईडी दर्ज करें। सफलतापूर्वक सेव होने के बाद PDF खोलने का लिंक मिलेगा।</p>
-  <form action="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" method="post" target="_blank">
+  <form action="https://script.google.com/macros/s/AKfycbxxFfoLSi2Bqe_7NQeT-Qdd-JhfDqOeOIjiKyK4_cIedBTdhl7GiTJb3_Y8xwP7fH64CQ/exec" method="post" target="_blank">
     <label for="baby-pdf-email" style="display:block;font-weight:700;margin:0 0 6px">ईमेल पता</label>
     <input id="baby-pdf-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" style="display:block;width:100%;max-width:440px;padding:12px;border:1px solid #b9c1ce;border-radius:8px;font:inherit;margin-bottom:12px">
     <input type="hidden" name="source" value="baby-names-120-pdf">
