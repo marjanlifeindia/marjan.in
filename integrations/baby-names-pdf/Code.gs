@@ -6,7 +6,7 @@
  * The form submits to this endpoint; each valid email is appended with timestamp,
  * source and optional marketing consent.
  */
-const SHEET_ID = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE';
+const SHEET_ID = '13OwZiSd2bldhPgc7Z8OOgXtho9mC4uRd0ku9TteR2t4';
 const SHEET_NAME = 'Leads';
 const PDF_URL = 'https://drive.google.com/file/d/1XpLVPMbSQVqJIP7mNNaXKwnYajgu4n3I/view?usp=drivesdk';
 
