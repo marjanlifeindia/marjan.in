@@ -114,6 +114,23 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 @media(max-width:480px){footer{padding:22px 4%}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
 
 @media(min-width:768px){footer .social-links{display:flex;flex-flow:row nowrap;justify-content:center;align-items:center;width:max-content;max-width:100%;margin-left:auto;margin-right:auto;gap:8px}footer .social-links a{display:inline-flex;flex:0 0 auto;align-items:center;gap:6px;padding:8px 10px;font-size:13px;white-space:nowrap}}
+
+/* Prominent homepage PDF feature */
+.pdf-feature{max-width:1000px;margin:28px auto 10px;padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:22px;background:linear-gradient(120deg,#fff0f1 0%,#f4f6ff 58%,#eef8f3 100%);border:1px solid #f0dfe3;border-radius:20px;box-shadow:0 10px 28px #24304712;overflow:hidden}
+.pdf-feature-icon{width:76px;height:76px;display:grid;place-items:center;background:#fff;border:1px solid #f3d7dc;border-radius:20px;font-size:38px;box-shadow:0 5px 16px #2430470d}
+.pdf-feature-copy{min-width:0}
+.pdf-feature-label{display:inline-block;margin-bottom:7px;color:#a74357;font-size:11px;font-weight:800;letter-spacing:1px;line-height:1.5}
+.pdf-feature h2{margin:0 0 7px;font-size:clamp(22px,3vw,30px);line-height:1.3;color:#243047}
+.pdf-feature p{margin:0 0 16px;color:#505a6b;font-size:15px;line-height:1.65}
+.pdf-feature-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 18px;background:#2d7a58;color:#fff!important;text-decoration:none;border-radius:10px;font-weight:800;box-shadow:0 4px 10px #2d7a5826;transition:transform .18s ease,background .18s ease}
+.pdf-feature-button:hover{background:#236346;transform:translateY(-1px)}
+.pdf-feature-button:focus-visible{outline:3px solid #243047;outline-offset:3px}
+.pdf-feature-preview{position:relative;width:132px;min-height:160px;padding:17px 13px;display:flex;flex-direction:column;justify-content:center;gap:7px;background:#fff;border:1px solid #e8eaf2;border-radius:10px;box-shadow:0 8px 18px #24304718;transform:rotate(3deg);color:#243047}
+.pdf-feature-preview>span:first-child{font-size:10px;font-weight:900;letter-spacing:2px;color:#a74357}
+.pdf-feature-preview strong{font-size:25px;line-height:1.08}
+.pdf-feature-preview small{font-size:10px;color:#626a78;line-height:1.4}
+.pdf-feature-preview .pdf-preview-mark{position:absolute;right:8px;bottom:8px;padding:3px 6px;background:#fce8eb;color:#a74357;border-radius:4px;font-size:10px;font-weight:900}
+@media(max-width:650px){.pdf-feature{margin:20px 4% 8px;padding:20px;grid-template-columns:54px minmax(0,1fr);gap:14px;border-radius:16px}.pdf-feature-icon{width:54px;height:54px;border-radius:14px;font-size:28px;align-self:start}.pdf-feature-copy{grid-column:2;grid-row:1}.pdf-feature-label{font-size:9px;letter-spacing:.6px}.pdf-feature h2{font-size:22px}.pdf-feature p{font-size:14px;margin-bottom:13px}.pdf-feature-button{min-height:44px;padding:11px 13px;font-size:14px}.pdf-feature-preview{display:none}}
 </style>
   <link rel="canonical" href="https://marjan.in/">
 </head>
@@ -157,10 +174,20 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 <p>बच्चों की परवरिश, पढ़ाई, अच्छी आदतों और खेल-खेल में सीखने के लिए आसान और उपयोगी जानकारी—माता-पिता के लिए, आसान हिंदी में।</p>
 <a class="button" href="parenting.html">Parenting Tips पढ़ें</a>
 <a class="button blue" href="kids-education.html">Kids Education देखें</a>
-<a class="button pdf-cta" href="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" target="_blank" rel="noopener noreferrer">📄 120 बेबी नेम्स की PDF पाएँ</a>
 </div>
 <img class="hero-art" src="media/file_000000003e4081fb944b68ed03915b12.png" alt="माता-पिता और बच्चा साथ बैठकर किताब पढ़ते हुए" width="640" height="480" fetchpriority="high">
 </div>
+</section>
+
+<section class="pdf-feature" aria-labelledby="pdf-feature-title">
+  <div class="pdf-feature-icon" aria-hidden="true">📄</div>
+  <div class="pdf-feature-copy">
+    <span class="pdf-feature-label">FREE DOWNLOAD · MARJAN BABY NAMES</span>
+    <h2 id="pdf-feature-title">120 बेबी नेम्स की PDF पाएँ</h2>
+    <p>अपने बच्चे के लिए प्यारा नाम ढूँढें। हमारी बेबी नेम्स PDF पाने के लिए यहाँ क्लिक करें।</p>
+    <a class="pdf-feature-button" href="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" target="_blank" rel="noopener noreferrer">PDF अभी प्राप्त करें <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="pdf-feature-preview" aria-hidden="true"><span>MARJAN</span><strong>Baby<br>Names</strong><small>120 नामों का संग्रह</small><span class="pdf-preview-mark">PDF</span></div>
 </section>
 
 <main>
@@ -199,12 +226,6 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 <a href="kids-corner.html">Toys, Books & Learning देखें →</a>
 </div>
 </div>
-</section>
-
-<section class="notice" style="margin:28px 0;padding:24px;border-radius:14px;background:linear-gradient(135deg,#fff0f1,#f0f5ff);text-align:center;">
-  <h2>📄 120 बेबी नेम्स की PDF पाएँ</h2>
-  <p>अपने बच्चे के लिए प्यारे नाम खोजें। ईमेल दर्ज करके MARJAN Baby Names PDF प्राप्त करें।</p>
-  <a class="button" href="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" target="_blank" rel="noopener noreferrer">PDF प्राप्त करें →</a>
 </section>
 
 <section style="margin-top:35px">
