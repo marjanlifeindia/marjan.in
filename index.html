@@ -131,6 +131,23 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 .pdf-feature-preview small{font-size:10px;color:#626a78;line-height:1.4}
 .pdf-feature-preview .pdf-preview-mark{position:absolute;right:8px;bottom:8px;padding:3px 6px;background:#fce8eb;color:#a74357;border-radius:4px;font-size:10px;font-weight:900}
 @media(max-width:650px){.pdf-feature{margin:20px 4% 8px;padding:20px;grid-template-columns:54px minmax(0,1fr);gap:14px;border-radius:16px}.pdf-feature-icon{width:54px;height:54px;border-radius:14px;font-size:28px;align-self:start}.pdf-feature-copy{grid-column:2;grid-row:1}.pdf-feature-label{font-size:9px;letter-spacing:.6px}.pdf-feature h2{font-size:22px}.pdf-feature p{font-size:14px;margin-bottom:13px}.pdf-feature-button{min-height:44px;padding:11px 13px;font-size:14px}.pdf-feature-preview{display:none}}
+
+/* Make the free PDF immediately discoverable, including on mobile. */
+.pdf-feature{margin:18px auto 12px;position:relative;isolation:isolate;grid-template-columns:76px minmax(0,1fr) 132px}
+.pdf-feature:before{content:"";position:absolute;z-index:-1;inset:0 auto 0 0;width:5px;background:linear-gradient(180deg,#e97885,#2d7a58)}
+.pdf-feature-button{font-size:15px}
+.pdf-feature-preview{transition:transform .2s ease,box-shadow .2s ease}
+.pdf-feature:hover .pdf-feature-preview{transform:rotate(0deg) translateY(-2px);box-shadow:0 12px 22px #24304720}
+@media(max-width:650px){
+ .pdf-feature{margin:14px 4% 10px;padding:18px;grid-template-columns:minmax(0,1fr) 54px;gap:10px 12px}
+ .pdf-feature-copy{grid-column:1;grid-row:1}
+ .pdf-feature-icon{grid-column:2;grid-row:1;width:48px;height:48px;font-size:25px;border-radius:13px}
+ .pdf-feature-label{font-size:10px;letter-spacing:.45px}
+ .pdf-feature h2{font-size:clamp(20px,5.8vw,24px);line-height:1.3}
+ .pdf-feature p{font-size:14px;line-height:1.55}
+ .pdf-feature-button{width:100%;max-width:260px;font-size:14px;padding:11px 12px}
+}
+
 </style>
   <link rel="canonical" href="https://marjan.in/">
 </head>
@@ -166,6 +183,17 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 </nav>
 </header>
 
+<section class="pdf-feature" aria-labelledby="pdf-feature-title">
+  <div class="pdf-feature-icon" aria-hidden="true">📄</div>
+  <div class="pdf-feature-copy">
+    <span class="pdf-feature-label">FREE PDF · MARJAN BABY NAMES</span>
+    <h2 id="pdf-feature-title">120 बेबी नेम्स की मुफ़्त PDF</h2>
+    <p>अपने बच्चे के लिए प्यारा नाम ढूँढें। 120 नामों का संग्रह PDF में पाने के लिए अभी क्लिक करें।</p>
+    <a class="pdf-feature-button" href="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" target="_blank" rel="noopener noreferrer">मुफ़्त PDF अभी पाएँ <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="pdf-feature-preview" aria-hidden="true"><span>MARJAN</span><strong>Baby<br>Names</strong><small>120 नामों का संग्रह</small><span class="pdf-preview-mark">PDF</span></div>
+</section>
+
 <section class="hero">
 <div class="hero-inner">
 <div class="hero-copy">
@@ -177,17 +205,6 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 </div>
 <img class="hero-art" src="media/file_000000003e4081fb944b68ed03915b12.png" alt="माता-पिता और बच्चा साथ बैठकर किताब पढ़ते हुए" width="640" height="480" fetchpriority="high">
 </div>
-</section>
-
-<section class="pdf-feature" aria-labelledby="pdf-feature-title">
-  <div class="pdf-feature-icon" aria-hidden="true">📄</div>
-  <div class="pdf-feature-copy">
-    <span class="pdf-feature-label">FREE DOWNLOAD · MARJAN BABY NAMES</span>
-    <h2 id="pdf-feature-title">120 बेबी नेम्स की PDF पाएँ</h2>
-    <p>अपने बच्चे के लिए प्यारा नाम ढूँढें। हमारी बेबी नेम्स PDF पाने के लिए यहाँ क्लिक करें।</p>
-    <a class="pdf-feature-button" href="https://script.google.com/macros/s/AKfycbzrd5tpkQxJ3zp_4QGPfI9sEehqDhla7FoS9N_f94aeG8XgjM39A4FlXmmagAmfTY5RBg/exec" target="_blank" rel="noopener noreferrer">PDF अभी प्राप्त करें <span aria-hidden="true">→</span></a>
-  </div>
-  <div class="pdf-feature-preview" aria-hidden="true"><span>MARJAN</span><strong>Baby<br>Names</strong><small>120 नामों का संग्रह</small><span class="pdf-preview-mark">PDF</span></div>
 </section>
 
 <main>
