@@ -306,7 +306,7 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 <script>
 const recentArticles=document.getElementById("recentArticles");
 const articlesMessage=document.getElementById("articlesMessage");
-const POSTS_API="https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main";
+const POSTS_INDEX="/posts/index.json";
 function fetchWithTimeout(url,options){const controller=new AbortController();const timer=setTimeout(function(){controller.abort();},10000);return fetch(url,Object.assign({},options||{},{signal:controller.signal})).finally(function(){clearTimeout(timer);});}
 function parseFrontMatter(markdown){
   const match=markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
@@ -322,24 +322,31 @@ function parseFrontMatter(markdown){
 function escapeHtml(value){return String(value||"").replace(/[&<>"\']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[ch];});}
 async function loadRecentArticles(){
  try{
-  const response=await fetchWithTimeout(POSTS_API,{headers:{"Accept":"application/vnd.github+json"}});
-  if(!response.ok)throw new Error("posts list unavailable");
-  const files=await response.json();
-  const posts=await Promise.all(files.filter(function(file){return file.type==="file" && /\.md$/i.test(file.name);}).map(async function(file){
-   const fileResponse=await fetchWithTimeout(file.download_url); if(!fileResponse.ok)return null;
-   const parsed=parseFrontMatter(await fileResponse.text()); if(!parsed||!parsed.meta.title)return null;
-   const plainBody=parsed.body.replace(/[#>*_\[\]()!-]/g," ").replace(/\s+/g," ").trim();
-   return {file:file.name,slug:parsed.meta.slug||"",title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
+  const response=await fetchWithTimeout(POSTS_INDEX,{headers:{"Accept":"application/json"}});
+  if(!response.ok)throw new Error("static article index unavailable");
+  const index=await response.json();
+  const entries=Object.entries(index||{});
+  const posts=await Promise.all(entries.map(async function(entry){
+   const slug=entry[0],filename=entry[1];
+   try{
+    const fileResponse=await fetchWithTimeout("/posts/"+encodeURIComponent(filename));
+    if(!fileResponse.ok)return null;
+    const parsed=parseFrontMatter(await fileResponse.text());
+    if(!parsed||!parsed.meta.title)return null;
+    const plainBody=parsed.body.replace(/[#>*_\[\]()!-]/g," ").replace(/\s+/g," ").trim();
+    return {slug:parsed.meta.slug||slug,title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
+   }catch(fileError){return null;}
   }));
   const valid=posts.filter(Boolean).sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
   recentArticles.innerHTML="";
   if(!valid.length){recentArticles.innerHTML="<article class=\"card\"><p>अभी कोई लेख उपलब्ध नहीं है।</p></article>";return;}
   valid.slice(0,6).forEach(function(post){
    const article=document.createElement("article");article.className="card";
-   article.innerHTML=(post.image?"<img src=\""+escapeHtml(post.image)+"\" alt=\"\" loading=\"lazy\" style=\"width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px\">":"")+"<h3>"+escapeHtml(post.title)+"</h3><p>"+escapeHtml(post.excerpt)+"</p><a href=\"/article-"+encodeURIComponent(post.slug||post.file.replace(/\.md$/i,""))+""+"\">पूरा लेख पढ़ें →</a>";
+   article.innerHTML=(post.image?"<img src=\""+escapeHtml(post.image)+"\" alt=\"\" loading=\"lazy\" style=\"width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px\">":"")+"<h3>"+escapeHtml(post.title)+"</h3><p>"+escapeHtml(post.excerpt)+"</p><a href=\"/article-"+encodeURIComponent(post.slug)+".html\">पूरा लेख पढ़ें →</a>";
    recentArticles.appendChild(article);
   });
- }catch(error){recentArticles.innerHTML="<article class=\"card\"><p>नए लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";articlesMessage.textContent="लेख दिखाने के लिए इंटरनेट कनेक्शन आवश्यक है।";}
+  if(articlesMessage)articlesMessage.textContent="";
+ }catch(error){recentArticles.innerHTML="<article class=\"card\"><p>नए लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";if(articlesMessage)articlesMessage.textContent="लेख दिखाने में समस्या आई। कृपया बाद में फिर कोशिश करें।";}
 }
 loadRecentArticles();
 
