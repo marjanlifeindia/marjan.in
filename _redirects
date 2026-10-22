@@ -1,16 +1,24 @@
-# Keep legacy article links pointed at the single clean canonical URL.
+# Cloudflare Pages serves about.html at the clean URL /about.
+# Do not redirect /about back to /about.html; that creates a redirect loop.
+# Keep legacy article links pointed at their canonical URLs.
 /reading-habit.html /article-reading-habit 301
-/article-reading-habit.html /article-reading-habit 301
 /article-kids-sleep-routine.html /article-kids-sleep-routine 301
 /article-kids-science-experiments-home.html /article-kids-science-experiments-home 301
 /article-kids-activities-ghar-par.html /article-kids-activities-ghar-par 301
 /article-bachon-ke-liye-educational-toys.html /article-bachon-ke-liye-educational-toys 301
 /article-bachon-ke-liye-hindi-story-books.html /article-bachon-ke-liye-hindi-story-books 301
-/about-us /about 301
-/about-us/ /about 301
-/about.html /about 301
+/about-us /about.html 301
+/about-us/ /about.html 301
 /parenting.html /parenting 301
 /kids-education.html /kids-education 301
 /activities.html /activities 301
 /mobile-habit.html /mobile-habit 301
 /kids-corner.html /kids-corner 301
+/privacy-policy.html /privacy-policy 301
+/privacy-policy/ /privacy-policy 301
+/contact.html /contact 301
+/contact/ /contact 301
+/terms.html /terms 301
+/terms/ /terms 301
+/affiliate-disclosure.html /affiliate-disclosure 301
+/affiliate-disclosure/ /affiliate-disclosure 301

@@ -30,9 +30,12 @@ jobs:
           import xml.etree.ElementTree as ET
 
           base = "https://marjan.in/"
+          # List only preferred, non-redirecting public URLs in the sitemap.
           static_pages = [
-              "", "about.html", "parenting.html", "kids-education.html",
-              "activities.html", "mobile-habit.html"
+              "", "about", "parenting", "kids-education",
+              "activities", "mobile-habit", "kids-corner", "baby-names/",
+              "baby-names/a-letter-hindu-boy-names/",
+              "privacy-policy", "contact", "terms", "affiliate-disclosure"
           ]
           urls = [base + page for page in static_pages]
           posts_dir = Path("posts")
@@ -48,7 +51,7 @@ jobs:
                   if slug in slug_index:
                       raise ValueError(f"Duplicate article slug: {slug}")
                   slug_index[slug] = post.name
-                  urls.append(base + "article-" + quote(slug, safe="-") + ".html")
+                  urls.append(base + "article-" + quote(slug, safe="-"))
 
           Path("posts/index.json").write_text(
               json.dumps(slug_index, ensure_ascii=False, indent=2) + "\n",
@@ -145,7 +148,7 @@ jobs:
                   if image_path else ""
               )
               description = str(meta.get("seo_description") or meta.get("excerpt") or "MARJAN.IN पर बच्चों की परवरिश और शिक्षा से जुड़ी उपयोगी जानकारी।")
-              canonical = base + "article-" + quote(slug, safe="-") + ".html"
+              canonical = base + "article-" + quote(slug, safe="-")
               page = template
               page = page.replace('<link rel="canonical" href="https://marjan.in/article.html">', '<link rel="canonical" href="' + html.escape(canonical, quote=True) + '">')
               page = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="' + html.escape(description, quote=True) + '">', page, count=1)
