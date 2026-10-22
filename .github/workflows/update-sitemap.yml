@@ -51,7 +51,7 @@ jobs:
                   if slug in slug_index:
                       raise ValueError(f"Duplicate article slug: {slug}")
                   slug_index[slug] = post.name
-                  urls.append(base + "article-" + quote(slug, safe="-") + ".html")
+                  urls.append(base + "article-" + quote(slug, safe="-"))
 
           Path("posts/index.json").write_text(
               json.dumps(slug_index, ensure_ascii=False, indent=2) + "\n",
