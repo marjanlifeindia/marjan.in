@@ -1,4 +1,6 @@
 # Keep legacy article links pointed at their canonical URLs.
+/about /about.html 301
+/about/ /about.html 301
 /reading-habit.html /article-reading-habit 301
 /article-reading-habit.html /article-reading-habit 301
 /article-kids-sleep-routine.html /article-kids-sleep-routine 301
