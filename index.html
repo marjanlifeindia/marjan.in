@@ -214,6 +214,27 @@ footer{border-top:4px solid #e97885}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
+
+/* Compact, aligned header: reduce excess whitespace and keep navigation balanced */
+header{padding:10px 5% 0}
+header .brand{display:flex;align-items:center;width:max-content;max-width:100%;margin:0 0 2px}
+header .brand img{width:190px;max-height:62px}
+header .tagline{margin:0 0 9px 2px;font-size:12px;line-height:1.35}
+header>nav.primary-navigation{margin-left:-5.56%;margin-right:-5.56%;padding:7px 5.56%;gap:4px 6px}
+header>nav.primary-navigation>a,header>nav.primary-navigation>.nav-dropdown>summary{padding:7px 9px}
+@media(max-width:760px){
+ header{padding:10px 4% 0}
+ header .brand img{width:175px;max-height:58px}
+ header .tagline{margin-bottom:9px;font-size:12px}
+ header>nav.primary-navigation{margin-left:-4.35%;margin-right:-4.35%;padding:9px 4.35%}
+}
+@media(min-width:761px){
+ header{padding-top:8px}
+ header .brand img{width:180px;max-height:58px}
+ header .tagline{margin-bottom:8px}
+ header>nav.primary-navigation{padding-top:7px;padding-bottom:7px}
+}
+
 </style>
   <link rel="canonical" href="https://marjan.in/">
 </head>
