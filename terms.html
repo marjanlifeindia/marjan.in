@@ -9,10 +9,19 @@
 <title>Terms of Use | MARJAN.IN</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fffaf8;color:#303747;font:16px/1.8 Arial,sans-serif}header,footer{background:#243047;color:#fff;padding:18px 5%}header a,footer a{color:#fff}header a{font-size:23px;font-weight:bold;text-decoration:none}main{max-width:850px;margin:auto;padding:28px 5% 42px}h1,h2{color:#243047;line-height:1.4}h1{font-size:clamp(27px,4vw,38px)}.card{background:#fff;border:1px solid #eee5e2;border-radius:12px;padding:clamp(16px,3vw,26px)}a{color:#2464a5}footer nav{display:flex;gap:10px 16px;flex-wrap:wrap;margin-bottom:12px}footer p{margin-bottom:0}
+
+.site-header{background:#fff;color:#243047;padding:10px 5% 0;border-bottom:1px solid #e9eaf0}.site-header .brand{display:flex;width:max-content;max-width:100%;align-items:center;text-decoration:none;margin:0}.site-header .brand img{display:block;width:200px;max-height:66px;height:auto;object-fit:contain;object-position:left center}.site-header .tagline{margin:-2px 0 10px;padding-left:43px;color:#536781;font-size:13px;font-weight:500;line-height:1.35;letter-spacing:.35px}.site-header .menu-toggle{display:none}.site-header nav.primary-navigation{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:0 -5.56%;padding:9px 5.56%;align-items:center}.site-header nav.primary-navigation a{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.4;font-size:15px}.site-header nav.primary-navigation a:hover{background:#40516e}.site-header .nav-dropdown{position:relative}.site-header .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;padding:7px 10px;border-radius:6px}.site-header .nav-dropdown summary::-webkit-details-marker{display:none}.site-header .nav-dropdown summary:after{content:' ▾';font-size:.8em}.site-header .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:220px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}.site-header .nav-dropdown .nav-menu a{color:#243047;display:block}.site-header .nav-dropdown .nav-menu strong{margin:5px 10px 0;font-size:12px;color:#68748a}@media(max-width:760px){.site-header{padding:10px 4% 0}.site-header .brand img{width:185px;max-height:62px}.site-header .tagline{padding-left:40px;font-size:12px;margin-bottom:10px}.site-header .menu-toggle{display:inline-flex;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700}.site-header nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;gap:3px;margin:0 -4.35%;padding:10px 4.35%}.site-header nav.primary-navigation.is-open{display:flex}.site-header nav.primary-navigation>a,.site-header nav.primary-navigation>.nav-dropdown>summary{display:block;width:100%;padding:9px 10px}.site-header nav.primary-navigation>.nav-dropdown .nav-menu{position:static;min-width:0;width:100%;box-shadow:none;margin:4px 0;padding:8px}.site-header nav.primary-navigation>.nav-dropdown{width:100%}}
 </style>
 </head>
 <body>
-<header><a href="/">MARJAN.IN</a></header>
+<header class="site-header">
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo.svg?v=2" alt="MARJAN.IN" width="200" height="66"></a>
+<p class="tagline">Parenting • Education • Learning</p>
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+<a href="/">Home</a><a href="/parenting.html">Parenting</a><a href="/kids-education.html">Kids Education</a><a href="/activities.html">Kids Activities</a><a href="/kids-corner.html">Kids Corner</a>
+<details class="nav-dropdown"><summary>Baby Names</summary><div class="nav-menu"><a href="/baby-names/">Baby Names Directory</a><strong>By Religion</strong><a href="/baby-names/#hindu-names">Hindu Names</a><a href="/baby-names/#muslim-names">Muslim Names</a><a href="/baby-names/#sikh-names">Sikh Names</a><a href="/baby-names/#christian-names">Christian Names</a><strong>By Category</strong><a href="/baby-names/#boy-names">Boy Names</a><a href="/baby-names/#girl-names">Girl Names</a><a href="/baby-names/#a-z-names">A–Z Names</a><a href="/baby-names/#names-by-meaning">Names by Meaning</a></div></details><a href="/about.html">About Us</a>
+</nav></header>
 <main><article class="card"><h1>Terms of Use (उपयोग की शर्तें)</h1>
 <p><strong>अंतिम अपडेट:</strong> 22 अक्टूबर 2026</p>
 <p>MARJAN.IN का उपयोग करके आप इन सामान्य शर्तों से सहमत होते हैं। यदि आप इन शर्तों से सहमत नहीं हैं, तो वेबसाइट का उपयोग न करें।</p>
@@ -23,5 +32,6 @@
 <h2>शर्तों में बदलाव</h2><p>इन शर्तों को समय-समय पर अपडेट किया जा सकता है।</p>
 <h2>संपर्क</h2><p>सवालों के लिए <a href="/contact">Contact page</a> देखें।</p></article></main>
 <footer><nav aria-label="Footer navigation"><a href="/">Home</a><a href="/about">About Us</a><a href="/contact">Contact</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms</a><a href="/affiliate-disclosure">Affiliate Disclosure</a></nav><p>© 2026 MARJAN.IN. All rights reserved.</p></footer>
+<script id="site-header-menu-script">(function(){var m=document.getElementById('primary-navigation'),b=document.querySelector('.site-header .menu-toggle');if(!m||!b)return;b.addEventListener('click',function(){var o=m.classList.toggle('is-open');b.setAttribute('aria-expanded',String(o));});})();</script>
 </body>
 </html>
