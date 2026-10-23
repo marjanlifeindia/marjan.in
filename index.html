@@ -148,6 +148,72 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
  .pdf-feature-button{width:100%;max-width:260px;font-size:14px;padding:11px 12px}
 }
 
+
+/* Homepage visual refresh: clearer hierarchy, softer surfaces, and responsive polish */
+:root{--marjan-ink:#243047;--marjan-rose:#e97885;--marjan-blue:#2464a5;--marjan-mint:#eaf6ef;--marjan-line:#e8eaf0}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{background:linear-gradient(180deg,#fffaf8 0%,#fff 54%,#f8fbff 100%);color:#303747}
+header{box-shadow:0 4px 18px #24304708}
+.brand img{transition:transform .2s ease}
+.brand:hover img{transform:translateY(-1px)}
+nav{box-shadow:0 5px 16px #17243a12}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 90% 10%,#fff 0%,#fff0f1 36%,transparent 66%),linear-gradient(135deg,#fff2f3 0%,#f2f6ff 58%,#eef8f3 100%);padding-top:clamp(34px,5vw,64px);padding-bottom:clamp(34px,5vw,64px)}
+.hero:before,.hero:after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.hero:before{width:220px;height:220px;right:-90px;top:-105px;background:#f9dce1;opacity:.55}
+.hero:after{width:150px;height:150px;left:-80px;bottom:-90px;background:#dce9fa;opacity:.65}
+.hero-inner{gap:clamp(22px,4vw,54px)}
+.hero-copy{max-width:590px}
+.hero h1{letter-spacing:-.7px}
+.hero p{line-height:1.8}
+.hero-art{border:6px solid #ffffffc9;box-shadow:0 18px 45px #24304720;transition:transform .25s ease,box-shadow .25s ease}
+.hero-art:hover{transform:translateY(-3px);box-shadow:0 24px 52px #24304727}
+.button{border:1px solid transparent;box-shadow:0 5px 14px #e978852b;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.button:hover{transform:translateY(-2px);box-shadow:0 8px 18px #24304720}
+.button.blue{box-shadow:0 5px 14px #2464a51c}
+main{padding-top:clamp(28px,4vw,46px);padding-bottom:clamp(30px,4vw,48px)}
+main>section{margin-bottom:34px}
+main h2{font-size:clamp(23px,3vw,30px);letter-spacing:-.35px;margin:0 0 12px}
+main h2:after{content:"";display:block;width:48px;height:4px;margin-top:10px;border-radius:8px;background:linear-gradient(90deg,#e97885,#f5c4cc)}
+.section-intro{margin-top:0}
+.search{background:#fff;border:1px solid #dfe4ed;box-shadow:0 4px 16px #24304708;transition:border-color .2s ease,box-shadow .2s ease}
+.search:focus{outline:none;border-color:#8ba9d3;box-shadow:0 0 0 4px #2464a51a}
+.grid{gap:18px}
+.card{position:relative;overflow:hidden;border:1px solid #e9eaf0;border-radius:17px;padding:22px;box-shadow:0 6px 20px #24304708;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#e97885,#a9c9ef,#a6d7b7);opacity:0;transition:opacity .2s ease}
+.card:hover{transform:translateY(-4px);border-color:#e6d7dc;box-shadow:0 14px 30px #24304712}
+.card:hover:before{opacity:1}
+.card h3{font-size:20px;line-height:1.4;margin-bottom:9px}
+.card p{color:#596273;line-height:1.75}
+.card a{display:inline-flex;align-items:center;gap:5px}
+.card a:hover{text-decoration:underline;text-underline-offset:3px}
+#categoryGrid .icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:14px;border-radius:17px;background:linear-gradient(135deg,#fff0f1,#f0f5ff);font-size:29px}
+#recentArticles .card img{height:175px!important;object-fit:cover;border-radius:11px!important;margin-bottom:14px!important;background:#f2f4f8}
+#recentArticles .card h3{font-size:18px}
+#recentArticles .card a{margin-top:4px}
+.notice{border:1px solid #e2eaf4!important;background:linear-gradient(135deg,#f4f8ff,#f1faf5)!important;padding:clamp(22px,4vw,34px)!important;border-radius:18px!important}
+.pdf-feature{box-shadow:0 12px 32px #24304710}
+footer{border-top:4px solid #e97885}
+@media(max-width:760px){
+ .hero-art{order:0;max-width:520px;aspect-ratio:16/10}
+ .hero-copy{text-align:left}
+ .hero h1,.hero p{margin-left:0;margin-right:0}
+ .hero .button{margin-left:0;margin-right:6px}
+ main>section{margin-bottom:26px}
+ .grid{gap:13px}
+ .card{border-radius:14px}
+}
+@media(max-width:480px){
+ .hero{padding-top:22px;padding-bottom:27px}
+ .hero-art{border-width:4px;aspect-ratio:4/3}
+ .hero-copy{text-align:center}
+ .hero h1,.hero p{margin-left:auto;margin-right:auto}
+ .hero .button{margin:5px 3px}
+ main h2{font-size:23px}
+ .card{padding:17px}
+ #recentArticles .card img{height:190px!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
 </style>
   <link rel="canonical" href="https://marjan.in/">
 </head>
@@ -182,6 +248,19 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 <a href="/about">About Us</a>
 </nav>
 </header>
+
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<span class="eyebrow">Parenting • Education • Learning</span>
+<h1>हर बच्चे की सीखने की यात्रा में साथ</h1>
+<p>बच्चों की परवरिश, पढ़ाई, अच्छी आदतों और खेल-खेल में सीखने के लिए आसान और उपयोगी जानकारी—माता-पिता के लिए, आसान हिंदी में।</p>
+<a class="button" href="parenting.html">Parenting Tips पढ़ें</a>
+<a class="button blue" href="kids-education.html">Kids Education देखें</a>
+</div>
+<img class="hero-art" src="media/file_000000003e4081fb944b68ed03915b12.png" alt="माता-पिता और बच्चा साथ बैठकर किताब पढ़ते हुए" width="640" height="480" fetchpriority="high">
+</div>
+</section>
 
 <section class="pdf-feature" aria-labelledby="pdf-feature-title">
   <div class="pdf-feature-icon" aria-hidden="true">📄</div>
