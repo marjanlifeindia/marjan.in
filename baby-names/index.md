@@ -1,3 +1,8 @@
+---
+permalink: /baby-names/
+title: Baby Names Directory | MARJAN.IN
+---
+
 <h1>Baby Names – Find Meaningful Names for Your Baby</h1>
 <p>अपने बच्चे के लिए नाम खोजें। नामों को Gender, Religion और शुरुआती अक्षर के अनुसार खोजने के लिए नीचे दिए गए filters इस्तेमाल करें। फिलहाल directory में उपलब्ध शुरुआती सूची दिखाई जा रही है; दूसरी categories की सूचियाँ चरणबद्ध तरीके से जोड़ी जाएँगी।</p>
 
