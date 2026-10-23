@@ -235,6 +235,20 @@ header>nav.primary-navigation>a,header>nav.primary-navigation>.nav-dropdown>summ
  header>nav.primary-navigation{padding-top:7px;padding-bottom:7px}
 }
 
+
+/* Refined brand tagline alignment */
+header .brand{display:flex;width:max-content;max-width:100%;margin:0 0 0;align-items:center}
+header .brand img{width:200px;max-height:66px;object-fit:contain;object-position:left center}
+header .tagline{margin:-2px 0 10px;padding-left:43px;color:#536781;font-size:13px;font-weight:500;line-height:1.35;letter-spacing:.35px}
+@media(max-width:760px){
+ header .brand img{width:185px;max-height:62px}
+ header .tagline{padding-left:40px;font-size:12px;letter-spacing:.2px;margin-bottom:10px}
+}
+@media(max-width:360px){
+ header .brand img{width:170px}
+ header .tagline{padding-left:36px;font-size:11px}
+}
+
 </style>
   <link rel="canonical" href="https://marjan.in/">
 </head>
