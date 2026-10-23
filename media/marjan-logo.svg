@@ -1,11 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400" role="img" aria-labelledby="title desc">
-<title id="title">marjan.in</title><desc id="desc">Pink rounded square with white M symbol and blue marjan.in wordmark.</desc>
-<rect width="1600" height="400" fill="#ffffff"/>
-<defs><linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f52f60"/><stop offset="1" stop-color="#e91e63"/></linearGradient></defs>
-<g transform="translate(28 58)">
-<rect width="325" height="284" rx="82" fill="url(#pink)"/>
-<path d="M82 218V91Q82 70 99 70Q112 70 124 86L164 137 207 84Q220 69 234 75Q249 80 249 97V218" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-<g fill="#0877d9"><circle cx="330" cy="4" r="18"/><circle cx="365" cy="33" r="13"/></g><circle cx="348" cy="51" r="9" fill="#f52f60"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="620" viewBox="0 0 1700 620" role="img" aria-labelledby="title desc">
+<title id="title">marjan.in — Parenting • Education • Learning</title>
+<desc id="desc">Pink rounded square with white M symbol, blue marjan.in wordmark and tagline.</desc>
+<defs><linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff1768"/><stop offset="1" stop-color="#ec1d62"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0878df"/><stop offset="1" stop-color="#0566c8"/></linearGradient></defs>
+<g transform="translate(42 112)">
+<rect x="0" y="0" width="350" height="350" rx="94" fill="url(#pink)"/>
+<path d="M83 266V106Q83 82 103 82Q119 82 137 103L177 153L222 102Q242 78 260 87Q278 94 278 115V266" fill="none" stroke="#fff" stroke-width="31" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 20Q326 -10 348 0Q367 9 357 34L344 66Q335 80 323 68Q315 61 317 46Z" fill="url(#blue)"/>
+<path d="M365 43Q383 19 402 35Q416 48 399 66L375 89Q361 100 352 86Q345 75 355 61Z" fill="#ff1768"/>
+<path d="M390 93Q414 80 425 99Q435 117 413 128L384 139Q366 144 361 129Q357 115 374 105Z" fill="url(#blue)"/>
 </g>
-<text x="390" y="273" fill="#0877d9" font-family="Arial,Helvetica,sans-serif" font-size="220" font-weight="800" letter-spacing="-8">marjan</text><circle cx="1375" cy="250" r="25" fill="#f52f60"/><text x="1406" y="273" fill="#0877d9" font-family="Arial,Helvetica,sans-serif" font-size="220" font-weight="800" letter-spacing="-8">in</text>
+<text x="425" y="365" fill="url(#blue)" font-family="Arial, Helvetica, sans-serif" font-size="245" font-weight="800" letter-spacing="-9">marjan.in</text>
+<text x="425" y="500" fill="#233b6d" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="600" letter-spacing="-1.5">Parenting</text>
+<circle cx="755" cy="477" r="17" fill="#ff1768"/>
+<text x="800" y="500" fill="#233b6d" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="600" letter-spacing="-1.5">Education</text>
+<circle cx="1180" cy="477" r="17" fill="#ff1768"/>
+<text x="1225" y="500" fill="#233b6d" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="600" letter-spacing="-1.5">Learning</text>
 </svg>
