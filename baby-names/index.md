@@ -2,7 +2,68 @@
 permalink: /baby-names/
 title: Baby Names Directory | MARJAN.IN
 ---
-
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="अपने बच्चे के लिए Baby Names खोजें। नामों के अर्थ, Gender, Religion और शुरुआती अक्षर के अनुसार नामों की directory देखें।">
+<link rel="canonical" href="https://marjan.in/baby-names/">
+<title>Baby Names Directory | MARJAN.IN</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#fffaf8;color:#303747;line-height:1.7}
+a{color:#244c87}
+.site-header{background:#fff;border-bottom:1px solid #e9eaf0;padding:12px 5% 0}
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brand img{display:block;width:200px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
+.primary-navigation{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:10px -5.56% 0;padding:9px 5.56%;align-items:center}
+.primary-navigation>a,.primary-navigation summary{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.5}
+.primary-navigation>a:hover,.primary-navigation summary:hover{background:#40516e}
+.nav-dropdown{position:relative}
+.nav-dropdown summary{cursor:pointer;list-style:none}
+.nav-dropdown summary::-webkit-details-marker{display:none}
+.nav-dropdown summary::after{content:" ▾";font-size:.8em}
+.nav-menu{position:absolute;top:100%;left:0;z-index:10;min-width:210px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:8px;box-shadow:0 8px 20px #17243a22;display:grid;gap:4px}
+.nav-menu a{color:#243047;text-decoration:none;padding:8px 10px;border-radius:5px}
+.nav-menu a:hover{background:#f0f5ff}
+main{max-width:1000px;margin:0 auto;padding:28px 5% 48px;background:#fff}
+h1,h2{color:#243047;line-height:1.3}
+h1{font-size:clamp(28px,4vw,38px)}
+.baby-name-filters{display:grid;grid-template-columns:1fr;gap:8px;max-width:600px;margin:16px 0}
+.baby-name-filters input,.baby-name-filters select{width:100%;padding:11px;border:1px solid #cbd1dc;border-radius:8px;font:inherit;background:#fff;color:#243047}
+.baby-name-filters button{justify-self:start;padding:10px 14px;border:0;border-radius:8px;background:#243047;color:#fff;font:inherit;cursor:pointer}
+#baby-name-results li{margin:8px 0}
+#baby-name-results li[hidden],#baby-name-results[hidden],#baby-name-no-results[hidden]{display:none}
+footer{padding:24px 5%;background:#f2f4f8;text-align:center;color:#4b5567}
+footer a{color:#243047}
+footer p{margin:8px 0}
+@media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
+@media(max-width:600px){.brand img{width:170px}.primary-navigation{gap:4px;padding:8px 5.56%}.primary-navigation>a,.primary-navigation summary{padding:6px 8px;font-size:14px}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120"></a>
+<nav class="primary-navigation" aria-label="Main navigation">
+<a href="/">Home</a>
+<a href="/parenting">Parenting</a>
+<a href="/kids-education">Kids Education</a>
+<a href="/activities">Kids Activities</a>
+<a href="/kids-corner">Kids Corner</a>
+<details class="nav-dropdown" open>
+<summary>Baby Names</summary>
+<div class="nav-menu">
+<a href="/baby-names/">Baby Names Directory</a>
+<a href="/baby-names/#hindu-names">Hindu Names</a>
+<a href="/baby-names/#boy-names">Boy Names</a>
+<a href="/baby-names/#a-z-names">A–Z Names</a>
+</div>
+</details>
+<a href="/about">About Us</a>
+</nav>
+</header>
+<main>
 <h1>Baby Names – Find Meaningful Names for Your Baby</h1>
 <p>अपने बच्चे के लिए नाम खोजें। नामों को Gender, Religion और शुरुआती अक्षर के अनुसार खोजने के लिए नीचे दिए गए filters इस्तेमाल करें। फिलहाल directory में उपलब्ध शुरुआती सूची दिखाई जा रही है; दूसरी categories की सूचियाँ चरणबद्ध तरीके से जोड़ी जाएँगी।</p>
 
@@ -148,3 +209,12 @@ title: Baby Names Directory | MARJAN.IN
 
 <h2 id="names-by-meaning">Baby Names by Meaning</h2>
 <p>नामों के अर्थों की जाँच और dataset विस्तार के बाद इस category को और विकसित किया जाएगा।</p>
+
+</main>
+<footer>
+<p><a href="/">MARJAN.IN</a> — Parenting &amp; Kids Education</p>
+<p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
+<p>© 2026 MARJAN.IN. All rights reserved.</p>
+</footer>
+</body>
+</html>
