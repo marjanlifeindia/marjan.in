@@ -275,6 +275,25 @@ header .brand img{display:block;width:340px;max-width:100%;height:auto;max-heigh
 /* Consistent footer text and link colors across all pages */
 footer, footer p, footer a, footer a:link, footer a:visited, footer a:hover, footer a:focus, footer a:active { color: #FFFFFF !important; }
 footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
+
+/* Baby Names: direct directory link plus an independent category toggle. */
+nav .baby-names-nav-item{display:inline-flex;align-items:center;gap:0;position:relative}
+nav .baby-names-nav-item>.baby-names-main-link{display:inline-block;color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.4}
+nav .baby-names-nav-item>.baby-names-main-link:hover,nav .baby-names-nav-item>.baby-names-main-link:focus-visible{background:#40516e}
+nav .baby-names-nav-item>.baby-names-categories{position:relative;display:inline-flex;align-items:center}
+nav .baby-names-nav-item>.baby-names-categories>summary{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:30px;min-height:34px;padding:5px 9px;cursor:pointer;color:#fff;list-style:none;border-radius:6px;white-space:nowrap}
+nav .baby-names-nav-item>.baby-names-categories>summary::-webkit-details-marker{display:none}
+nav .baby-names-nav-item>.baby-names-categories>summary::after{content:"▾";font-size:13px}
+nav .baby-names-nav-item>.baby-names-categories[open]>summary,nav .baby-names-nav-item>.baby-names-categories>summary:hover{background:#40516e}
+nav .baby-names-nav-item>.baby-names-categories .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:200px}
+nav .baby-names-nav-item>.baby-names-categories .nav-menu a{display:block;color:#243047;padding:9px 10px}
+nav .baby-names-nav-item>.baby-names-categories>summary:focus-visible{outline:2px solid #f5c4cc;outline-offset:2px}
+@media(max-width:760px){
+ header>nav.primary-navigation>.baby-names-nav-item{display:flex;align-items:center;width:100%;gap:0}
+ header>nav.primary-navigation>.baby-names-nav-item>.baby-names-main-link{flex:1;width:auto;padding:9px 10px;font-size:15px!important}
+ header>nav.primary-navigation>.baby-names-nav-item>.baby-names-categories>summary{min-width:42px;min-height:40px}
+ header>nav.primary-navigation>.baby-names-nav-item>.baby-names-categories .nav-menu{position:absolute;top:100%;left:auto;right:0;width:min(340px,calc(100vw - 40px));min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;box-shadow:0 10px 28px #17243a30;background:#fff}
+}
 </style>
   <link rel="canonical" href="https://marjan.in/">
 </head>
@@ -290,15 +309,17 @@ footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
 <a href="/kids-education">Kids Education</a>
 <a href="/activities">Kids Activities</a>
 <a href="/kids-corner">Kids Corner</a>
-<details class="nav-dropdown">
-<summary>Baby Names</summary>
+<div class="baby-names-nav-item">
+<a class="baby-names-main-link" href="/baby-names/">Baby Names</a>
+<details class="nav-dropdown baby-names-categories">
+<summary aria-label="Open Baby Names categories" title="Baby Names categories"><span>Categories</span></summary>
 <div class="nav-menu">
-<a href="/baby-names/">Baby Names Directory</a>
 <a href="/baby-names/#hindu-names">Hindu Names</a>
 <a href="/baby-names/#boy-names">Boy Names</a>
 <a href="/baby-names/#a-z-names">A–Z Names</a>
 </div>
 </details>
+</div>
 <a href="/about">About Us</a>
 </nav>
 </header>
