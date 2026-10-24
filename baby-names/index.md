@@ -51,7 +51,7 @@ footer p{margin:8px 0}
 <a href="/kids-education">Kids Education</a>
 <a href="/activities">Kids Activities</a>
 <a href="/kids-corner">Kids Corner</a>
-<details class="nav-dropdown" open>
+<details class="nav-dropdown">
 <summary>Baby Names</summary>
 <div class="nav-menu">
 <a href="/baby-names/">Baby Names Directory</a>
