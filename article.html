@@ -202,22 +202,8 @@ function renderBody(text,title){
 (async function(){
  const params=new URLSearchParams(location.search);
  let filename=params.get("post")||"";
- // Older homepage cards and saved links may still use ?post=filename.md.
- // Send those requests to the fully rendered static article page instead of
- // allowing the old JavaScript loader to replace the body after it appears.
- if(filename){
-  try{
-   const indexResponse=await fetch("/posts/index.json?refresh="+Date.now(),{cache:"no-store"});
-   if(indexResponse.ok){
-    const index=await indexResponse.json();
-    const entry=Object.entries(index).find(function(pair){return pair[1]===filename;});
-    if(entry&&entry[0]){
-     location.replace("/article-"+encodeURIComponent(entry[0])+".html");
-     return;
-    }
-   }
-  }catch(legacyRedirectError){}
- }
+ // Legacy links may use ?post=filename.md. Render the article on this URL
+ // and set a clean canonical URL below instead of relying on a JavaScript redirect.
  let requestedSlug="";
  const pathMatch=location.pathname.match(/^\/articles\/([^/]+)\/?$/);
  if(!filename&&pathMatch){
@@ -270,8 +256,8 @@ function renderBody(text,title){
   if(!parsed||!parsed.meta.title)throw new Error("Invalid post");
   const meta=parsed.meta;
   const slug=(meta.slug||requestedSlug||"").trim();
-  const canonicalUrl=requestedSlug && slug
-   ? new URL("articles/"+encodeURIComponent(slug)+"/","https://marjan.in/")
+  const canonicalUrl=slug
+   ? new URL("article-"+encodeURIComponent(slug),"https://marjan.in/")
    : new URL("article.html?post="+encodeURIComponent(filename),"https://marjan.in/");
   document.querySelector('link[rel="canonical"]').href=canonicalUrl.href;
   document.getElementById("articleTitle").textContent=meta.title.trim();
