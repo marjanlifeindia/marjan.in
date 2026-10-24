@@ -37,15 +37,6 @@ footer p{margin:8px 0}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
 @media(max-width:600px){.brand img{width:170px}.primary-navigation{gap:4px;padding:8px 5.56%}.primary-navigation>a,.primary-navigation summary{padding:6px 8px;font-size:14px}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}}
 </style>
-
-/* Simple Baby Names navigation: direct link plus a separate category toggle. */
-.nav-dropdown-heading{display:flex;align-items:center;gap:0;border-radius:6px}
-.nav-dropdown-heading .nav-main-link{display:block;color:#fff;text-decoration:none;padding:7px 8px 7px 10px;border-radius:6px;line-height:1.5}
-.nav-dropdown-heading .nav-dropdown-toggle{border:0;background:transparent;color:#fff;cursor:pointer;padding:8px 10px;border-radius:6px;font:inherit;line-height:1.4}
-.nav-dropdown-heading .nav-main-link:hover,.nav-dropdown-heading .nav-dropdown-toggle:hover{background:#40516e}
-.nav-dropdown-heading .nav-dropdown-toggle:focus-visible,.nav-dropdown-heading .nav-main-link:focus-visible{outline:2px solid #f5c4cc;outline-offset:2px}
-.nav-dropdown[open]>.nav-dropdown-heading .nav-dropdown-toggle{background:#40516e}
-@media(max-width:760px){.nav-dropdown-heading{width:max-content;max-width:100%}.nav-dropdown-heading .nav-main-link{padding:9px 8px 9px 10px}.nav-dropdown-heading .nav-dropdown-toggle{padding:9px 12px}.primary-navigation .nav-menu{position:static;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}.primary-navigation .nav-menu a{display:block;color:#243047;padding:8px 10px}}
 </head>
 <body>
 <header class="site-header">
@@ -57,11 +48,9 @@ footer p{margin:8px 0}
 <a href="/activities">Kids Activities</a>
 <a href="/kids-corner">Kids Corner</a>
 <details class="nav-dropdown">
-<div class="nav-dropdown-heading">
-<a class="nav-main-link" href="/baby-names/">Baby Names</a>
-<button class="nav-dropdown-toggle" type="button" aria-label="Open Baby Names categories" aria-expanded="false">▾</button>
-</div>
+<summary>Baby Names</summary>
 <div class="nav-menu">
+<a href="/baby-names/">Baby Names Directory</a>
 <a href="/baby-names/#hindu-names">Hindu Names</a>
 <a href="/baby-names/#boy-names">Boy Names</a>
 <a href="/baby-names/#a-z-names">A–Z Names</a>
@@ -223,22 +212,5 @@ footer p{margin:8px 0}
 <p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
 <p>© 2026 MARJAN.IN. All rights reserved.</p>
 </footer>
-
-<script>
-(function(){
- document.querySelectorAll('.nav-dropdown-toggle').forEach(function(button){
-  var dropdown=button.closest('.nav-dropdown');
-  if(!dropdown)return;
-  button.addEventListener('click',function(){
-   var open=!dropdown.open;
-   dropdown.open=open;
-   button.setAttribute('aria-expanded',String(open));
-   button.setAttribute('aria-label',open?'Close Baby Names categories':'Open Baby Names categories');
-  });
-  dropdown.addEventListener('toggle',function(){button.setAttribute('aria-expanded',String(dropdown.open));});
- });
- document.addEventListener('keydown',function(event){if(event.key==='Escape'){document.querySelectorAll('.nav-dropdown[open]').forEach(function(dropdown){dropdown.open=false;var button=dropdown.querySelector('.nav-dropdown-toggle');if(button){button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open Baby Names categories');}});}});
-})();
-</script>
 </body>
 </html>
