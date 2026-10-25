@@ -2,6 +2,7 @@
 # Do not redirect /about back to /about.html; that creates a redirect loop.
 # Keep legacy article links pointed at their canonical URLs.
 /reading-habit.html /article-reading-habit 301
+/reading-habit.htm /article-reading-habit 301
 /article-kids-sleep-routine.html /article-kids-sleep-routine 301
 /article-kids-science-experiments-home.html /article-kids-science-experiments-home 301
 /article-kids-activities-ghar-par.html /article-kids-activities-ghar-par 301
