@@ -411,10 +411,41 @@ nav .baby-names-nav-item>.baby-names-categories>summary:focus-visible{outline:2p
 </div>
 </section>
 
-<section style="margin:30px 0;padding:20px;background:#f2f7fc;border-radius:10px;">
-  <h2>हमारे नए लेख</h2>
-  <div class="grid" id="recentArticles" aria-live="polite"><article class="card"><p>नए लेख लोड हो रहे हैं…</p></article></div>
-  <p id="articlesMessage" class="section-intro"></p>
+<section style="margin:30px 0;padding:20px;background:#f2f7fc;border-radius:10px;" aria-labelledby="recentArticlesHeading">
+  <h2 id="recentArticlesHeading">हमारे उपयोगी लेख</h2>
+  <p class="section-intro">Parenting, बच्चों की पढ़ाई और घर पर सीखने की गतिविधियों से जुड़े हमारे लेख सीधे यहाँ पढ़ें।</p>
+  <div class="grid" id="recentArticles">
+    <article class="card">
+      <h3><a href="/article-reading-habit">बच्चों में पढ़ने की आदत कैसे डालें?</a></h3>
+      <p>बच्चों को किताबों से जोड़ने, कहानी पढ़ने और रोज़ पढ़ने की अच्छी आदत बनाने के व्यावहारिक सुझाव।</p>
+      <a href="/article-reading-habit">पूरा लेख पढ़ें →</a>
+    </article>
+    <article class="card">
+      <h3><a href="/article-kids-sleep-routine">बच्चों में अच्छी नींद की आदत कैसे डालें?</a></h3>
+      <p>बच्चों की दिनचर्या, सोने के समय और बेहतर sleep routine के लिए आसान parenting tips।</p>
+      <a href="/article-kids-sleep-routine">पूरा लेख पढ़ें →</a>
+    </article>
+    <article class="card">
+      <h3><a href="/article-kids-science-experiments-home">बच्चों के लिए घर पर आसान Science Experiments</a></h3>
+      <p>घर की सामान्य चीज़ों से विज्ञान सीखने के मज़ेदार प्रयोग और माता-पिता के लिए उपयोगी सुझाव।</p>
+      <a href="/article-kids-science-experiments-home">पूरा लेख पढ़ें →</a>
+    </article>
+    <article class="card">
+      <h3><a href="/article-kids-activities-ghar-par">बच्चों के लिए घर पर 15 मज़ेदार Activities</a></h3>
+      <p>घर पर बच्चों को व्यस्त रखने और खेल-खेल में सीखने के लिए गतिविधियों के विचार।</p>
+      <a href="/article-kids-activities-ghar-par">पूरा लेख पढ़ें →</a>
+    </article>
+    <article class="card">
+      <h3><a href="/article-bachon-ke-liye-educational-toys">4–8 साल के बच्चों के लिए Educational Toys</a></h3>
+      <p>बच्चों की उम्र और सीखने की जरूरत के अनुसार educational toys चुनने के लिए जानकारी।</p>
+      <a href="/article-bachon-ke-liye-educational-toys">पूरा लेख पढ़ें →</a>
+    </article>
+    <article class="card">
+      <h3><a href="/article-bachon-ke-liye-hindi-story-books">5–10 साल के बच्चों के लिए Hindi Story Books</a></h3>
+      <p>बच्चों में पढ़ने की रुचि बढ़ाने के लिए हिंदी कहानी की किताबों पर उपयोगी गाइड।</p>
+      <a href="/article-bachon-ke-liye-hindi-story-books">पूरा लेख पढ़ें →</a>
+    </article>
+  </div>
 </section>
 <section style="margin-top:35px" class="notice">
 <h2>MARJAN.IN के बारे में</h2>
@@ -438,52 +469,6 @@ nav .baby-names-nav-item>.baby-names-categories>summary:focus-visible{outline:2p
 </footer>
 
 <script>
-const recentArticles=document.getElementById("recentArticles");
-const articlesMessage=document.getElementById("articlesMessage");
-const POSTS_INDEX="/posts/index.json";
-function fetchWithTimeout(url,options){const controller=new AbortController();const timer=setTimeout(function(){controller.abort();},10000);return fetch(url,Object.assign({},options||{},{signal:controller.signal})).finally(function(){clearTimeout(timer);});}
-function parseFrontMatter(markdown){
-  const match=markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
-  if(!match)return null;
-  const meta={}; let currentKey="";
-  match[1].split("\n").forEach(function(line){
-    const item=line.match(/^([a-zA-Z_]+):\s*(.*)$/);
-    if(item){currentKey=item[1];meta[currentKey]=item[2].trim().replace(/^["\']|["\']$/g,"");}
-    else if(currentKey && /^\s{2,}\S/.test(line)){meta[currentKey]+=" "+line.trim();}
-  });
-  return {meta:meta,body:match[2].trim()};
-}
-function escapeHtml(value){return String(value||"").replace(/[&<>"\']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[ch];});}
-async function loadRecentArticles(){
- try{
-  const response=await fetchWithTimeout(POSTS_INDEX,{headers:{"Accept":"application/json"}});
-  if(!response.ok)throw new Error("static article index unavailable");
-  const index=await response.json();
-  const entries=Object.entries(index||{});
-  const posts=await Promise.all(entries.map(async function(entry){
-   const slug=entry[0],filename=entry[1];
-   try{
-    const fileResponse=await fetchWithTimeout("/posts/"+encodeURIComponent(filename));
-    if(!fileResponse.ok)return null;
-    const parsed=parseFrontMatter(await fileResponse.text());
-    if(!parsed||!parsed.meta.title)return null;
-    const plainBody=parsed.body.replace(/[#>*_\[\]()!-]/g," ").replace(/\s+/g," ").trim();
-    return {slug:parsed.meta.slug||slug,title:parsed.meta.title.trim(),date:parsed.meta.date||"",excerpt:parsed.meta.excerpt||plainBody.slice(0,150),image:parsed.meta.image||""};
-   }catch(fileError){return null;}
-  }));
-  const valid=posts.filter(Boolean).sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
-  recentArticles.innerHTML="";
-  if(!valid.length){recentArticles.innerHTML="<article class=\"card\"><p>अभी कोई लेख उपलब्ध नहीं है।</p></article>";return;}
-  valid.slice(0,6).forEach(function(post){
-   const article=document.createElement("article");article.className="card";
-   article.innerHTML=(post.image?"<img src=\""+escapeHtml(post.image)+"\" alt=\"\" loading=\"lazy\" style=\"width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px\">":"")+"<h3>"+escapeHtml(post.title)+"</h3><p>"+escapeHtml(post.excerpt)+"</p><a href=\"/article-"+encodeURIComponent(post.slug)+".html\">पूरा लेख पढ़ें →</a>";
-   recentArticles.appendChild(article);
-  });
-  if(articlesMessage)articlesMessage.textContent="";
- }catch(error){recentArticles.innerHTML="<article class=\"card\"><p>नए लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।</p></article>";if(articlesMessage)articlesMessage.textContent="लेख दिखाने में समस्या आई। कृपया बाद में फिर कोशिश करें।";}
-}
-loadRecentArticles();
-
 const searchBox=document.getElementById("siteSearch");
 const items=document.querySelectorAll(".search-item");
 const message=document.getElementById("searchMessage");
