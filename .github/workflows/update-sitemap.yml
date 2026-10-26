@@ -129,7 +129,7 @@ jobs:
           template = Path("article.html").read_text(encoding="utf-8")
           # Clean article routes are fully rendered HTML: no JS redirect or
           # client-side replacement can make the article text disappear.
-          template = re.sub(r"<script>[\s\S]*?</script>", "", template, flags=re.I)
+          template = re.sub(r"<script>[\s\S]*?</script>", "", template, count=1, flags=re.I)
           template = template.replace('href="index.html"', 'href="/index.html"')
 
           for post in sorted(posts_dir.glob("*.md")) if posts_dir.exists() else []:
