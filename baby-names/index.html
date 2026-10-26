@@ -13,6 +13,7 @@ a{color:#244c87}
 .site-header{background:#fff;border-bottom:1px solid #e9eaf0;padding:12px 5% 0}
 .brand{display:inline-flex;align-items:center;text-decoration:none}
 .brand img{display:block;width:200px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
+.mobile-menu-toggle{display:none}
 .primary-navigation{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:10px -5.56% 0;padding:9px 5.56%;align-items:center}
 .primary-navigation>a,.primary-navigation summary{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.5}
 .primary-navigation>a:hover,.primary-navigation summary:hover{background:#40516e}
@@ -35,13 +36,14 @@ footer{padding:24px 5%;background:#f2f4f8;text-align:center;color:#4b5567}
 footer a{color:#243047}
 footer p{margin:8px 0}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
-@media(max-width:600px){.brand img{width:170px}.primary-navigation{gap:4px;padding:8px 5.56%}.primary-navigation>a,.primary-navigation summary{padding:6px 8px;font-size:14px}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}}
+@media(max-width:600px){.site-header{padding:12px 5%}.brand img{width:170px}.mobile-menu-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:10px 0 12px;padding:11px 14px;border:0;border-radius:8px;background:#243047;color:#fff;font:inherit;font-size:16px;cursor:pointer}.mobile-menu-toggle .menu-icon{font-size:22px;line-height:1}.primary-navigation{display:none;flex-direction:column;align-items:stretch;gap:2px;margin:0 -5.56%;padding:8px 5.56%}.primary-navigation.is-open{display:flex}.primary-navigation>a,.primary-navigation summary{display:block;padding:10px 12px;font-size:16px}.primary-navigation .nav-dropdown{width:100%}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}.primary-navigation .nav-dropdown[open] .nav-menu{display:grid}}
 </style>
 </head>
 <body>
 <header class="site-header">
 <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120"></a>
-<nav class="primary-navigation" aria-label="Main navigation">
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></button>
+<nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
 <a href="/">Home</a>
 <a href="/parenting">Parenting</a>
 <a href="/kids-education">Kids Education</a>
@@ -260,6 +262,18 @@ footer p{margin:8px 0}
 <p>नामों के अर्थों की जाँच और dataset विस्तार के बाद इस category को और विकसित किया जाएगा।</p>
 
 </main>
+<script>
+(() => {
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const navigation = document.querySelector(".primary-navigation");
+  if (!toggle || !navigation) return;
+  toggle.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.querySelector(".menu-icon").textContent = isOpen ? "✕" : "☰";
+  });
+})();
+</script>
 <footer>
 <p><a href="/">MARJAN.IN</a> — Parenting &amp; Kids Education</p>
 <p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
