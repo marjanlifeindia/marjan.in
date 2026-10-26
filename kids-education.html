@@ -70,7 +70,7 @@
 @media(max-width:600px){nav{align-items:center;gap:4px 6px}nav>a,nav>.nav-dropdown>summary{font-size:16px!important;line-height:1.4;padding:7px 8px}nav>.nav-dropdown{position:relative;font-size:16px}nav>.nav-dropdown>summary{display:block}nav>.nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:0;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto;box-shadow:0 10px 28px #17243a30;margin-top:4px;gap:2px;padding:8px;background:#fff}nav>.nav-dropdown .nav-menu a{font-size:16px!important;line-height:1.4;padding:7px 10px}nav>.nav-dropdown .nav-menu strong{margin:5px 10px 0;font-size:12px;line-height:1.4;color:#68748a}nav>.nav-dropdown .nav-menu strong:first-child{margin-top:2px}}
 
 /* Shared MARJAN.IN brand/header treatment */
-header{background:#fff!important;color:#243047!important;padding:14px 5% 0!important;border-bottom:1px solid #e9eaf0}
+header{background:#fff!important;color:#243047!important;padding:8px 5% 0!important;border-bottom:1px solid #e9eaf0}
 header>.brand,header>a.brand,header>a:first-child.brand{display:inline-block;font-size:27px;font-weight:800;letter-spacing:-.5px;color:#176fc1;text-decoration:none}
 header>.tagline,header>p.tagline{margin:0 0 12px;color:#5c6576;font-size:13px;line-height:1.35;letter-spacing:.15px}
 header>nav{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:0 -5.56%;padding:9px 5.56%;align-items:center}
@@ -91,7 +91,7 @@ header>nav>a:hover,header>nav>.nav-dropdown>summary:hover{background:#40516e}
 /* Keep the Baby Names dropdown floating on mobile; do not expand/reflow the nav row. */
 @media(max-width:600px){header>nav>.nav-dropdown[open]{flex-basis:auto!important;width:auto!important;align-self:center}header>nav>.nav-dropdown .nav-menu{position:absolute!important;left:0;top:100%;width:min(340px,calc(100vw - 40px));max-height:65vh;overflow-y:auto}}
 /* Accessible shared mobile navigation */
-header>.menu-toggle{display:none}header>nav.primary-navigation{min-width:0}@media(max-width:760px){header{position:relative}header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}header>.menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{display:block;width:100%;font-size:15px!important;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;flex-basis:auto!important;align-self:stretch}header>nav.primary-navigation>.nav-dropdown[open]{flex-basis:auto!important;width:100%!important}header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px!important;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static!important;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px!important;padding:8px 10px;line-height:1.4}}@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+header>.menu-toggle{display:none}header>nav.primary-navigation{min-width:0}@media(max-width:760px){header{position:relative}header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}header>.menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{display:block;width:100%;font-size:15px!important;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;flex-basis:auto!important;align-self:stretch}header>nav.primary-navigation>.nav-dropdown[open]{flex-basis:auto!important;width:100%!important}header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px!important;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static!important;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px!important;padding:8px 10px;line-height:1.4}}@media(min-width:761px){@media(min-width:761px){header>nav.primary-navigation{display:flex}}}
 /* Original MARJAN.IN logo sizing */ .brand{display:inline-flex!important;align-items:center;max-width:100%;text-decoration:none}.brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;object-position:left center}@media(max-width:480px){.brand img{width:180px;max-height:62px}}
 
 /* Original MARJAN.IN footer logo */
@@ -141,6 +141,16 @@ header .brand img{display:block;width:340px;max-width:100%;height:auto;max-heigh
 /* Consistent footer text and link colors across all pages */
 footer, footer p, footer a, footer a:link, footer a:visited, footer a:hover, footer a:focus, footer a:active { color: #FFFFFF !important; }
 footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
+
+/* Compact, consistent footer spacing */
+footer{padding:14px 5%!important;margin-top:16px!important;}
+footer p{margin:5px 0!important;line-height:1.45;}
+footer .footer-follow-line{margin:4px auto!important;}
+footer .footer-follow-line img{width:120px!important;height:auto!important;max-height:42px!important;object-fit:contain!important;transform:none!important;clip-path:none!important;margin:0!important;}
+footer .social-links{gap:6px!important;margin:8px auto!important;}
+footer .social-links a{min-height:32px!important;padding:5px 9px!important;font-size:12px!important;}
+footer nav{gap:6px 12px!important;margin-bottom:6px!important;justify-content:center;}
+@media(max-width:600px){footer{padding:12px 4%!important;}footer .footer-follow-line img{width:105px!important;max-height:36px!important;}footer .social-links a{padding:5px 8px!important;}}
 </style>
   <link rel="canonical" href="https://marjan.in/kids-education">
 </head>

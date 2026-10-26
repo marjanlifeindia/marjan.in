@@ -10,7 +10,7 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#fffaf8;color:#303747;line-height:1.7}
 a{color:#244c87}
-.site-header{background:#fff;border-bottom:1px solid #e9eaf0;padding:12px 5% 0}
+.site-header{background:#fff;border-bottom:1px solid #e9eaf0;padding:8px 5% 0}
 .brand{display:inline-flex;align-items:center;text-decoration:none}
 .brand img{display:block;width:200px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
 .primary-navigation{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:10px -5.56% 0;padding:9px 5.56%;align-items:center}
@@ -36,12 +36,31 @@ footer a{color:#243047}
 footer p{margin:8px 0}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
 @media(max-width:600px){.brand img{width:170px}.primary-navigation{gap:4px;padding:8px 5.56%}.primary-navigation>a,.primary-navigation summary{padding:6px 8px;font-size:14px}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}}
+/* Accessible mobile menu: keep navigation compact until the user opens it. */
+.menu-toggle{display:none}
+@media(max-width:760px){
+ .site-header{position:relative}
+ .menu-toggle{display:inline-flex;align-items:center;justify-content:center;margin:10px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}
+ .menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}
+ .site-header>.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -5.56%;padding:10px 5.56%;background:#243047}
+ .site-header>.primary-navigation.is-open{display:flex}
+ .site-header>.primary-navigation>a{display:block;width:100%;font-size:15px;padding:9px 10px;line-height:1.4}
+ .site-header>.primary-navigation>.nav-dropdown{position:relative;width:100%;align-self:stretch}
+ .site-header>.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px;padding:9px 10px;line-height:1.4}
+ .site-header>.primary-navigation>.nav-dropdown>.nav-menu{position:static;min-width:0;width:100%;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}
+ .site-header>.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px;padding:8px 10px;line-height:1.4}
+}
+@media(min-width:761px){.site-header>.primary-navigation{display:flex}}
+
+/* Compact, consistent footer spacing */
+footer{padding:14px 5%!important;margin-top:16px!important;}footer p{margin:5px 0!important;line-height:1.45;}footer .footer-follow-line{margin:4px auto!important;}footer .footer-follow-line img{width:120px!important;height:auto!important;max-height:42px!important;object-fit:contain!important;transform:none!important;clip-path:none!important;margin:0!important;}footer .social-links{gap:6px!important;margin:8px auto!important;}footer .social-links a{min-height:32px!important;padding:5px 9px!important;font-size:12px!important;}footer nav{gap:6px 12px!important;margin-bottom:6px!important;justify-content:center;}@media(max-width:600px){footer{padding:12px 4%!important;}footer .footer-follow-line img{width:105px!important;max-height:36px!important;}footer .social-links a{padding:5px 8px!important;}}
 </style>
 </head>
 <body>
 <header class="site-header">
 <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120"></a>
-<nav class="primary-navigation" aria-label="Main navigation">
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
 <a href="/">Home</a>
 <a href="/parenting">Parenting</a>
 <a href="/kids-education">Kids Education</a>
@@ -265,5 +284,18 @@ footer p{margin:8px 0}
 <p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
 <p>© 2026 MARJAN.IN. All rights reserved.</p>
 </footer>
+
+<script>
+(function(){
+  var menu=document.getElementById("primary-navigation");
+  var toggle=document.querySelector(".menu-toggle");
+  if(!menu||!toggle)return;
+  function closeMenu(){menu.classList.remove("is-open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open main menu");}
+  toggle.addEventListener("click",function(){var open=!menu.classList.contains("is-open");menu.classList.toggle("is-open",open);toggle.setAttribute("aria-expanded",String(open));toggle.setAttribute("aria-label",open?"Close main menu":"Open main menu");});
+  menu.querySelectorAll("a").forEach(function(link){link.addEventListener("click",closeMenu);});
+  document.addEventListener("keydown",function(event){if(event.key==="Escape")closeMenu();});
+  window.addEventListener("resize",function(){if(window.innerWidth>760)closeMenu();});
+})();
+</script>
 </body>
 </html>
