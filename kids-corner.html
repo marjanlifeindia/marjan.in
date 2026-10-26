@@ -133,6 +133,13 @@ header .brand img{display:block;width:340px;max-width:100%;height:auto;max-heigh
 /* Consistent footer text and link colors across all pages */
 footer, footer p, footer a, footer a:link, footer a:visited, footer a:hover, footer a:focus, footer a:active { color: #FFFFFF !important; }
 footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
+
+/* Unified mobile header: logo on its own row and compact menu directly below. */
+@media(max-width:760px){
+ header>.brand,header>a.brand{display:flex!important;flex:0 0 100%;width:100%;max-width:100%;align-items:center}
+ header>.brand img,header>a.brand img{display:block;width:180px;max-width:100%;height:auto;max-height:62px;object-fit:contain;object-position:left center}
+ header>.menu-toggle,header>.mobile-menu-toggle{display:inline-flex!important;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:8px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+}
 </style>
 </head>
 <body>
