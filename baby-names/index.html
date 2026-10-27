@@ -45,6 +45,15 @@ footer a{color:white;margin:5px}
 .social-mark.x-mark{background:#000;border-radius:50%}
 @media(max-width:480px){.social-links{gap:8px}.social-links a{font-size:13px;padding:8px 11px;min-height:40px}}
 footer p{margin:8px 0}
+
+/* Match the homepage footer follow heading and keep all social buttons balanced. */
+footer .footer-follow-line{display:flex;justify-content:center;align-items:center;width:100%;margin:8px auto 14px;text-align:center}
+footer .footer-follow-line a{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:8px;margin:0 auto;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+footer .footer-follow-line a img{display:block;width:150px;height:auto;max-height:60px;object-fit:contain;object-position:center;flex:0 0 auto}
+footer .social-links{width:100%;max-width:900px;margin:16px auto;display:flex;flex-flow:row wrap;justify-content:center;align-items:center;gap:10px}
+footer .social-links a{margin:0;flex:0 0 auto}
+@media(min-width:600px){footer .social-links{flex-flow:row nowrap;gap:8px}footer .social-links a{white-space:nowrap;padding:8px 10px}}
+@media(max-width:480px){footer .footer-follow-line a img{width:140px}footer .footer-follow-line a{gap:6px;font-size:14px}footer .social-links{gap:8px}}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
 @media(max-width:600px){.site-header{padding:12px 5%}.brand{display:flex;flex:0 0 100%;width:100%;max-width:100%}.brand img{width:170px}.mobile-menu-toggle{display:flex;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:10px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}.mobile-menu-toggle .menu-icon{font-size:22px;line-height:1}.primary-navigation{display:none;flex-direction:column;align-items:stretch;gap:2px;margin:0 -5.56%;padding:8px 5.56%}.primary-navigation.is-open{display:flex}.primary-navigation>a,.primary-navigation summary{display:block;padding:10px 12px;font-size:16px}.primary-navigation .nav-dropdown{width:100%}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}.primary-navigation .nav-dropdown[open] .nav-menu{display:grid}}
 </style>
