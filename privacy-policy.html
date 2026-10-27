@@ -52,6 +52,35 @@ header .brand img{display:block;width:340px;max-width:100%;height:auto;max-heigh
 <p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
 <p>© 2026 MARJAN.IN. All rights reserved.</p>
 </footer>
-<script id="site-header-menu-script">(function(){var m=document.getElementById('primary-navigation'),b=document.querySelector('.site-header .menu-toggle');if(!m||!b)return;b.addEventListener('click',function(){var o=m.classList.toggle('is-open');b.setAttribute('aria-expanded',String(o));});})();</script>
+<script id="site-header-menu-script">
+(function(){
+  var menu=document.getElementById('primary-navigation');
+  var toggle=document.querySelector('.site-header .menu-toggle, .site-header .mobile-menu-toggle');
+  if(!menu||!toggle)return;
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+  toggle.addEventListener('click',function(){
+    var open=!menu.classList.contains('is-open');
+    menu.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',closeMenu);
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){
+      closeMenu();
+      var dropdown=menu.querySelector('.nav-dropdown[open]');
+      if(dropdown)dropdown.removeAttribute('open');
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>760)closeMenu();
+  });
+})();
+</script>
 </body>
 </html>
