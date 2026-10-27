@@ -29,7 +29,7 @@ footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
 <header class="site-header">
 <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="200" height="66"></a>
 
-<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">☰ Menu</button>
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
 <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
 <a href="/">Home</a><a href="/parenting">Parenting</a><a href="/kids-education">Kids Education</a><a href="/activities">Kids Activities</a><a href="/kids-corner">Kids Corner</a>
 <details class="nav-dropdown"><summary>Baby Names</summary><div class="nav-menu"><a href="/baby-names/">Baby Names Directory</a><strong>By Religion</strong><a href="/baby-names/#hindu-names">Hindu Names</a><a href="/baby-names/#muslim-names">Muslim Names</a><a href="/baby-names/#sikh-names">Sikh Names</a><a href="/baby-names/#christian-names">Christian Names</a><strong>By Category</strong><a href="/baby-names/#boy-names">Boy Names</a><a href="/baby-names/#girl-names">Girl Names</a><a href="/baby-names/#a-z-names">A–Z Names</a><a href="/baby-names/#names-by-meaning">Names by Meaning</a></div></details><a href="/about">About Us</a>
@@ -64,11 +64,13 @@ footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
   function closeMenu(){
     menu.classList.remove('is-open');
     toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open main menu');
   }
   toggle.addEventListener('click',function(){
     var open=!menu.classList.contains('is-open');
     menu.classList.toggle('is-open',open);
     toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
   });
   menu.querySelectorAll('a').forEach(function(link){
     link.addEventListener('click',closeMenu);
