@@ -33,7 +33,17 @@ h1{font-size:clamp(28px,4vw,38px)}
 #baby-name-results li{margin:8px 0}
 #baby-name-results li[hidden],#baby-name-results[hidden],#baby-name-no-results[hidden]{display:none}
 footer{background:#243047;color:white;text-align:center;padding:28px 5%;margin-top:25px}
-footer a{color:white}
+footer a{color:white;margin:5px}
+.social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:18px auto;max-width:620px}
+.social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 13px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;transition:background .2s ease,border-color .2s ease}
+.social-links a:hover,.social-links a:focus-visible{background:#40516e;border-color:#fff;outline-offset:3px}
+.social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;color:#fff;font-weight:800;font-size:17px;line-height:1;background:#1877F2}
+.social-mark svg{display:block;width:17px;height:17px;fill:currentColor}
+.social-mark.youtube-mark{background:#FF0033;border-radius:7px}
+.social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
+.social-mark.instagram-mark{background:#C13584}
+.social-mark.x-mark{background:#000;border-radius:50%}
+@media(max-width:480px){.social-links{gap:8px}.social-links a{font-size:13px;padding:8px 11px;min-height:40px}}
 footer p{margin:8px 0}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
 @media(max-width:600px){.site-header{padding:12px 5%}.brand{display:flex;flex:0 0 100%;width:100%;max-width:100%}.brand img{width:170px}.mobile-menu-toggle{display:flex;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:10px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}.mobile-menu-toggle .menu-icon{font-size:22px;line-height:1}.primary-navigation{display:none;flex-direction:column;align-items:stretch;gap:2px;margin:0 -5.56%;padding:8px 5.56%}.primary-navigation.is-open{display:flex}.primary-navigation>a,.primary-navigation summary{display:block;padding:10px 12px;font-size:16px}.primary-navigation .nav-dropdown{width:100%}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}.primary-navigation .nav-dropdown[open] .nav-menu{display:grid}}
