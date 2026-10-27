@@ -440,6 +440,13 @@ footer>p:last-child{margin:12px 0 0;color:#e0e5ef;font-size:14px}
   [search, gender, religion, letter].forEach(function (control) {
     control.addEventListener(control === search ? 'input' : 'change', applyFilters);
   });
+  document.querySelectorAll('.baby-name-meaning-chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      search.value = chip.dataset.meaningQuery || '';
+      applyFilters();
+      search.focus();
+    });
+  });
   reset.addEventListener('click', function () {
     search.value = '';
     gender.value = 'all';
@@ -503,7 +510,13 @@ Directory में कुल 214 नाम हैं। फिलहाल क�
 </ul>
 
 <h2 id="names-by-meaning">Baby Names by Meaning</h2>
-<p>Meaning-based browsing अगला चरण है। अभी नामों के अर्थ को ऊपर दिए गए Search box में लिखकर matching names खोज सकते हैं। उदाहरण: “प्रकाश”, “शांति”, “खुशी” या “ज्ञान”।</p>
+<p>किसी अर्थ-विषय पर टैप करें—directory में उस अर्थ से मेल खाने वाले नाम फ़िल्टर हो जाएंगे। आप Search box और Gender/Religion filters भी साथ इस्तेमाल कर सकते हैं।</p>
+<div class="baby-name-meaning-chips" aria-label="Browse names by meaning">
+  <button type="button" class="baby-name-meaning-chip" data-meaning-query="प्रकाश">प्रकाश</button>
+  <button type="button" class="baby-name-meaning-chip" data-meaning-query="शांति">शांति</button>
+  <button type="button" class="baby-name-meaning-chip" data-meaning-query="खुशी">खुशी</button>
+  <button type="button" class="baby-name-meaning-chip" data-meaning-query="ज्ञान">ज्ञान</button>
+</div>
 
 </main>
 <script>
