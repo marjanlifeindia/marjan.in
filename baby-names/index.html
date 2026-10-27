@@ -406,11 +406,24 @@ footer>p:last-child{margin:12px 0 0;color:#e0e5ef;font-size:14px}
   var count = document.getElementById('baby-name-result-count');
   var empty = document.getElementById('baby-name-no-results');
   var reset = document.getElementById('baby-name-reset');
+  // Normalize search text without removing Hindi vowel signs (matras).
+  // This makes Unicode and nukta spelling variants easier to match.
+  function normalizeSearchText(value) {
+    return String(value || '')
+      .toLocaleLowerCase()
+      .normalize('NFC')
+      .replace(/[़]/g, '')
+      .replace(/[\u200c\u200d]/g, '')
+      .replace(/[.,،؛:!?।\-_/]+/g, ' ')
+      .replace(/\\s+/g, ' ')
+      .trim();
+  }
   function applyFilters() {
-    var q = search.value.trim().toLocaleLowerCase();
+    var q = normalizeSearchText(search.value);
     var shown = 0;
     items.forEach(function (item) {
-      var matches = (!q || (item.dataset.name + ' ' + item.dataset.meaning + ' ' + item.textContent).toLocaleLowerCase().indexOf(q) !== -1)
+      var searchableText = normalizeSearchText(item.dataset.name + ' ' + item.dataset.meaning + ' ' + item.textContent);
+      var matches = (!q || searchableText.indexOf(q) !== -1)
         && (gender.value === 'all' || item.dataset.gender === gender.value)
         && (religion.value === 'all' || item.dataset.religion === religion.value)
         && (letter.value === 'all' || item.dataset.letter === letter.value);
