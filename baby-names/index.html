@@ -42,7 +42,7 @@ footer p{margin:8px 0}
 <body>
 <header class="site-header">
 <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120"></a>
-<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></button>
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open main menu"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></button>
 <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
 <a href="/">Home</a>
 <a href="/parenting">Parenting</a>
@@ -284,12 +284,14 @@ footer p{margin:8px 0}
   function closeMenu(){
     menu.classList.remove('is-open');
     toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open main menu');
     if(icon)icon.textContent='☰';
   }
   toggle.addEventListener('click',function(){
     var open=!menu.classList.contains('is-open');
     menu.classList.toggle('is-open',open);
     toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
     if(icon)icon.textContent=open?'✕':'☰';
   });
   menu.querySelectorAll('a').forEach(function(link){
