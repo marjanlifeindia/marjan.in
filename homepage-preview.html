@@ -49,6 +49,11 @@ section{padding:22px 0}.section-head{align-items:flex-start;gap:8px}
 }
 @media(max-width:380px){.brand img{width:150px}.hero h1{font-size:27px}.actions{flex-direction:column;align-items:stretch}.btn{justify-content:center}.topics{grid-template-columns:1fr}.section-head .more{font-size:11px}}
 
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
