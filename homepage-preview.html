@@ -8,7 +8,7 @@
 <style>
 :root{--navy:#10365f;--blue:#0864a6;--teal:#2b8b80;--ink:#173657;--muted:#52677d;--cream:#fff8ed;--line:#e6edf2}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);font:16px/1.55 "Noto Sans Devanagari",Arial,sans-serif;background:#fff}
-a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #e64c79;outline-offset:3px;border-radius:5px}.wrap{width:min(1160px,92%);margin:auto}
+a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #e64c79;outline-offset:3px;border-radius:5px}.skip-link{position:absolute;left:12px;top:-60px;background:#10365f;color:#fff;padding:10px 14px;border-radius:8px;z-index:10;font-weight:700}.skip-link:focus{top:12px}.wrap{width:min(1160px,92%);margin:auto}
 header{background:#fff;border-bottom:1px solid #e8edf1;position:relative;z-index:2}.head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand img{width:230px;height:auto;display:block}
 nav{display:flex;align-items:center;gap:20px;font-size:14px;font-weight:650;color:#263d57}nav a:hover{color:var(--blue)}.lang{border:1px solid #dce5ec;border-radius:30px;padding:5px 11px}
 .hero{background:linear-gradient(100deg,#fff9ef 0%,#fff7e9 45%,#f3eadb 100%);overflow:hidden}.hero-inner{display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:28px;min-height:340px}.hero-copy{padding:34px 0}.eyebrow{color:#548574;font-size:12px;font-weight:800;letter-spacing:1px}.hero h1{font-size:clamp(32px,4vw,48px);line-height:1.17;color:var(--navy);margin:12px 0}.hero h1 em{font-style:normal;color:#e64c79}.hero p{color:#314d69;max-width:520px;margin:0 0 20px;font-size:16px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:30px;border:1px solid var(--blue);font-size:14px;font-weight:750}.btn.primary{background:var(--blue);color:#fff}.hero-image{width:100%;height:340px;object-fit:cover;object-position:center;border-radius:0 0 0 20px}.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:12px;font-weight:700;color:#38516a}
@@ -53,7 +53,7 @@ section{padding:22px 0}.section-head{align-items:flex-start;gap:8px}
 </head>
 <body>
 <div class="preview-note">HOMEPAGE REDESIGN PREVIEW — यह डिज़ाइन अभी Live Website पर लागू नहीं है</div>
-<header><div class="wrap head">
+<a class="skip-link" href="#main-content">मुख्य सामग्री पर जाएँ</a>\n<header><div class="wrap head">
 <a class="brand" href="/"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN"></a>
 <nav aria-label="Preview navigation"><a href="/">होम</a><a href="/parenting">पैरेंटिंग</a><a href="/kids-education">किड्स एजुकेशन</a><a href="/activities">एक्टिविटीज</a><a href="/kids-corner">किड्स कॉर्नर</a><a href="/baby-names/">बेबी नेम्स</a><a href="/about">हमारे बारे में</a><span class="lang">हिंदी　EN</span></nav>
 </div></header>
@@ -61,7 +61,7 @@ section{padding:22px 0}.section-head{align-items:flex-start;gap:8px}
 <div class="hero-copy"><span class="eyebrow">WELCOME TO MARJAN.IN</span><h1>हर बच्चे की सीखने की<br>यात्रा में <em>साथ</em></h1><p>माता-पिता के लिए भरोसेमंद जानकारी, उपयोगी सुझाव और बच्चों के बेहतर परवरिश व शिक्षा के लिए सही मार्गदर्शन।</p><div class="actions"><a class="btn primary" href="/parenting">♧ पैरेंटिंग टिप्स पढ़ें →</a><a class="btn" href="/kids-education">▣ किड्स एजुकेशन शुरू करें →</a></div><div class="trust"><span>💗 सही जानकारी</span><span>🛡 भरोसेमंद सुझाव</span><span>⭐ बेहतर भविष्य</span></div></div>
 <img class="hero-image" src="/media/file_000000003e4081fb944b68ed03915b12.png" alt="माँ और बेटी साथ किताब पढ़ते हुए">
 </div></div>
-<main>
+<main id="main-content">
 <section class="wrap"><div class="section-head"><div><h2>उम्र के अनुसार खोजें</h2><p>हर उम्र के लिए अलग जरूरतें, यहाँ मिलेंगी सही जानकारी।</p></div><a class="more" href="/kids-education">सभी देखें →</a></div>
 <div class="tiles ages"><a class="tile pink" href="/parenting"><span class="emoji">👶🏻</span><strong>बेबी</strong><small>(0–2 वर्ष)</small></a><a class="tile peach" href="/parenting"><span class="emoji">🧒🏻</span><strong>टॉडलर</strong><small>(2–4 वर्ष)</small></a><a class="tile mint" href="/kids-education"><span class="emoji">🧒🏽</span><strong>प्रीस्कूल</strong><small>(4–6 वर्ष)</small></a><a class="tile sky" href="/kids-education"><span class="emoji">👦🏻</span><strong>स्कूल-एज</strong><small>(6+ वर्ष)</small></a></div></section>
 <section class="wrap"><div class="section-head"><div><h2>हमारे मुख्य विषय</h2><p>पैरेंटिंग, शिक्षा, एक्टिविटीज और बहुत कुछ — सब एक ही जगह।</p></div><a class="more" href="/kids-corner">सभी देखें →</a></div>
