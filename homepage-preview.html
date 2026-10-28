@@ -153,6 +153,27 @@ footer{background:linear-gradient(115deg,#10365f,#16456d)}
  .hero-inner{padding-top:14px}
  .hero-image{max-height:230px}
 }
+
+/* Compact, balanced mobile content cards */
+@media(max-width:700px){
+ .ages,.topics,.articles{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .topics .tile{min-height:145px;padding:13px 12px;align-items:flex-start;text-align:left}
+ .topics .tile .emoji{font-size:30px}
+ .topics .tile strong{font-size:15px;line-height:1.35}
+ .topics .tile small{font-size:12px;line-height:1.45}
+ .ages .tile{min-height:126px;padding:12px 8px}
+ .articles .article{min-width:0}
+ .articles .article h3{font-size:15px;line-height:1.45}
+ .section-head h2{font-size:22px}
+ .section-head p{font-size:13px}
+ .promo-grid{grid-template-columns:1fr;gap:12px}
+}
+@media(max-width:390px){
+ .ages,.topics,.articles{gap:9px}
+ .topics .tile{padding:11px 10px;min-height:135px}
+ .topics .tile strong{font-size:14px}
+ .topics .tile small{font-size:11px}
+}
 </style>
 </head>
 <body>
