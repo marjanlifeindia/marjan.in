@@ -115,9 +115,11 @@ footer .social-links{display:flex;justify-content:center;align-items:center;flex
 footer .social-mark{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 24px;width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important;overflow:hidden;border-radius:50%;font-size:17px;line-height:1}footer .social-mark svg{display:block!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;max-width:17px!important;max-height:17px!important;fill:currentColor}footer .social-mark.youtube-mark{border-radius:7px}footer p{margin-bottom:0}@media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
 
-/* MARJAN.IN homepage footer base: center footer navigation and copyright on every page. */
-footer>p{text-align:center;margin:10px auto 0}
-footer nav{justify-content:center}
+/* Homepage footer layout — enforce centered footer link and copyright rows across every page. */
+footer{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+footer>p:not(.footer-follow-line){display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:10px auto 0!important;float:none!important}
+footer>.social-links{margin-left:auto!important;margin-right:auto!important}
+footer nav{justify-content:center!important}
 </style>
 </head>
 <body>
