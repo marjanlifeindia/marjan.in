@@ -109,6 +109,18 @@ header .brand img{display:block;width:340px;max-width:100%;height:auto;max-heigh
 /* Consistent footer text and link colors across all pages */
 footer, footer p, footer a, footer a:link, footer a:visited, footer a:hover, footer a:focus, footer a:active { color: #FFFFFF !important; }
 footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
+/* Shared footer consistency patch: prevent oversized social marks and keep links compact. */
+footer .footer-follow-line{display:flex;justify-content:center;margin:8px auto}
+footer .footer-follow-line>a{display:inline-flex;align-items:center;justify-content:center;gap:0;max-width:100%;white-space:nowrap}
+footer .footer-follow-line img{display:block;width:150px;height:auto;max-height:none;object-fit:contain;clip-path:none;border-radius:0;transform:none;margin:0}
+footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:auto;max-width:620px;margin:16px auto;gap:10px}
+footer .social-links>a{display:inline-flex;flex:0 1 auto;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;white-space:nowrap;font-size:14px;margin:0}
+footer .social-mark{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 24px;width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important;overflow:hidden;border-radius:50%;font-size:17px;line-height:1}
+footer .social-mark svg{display:block!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;max-width:17px!important;max-height:17px!important;fill:currentColor}
+footer .social-mark.youtube-mark{border-radius:7px}
+footer p{margin-bottom:0}
+@media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
+
 </style>
 </head>
 <body>
