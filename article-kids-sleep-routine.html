@@ -134,6 +134,13 @@ footer .footer-follow-line{width:100%!important;text-align:center!important;alig
 footer .social-links{align-self:center!important;margin-left:auto!important;margin-right:auto!important}
 footer nav{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important}
 footer{align-items:center!important;text-align:center!important}
+
+/* FINAL homepage-footer clone fix: force both footer text rows to center, independent of inherited/legacy rules. */
+footer p:not(.footer-follow-line){display:block!important;position:static!important;float:none!important;clear:both!important;width:100%!important;max-width:none!important;margin:10px 0 0!important;padding:0!important;text-align:center!important;text-indent:0!important;align-self:stretch!important}
+footer .footer-follow-line{width:100%!important;text-align:center!important;align-self:stretch!important}
+footer .social-links{align-self:center!important;margin-left:auto!important;margin-right:auto!important}
+footer nav{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important}
+footer{align-items:center!important;text-align:center!important}
 </style>
 </head>
 <body>
