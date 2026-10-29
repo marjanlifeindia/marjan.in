@@ -42,9 +42,11 @@ footer p{margin-bottom:0}
 @media(max-width:480px){footer{padding:22px 4%}footer .social-links{gap:8px}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
 
 
-/* MARJAN.IN homepage footer base: center footer navigation and copyright on every page. */
-footer>p{text-align:center;margin:10px auto 0}
-footer nav{justify-content:center}
+/* Homepage footer layout — enforce centered footer link and copyright rows across every page. */
+footer{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+footer>p:not(.footer-follow-line){display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:10px auto 0!important;float:none!important}
+footer>.social-links{margin-left:auto!important;margin-right:auto!important}
+footer nav{justify-content:center!important}
 </style>
 </head>
 <body>
