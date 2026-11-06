@@ -29,10 +29,49 @@ footer .footer-follow-line{display:flex;justify-content:center;margin:8px auto}f
 footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:auto;max-width:620px;margin:16px auto;gap:10px}footer .social-links>a{display:inline-flex;flex:0 1 auto;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;white-space:nowrap;font-size:14px;margin:0}
 footer .social-mark{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 24px;width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important;overflow:hidden;border-radius:50%;font-size:17px;line-height:1}footer .social-mark svg{display:block!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;max-width:17px!important;max-height:17px!important;fill:currentColor}footer .social-mark.youtube-mark{border-radius:7px}footer p{margin-bottom:0}@media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
+
+/* Match the shared MARJAN.IN homepage header and responsive navigation. */
+header{background:#fff!important;color:#243047!important;padding:14px 5% 0!important;border-bottom:1px solid #e9eaf0}
+header .brand{display:inline-flex;align-items:center;max-width:100%;text-decoration:none;margin:0}
+header .brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
+header>nav.primary-navigation{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;background:#243047;margin:0 -5.56%;padding:9px 5.56%;min-width:0}
+header>nav.primary-navigation>a,header>nav.primary-navigation>.baby-names-nav-item a{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.4;font-size:15px}
+header>nav.primary-navigation>a:hover,header>nav.primary-navigation>.baby-names-nav-item a:hover{background:#40516e}
+header>.menu-toggle{display:none}
+header .baby-names-nav-item{display:flex;align-items:center;gap:2px}
+header .nav-dropdown{position:relative}
+header .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;padding:7px 10px;border-radius:6px}
+header .nav-dropdown summary::-webkit-details-marker{display:none}
+header .nav-dropdown summary:after{content:" ▾";font-size:.8em}
+header .nav-menu{position:absolute;top:100%;left:0;z-index:30;min-width:220px;padding:8px;background:#fff;border:1px solid #e1e7f0;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}
+header .nav-menu a{display:block;color:#243047!important;text-decoration:none;padding:9px 10px;border-radius:6px;white-space:normal}
+header .nav-menu a:hover{background:#f0f5ff!important}
+@media(max-width:760px){
+ header{position:relative}
+ header>.menu-toggle{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}
+ header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}
+ header>nav.primary-navigation.is-open{display:flex}
+ header>nav.primary-navigation>a{display:block;width:100%;font-size:15px;padding:9px 10px}
+ header .baby-names-nav-item{display:flex;flex-wrap:wrap;align-items:center}
+ header .baby-names-nav-item>a{flex:1}
+ header .nav-dropdown{width:100%}
+ header .nav-dropdown .nav-menu{position:static;width:100%;min-width:0;max-height:50vh;overflow-y:auto;box-shadow:none;margin:4px 0;padding:8px}
+ header .nav-dropdown .nav-menu a{font-size:14px;padding:8px 10px}
+}
+@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+
 </style>
 </head>
 <body>
-<header><a href="/">MARJAN.IN</a></header>
+<header>
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a>
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+<a href="/">Home</a><a href="/parenting">Parenting</a><a href="/kids-education">Kids Education</a><a href="/activities">Kids Activities</a><a href="/kids-corner">Kids Corner</a>
+<div class="baby-names-nav-item"><a class="baby-names-main-link" href="/baby-names/">Baby Names</a><details class="nav-dropdown baby-names-categories"><summary aria-label="Open Baby Names categories" title="Baby Names categories"><span>Categories</span></summary><div class="nav-menu"><a href="/baby-names/#hindu-names">Hindu Names</a><a href="/baby-names/#boy-names">Boy Names</a><a href="/baby-names/#a-z-names">A–Z Names</a></div></details></div>
+<a href="/about">About Us</a>
+</nav>
+</header>
 <main><article class="card"><h1>Contact MARJAN.IN</h1>
 <p>MARJAN.IN पर parenting, बच्चों की शिक्षा, गतिविधियों, books और learning resources से जुड़ी सामग्री साझा की जाती है। सुझाव, correction या सहयोग संबंधी संदेश भेजने के लिए नीचे दिए गए आधिकारिक channels का उपयोग करें।</p>
 <ul>
@@ -57,5 +96,16 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
 <p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
 <p>© 2026 MARJAN.IN. All rights reserved.</p>
 </footer>
+<script>
+(function(){
+ const menu=document.getElementById("primary-navigation"),toggle=document.querySelector(".menu-toggle");
+ if(!menu||!toggle)return;
+ function closeMenu(){menu.classList.remove("is-open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open main menu");}
+ toggle.addEventListener("click",function(){const open=!menu.classList.contains("is-open");menu.classList.toggle("is-open",open);toggle.setAttribute("aria-expanded",String(open));toggle.setAttribute("aria-label",open?"Close main menu":"Open main menu");});
+ menu.querySelectorAll("a").forEach(function(link){link.addEventListener("click",closeMenu);});
+ document.addEventListener("keydown",function(event){if(event.key==="Escape"){closeMenu();const dropdown=menu.querySelector(".nav-dropdown[open]");if(dropdown)dropdown.removeAttribute("open");toggle.focus();}});
+ window.addEventListener("resize",function(){if(window.innerWidth>760)closeMenu();});
+})();
+</script>
 </body>
 </html>
