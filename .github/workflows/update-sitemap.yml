@@ -9,6 +9,13 @@ on:
       - '.pages.yml'
       - 'article.html'
       - '.github/workflows/update-sitemap.yml'
+  pull_request:
+    paths:
+      - 'posts/**/*.md'
+      - 'posts/*.md'
+      - '.pages.yml'
+      - 'article.html'
+      - '.github/workflows/update-sitemap.yml'
   workflow_dispatch:
 
 permissions:
