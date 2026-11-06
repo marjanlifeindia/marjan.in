@@ -155,6 +155,35 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
 
 </style>
   <link rel="canonical" href="https://marjan.in/kids-education">
+<style id="homepage-footer-standard">
+/* Exact Homepage footer layout standard; links and footer content remain page-specific. */
+footer a{color:#fff!important;margin:5px}
+footer{background:#243047!important;color:#fff!important;text-align:center!important;padding:28px 5%!important;margin-top:25px!important;border-top:4px solid #e97885!important}
+footer a{color:#fff!important}
+footer .footer-brand{display:inline-flex;align-items:center;justify-content:center;max-width:100%;margin:0 auto 12px;text-decoration:none}
+footer .footer-brand img{display:block;width:150px;height:auto;max-height:60px;object-fit:contain;object-position:center}
+footer .footer-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 16px;margin:14px auto;max-width:900px}
+footer .footer-nav a{color:#fff;text-decoration:none;margin:0;padding:5px 2px;border-radius:4px}
+footer .footer-nav a:hover,footer .footer-nav a:focus-visible{text-decoration:underline;outline-offset:3px}
+footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:620px}
+footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+footer .social-links a:hover,footer .social-links a:focus-visible{background:#40516e;border-color:#fff;outline-offset:3px}
+footer .social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;color:#fff;font-weight:800;font-size:17px;line-height:1;background:#1877F2}
+footer .social-mark svg{display:block;width:17px;height:17px;fill:currentColor}
+footer .social-mark.youtube-mark{background:#FF0033;border-radius:7px}
+footer .social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
+footer .social-mark.instagram-mark{background:#C13584}
+footer .social-mark.x-mark{background:#000;border-radius:50%}
+@media(max-width:480px){footer{padding:22px 4%!important}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px;flex-wrap:wrap}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
+@media(min-width:768px){footer .social-links{display:flex;flex-flow:row nowrap;justify-content:center;align-items:center;width:max-content;max-width:100%;margin-left:auto;margin-right:auto;gap:8px}footer .social-links a{display:inline-flex;flex:0 0 auto;align-items:center;gap:6px;padding:8px 10px;font-size:13px;white-space:nowrap}}
+footer,footer p,footer a,footer a:link,footer a:visited,footer a:hover,footer a:focus,footer a:active{color:#fff!important}
+footer a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Match the Homepage logo line above the social links. */
+footer .footer-follow-line{margin:8px auto;display:flex;justify-content:center}
+footer .footer-follow-line a{display:inline-flex;align-items:center;justify-content:center;gap:0;max-width:100%;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+footer .footer-follow-line a img{display:block;width:150px;height:auto;max-height:none;object-fit:contain;clip-path:none;border-radius:0;transform:none;margin-right:0}
+@media(max-width:360px){footer .footer-follow-line a{gap:5px;font-size:14px}footer .footer-follow-line a img{width:135px;height:auto;max-height:none;margin-right:0}}</style>
 </head>
 <body>
   <header>
@@ -212,29 +241,15 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
     </div>
 
     
-<section class="card"><h2>नए Kids Education लेख</h2><div id="cmsArticles"><p>लेख लोड हो रहे हैं…</p></div></section>
-<script>
-(function(){
-const target=document.getElementById("cmsArticles");
-function fetchWithTimeout(url,options){const controller=new AbortController();const timer=setTimeout(function(){controller.abort();},10000);return fetch(url,Object.assign({},options||{},{signal:controller.signal})).finally(function(){clearTimeout(timer);});}
-function parse(md){
- const m=md.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);if(!m)return null;
- const meta={};let key="";
- m[1].split("\n").forEach(function(line){const x=line.match(/^([a-zA-Z_]+):\s*(.*)$/);if(x){key=x[1];meta[key]=x[2].trim().replace(/^["']|["']$/g,"");}else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}});
- return meta;
-}
-function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-fetchWithTimeout("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main")
-.then(function(r){if(!r.ok)throw Error();return r.json();})
-.then(function(files){return Promise.all(files.filter(function(f){return f.type==="file"&&/\.md$/i.test(f.name);}).map(function(f){return fetchWithTimeout(f.download_url).then(function(r){return r.ok?r.text():"";}).then(function(md){return {file:f.name,meta:parse(md)};});}));})
-.then(function(posts){
-const found=posts.filter(function(p){return p.meta&&p.meta.title&&(p.meta.category||"").toLowerCase()==="kids education";}).sort(function(a,b){return (b.meta.date||"").localeCompare(a.meta.date||"");});
-if(!found.length){target.innerHTML="<p>इस category में अभी कोई नया CMS लेख नहीं है।</p>";return;}
-target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"/article-"+encodeURIComponent(p.meta.slug||p.file.replace(/\.md$/i,""))+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
-})
-.catch(function(){target.innerHTML="<p>लेख अभी लोड नहीं हो सके। कुछ देर बाद फिर कोशिश करें।</p>";});
-})();
-</script>
+<section class="card" aria-labelledby="educationArticlesHeading">
+  <h2 id="educationArticlesHeading">Kids Education के उपयोगी लेख</h2>
+  <article style="padding:14px 0;border-bottom:1px solid #eee5e2">
+    <h3><a href="/article-reading-habit">बच्चों में पढ़ने की आदत कैसे विकसित करें</a></h3>
+    <p>बच्चों की उम्र और रुचि के अनुसार किताबें चुनने तथा रोज़ पढ़ने की आदत बनाने के आसान तरीके।</p>
+    <a href="/article-reading-habit">पूरा लेख पढ़ें →</a>
+  </article>
+  <p>नए Education लेख प्रकाशित होने पर वे इसी सेक्शन में जोड़े जाएँगे।</p>
+</section>
 <p><a class="button" href="index.html">मुख्य पेज पर वापस जाएँ</a></p>
   </main>
 

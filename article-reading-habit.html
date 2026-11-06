@@ -121,27 +121,82 @@ footer .social-mark.youtube-mark{border-radius:7px}
 footer p{margin-bottom:0}
 @media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
+
+/* Homepage-matched header and responsive navigation. */
+.site-header{background:#fff;color:#243047;padding:10px 5% 0;border-bottom:1px solid #e9eaf0}
+.site-header>.brand{display:flex;flex:0 0 auto;width:max-content;max-width:100%;align-items:center;text-decoration:none;margin:0}
+.site-header>.brand img{display:block;width:340px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:left center}
+.site-header>.menu-toggle{display:none}
+.site-header>nav.primary-navigation{display:flex;flex-wrap:wrap;gap:4px 6px;background:#243047;margin:0 -5.56%;padding:7px 5.56%;align-items:center}
+.site-header>nav.primary-navigation>a,.site-header .baby-names-main-link{color:#fff;text-decoration:none;padding:7px 9px;border-radius:6px;line-height:1.4;font-size:15px}
+.site-header>nav.primary-navigation>a:hover,.site-header .baby-names-main-link:hover{background:#40516e}
+.site-header .baby-names-nav-item{display:inline-flex;align-items:center;gap:0;position:relative}
+.site-header .baby-names-main-link{display:inline-block}
+.site-header .baby-names-categories{position:relative;display:inline-flex;align-items:center}
+.site-header .baby-names-categories>summary{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:30px;min-height:34px;padding:5px 9px;cursor:pointer;color:#fff;list-style:none;border-radius:6px;white-space:nowrap}
+.site-header .baby-names-categories>summary::-webkit-details-marker{display:none}
+.site-header .baby-names-categories>summary:after{content:"▾";font-size:13px}
+.site-header .baby-names-categories[open]>summary,.site-header .baby-names-categories>summary:hover{background:#40516e}
+.site-header .baby-names-categories .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:200px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:10px;box-shadow:0 10px 28px #17243a30;display:grid;gap:4px}
+.site-header .baby-names-categories .nav-menu a{display:block;color:#243047;padding:9px 10px;text-decoration:none;font-size:15px}
+.site-header .baby-names-categories>summary:focus-visible{outline:2px solid #f5c4cc;outline-offset:2px}
+@media(max-width:760px){
+ .site-header{padding:10px 4% 0}
+ .site-header>.brand{display:flex!important;flex:0 0 100%;width:100%;max-width:100%;align-items:center}
+ .site-header>.brand img{display:block;width:180px;max-width:100%;height:auto;max-height:62px;object-fit:contain;object-position:left center}
+ .site-header>.menu-toggle{display:inline-flex!important;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:8px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+ .site-header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:9px 4.35%;background:#243047}
+ .site-header>nav.primary-navigation.is-open{display:flex}
+ .site-header>nav.primary-navigation>a{display:block;width:100%;font-size:15px;padding:9px 10px;line-height:1.4}
+ .site-header>nav.primary-navigation>.baby-names-nav-item{display:flex;align-items:center;width:100%;gap:0}
+ .site-header .baby-names-nav-item>.baby-names-main-link{flex:1;width:auto;padding:9px 10px;font-size:15px}
+ .site-header .baby-names-nav-item>.baby-names-categories>summary{min-width:42px;min-height:40px}
+ .site-header .baby-names-nav-item>.baby-names-categories .nav-menu{position:absolute;top:100%;left:auto;right:0;width:min(340px,calc(100vw - 40px));min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;box-shadow:0 10px 28px #17243a30;background:#fff}
+}
+@media(min-width:761px){.site-header>nav.primary-navigation{display:flex}}
+
 </style>
+<style id="homepage-footer-standard">
+/* Exact Homepage footer layout standard; links and footer content remain page-specific. */
+footer a{color:#fff!important;margin:5px}
+footer{background:#243047!important;color:#fff!important;text-align:center!important;padding:28px 5%!important;margin-top:25px!important;border-top:4px solid #e97885!important}
+footer a{color:#fff!important}
+footer .footer-brand{display:inline-flex;align-items:center;justify-content:center;max-width:100%;margin:0 auto 12px;text-decoration:none}
+footer .footer-brand img{display:block;width:150px;height:auto;max-height:60px;object-fit:contain;object-position:center}
+footer .footer-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 16px;margin:14px auto;max-width:900px}
+footer .footer-nav a{color:#fff;text-decoration:none;margin:0;padding:5px 2px;border-radius:4px}
+footer .footer-nav a:hover,footer .footer-nav a:focus-visible{text-decoration:underline;outline-offset:3px}
+footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:620px}
+footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+footer .social-links a:hover,footer .social-links a:focus-visible{background:#40516e;border-color:#fff;outline-offset:3px}
+footer .social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;color:#fff;font-weight:800;font-size:17px;line-height:1;background:#1877F2}
+footer .social-mark svg{display:block;width:17px;height:17px;fill:currentColor}
+footer .social-mark.youtube-mark{background:#FF0033;border-radius:7px}
+footer .social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
+footer .social-mark.instagram-mark{background:#C13584}
+footer .social-mark.x-mark{background:#000;border-radius:50%}
+@media(max-width:480px){footer{padding:22px 4%!important}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px;flex-wrap:wrap}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
+@media(min-width:768px){footer .social-links{display:flex;flex-flow:row nowrap;justify-content:center;align-items:center;width:max-content;max-width:100%;margin-left:auto;margin-right:auto;gap:8px}footer .social-links a{display:inline-flex;flex:0 0 auto;align-items:center;gap:6px;padding:8px 10px;font-size:13px;white-space:nowrap}}
+footer,footer p,footer a,footer a:link,footer a:visited,footer a:hover,footer a:focus,footer a:active{color:#fff!important}
+footer a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Match the Homepage logo line above the social links. */
+footer .footer-follow-line{margin:8px auto;display:flex;justify-content:center}
+footer .footer-follow-line a{display:inline-flex;align-items:center;justify-content:center;gap:0;max-width:100%;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+footer .footer-follow-line a img{display:block;width:150px;height:auto;max-height:none;object-fit:contain;clip-path:none;border-radius:0;transform:none;margin-right:0}
+@media(max-width:360px){footer .footer-follow-line a{gap:5px;font-size:14px}footer .footer-follow-line a img{width:135px;height:auto;max-height:none;margin-right:0}}</style>
 </head>
 <body>
-<header><a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
-<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/parenting">Parenting</a><a href="/kids-education">Kids Education</a><a href="/activities">Kids Activities</a><a href="/kids-corner">Kids Corner</a><details class="nav-dropdown">
-<summary>Baby Names</summary>
-<div class="nav-menu">
-<a href="/baby-names/">Baby Names Directory</a>
-<strong>By Religion</strong>
-<a href="/baby-names/#hindu-names">Hindu Names</a>
-<a href="/baby-names/#muslim-names">Muslim Names</a>
-<a href="/baby-names/#sikh-names">Sikh Names</a>
-<a href="/baby-names/#christian-names">Christian Names</a>
-<strong>By Category</strong>
-<a href="/baby-names/#boy-names">Boy Names</a>
-<a href="/baby-names/#girl-names">Girl Names</a>
-<a href="/baby-names/#a-z-names">A–Z Names</a>
-<a href="/baby-names/#names-by-meaning">Names by Meaning</a>
-</div>
-</details><a href="/about">About Us</a></nav>
-</header>
+<header class="site-header">
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a>
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+<a href="/">Home</a><a href="/parenting">Parenting</a><a href="/kids-education">Kids Education</a><a href="/activities">Kids Activities</a><a href="/kids-corner">Kids Corner</a>
+<div class="baby-names-nav-item"><a class="baby-names-main-link" href="/baby-names/">Baby Names</a>
+<details class="nav-dropdown baby-names-categories"><summary aria-label="Open Baby Names categories" title="Baby Names categories"><span>Categories</span></summary>
+<div class="nav-menu"><a href="/baby-names/#hindu-names">Hindu Names</a><a href="/baby-names/#boy-names">Boy Names</a><a href="/baby-names/#a-z-names">A–Z Names</a></div>
+</details></div>
+<a href="/about">About Us</a></nav></header>
 <main><a class="back" href="/">← Homepage पर वापस जाएँ</a><article class="article"><p id="status" hidden>लेख लोड हो रहा है…</p>
 <h1 id="articleTitle">बच्चों में पढ़ने की आदत कैसे विकसित करें</h1>
 <p class="meta" id="articleMeta">Kids Education • 2026-10-13</p>
@@ -190,5 +245,6 @@ footer p{margin-bottom:0}
 
 
 
+<script id="site-header-menu-script">(function(){var m=document.getElementById("primary-navigation"),b=document.querySelector(".site-header .menu-toggle");if(!m||!b)return;b.addEventListener("click",function(){var o=m.classList.toggle("is-open");b.setAttribute("aria-expanded",String(o));});})();</script>
 </body>
 </html>
