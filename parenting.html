@@ -232,7 +232,8 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
   const slug=entry[0],file=entry[1];
   return fetch("https://raw.githubusercontent.com/marjanlifeindia/marjan.in/main/posts/"+encodeURIComponent(file))
    .then(function(response){if(!response.ok)throw new Error("Article unavailable");return response.text();})
-   .then(function(md){return {slug:slug,file:file,meta:parse(md)};})\n   .catch(function(){return null;});
+   .then(function(md){return {slug:slug,file:file,meta:parse(md)};})
+   .catch(function(){return null;});
  }));})
  .then(function(posts){
   const found=posts.filter(function(post){return post&&post.meta&&post.meta.title&&(post.meta.category||"").trim().toLowerCase()==="parenting";})
