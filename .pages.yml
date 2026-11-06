@@ -34,6 +34,21 @@ content:
             - Toys & Learning
             - Kids Books
             - School Supplies
+      - name: excerpt
+        label: संक्षिप्त विवरण (Excerpt)
+        type: text
+      - name: image
+        label: मुख्य तस्वीर का URL (Image)
+        type: string
+      - name: image_alt
+        label: तस्वीर का वर्णन (Image Alt Text)
+        type: string
+      - name: seo_title
+        label: SEO Title
+        type: string
+      - name: seo_description
+        label: SEO Description
+        type: text
       - name: body
         label: कंटेंट (Content)
         type: rich-text
