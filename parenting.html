@@ -211,13 +211,13 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
  const target=document.getElementById("cmsArticles");
  if(!target)return;
  function parse(md){
-  const match=md.match(/^---\\s*\\n([\\s\\S]*?)\\n---\\s*\\n?([\\s\\S]*)$/);
+  const match=md.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
   if(!match)return null;
   const meta={};let key="";
-  match[1].split("\\n").forEach(function(line){
-   const item=line.match(/^([a-zA-Z_]+):\\s*(.*)$/);
+  match[1].split("\n").forEach(function(line){
+   const item=line.match(/^([a-zA-Z_]+):\s*(.*)$/);
    if(item){key=item[1];meta[key]=item[2].trim().replace(/^["']|["']$/g,"");}
-   else if(key&&/^\\s{2,}\\S/.test(line)){meta[key]+=" "+line.trim();}
+   else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}
   });
   return meta;
  }
