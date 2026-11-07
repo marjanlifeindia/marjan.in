@@ -243,6 +243,18 @@ jobs:
                   raise SystemExit(slug + ": failed checks: " + ", ".join(failed))
           print("Validated " + str(len(index)) + " generated articles and sitemap entries.")
           PY
+      - name: Upload generated article preview files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: marjan-article-preview
+          path: |
+            sitemap.xml
+            posts/index.json
+            articles/
+            article-*.html
+          if-no-files-found: error
+          retention-days: 7
       - name: Commit updated slug index and sitemap
         run: |
           if [ "$GITHUB_EVENT_NAME" != "push" ] || [ "$GITHUB_REF" != "refs/heads/main" ]; then
