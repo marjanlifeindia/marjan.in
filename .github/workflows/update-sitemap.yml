@@ -128,14 +128,21 @@ jobs:
                       blocks.append("<h" + str(level) + ">" + inline(heading.group(2)) + "</h" + str(level) + ">")
                       i += 1
                       continue
-                  if re.match(r"^\d+[.)]\s+\S+", line):
+                  if re.match(r"^\\d+[.)]\\s+\\S+", line):
                       flush()
                       items = []
-                      while i < len(lines) and re.match(r"^\s*\d+[.)]\s+\S+", lines[i]):
-                          item = re.sub(r"^\s*\d+[.)]\s+", "", lines[i]).strip()
-                          items.append("<li>" + inline(item) + "</li>")
+                      first_number = int(re.match(r"^(\\d+)", line).group(1))
+                      while i < len(lines) and re.match(r"^\\s*\\d+[.)]\\s+\\S+", lines[i]):
+                          item_match = re.match(r"^\\s*(\\d+)[.)]\\s+(\\S.*)$", lines[i])
+                          items.append((int(item_match.group(1)), item_match.group(2).strip()))
                           i += 1
-                      blocks.append("<ol>" + "".join(items) + "</ol>")
+                      if len(items) == 1:
+                          number, item = items[0]
+                          blocks.append("<h2>" + str(number) + ". " + inline(item) + "</h2>")
+                      else:
+                          list_items = "".join("<li>" + inline(item) + "</li>" for _, item in items)
+                          start_attr = ' start="' + str(first_number) + '"' if first_number != 1 else ""
+                          blocks.append("<ol" + start_attr + ">" + list_items + "</ol>")
                       continue
                   if line.startswith(("- ", "* ")):
                       flush()
