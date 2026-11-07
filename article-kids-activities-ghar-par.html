@@ -122,25 +122,64 @@ footer p{margin-bottom:0}
 @media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
 </style>
+<style>
+/* MARJAN.IN shared Homepage header, mobile navigation and footer */
+header{background:#fff;color:#243047;padding:14px 5% 0;border-bottom:1px solid #e9eaf0;box-shadow:0 4px 18px #24304708}
+header .brand{display:inline-flex;align-items:center;max-width:100%;text-decoration:none}
+header .brand img{display:block;width:340px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:left center}
+header .tagline{margin:0 0 12px;color:#5c6576;font-size:13px;line-height:1.35;letter-spacing:.15px}
+header>nav.primary-navigation{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;min-width:0;background:#243047;margin:0 -5.56%;padding:7px 5.56%;box-shadow:0 5px 16px #17243a12}
+header>nav.primary-navigation a{color:#fff;text-decoration:none;padding:7px 9px;border-radius:6px;line-height:1.4}
+header>nav.primary-navigation a:hover{background:#40516e}
+header>nav.primary-navigation .nav-dropdown{position:relative}
+header>nav.primary-navigation .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;padding:7px 10px;border-radius:6px;line-height:1.7}
+header>nav.primary-navigation .nav-dropdown summary::-webkit-details-marker{display:none}
+header>nav.primary-navigation .nav-dropdown summary:after{content:" ▾";font-size:.8em}
+header>nav.primary-navigation .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:220px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}
+header>nav.primary-navigation .nav-dropdown .nav-menu a{display:block;color:#243047;padding:9px 10px}
+header>.menu-toggle{display:none}
+footer{background:#243047;color:#fff;text-align:center;padding:24px 5%;margin-top:25px;border-top:4px solid #e97885}
+footer,footer p,footer a,footer a:link,footer a:visited,footer a:hover,footer a:focus,footer a:active{color:#fff!important}
+footer .footer-brand{display:inline-flex;align-items:center;justify-content:center;max-width:100%;margin:0 auto 12px;text-decoration:none}
+footer .footer-brand img{display:block;width:150px;height:auto;max-height:60px;object-fit:contain;object-position:center}
+footer .footer-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 16px;margin:14px auto;max-width:900px}
+footer .footer-nav a{color:#fff;text-decoration:none;margin:0;padding:5px 2px;border-radius:4px}
+footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:620px}
+footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+footer .social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;color:#fff;font-weight:800;font-size:17px;line-height:1;background:#1877F2}
+footer .social-mark svg{display:block;width:17px;height:17px;fill:currentColor}
+footer .social-mark.youtube-mark{background:#FF0033;border-radius:7px}
+footer .social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
+footer .social-mark.instagram-mark{background:#C13584}
+footer .social-mark.x-mark{background:#000;border-radius:50%}
+@media(max-width:760px){header{position:relative;padding:12px 4% 0}header .brand img{width:290px;max-width:100%}header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{display:block;width:100%;font-size:15px;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;align-self:stretch}header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px;padding:8px 10px;line-height:1.4}footer{padding:22px 4%}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
+@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+</style>
 </head>
 <body>
-<header><a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
-<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/parenting">Parenting</a><a href="/kids-education">Kids Education</a><a href="/activities">Kids Activities</a><a href="/kids-corner">Kids Corner</a><details class="nav-dropdown">
-<summary>Baby Names</summary>
+<header>
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a>
+
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+<a href="/">Home</a>
+<a href="/parenting">Parenting</a>
+<a href="/kids-education">Kids Education</a>
+<a href="/activities">Kids Activities</a>
+<a href="/kids-corner">Kids Corner</a>
+<div class="baby-names-nav-item">
+<a class="baby-names-main-link" href="/baby-names/">Baby Names</a>
+<details class="nav-dropdown baby-names-categories">
+<summary aria-label="Open Baby Names categories" title="Baby Names categories"><span>Categories</span></summary>
 <div class="nav-menu">
-<a href="/baby-names/">Baby Names Directory</a>
-<strong>By Religion</strong>
 <a href="/baby-names/#hindu-names">Hindu Names</a>
-<a href="/baby-names/#muslim-names">Muslim Names</a>
-<a href="/baby-names/#sikh-names">Sikh Names</a>
-<a href="/baby-names/#christian-names">Christian Names</a>
-<strong>By Category</strong>
 <a href="/baby-names/#boy-names">Boy Names</a>
-<a href="/baby-names/#girl-names">Girl Names</a>
 <a href="/baby-names/#a-z-names">A–Z Names</a>
-<a href="/baby-names/#names-by-meaning">Names by Meaning</a>
 </div>
-</details><a href="/about">About Us</a></nav>
+</details>
+</div>
+<a href="/about">About Us</a>
+</nav>
 </header>
 <main><a class="back" href="/">← Homepage पर वापस जाएँ</a><article class="article"><p id="status" hidden>लेख लोड हो रहा है…</p>
 <h1 id="articleTitle">बच्चों के लिए घर पर 15 मज़ेदार और शिक्षाप्रद Activities</h1>
@@ -226,7 +265,7 @@ footer p{margin-bottom:0}
 
 <p class="footer-follow-line"><a href="/" aria-label="MARJAN.IN ko Follow karein - Home Page"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" loading="lazy" decoding="async"><span>को Follow करें।</span></a></p>
 <div class="social-links" aria-label="MARJAN.IN social media links">
-<a href="https://www.facebook.com/marjan.inindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook पर MARJAN.IN को Follow करें"><span class="social-mark facebook-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4z"/></svg></span>Facebook</a>
+<a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook पर MARJAN.IN को Follow करें"><span class="social-mark facebook-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4z"/></svg></span>Facebook</a>
 <a href="https://www.youtube.com/@MarjanIndia" target="_blank" rel="noopener noreferrer" aria-label="YouTube पर MARJAN.IN को Subscribe करें"><span class="social-mark youtube-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></span>YouTube</a>
 <a href="https://www.pinterest.com/MarjanIndia/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest पर MARJAN.IN को Follow करें"><span class="social-mark pinterest-mark" aria-hidden="true">P</span>Pinterest</a>
 <a href="https://www.instagram.com/marjan.india/" target="_blank" rel="noopener noreferrer" aria-label="Instagram पर MARJAN.IN को Follow करें"><span class="social-mark instagram-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm5.8-3.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg></span>Instagram</a>
@@ -239,5 +278,37 @@ footer p{margin-bottom:0}
 
 
 
+<script>
+
+(function(){
+  var menu=document.getElementById('primary-navigation');
+  var toggle=document.querySelector('.menu-toggle');
+  if(!menu||!toggle)return;
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open main menu');
+  }
+  toggle.addEventListener('click',function(){
+    var open=!menu.classList.contains('is-open');
+    menu.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){closeMenu();});
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){
+      closeMenu();
+      var dropdown=menu.querySelector('.nav-dropdown[open]');
+      if(dropdown)dropdown.removeAttribute('open');
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
+})();
+
+</script>
 </body>
 </html>
