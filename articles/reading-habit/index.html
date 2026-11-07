@@ -115,25 +115,31 @@ footer .social-links{display:flex;justify-content:center;align-items:center;flex
 footer .social-mark{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 24px;width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important;overflow:hidden;border-radius:50%;font-size:17px;line-height:1}footer .social-mark svg{display:block!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;max-width:17px!important;max-height:17px!important;fill:currentColor}footer .social-mark.youtube-mark{border-radius:7px}footer p{margin-bottom:0}@media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
 </style>
-</head>
+<style>/* MARJAN.IN shared Homepage header, mobile navigation and footer */header{background:#fff;color:#243047;padding:14px 5% 0;border-bottom:1px solid #e9eaf0}header .brand img{width:340px;max-width:100%;height:auto}header>nav.primary-navigation{display:flex;flex-wrap:wrap;background:#243047;margin:0 -5.56%;padding:7px 5.56%}header>nav.primary-navigation a{color:#fff;text-decoration:none;padding:7px 9px}header>nav.primary-navigation .nav-dropdown{position:relative}header>nav.primary-navigation .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:220px;padding:8px;background:#fff;display:grid}header>nav.primary-navigation .nav-dropdown .nav-menu a{color:#243047}header>.menu-toggle{display:none}footer{background:#243047;color:#fff;text-align:center;padding:24px 5%;margin-top:25px;border-top:4px solid #e97885}footer,footer p,footer a{color:#fff!important}footer .footer-brand img{width:150px;height:auto}footer .footer-nav,footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:14px auto}footer .social-links a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none}footer .social-mark{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#1877F2}footer .social-mark svg{width:17px;height:17px;fill:currentColor}@media(max-width:760px){header{padding:12px 4% 0}header .brand img{width:290px}header>.menu-toggle{display:inline-flex;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;margin:0 -4.35%;padding:10px 4.35%}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{padding:9px 10px}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static;width:100%;max-height:50vh;overflow:auto}footer{padding:22px 4%}}@media(min-width:761px){header>nav.primary-navigation{display:flex}}</style></head>
 <body>
-<header><a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
-<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/parenting.html">Parenting</a><a href="/kids-education.html">Kids Education</a><a href="/activities.html">Kids Activities</a><a href="/kids-corner.html">Kids Corner</a><details class="nav-dropdown">
-<summary>Baby Names</summary>
+<header>
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" decoding="async"></a>
+
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+<a href="/">Home</a>
+<a href="/parenting">Parenting</a>
+<a href="/kids-education">Kids Education</a>
+<a href="/activities">Kids Activities</a>
+<a href="/kids-corner">Kids Corner</a>
+<div class="baby-names-nav-item">
+<a class="baby-names-main-link" href="/baby-names/">Baby Names</a>
+<details class="nav-dropdown baby-names-categories">
+<summary aria-label="Open Baby Names categories" title="Baby Names categories"><span>Categories</span></summary>
 <div class="nav-menu">
-<a href="/baby-names/">Baby Names Directory</a>
-<strong>By Religion</strong>
 <a href="/baby-names/#hindu-names">Hindu Names</a>
-<a href="/baby-names/#muslim-names">Muslim Names</a>
-<a href="/baby-names/#sikh-names">Sikh Names</a>
-<a href="/baby-names/#christian-names">Christian Names</a>
-<strong>By Category</strong>
 <a href="/baby-names/#boy-names">Boy Names</a>
-<a href="/baby-names/#girl-names">Girl Names</a>
 <a href="/baby-names/#a-z-names">A–Z Names</a>
-<a href="/baby-names/#names-by-meaning">Names by Meaning</a>
 </div>
-</details><a href="/about.html">About Us</a></nav>
+</details>
+</div>
+<a href="/about">About Us</a>
+</nav>
 </header>
 <main><a class="back" href="/index.html">← Homepage पर वापस जाएँ</a><article class="article"><p id="status" hidden>लेख लोड हो रहा है…</p>
 <h1 id="articleTitle">बच्चों में पढ़ने की आदत कैसे विकसित करें</h1>
@@ -170,7 +176,7 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
 
 <p class="footer-follow-line"><a href="/" aria-label="MARJAN.IN ko Follow karein - Home Page"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" loading="lazy" decoding="async"><span>को Follow करें।</span></a></p>
 <div class="social-links" aria-label="MARJAN.IN social media links">
-<a href="https://www.facebook.com/marjan.inindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook पर MARJAN.IN को Follow करें"><span class="social-mark facebook-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4z"/></svg></span>Facebook</a>
+<a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook पर MARJAN.IN को Follow करें"><span class="social-mark facebook-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4z"/></svg></span>Facebook</a>
 <a href="https://www.youtube.com/@MarjanIndia" target="_blank" rel="noopener noreferrer" aria-label="YouTube पर MARJAN.IN को Subscribe करें"><span class="social-mark youtube-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></span>YouTube</a>
 <a href="https://www.pinterest.com/MarjanIndia/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest पर MARJAN.IN को Follow करें"><span class="social-mark pinterest-mark" aria-hidden="true">P</span>Pinterest</a>
 <a href="https://www.instagram.com/marjan.india/" target="_blank" rel="noopener noreferrer" aria-label="Instagram पर MARJAN.IN को Follow करें"><span class="social-mark instagram-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm5.8-3.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg></span>Instagram</a>

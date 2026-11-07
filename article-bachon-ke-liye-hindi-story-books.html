@@ -110,16 +110,9 @@ header .brand img{display:block;width:340px;max-width:100%;height:auto;max-heigh
 footer, footer p, footer a, footer a:link, footer a:visited, footer a:hover, footer a:focus, footer a:active { color: #FFFFFF !important; }
 footer a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
 /* Shared footer consistency patch: prevent oversized social marks and keep links compact. */
-footer .footer-follow-line{display:flex;justify-content:center;margin:8px auto}
-footer .footer-follow-line>a{display:inline-flex;align-items:center;justify-content:center;gap:0;max-width:100%;white-space:nowrap}
-footer .footer-follow-line img{display:block;width:150px;height:auto;max-height:none;object-fit:contain;clip-path:none;border-radius:0;transform:none;margin:0}
-footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:auto;max-width:620px;margin:16px auto;gap:10px}
-footer .social-links>a{display:inline-flex;flex:0 1 auto;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;white-space:nowrap;font-size:14px;margin:0}
-footer .social-mark{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 24px;width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important;overflow:hidden;border-radius:50%;font-size:17px;line-height:1}
-footer .social-mark svg{display:block!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;max-width:17px!important;max-height:17px!important;fill:currentColor}
-footer .social-mark.youtube-mark{border-radius:7px}
-footer p{margin-bottom:0}
-@media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
+footer .footer-follow-line{display:flex;justify-content:center;margin:8px auto}footer .footer-follow-line>a{display:inline-flex;align-items:center;justify-content:center;gap:0;max-width:100%;white-space:nowrap}footer .footer-follow-line img{display:block;width:150px;height:auto;max-height:none;object-fit:contain;clip-path:none;border-radius:0;transform:none;margin:0}
+footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:auto;max-width:620px;margin:16px auto;gap:10px}footer .social-links>a{display:inline-flex;flex:0 1 auto;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;white-space:nowrap;font-size:14px;margin:0}
+footer .social-mark{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 24px;width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important;overflow:hidden;border-radius:50%;font-size:17px;line-height:1}footer .social-mark svg{display:block!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;max-width:17px!important;max-height:17px!important;fill:currentColor}footer .social-mark.youtube-mark{border-radius:7px}footer p{margin-bottom:0}@media(max-width:480px){footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
 </style>
 <style>/* MARJAN.IN shared Homepage header, mobile navigation and footer */header{background:#fff;color:#243047;padding:14px 5% 0;border-bottom:1px solid #e9eaf0}header .brand img{width:340px;max-width:100%;height:auto}header>nav.primary-navigation{display:flex;flex-wrap:wrap;background:#243047;margin:0 -5.56%;padding:7px 5.56%}header>nav.primary-navigation a{color:#fff;text-decoration:none;padding:7px 9px}header>nav.primary-navigation .nav-dropdown{position:relative}header>nav.primary-navigation .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:220px;padding:8px;background:#fff;display:grid}header>nav.primary-navigation .nav-dropdown .nav-menu a{color:#243047}header>.menu-toggle{display:none}footer{background:#243047;color:#fff;text-align:center;padding:24px 5%;margin-top:25px;border-top:4px solid #e97885}footer,footer p,footer a{color:#fff!important}footer .footer-brand img{width:150px;height:auto}footer .footer-nav,footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:14px auto}footer .social-links a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none}footer .social-mark{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#1877F2}footer .social-mark svg{width:17px;height:17px;fill:currentColor}@media(max-width:760px){header{padding:12px 4% 0}header .brand img{width:290px}header>.menu-toggle{display:inline-flex;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;margin:0 -4.35%;padding:10px 4.35%}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{padding:9px 10px}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static;width:100%;max-height:50vh;overflow:auto}footer{padding:22px 4%}}@media(min-width:761px){header>nav.primary-navigation{display:flex}}</style></head>
@@ -148,7 +141,7 @@ footer p{margin-bottom:0}
 <a href="/about">About Us</a>
 </nav>
 </header>
-<main><a class="back" href="/">← Homepage पर वापस जाएँ</a><article class="article"><p id="status" hidden>लेख लोड हो रहा है…</p>
+<main><a class="back" href="/index.html">← Homepage पर वापस जाएँ</a><article class="article"><p id="status" hidden>लेख लोड हो रहा है…</p>
 <h1 id="articleTitle">5-10 साल के बच्चों के लिए 15 Best Hindi Story Books</h1>
 <p class="meta" id="articleMeta">Kids Books • 2026-10-16</p>
 <img id="articleImage" src="/media/1792161780026.png" alt="5-10 साल के बच्चों के लिए 15 Best Hindi Story Books">
@@ -281,34 +274,5 @@ footer p{margin-bottom:0}
 
 
 
-<script>
-(function(){
-  var menu=document.getElementById('primary-navigation');
-  var toggle=document.querySelector('.menu-toggle');
-  if(!menu||!toggle)return;
-  function closeMenu(){
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded','false');
-    toggle.setAttribute('aria-label','Open main menu');
-  }
-  toggle.addEventListener('click',function(){
-    var open=!menu.classList.contains('is-open');
-    menu.classList.toggle('is-open',open);
-    toggle.setAttribute('aria-expanded',String(open));
-    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
-  });
-  menu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click',function(){closeMenu();});
-  });
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'){
-      closeMenu();
-      var dropdown=menu.querySelector('.nav-dropdown[open]');
-      if(dropdown)dropdown.removeAttribute('open');
-      toggle.focus();
-    }
-  });
-  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
-})();
-</script></body>
+</body>
 </html>
