@@ -176,6 +176,20 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 @media(max-width:760px){header{position:relative;padding:12px 4% 0}header .brand img{width:290px;max-width:100%}header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{display:block;width:100%;font-size:15px;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;align-self:stretch}header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px;padding:8px 10px;line-height:1.4}footer{padding:22px 4%}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
 @media(min-width:761px){header>nav.primary-navigation{display:flex}}
 </style>
+<style>
+/* JSON-powered Baby Names cards and shortlist */
+#baby-name-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:0;border:0;background:transparent;box-shadow:none}
+#baby-name-results .baby-name-card{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:16px;border:1px solid #e4eaf1;border-radius:14px;background:#fff;box-shadow:0 5px 18px #24304708}
+.baby-name-card-title{margin:0;color:#243047;font-size:18px;line-height:1.35}
+.baby-name-card-meaning{margin:0;color:#59677c;font-size:14px;line-height:1.6}
+.baby-name-card-meta{margin:0;color:#748096;font-size:12px;text-transform:capitalize}
+.baby-name-card-gift{margin:0;color:#2b8179;font-size:12px;font-weight:600}
+.baby-name-shortlist-button{align-self:flex-start;margin-top:4px;padding:7px 12px;border:1px solid #d8e1ec;border-radius:999px;background:#f8fafc;color:#243047;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.baby-name-shortlist-button[aria-pressed="true"]{border-color:#e9b6bd;background:#fff2f4;color:#a92e4c}
+#baby-name-shortlist-filter{min-height:42px;padding:9px 14px;border:1px solid #e3c3cb;border-radius:999px;background:#fff7f8;color:#9c3650;font:inherit;font-weight:700;cursor:pointer}
+#baby-name-shortlist-filter[aria-pressed="true"]{background:#9c3650;color:#fff;border-color:#9c3650}
+@media(max-width:700px){#baby-name-results{grid-template-columns:1fr;gap:10px}}
+</style>
 </head>
 <body>
 <header>
@@ -233,554 +247,11 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
       <option value="a">A</option><option value="c">C</option><option value="d">D</option><option value="e">E</option><option value="f">F</option><option value="g">G</option><option value="h">H</option><option value="i">I</option><option value="j">J</option><option value="k">K</option><option value="l">L</option><option value="m">M</option><option value="n">N</option><option value="o">O</option><option value="p">P</option><option value="r">R</option><option value="s">S</option><option value="t">T</option><option value="v">V</option><option value="z">Z</option>
     </select>
     <button type="button" id="baby-name-reset">Reset filters</button>
+    <button type="button" id="baby-name-shortlist-filter" aria-pressed="false">♥ Show Shortlist</button>
   </div>
   <p id="baby-name-result-count" aria-live="polite">538 names</p>
   <p id="baby-name-no-results" hidden>इन filters से मेल खाने वाला नाम अभी directory में उपलब्ध नहीं है। किसी दूसरे अक्षर या category की सूची बाद में जोड़ी जाएगी।</p>
-  <ul id="baby-name-results">
-    <li data-name="Aarav" data-meaning="शांत शांतिपूर्ण" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Aarav (आरव)</strong> — शांत, शांतिपूर्ण</li>
-    <li data-name="Advik" data-meaning="अनोखा अद्वितीय" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Advik (अद्विक)</strong> — अनोखा, अद्वितीय</li>
-    <li data-name="Arjun" data-meaning="उज्ज्वल चमकदार" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Arjun (अर्जुन)</strong> — उज्ज्वल, चमकदार</li>
-    <li data-name="Atharv" data-meaning="पहला वेद" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Atharv (अथर्व)</strong> — पहला वेद</li>
-    <li data-name="Ayaan" data-meaning="ईश्वर का उपहार" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Ayaan (अयान)</strong> — ईश्वर का उपहार</li>
-    <li data-name="Ayaansh" data-meaning="ईश्वर का एक हिस्सा" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Ayaansh (आयांश)</strong> — ईश्वर का एक हिस्सा</li>
-    <li data-name="Aditya" data-meaning="सूर्य" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Aditya (आदित्य)</strong> — सूर्य</li>
-    <li data-name="Akash" data-meaning="आसमान" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Akash (आकाश)</strong> — आसमान</li>
-    <li data-name="Ansh" data-meaning="भगवान का हिस्सा" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Ansh (अंश)</strong> — भगवान का हिस्सा</li>
-    <li data-name="Abhay" data-meaning="निडर बहादुर" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Abhay (अभय)</strong> — निडर, बहादुर</li>
-    <li data-name="Anay" data-meaning="भगवान का आशीर्वाद" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Anay (अनय)</strong> — भगवान का आशीर्वाद</li>
-    <li data-name="Akshat" data-meaning="जिसे कोई हरा न सके" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Akshat (अक्षत)</strong> — जिसे कोई हरा न सके</li>
-    <li data-name="Anirudh" data-meaning="जिसे कोई रोक न सके" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Anirudh (अनिरुद्ध)</strong> — जिसे कोई रोक न सके</li>
-    <li data-name="Avyukt" data-meaning="जो स्पष्ट रूप से जाना जाए" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Avyukt (अव्युक्त)</strong> — जो स्पष्ट रूप से जाना जाए</li>
-    <li data-name="Anvay" data-meaning="एकता जुड़ाव" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Anvay (अन्वय)</strong> — एकता, जुड़ाव</li>
-    <li data-name="Arhaan" data-meaning="बादशाह राजा" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Arhaan (अरहान)</strong> — बादशाह, राजा</li>
-    <li data-name="Anuj" data-meaning="छोटा भाई" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Anuj (अनुज)</strong> — छोटा भाई</li>
-    <li data-name="Agastya" data-meaning="प्रसिद्ध ऋषि" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Agastya (अगस्त्य)</strong> — एक प्रसिद्ध ऋषि का नाम</li>
-    <li data-name="Avyansh" data-meaning="शक्तिशाली अटल" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Avyansh (अव्यांश)</strong> — शक्तिशाली और अटल</li>
-    <li data-name="Arin" data-meaning="शांतिपूर्ण" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Arin (अरिन)</strong> — शांतिपूर्ण</li>
-    <li data-name="Aayan" data-meaning="ईश्वर का उपहार; अर्थ स्रोतों में भिन्न हो सकता है" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Aayan (आयान)</strong> — ईश्वर का उपहार; अर्थ स्रोतों में भिन्न हो सकता है</li>
-    <li data-name="Abbas" data-meaning="गंभीर, दृढ़; कुछ स्रोत इसे शेर से भी जोड़ते हैं" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Abbas (अब्बास)</strong> — गंभीर, दृढ़; कुछ स्रोत इसे शेर से भी जोड़ते हैं</li>
-    <li data-name="Abdullah" data-meaning="अल्लाह का बंदा / सेवक" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Abdullah (अब्दुल्लाह)</strong> — अल्लाह का बंदा / सेवक</li>
-    <li data-name="Adeel" data-meaning="न्यायप्रिय, नेक और निष्पक्ष" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Adeel (अदील)</strong> — न्यायप्रिय, नेक और निष्पक्ष</li>
-    <li data-name="Adnan" data-meaning="लंबे समय तक किसी स्थान पर बसने से संबंधित पारंपरिक अर्थ" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Adnan (अदनान)</strong> — लंबे समय तक किसी स्थान पर बसने से संबंधित पारंपरिक अर्थ</li>
-    <li data-name="Ahmed" data-meaning="बहुत प्रशंसनीय; प्रशंसा के योग्य" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Ahmed (अहमद)</strong> — बहुत प्रशंसनीय; प्रशंसा के योग्य</li>
-    <li data-name="Ahsan" data-meaning="सबसे अच्छा, सबसे सुंदर" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Ahsan (अहसन)</strong> — सबसे अच्छा, सबसे सुंदर</li>
-    <li data-name="Ali" data-meaning="ऊँचा, महान, प्रतिष्ठित" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Ali (अली)</strong> — ऊँचा, महान, प्रतिष्ठित</li>
-    <li data-name="Amir" data-meaning="राजकुमार, नेता या शासक" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Amir (अमीर)</strong> — राजकुमार, नेता या शासक</li>
-    <li data-name="Anas" data-meaning="मित्रता, अपनापन या सौहार्द" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Anas (अनस)</strong> — मित्रता, अपनापन या सौहार्द</li>
-    <li data-name="Aqib" data-meaning="उत्तराधिकारी या बाद में आने वाला" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Aqib (आक़िब)</strong> — उत्तराधिकारी या बाद में आने वाला</li>
-    <li data-name="Arham" data-meaning="दयालु, करुणामय" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Arham (अरहम)</strong> — दयालु, करुणामय</li>
-    <li data-name="Arif" data-meaning="जानकार, समझदार या ज्ञानी" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Arif (आरिफ़)</strong> — जानकार, समझदार या ज्ञानी</li>
-    <li data-name="Arsalan" data-meaning="शेर; बहादुरी से जुड़ा नाम" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Arsalan (अरसलान)</strong> — शेर; बहादुरी से जुड़ा नाम</li>
-    <li data-name="Arshad" data-meaning="सही राह पर चलने वाला" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Arshad (अरशद)</strong> — सही राह पर चलने वाला</li>
-    <li data-name="Asad" data-meaning="शेर" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Asad (असद)</strong> — शेर</li>
-    <li data-name="Ashar" data-meaning="कुछ नाम-सूचियों में बुद्धिमत्ता से संबंधित" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Ashar (अशर)</strong> — कुछ नाम-सूचियों में बुद्धिमत्ता से संबंधित</li>
-    <li data-name="Asif" data-meaning="मज़बूत, शक्तिशाली; अर्थ स्रोत के अनुसार बदल सकता है" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Asif (आसिफ़)</strong> — मज़बूत, शक्तिशाली; अर्थ स्रोत के अनुसार बदल सकता है</li>
-    <li data-name="Asim" data-meaning="रक्षक, संरक्षक" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Asim (आसिम)</strong> — रक्षक, संरक्षक</li>
-    <li data-name="Atif" data-meaning="दयालु, सहानुभूति रखने वाला" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Atif (आतिफ़)</strong> — दयालु, सहानुभूति रखने वाला</li>
-    <li data-name="Azaan" data-meaning="नमाज़ के लिए पुकार" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Azaan (अज़ान)</strong> — नमाज़ के लिए पुकार</li>
-    <li data-name="Aaliyah" data-meaning="ऊँचा, महान या उच्च स्थान से जुड़ा अर्थ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Aaliyah (आलिया)</strong> — ऊँचा, महान या उच्च स्थान से जुड़ा अर्थ</li>
-    <li data-name="Aamaal" data-meaning="आशाएँ, आकांक्षाएँ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Aamaal (आमाल)</strong> — आशाएँ, आकांक्षाएँ</li>
-    <li data-name="Amina" data-meaning="सुरक्षित, निश्चिंत; भरोसेमंद होने से जुड़ा अर्थ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Amina (आमिना)</strong> — सुरक्षित, निश्चिंत; भरोसेमंद होने से जुड़ा अर्थ</li>
-    <li data-name="Abeer" data-meaning="सुगंध, खुशबू" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Abeer (अबीर)</strong> — सुगंध, खुशबू</li>
-    <li data-name="Abrar" data-meaning="नेक, सदाचारी; क्षेत्र के अनुसार gender usage बदल सकता है" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Abrar (अब्रार)</strong> — नेक, सदाचारी; क्षेत्र के अनुसार gender usage बदल सकता है</li>
-    <li data-name="Afaf" data-meaning="पवित्रता, संयम या शालीनता" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Afaf (अफ़ाफ़)</strong> — पवित्रता, संयम या शालीनता</li>
-    <li data-name="Afifa" data-meaning="पाकदामनी या शालीनता से जुड़ा नाम" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Afifa (अफ़ीफ़ा)</strong> — पाकदामनी या शालीनता से जुड़ा नाम</li>
-    <li data-name="Afnan" data-meaning="पेड़ों की शाखाएँ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Afnan (अफ़नान)</strong> — पेड़ों की शाखाएँ</li>
-    <li data-name="Ahlam" data-meaning="सपने" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Ahlam (अहलाम)</strong> — सपने</li>
-    <li data-name="Aisha" data-meaning="जीवित, जीवन से भरपूर" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Aisha (आयशा)</strong> — जीवित, जीवन से भरपूर</li>
-    <li data-name="Alaa" data-meaning="नेमतें, उपकार या बरकतें" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Alaa (अला)</strong> — नेमतें, उपकार या बरकतें</li>
-    <li data-name="Alya" data-meaning="आसमान, ऊँचाई या बुलंदी" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Alya (आल्या)</strong> — आसमान, ऊँचाई या बुलंदी</li>
-    <li data-name="Amal" data-meaning="आशा, उम्मीद या आकांक्षा" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Amal (अमल)</strong> — आशा, उम्मीद या आकांक्षा</li>
-    <li data-name="Amani" data-meaning="इच्छाएँ, अभिलाषाएँ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Amani (अमानी)</strong> — इच्छाएँ, अभिलाषाएँ</li>
-    <li data-name="Amira" data-meaning="राजकुमारी" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Amira (अमीरा)</strong> — राजकुमारी</li>
-    <li data-name="Amna" data-meaning="सुरक्षा, महफ़ूज़ होने से जुड़ा अर्थ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Amna (अमना)</strong> — सुरक्षा, महफ़ूज़ होने से जुड़ा अर्थ</li>
-    <li data-name="Aqsa" data-meaning="सबसे दूर; मस्जिद अल-अक़्सा के नाम से भी संबंध" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Aqsa (अक़्सा)</strong> — सबसे दूर; मस्जिद अल-अक़्सा के नाम से भी संबंध</li>
-    <li data-name="Areej" data-meaning="सुगंध या खुशबू" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Areej (अरीज)</strong> — सुगंध या खुशबू</li>
-    <li data-name="Asma" data-meaning="ऊँचा, सर्वोच्च या बुलंद" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Asma (अस्मा)</strong> — ऊँचा, सर्वोच्च या बुलंद</li>
-    <li data-name="Atika" data-meaning="स्वच्छ या पवित्र से जुड़ा अर्थ" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Atika (अतीका)</strong> — स्वच्छ या पवित्र से जुड़ा अर्थ</li>
-    <li data-name="Aya" data-meaning="निशानी, प्रमाण; क़ुरआन की आयत के अर्थ में भी प्रयुक्त" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Aya (आया)</strong> — निशानी, प्रमाण; क़ुरआन की आयत के अर्थ में भी प्रयुक्त</li>
-    <li data-name="Dania" data-meaning="निकट, समीप; नामार्थ स्रोतों में अंतर" data-gender="girl" data-religion="muslim" data-letter="d"><strong>Dania (दानिया)</strong> — निकट, समीप; नामार्थ स्रोतों में अंतर</li>
-    <li data-name="Ghazal" data-meaning="कविता/गीत" data-gender="girl" data-religion="muslim" data-letter="g"><strong>Ghazal (ग़ज़ल)</strong> — कविता/गीत</li>
-    <li data-name="Hafsa" data-meaning="युवा सिंहनी से जुड़ा नाम" data-gender="girl" data-religion="muslim" data-letter="h"><strong>Hafsa (हफ़्सा)</strong> — युवा सिंहनी से जुड़ा नाम</li>
-    <li data-name="Huda" data-meaning="मार्गदर्शन, सही राह" data-gender="girl" data-religion="muslim" data-letter="h"><strong>Huda (हुदा)</strong> — मार्गदर्शन, सही राह</li>
-    <li data-name="Juwairiya" data-meaning="एक ऐतिहासिक इस्लामी नाम; अर्थ-व्याख्या अलग" data-gender="girl" data-religion="muslim" data-letter="j"><strong>Juwairiya (जुवैरिया)</strong> — एक ऐतिहासिक इस्लामी नाम; अर्थ-व्याख्या अलग</li>
-    <li data-name="Laila" data-meaning="रात/रात्रि से जुड़ा नाम" data-gender="girl" data-religion="muslim" data-letter="l"><strong>Laila (लैला)</strong> — रात/रात्रि से जुड़ा नाम</li>
-    <li data-name="Mariam" data-meaning="मरियम; पवित्र धार्मिक नाम" data-gender="girl" data-religion="muslim" data-letter="m"><strong>Mariam (मरियम)</strong> — मरियम; पवित्र धार्मिक नाम</li>
-    <li data-name="Aarush" data-meaning="सूर्य की पहली किरण" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Aarush (आरुष)</strong> — सूर्य की पहली किरण</li>
-    <li data-name="Aariv" data-meaning="शांतिपूर्ण; आधुनिक नाम-प्रयोग" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Aariv (आरिव)</strong> — शांतिपूर्ण; आधुनिक नाम-प्रयोग</li>
-    <li data-name="Ahaan" data-meaning="सुबह, भोर" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Ahaan (अहान)</strong> — सुबह, भोर</li>
-    <li data-name="Aaravya" data-meaning="आधुनिक नाम; अर्थ स्रोतों में भिन्न" data-gender="boy" data-religion="hindu" data-letter="a"><strong>Aaravya (आरव्या)</strong> — आधुनिक नाम; अर्थ स्रोतों में भिन्न</li>
-    <li data-name="Aadya" data-meaning="प्रथम, आदि शक्ति" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Aadya (आद्या)</strong> — प्रथम, आदि शक्ति</li>
-    <li data-name="Anvi" data-meaning="लक्ष्मी से जुड़ा नाम; अर्थ परंपरा अनुसार" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Anvi (अन्वी)</strong> — लक्ष्मी से जुड़ा नाम; अर्थ परंपरा अनुसार</li>
-    <li data-name="Aarohi" data-meaning="संगीत की आरोही स्वर-श्रृंखला" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Aarohi (आरोही)</strong> — संगीत की आरोही स्वर-श्रृंखला</li>
-    <li data-name="Avni" data-meaning="पृथ्वी" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Avni (अवनि)</strong> — पृथ्वी</li>
-    <li data-name="Ira" data-meaning="पृथ्वी/सरस्वती से जुड़ा नाम" data-gender="girl" data-religion="hindu" data-letter="i"><strong>Ira (इरा)</strong> — पृथ्वी/सरस्वती से जुड़ा नाम</li>
-    <li data-name="Kiara" data-meaning="उज्ज्वल/प्रकाशमान; कई भाषाई मूल" data-gender="girl" data-religion="hindu" data-letter="k"><strong>Kiara (कियारा)</strong> — उज्ज्वल/प्रकाशमान; कई भाषाई मूल</li>
-    <li data-name="Reyansh" data-meaning="प्रकाश की किरण; अर्थ स्रोत अनुसार" data-gender="boy" data-religion="hindu" data-letter="r"><strong>Reyansh (रेयांश)</strong> — प्रकाश की किरण; अर्थ स्रोत अनुसार</li>
-    <li data-name="Vihaan" data-meaning="सुबह, नया आरंभ" data-gender="boy" data-religion="hindu" data-letter="v"><strong>Vihaan (विहान)</strong> — सुबह, नया आरंभ</li>
-    <li data-name="Aahil" data-meaning="राजकुमार/नेता; नामार्थ स्रोत अलग-अलग" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Aahil (आहिल)</strong> — राजकुमार/नेता; नामार्थ स्रोत अलग-अलग</li>
-    <li data-name="Aydin" data-meaning="प्रबुद्ध, उज्ज्वल (तुर्की मूल)" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Aydin (आयदिन)</strong> — प्रबुद्ध, उज्ज्वल (तुर्की मूल)</li>
-    <li data-name="Zayan" data-meaning="सुंदर, शोभायमान; transliteration/meaning vary" data-gender="boy" data-religion="muslim" data-letter="z"><strong>Zayan (ज़ायान)</strong> — सुंदर, शोभायमान; transliteration/meaning vary</li>
-    <li data-name="Rayyan" data-meaning="तृप्त/स्वर्ग के द्वार से जुड़ा इस्लामी नाम" data-gender="boy" data-religion="muslim" data-letter="r"><strong>Rayyan (रैयान)</strong> — तृप्त/स्वर्ग के द्वार से जुड़ा इस्लामी नाम</li>
-    <li data-name="Aariz" data-meaning="सम्मानित/बुद्धिमान—नामार्थ स्रोतों में अंतर" data-gender="boy" data-religion="muslim" data-letter="a"><strong>Aariz (आरिज़)</strong> — सम्मानित/बुद्धिमान—नामार्थ स्रोतों में अंतर</li>
-    <li data-name="Inaya" data-meaning="देखभाल, कृपा" data-gender="girl" data-religion="muslim" data-letter="i"><strong>Inaya (इनाया)</strong> — देखभाल, कृपा</li>
-    <li data-name="Zara" data-meaning="चमक/फूल; अलग-अलग मूलों में अर्थ अलग" data-gender="girl" data-religion="muslim" data-letter="z"><strong>Zara (ज़ारा)</strong> — चमक/फूल; अलग-अलग मूलों में अर्थ अलग</li>
-    <li data-name="Ayla" data-meaning="चाँदनी/चंद्र-प्रभामंडल; मूल अनुसार" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Ayla (आयला)</strong> — चाँदनी/चंद्र-प्रभामंडल; मूल अनुसार</li>
-    <li data-name="Alina" data-meaning="सुंदर/उज्ज्वल; कई भाषाई मूल" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Alina (अलीना)</strong> — सुंदर/उज्ज्वल; कई भाषाई मूल</li>
-    <li data-name="Mahira" data-meaning="कुशल, प्रतिभाशाली" data-gender="girl" data-religion="muslim" data-letter="m"><strong>Mahira (माहिरा)</strong> — कुशल, प्रतिभाशाली</li>
-    <li data-name="Areeba" data-meaning="समझदार, बुद्धिमती" data-gender="girl" data-religion="muslim" data-letter="a"><strong>Areeba (अरीबा)</strong> — समझदार, बुद्धिमती</li>
-    <li data-name="Aaradhya" data-meaning="पूजनीय, आदरणीय" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Aaradhya (आराध्या)</strong> — पूजनीय, आदरणीय</li>
-    <li data-name="Anika" data-meaning="अर्थ स्रोत के अनुसार सुंदरता/कृपा से जुड़ा" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Anika (अनिका)</strong> — अर्थ स्रोत के अनुसार सुंदरता/कृपा से जुड़ा</li>
-    <li data-name="Ishita" data-meaning="इच्छित, वांछित" data-gender="girl" data-religion="hindu" data-letter="i"><strong>Ishita (इशिता)</strong> — इच्छित, वांछित</li>
-    <li data-name="Myra" data-meaning="आधुनिक नाम; अर्थ स्रोतों में अलग-अलग" data-gender="girl" data-religion="hindu" data-letter="m"><strong>Myra (मायरा)</strong> — आधुनिक नाम; अर्थ स्रोतों में अलग-अलग</li>
-    <li data-name="Saanvi" data-meaning="लक्ष्मी से जुड़ा नाम" data-gender="girl" data-religion="hindu" data-letter="s"><strong>Saanvi (सान्वी)</strong> — लक्ष्मी से जुड़ा नाम</li>
-    <li data-name="Arjan" data-meaning="कमाई/सृजन; पंजाबी नाम" data-gender="boy" data-religion="sikh" data-letter="a"><strong>Arjan (अर्जन)</strong> — कमाई/सृजन; पंजाबी नाम</li>
-    <li data-name="Charanjit" data-meaning="चरणों/आध्यात्मिक मार्ग से विजय" data-gender="boy" data-religion="sikh" data-letter="c"><strong>Charanjit (चरणजीत)</strong> — चरणों/आध्यात्मिक मार्ग से विजय</li>
-    <li data-name="Gurjot" data-meaning="गुरु का प्रकाश" data-gender="boy" data-religion="sikh" data-letter="g"><strong>Gurjot (गुरजोत)</strong> — गुरु का प्रकाश</li>
-    <li data-name="Karanveer" data-meaning="वीर और साहसी" data-gender="boy" data-religion="sikh" data-letter="k"><strong>Karanveer (करनवीर)</strong> — वीर और साहसी</li>
-    <li data-name="Kuldeep" data-meaning="कुल/परिवार का दीप" data-gender="boy" data-religion="sikh" data-letter="k"><strong>Kuldeep (कुलदीप)</strong> — कुल/परिवार का दीप</li>
-    <li data-name="Lakhwinder" data-meaning="लक्ष्मी/समृद्धि से विजय का भाव" data-gender="boy" data-religion="sikh" data-letter="l"><strong>Lakhwinder (लखविंदर)</strong> — लक्ष्मी/समृद्धि से विजय का भाव</li>
-    <li data-name="Navjot" data-meaning="नया प्रकाश" data-gender="boy" data-religion="sikh" data-letter="n"><strong>Navjot (नवजोत)</strong> — नया प्रकाश</li>
-    <li data-name="Onkar" data-meaning="ईश्वर के एकत्व का प्रतीक" data-gender="boy" data-religion="sikh" data-letter="o"><strong>Onkar (ओंकार)</strong> — ईश्वर के एकत्व का प्रतीक</li>
-    <li data-name="Ranjit" data-meaning="विजयी" data-gender="boy" data-religion="sikh" data-letter="r"><strong>Ranjit (रणजीत)</strong> — विजयी</li>
-    <li data-name="Vikramjit" data-meaning="पराक्रम से विजय" data-gender="boy" data-religion="sikh" data-letter="v"><strong>Vikramjit (विक्रमजीत)</strong> — पराक्रम से विजय</li>
-    <li data-name="Yuvraj" data-meaning="राजकुमार" data-gender="boy" data-religion="sikh" data-letter="y"><strong>Yuvraj (युवराज)</strong> — राजकुमार</li>
-    <li data-name="Zorawar" data-meaning="शक्तिशाली, बहादुर" data-gender="boy" data-religion="sikh" data-letter="z"><strong>Zorawar (ज़ोरावर)</strong> — शक्तिशाली, बहादुर</li>
-    <li data-name="Akal" data-meaning="कालातीत, शाश्वत" data-gender="boy" data-religion="sikh" data-letter="a"><strong>Akal (अकाल)</strong> — कालातीत, शाश्वत</li>
-    <li data-name="Gurveer" data-meaning="गुरु का वीर/बहादुर" data-gender="boy" data-religion="sikh" data-letter="g"><strong>Gurveer (गुरवीर)</strong> — गुरु का वीर/बहादुर</li>
-    <li data-name="Harman" data-meaning="सबका प्रिय; पंजाबी नाम" data-gender="boy" data-religion="sikh" data-letter="h"><strong>Harman (हरमन)</strong> — सबका प्रिय; पंजाबी नाम</li>
-    <li data-name="Jasdeep" data-meaning="यश/प्रशंसा का दीप" data-gender="boy" data-religion="sikh" data-letter="j"><strong>Jasdeep (जसदीप)</strong> — यश/प्रशंसा का दीप</li>
-    <li data-name="Gurleen" data-meaning="गुरु में लीन" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Gurleen (गुरलीन)</strong> — गुरु में लीन</li>
-        <li data-name="Jasleen" data-meaning="यश/प्रशंसा में लीन" data-gender="girl" data-religion="sikh" data-letter="j"><strong>Jasleen (जसलीन)</strong> — यश/प्रशंसा में लीन</li>
-        <li data-name="Kirandeep" data-meaning="किरणों का दीप" data-gender="girl" data-religion="sikh" data-letter="k"><strong>Kirandeep (किरनदीप)</strong> — किरणों का दीप</li>
-    
-    <li data-name="Ujjal" data-meaning="उज्ज्वल, प्रकाशमान" data-gender="girl" data-religion="sikh" data-letter="u"><strong>Ujjal (उज्जल)</strong> — उज्ज्वल, प्रकाशमान</li>
-    <li data-name="Jaspreet" data-meaning="यश/प्रशंसा से प्रेम" data-gender="girl" data-religion="sikh" data-letter="j"><strong>Jaspreet (जसप्रीत)</strong> — यश/प्रशंसा से प्रेम</li>
-    <li data-name="Gurshabad" data-meaning="गुरु का शब्द" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Gurshabad (गुरशब्द)</strong> — गुरु का शब्द</li>
-    <li data-name="Navleen" data-meaning="नया/नवीन और समर्पित भाव" data-gender="girl" data-religion="sikh" data-letter="n"><strong>Navleen (नवलीन)</strong> — नया/नवीन और समर्पित भाव</li>
-    <li data-name="Simran" data-meaning="स्मरण, ध्यान" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Simran (सिमरन)</strong> — स्मरण, ध्यान</li>
-    <li data-name="Aiden" data-meaning="आयरिश मूल: छोटा अग्निमय/उत्साही" data-gender="boy" data-religion="christian" data-letter="a"><strong>Aiden (एडेन)</strong> — आयरिश मूल: छोटा अग्निमय/उत्साही</li>
-    <li data-name="Ethan" data-meaning="दृढ़, मजबूत" data-gender="boy" data-religion="christian" data-letter="e"><strong>Ethan (ईथन)</strong> — दृढ़, मजबूत</li>
-    <li data-name="Liam" data-meaning="दृढ़ रक्षक से जुड़ा नाम" data-gender="boy" data-religion="christian" data-letter="l"><strong>Liam (लियाम)</strong> — दृढ़ रक्षक से जुड़ा नाम</li>
-    <li data-name="Noah" data-meaning="विश्राम, आराम" data-gender="boy" data-religion="christian" data-letter="n"><strong>Noah (नोआ)</strong> — विश्राम, आराम</li>
-    <li data-name="Theo" data-meaning="ईश्वर का उपहार" data-gender="boy" data-religion="christian" data-letter="t"><strong>Theo (थियो)</strong> — ईश्वर का उपहार</li>
-    <li data-name="Jacob" data-meaning="अनुसरण करने वाला; पारंपरिक नामार्थ" data-gender="boy" data-religion="christian" data-letter="j"><strong>Jacob (जेकब)</strong> — अनुसरण करने वाला; पारंपरिक नामार्थ</li>
-    <li data-name="Benjamin" data-meaning="दाहिने हाथ का पुत्र; पारंपरिक नामार्थ" data-gender="boy" data-religion="christian" data-letter="b"><strong>Benjamin (बेंजामिन)</strong> — दाहिने हाथ का पुत्र; पारंपरिक नामार्थ</li>
-    <li data-name="James" data-meaning="पारंपरिक बाइबिलीय नाम" data-gender="boy" data-religion="christian" data-letter="j"><strong>James (जेम्स)</strong> — पारंपरिक बाइबिलीय नाम</li>
-    <li data-name="Matthew" data-meaning="ईश्वर का उपहार" data-gender="boy" data-religion="christian" data-letter="m"><strong>Matthew (मैथ्यू)</strong> — ईश्वर का उपहार</li>
-    <li data-name="Adrian" data-meaning="आद्रियाई/समुद्र क्षेत्र से जुड़ा लैटिन नाम" data-gender="boy" data-religion="christian" data-letter="a"><strong>Adrian (एड्रियन)</strong> — आद्रियाई/समुद्र क्षेत्र से जुड़ा लैटिन नाम</li>
-    <li data-name="Nathan" data-meaning="उपहार/दिया हुआ; मूल अनुसार" data-gender="boy" data-religion="christian" data-letter="n"><strong>Nathan (नेथन)</strong> — उपहार/दिया हुआ; मूल अनुसार</li>
-    <li data-name="Aaron" data-meaning="उच्च/बलवान; नामार्थ स्रोतों में अंतर" data-gender="boy" data-religion="christian" data-letter="a"><strong>Aaron (एरॉन)</strong> — उच्च/बलवान; नामार्थ स्रोतों में अंतर</li>
-    <li data-name="Evan" data-meaning="ईश्वर कृपालु है; वेल्श मूल" data-gender="boy" data-religion="christian" data-letter="e"><strong>Evan (एवन)</strong> — ईश्वर कृपालु है; वेल्श मूल</li>
-    <li data-name="Ava" data-meaning="जीवन/पक्षी से जुड़े संभावित अर्थ; मूल अनुसार" data-gender="girl" data-religion="christian" data-letter="a"><strong>Ava (एवा)</strong> — जीवन/पक्षी से जुड़े संभावित अर्थ; मूल अनुसार</li>
-    <li data-name="Ariana" data-meaning="पवित्र/श्रेष्ठ; अर्थ मूल के अनुसार" data-gender="girl" data-religion="christian" data-letter="a"><strong>Ariana (एरियाना)</strong> — पवित्र/श्रेष्ठ; अर्थ मूल के अनुसार</li>
-    <li data-name="Beverly" data-meaning="झरने/धारा के पास रहने से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="b"><strong>Beverly (बेवरली)</strong> — झरने/धारा के पास रहने से जुड़ा नाम</li>
-    <li data-name="Cecilia" data-meaning="लैटिन मूल का पारंपरिक नाम" data-gender="girl" data-religion="christian" data-letter="c"><strong>Cecilia (सीसिलिया)</strong> — लैटिन मूल का पारंपरिक नाम</li>
-    <li data-name="Delilah" data-meaning="नाज़ुक/कोमल; व्याख्याएँ अलग" data-gender="girl" data-religion="christian" data-letter="d"><strong>Delilah (डेलिला)</strong> — नाज़ुक/कोमल; व्याख्याएँ अलग</li>
-    <li data-name="Francesca" data-meaning="स्वतंत्र/फ्रांसीसी मूल से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="f"><strong>Francesca (फ्रांसेस्का)</strong> — स्वतंत्र/फ्रांसीसी मूल से जुड़ा नाम</li>
-    <li data-name="Georgia" data-meaning="किसान/पृथ्वी से जुड़ा ग्रीक मूल" data-gender="girl" data-religion="christian" data-letter="g"><strong>Georgia (जॉर्जिया)</strong> — किसान/पृथ्वी से जुड़ा ग्रीक मूल</li>
-    <li data-name="Isabel" data-meaning="ईश्वर से जुड़ा पारंपरिक नाम" data-gender="girl" data-religion="christian" data-letter="i"><strong>Isabel (इज़ाबेल)</strong> — ईश्वर से जुड़ा पारंपरिक नाम</li>
-    <li data-name="Kiera" data-meaning="गहरे रंग/काले बालों से जुड़ा आयरिश मूल" data-gender="girl" data-religion="christian" data-letter="k"><strong>Kiera (कीरा)</strong> — गहरे रंग/काले बालों से जुड़ा आयरिश मूल</li>
-    <li data-name="Lauren" data-meaning="लॉरेल/विजय-प्रतीक से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="l"><strong>Lauren (लॉरेन)</strong> — लॉरेल/विजय-प्रतीक से जुड़ा नाम</li>
-    <li data-name="Margaret" data-meaning="मोती" data-gender="girl" data-religion="christian" data-letter="m"><strong>Margaret (मार्गरेट)</strong> — मोती</li>
-    <li data-name="Olive" data-meaning="जैतून का वृक्ष" data-gender="girl" data-religion="christian" data-letter="o"><strong>Olive (ऑलिव)</strong> — जैतून का वृक्ष</li>
-    <li data-name="Paige" data-meaning="सहायक/सेवक से जुड़ा अंग्रेज़ी नाम" data-gender="girl" data-religion="christian" data-letter="p"><strong>Paige (पेज)</strong> — सहायक/सेवक से जुड़ा अंग्रेज़ी नाम</li>
-    <li data-name="Sabrina" data-meaning="परंपरागत नाम; व्युत्पत्ति पर मतभेद" data-gender="girl" data-religion="christian" data-letter="s"><strong>Sabrina (सबरीना)</strong> — परंपरागत नाम; व्युत्पत्ति पर मतभेद</li>
-    <li data-name="Talia" data-meaning="ईश्वर की ओस; नामार्थ स्रोत अनुसार" data-gender="girl" data-religion="christian" data-letter="t"><strong>Talia (तालिया)</strong> — ईश्वर की ओस; नामार्थ स्रोत अनुसार</li>
-    <li data-name="Uma" data-meaning="विभिन्न मूलों में प्रयुक्त नाम; अर्थ स्रोत अनुसार" data-gender="girl" data-religion="christian" data-letter="u"><strong>Uma (उमा)</strong> — विभिन्न मूलों में प्रयुक्त नाम; अर्थ स्रोत अनुसार</li>
-    <li data-name="Vanessa" data-meaning="साहित्यिक रूप से निर्मित नाम" data-gender="girl" data-religion="christian" data-letter="v"><strong>Vanessa (वैनेसा)</strong> — साहित्यिक रूप से निर्मित नाम</li>
-    <li data-name="Willow" data-meaning="विलो वृक्ष" data-gender="girl" data-religion="christian" data-letter="w"><strong>Willow (विलो)</strong> — विलो वृक्ष</li>
-    <li data-name="Xenia" data-meaning="अतिथि-सत्कार से जुड़ा यूनानी नाम" data-gender="girl" data-religion="christian" data-letter="x"><strong>Xenia (ज़ेनिया)</strong> — अतिथि-सत्कार से जुड़ा यूनानी नाम</li>
-    <li data-name="Yara" data-meaning="अलग मूलों में अर्थ भिन्न" data-gender="girl" data-religion="christian" data-letter="y"><strong>Yara (यारा)</strong> — अलग मूलों में अर्थ भिन्न</li>
-    <li data-name="Zelda" data-meaning="नामार्थ स्रोतों में भिन्न व्याख्याएँ" data-gender="girl" data-religion="christian" data-letter="z"><strong>Zelda (ज़ेल्डा)</strong> — नामार्थ स्रोतों में भिन्न व्याख्याएँ</li>
-    <li data-name="Adelaide" data-meaning="उच्च कुल/श्रेष्ठता से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="a"><strong>Adelaide (एडिलेड)</strong> — उच्च कुल/श्रेष्ठता से जुड़ा नाम</li>
-    <li data-name="Amelia" data-meaning="परिश्रमी, कर्मठ; मूल के अनुसार" data-gender="girl" data-religion="christian" data-letter="a"><strong>Amelia (अमेलिया)</strong> — परिश्रमी, कर्मठ; मूल के अनुसार</li>
-    <li data-name="Audrey" data-meaning="श्रेष्ठ शक्ति से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="a"><strong>Audrey (ऑड्रे)</strong> — श्रेष्ठ शक्ति से जुड़ा नाम</li>
-    <li data-name="Aurora" data-meaning="भोर, उषा" data-gender="girl" data-religion="christian" data-letter="a"><strong>Aurora (ऑरोरा)</strong> — भोर, उषा</li>
-    <li data-name="Bella" data-meaning="सुंदर" data-gender="girl" data-religion="christian" data-letter="b"><strong>Bella (बेला)</strong> — सुंदर</li>
-    <li data-name="Caroline" data-meaning="स्वतंत्र/मजबूत; मूल अनुसार" data-gender="girl" data-religion="christian" data-letter="c"><strong>Caroline (कैरोलिन)</strong> — स्वतंत्र/मजबूत; मूल अनुसार</li>
-    <li data-name="Daisy" data-meaning="डेज़ी फूल" data-gender="girl" data-religion="christian" data-letter="d"><strong>Daisy (डेज़ी)</strong> — डेज़ी फूल</li>
-    <li data-name="Eliza" data-meaning="ईश्वर मेरी शपथ है; परंपरागत अर्थ" data-gender="girl" data-religion="christian" data-letter="e"><strong>Eliza (एलाइज़ा)</strong> — ईश्वर मेरी शपथ है; परंपरागत अर्थ</li>
-    <li data-name="Esther" data-meaning="तारा; पारंपरिक अर्थ" data-gender="girl" data-religion="christian" data-letter="e"><strong>Esther (एस्थर)</strong> — तारा; पारंपरिक अर्थ</li>
-    <li data-name="Gabriella" data-meaning="ईश्वर मेरी शक्ति है; पारंपरिक अर्थ" data-gender="girl" data-religion="christian" data-letter="g"><strong>Gabriella (गैब्रिएला)</strong> — ईश्वर मेरी शक्ति है; पारंपरिक अर्थ</li>
-    <li data-name="Ivy" data-meaning="आइवी पौधा; निष्ठा का प्रतीक" data-gender="girl" data-religion="christian" data-letter="i"><strong>Ivy (आइवी)</strong> — आइवी पौधा; निष्ठा का प्रतीक</li>
-    <li data-name="Julia" data-meaning="युवा/कोमल; मूल अनुसार" data-gender="girl" data-religion="christian" data-letter="j"><strong>Julia (जूलिया)</strong> — युवा/कोमल; मूल अनुसार</li>
-    <li data-name="Katherine" data-meaning="शुद्धता से जुड़ा पारंपरिक अर्थ" data-gender="girl" data-religion="christian" data-letter="k"><strong>Katherine (कैथरीन)</strong> — शुद्धता से जुड़ा पारंपरिक अर्थ</li>
-    <li data-name="Madeline" data-meaning="मगदला से संबंधित नाम" data-gender="girl" data-religion="christian" data-letter="m"><strong>Madeline (मैडेलिन)</strong> — मगदला से संबंधित नाम</li>
-    <li data-name="Penelope" data-meaning="ग्रीक मूल का पारंपरिक नाम" data-gender="girl" data-religion="christian" data-letter="p"><strong>Penelope (पेनेलोप)</strong> — ग्रीक मूल का पारंपरिक नाम</li>
-    <li data-name="Quinn" data-meaning="बुद्धिमान/नेतृत्व; व्याख्या अनुसार" data-gender="girl" data-religion="christian" data-letter="q"><strong>Quinn (क्विन)</strong> — बुद्धिमान/नेतृत्व; व्याख्या अनुसार</li>
-    <li data-name="Ruby" data-meaning="लाल रत्न" data-gender="girl" data-religion="christian" data-letter="r"><strong>Ruby (रूबी)</strong> — लाल रत्न</li>
-    <li data-name="Summer" data-meaning="गर्मी का मौसम" data-gender="girl" data-religion="christian" data-letter="s"><strong>Summer (समर)</strong> — गर्मी का मौसम</li>
-    <li data-name="Violet" data-meaning="बैंगनी फूल" data-gender="girl" data-religion="christian" data-letter="v"><strong>Violet (वायलेट)</strong> — बैंगनी फूल</li>
-    <li data-name="Grace" data-meaning="अनुग्रह, कृपा" data-gender="girl" data-religion="christian" data-letter="g"><strong>Grace (ग्रेस)</strong> — अनुग्रह, कृपा</li>
-    <li data-name="Emma" data-meaning="सम्पूर्ण/सार्वभौमिक से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="e"><strong>Emma (एम्मा)</strong> — सम्पूर्ण/सार्वभौमिक से जुड़ा नाम</li>
-    <li data-name="Mia" data-meaning="प्रिय/मेरा; मूल के अनुसार अर्थ" data-gender="girl" data-religion="christian" data-letter="m"><strong>Mia (मिया)</strong> — प्रिय/मेरा; मूल के अनुसार अर्थ</li>
-    <li data-name="Olivia" data-meaning="जैतून के वृक्ष से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="o"><strong>Olivia (ओलिविया)</strong> — जैतून के वृक्ष से जुड़ा नाम</li>
-    <li data-name="Bethany" data-meaning="बाइबिल से जुड़ा स्थान-नाम" data-gender="girl" data-religion="christian" data-letter="b"><strong>Bethany (बेथनी)</strong> — बाइबिल से जुड़ा स्थान-नाम</li>
-    <li data-name="Eleanor" data-meaning="प्रकाश/उज्ज्वलता से जुड़ी व्याख्या; मूल पर मतभेद" data-gender="girl" data-religion="christian" data-letter="e"><strong>Eleanor (एलेनोर)</strong> — प्रकाश/उज्ज्वलता से जुड़ी व्याख्या; मूल पर मतभेद</li>
-    <li data-name="Faith" data-meaning="विश्वास" data-gender="girl" data-religion="christian" data-letter="f"><strong>Faith (फेथ)</strong> — विश्वास</li>
-    <li data-name="Joy" data-meaning="आनंद, खुशी" data-gender="girl" data-religion="christian" data-letter="j"><strong>Joy (जॉय)</strong> — आनंद, खुशी</li>
-    <li data-name="Leah" data-meaning="बाइबिल का पारंपरिक नाम; अर्थ-व्याख्याएँ अलग" data-gender="girl" data-religion="christian" data-letter="l"><strong>Leah (लिया)</strong> — बाइबिल का पारंपरिक नाम; अर्थ-व्याख्याएँ अलग</li>
-    <li data-name="Lydia" data-meaning="लिडिया क्षेत्र से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="l"><strong>Lydia (लिडिया)</strong> — लिडिया क्षेत्र से जुड़ा नाम</li>
-    <li data-name="Naomi" data-meaning="मधुरता, सुखदता" data-gender="girl" data-religion="christian" data-letter="n"><strong>Naomi (नाओमी)</strong> — मधुरता, सुखदता</li>
-    <li data-name="Phoebe" data-meaning="उज्ज्वल, चमकदार" data-gender="girl" data-religion="christian" data-letter="p"><strong>Phoebe (फीबी)</strong> — उज्ज्वल, चमकदार</li>
-    <li data-name="Rachel" data-meaning="भेड़/मेमने से जुड़ा बाइबिल नाम" data-gender="girl" data-religion="christian" data-letter="r"><strong>Rachel (रेचल)</strong> — भेड़/मेमने से जुड़ा बाइबिल नाम</li>
-    <li data-name="Rebecca" data-meaning="जोड़ने/बंधन से जुड़ी पारंपरिक व्याख्या" data-gender="girl" data-religion="christian" data-letter="r"><strong>Rebecca (रेबेका)</strong> — जोड़ने/बंधन से जुड़ी पारंपरिक व्याख्या</li>
-    <li data-name="Sarah" data-meaning="राजकुमारी" data-gender="girl" data-religion="christian" data-letter="s"><strong>Sarah (सारा)</strong> — राजकुमारी</li>
-    <li data-name="Theresa" data-meaning="नाम का मूल/अर्थ विवादित" data-gender="girl" data-religion="christian" data-letter="t"><strong>Theresa (टेरेसा)</strong> — नाम का मूल/अर्थ विवादित</li>
-    <li data-name="Victoria" data-meaning="विजय" data-gender="girl" data-religion="christian" data-letter="v"><strong>Victoria (विक्टोरिया)</strong> — विजय</li>
-    <li data-name="Eve" data-meaning="जीवन; बाइबिल का नाम" data-gender="girl" data-religion="christian" data-letter="e"><strong>Eve (ईव)</strong> — जीवन; बाइबिल का नाम</li>
-    <li data-name="Riddhi" data-meaning="समृद्धि, उन्नति" data-gender="girl" data-religion="hindu" data-letter="r"><strong>Riddhi (ऋद्धि)</strong> — समृद्धि, उन्नति</li>
-    <li data-name="Navya" data-meaning="नई, आधुनिक" data-gender="girl" data-religion="hindu" data-letter="n"><strong>Navya (नव्या)</strong> — नई, आधुनिक</li>
-    <li data-name="Vamika" data-meaning="दुर्गा से जुड़ा नाम" data-gender="girl" data-religion="hindu" data-letter="v"><strong>Vamika (वामिका)</strong> — दुर्गा से जुड़ा नाम</li>
-    <li data-name="Prisha" data-meaning="प्रिय, ईश्वर का उपहार—अर्थ स्रोतों में भिन्न" data-gender="girl" data-religion="hindu" data-letter="p"><strong>Prisha (प्रिशा)</strong> — प्रिय, ईश्वर का उपहार—अर्थ स्रोतों में भिन्न</li>
-    <li data-name="Pari" data-meaning="परी, सुंदरता से जुड़ा नाम" data-gender="girl" data-religion="hindu" data-letter="p"><strong>Pari (परी)</strong> — परी, सुंदरता से जुड़ा नाम</li>
-    <li data-name="Ekam" data-meaning="एक, परम सत्ता से जुड़ा नाम" data-gender="boy" data-religion="sikh" data-letter="e"><strong>Ekam (एकम)</strong> — एक, परम सत्ता से जुड़ा नाम</li>
-    <li data-name="Fateh" data-meaning="विजय" data-gender="boy" data-religion="sikh" data-letter="f"><strong>Fateh (फ़तेह)</strong> — विजय</li>
-    <li data-name="Manveer" data-meaning="मन का वीर" data-gender="boy" data-religion="sikh" data-letter="m"><strong>Manveer (मनवीर)</strong> — मन का वीर</li>
-    <li data-name="Gurshaan" data-meaning="गुरु की शान" data-gender="boy" data-religion="sikh" data-letter="g"><strong>Gurshaan (गुरशान)</strong> — गुरु की शान</li>
-    <li data-name="Jujhar" data-meaning="बहादुर, संघर्षशील" data-gender="boy" data-religion="sikh" data-letter="j"><strong>Jujhar (जुझार)</strong> — बहादुर, संघर्षशील</li>
-    <li data-name="Sukhmani" data-meaning="शांति/सुख से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Sukhmani (सुखमनी)</strong> — शांति/सुख से जुड़ा नाम</li>
-    <li data-name="Guneet" data-meaning="गुणों से भरपूर" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Guneet (गुणीत)</strong> — गुणों से भरपूर</li>
-    <li data-name="Kirat" data-meaning="मेहनत, नेक कर्म" data-gender="girl" data-religion="sikh" data-letter="k"><strong>Kirat (किरत)</strong> — मेहनत, नेक कर्म</li>
-    <li data-name="Mehar" data-meaning="कृपा, दया" data-gender="girl" data-religion="sikh" data-letter="m"><strong>Mehar (मेहर)</strong> — कृपा, दया</li>
-    <li data-name="Avneet" data-meaning="पृथ्वी/नम्रता से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="a"><strong>Avneet (अवनीत)</strong> — पृथ्वी/नम्रता से जुड़ा नाम</li>
-    <li data-name="Daniel" data-meaning="ईश्वर मेरा न्यायाधीश है" data-gender="boy" data-religion="christian" data-letter="d"><strong>Daniel (डैनियल)</strong> — ईश्वर मेरा न्यायाधीश है</li>
-    <li data-name="Joshua" data-meaning="ईश्वर उद्धार करता है" data-gender="boy" data-religion="christian" data-letter="j"><strong>Joshua (जोशुआ)</strong> — ईश्वर उद्धार करता है</li>
-    <li data-name="Samuel" data-meaning="ईश्वर ने सुना" data-gender="boy" data-religion="christian" data-letter="s"><strong>Samuel (सैमुअल)</strong> — ईश्वर ने सुना</li>
-    <li data-name="Gabriel" data-meaning="ईश्वर मेरी शक्ति है" data-gender="boy" data-religion="christian" data-letter="g"><strong>Gabriel (गेब्रियल)</strong> — ईश्वर मेरी शक्ति है</li>
-    <li data-name="Isaac" data-meaning="हँसी, आनंद" data-gender="boy" data-religion="christian" data-letter="i"><strong>Isaac (आइज़ैक)</strong> — हँसी, आनंद</li>
-    <li data-name="Sophia" data-meaning="ज्ञान" data-gender="girl" data-religion="christian" data-letter="s"><strong>Sophia (सोफिया)</strong> — ज्ञान</li>
-    <li data-name="Isabella" data-meaning="ईश्वर को समर्पित से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="i"><strong>Isabella (इज़ाबेला)</strong> — ईश्वर को समर्पित से जुड़ा नाम</li>
-    <li data-name="Chloe" data-meaning="हरी-भरी, नवांकुर" data-gender="girl" data-religion="christian" data-letter="c"><strong>Chloe (क्लोई)</strong> — हरी-भरी, नवांकुर</li>
-    <li data-name="Hannah" data-meaning="कृपा, अनुग्रह" data-gender="girl" data-religion="christian" data-letter="h"><strong>Hannah (हैना)</strong> — कृपा, अनुग्रह</li>
-    <li data-name="Abigail" data-meaning="पिता की खुशी" data-gender="girl" data-religion="christian" data-letter="a"><strong>Abigail (एबिगेल)</strong> — पिता की खुशी</li>
-    <li data-name="Ivaan" data-meaning="ईश्वर का उपहार" data-gender="boy" data-religion="hindu" data-letter="i"><strong>Ivaan (इवान)</strong> — ईश्वर का उपहार</li>
-    <li data-name="Kiaan" data-meaning="कृपा, राजसी भाव" data-gender="boy" data-religion="hindu" data-letter="k"><strong>Kiaan (कियान)</strong> — कृपा, राजसी भाव</li>
-    <li data-name="Dhruv" data-meaning="अटल, स्थिर" data-gender="boy" data-religion="hindu" data-letter="d"><strong>Dhruv (ध्रुव)</strong> — अटल, स्थिर</li>
-    <li data-name="Krishiv" data-meaning="कृष्ण और शिव से जुड़ा नाम" data-gender="boy" data-religion="hindu" data-letter="k"><strong>Krishiv (कृषिव)</strong> — कृष्ण और शिव से जुड़ा नाम</li>
-    <li data-name="Yuvaan" data-meaning="युवा, ऊर्जावान" data-gender="boy" data-religion="hindu" data-letter="y"><strong>Yuvaan (युवान)</strong> — युवा, ऊर्जावान</li>
-    <li data-name="Aadhya" data-meaning="प्रथम शक्ति" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Aadhya (आध्या)</strong> — प्रथम शक्ति</li>
-    <li data-name="Aarika" data-meaning="सम्मानित, सुंदर" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Aarika (आरिका)</strong> — सम्मानित, सुंदर</li>
-    <li data-name="Ishani" data-meaning="देवी दुर्गा, शक्ति" data-gender="girl" data-religion="hindu" data-letter="i"><strong>Ishani (इशानी)</strong> — देवी दुर्गा, शक्ति</li>
-    <li data-name="Tara" data-meaning="तारा, सितारा" data-gender="girl" data-religion="hindu" data-letter="t"><strong>Tara (तारा)</strong> — तारा, सितारा</li>
-    <li data-name="Aarna" data-meaning="लक्ष्मी, जल" data-gender="girl" data-religion="hindu" data-letter="a"><strong>Aarna (आर्णा)</strong> — लक्ष्मी, जल</li>
-    <li data-name="Zaid" data-meaning="वृद्धि, प्रचुरता" data-gender="boy" data-religion="muslim" data-letter="z"><strong>Zaid (ज़ैद)</strong> — वृद्धि, प्रचुरता</li>
-    <li data-name="Izaan" data-meaning="आज्ञाकारिता, सम्मान" data-gender="boy" data-religion="muslim" data-letter="i"><strong>Izaan (इज़ान)</strong> — आज्ञाकारिता, सम्मान</li>
-    <li data-name="Rihan" data-meaning="सुगंधित, खुशबू" data-gender="boy" data-religion="muslim" data-letter="r"><strong>Rihan (रिहान)</strong> — सुगंधित, खुशबू</li>
-    <li data-name="Mikail" data-meaning="फ़रिश्ते का नाम" data-gender="boy" data-religion="muslim" data-letter="m"><strong>Mikail (मिकाइल)</strong> — फ़रिश्ते का नाम</li>
-    <li data-name="Huzaifa" data-meaning="एक सहाबी का नाम" data-gender="boy" data-religion="muslim" data-letter="h"><strong>Huzaifa (हुज़ैफ़ा)</strong> — एक सहाबी का नाम</li>
-    <li data-name="Inara" data-meaning="रोशनी, चमक" data-gender="girl" data-religion="muslim" data-letter="i"><strong>Inara (इनारा)</strong> — रोशनी, चमक</li>
-    <li data-name="Yusra" data-meaning="आसानी, खुशहाली" data-gender="girl" data-religion="muslim" data-letter="y"><strong>Yusra (युसरा)</strong> — आसानी, खुशहाली</li>
-    <li data-name="Liyana" data-meaning="नरमी, कोमलता" data-gender="girl" data-religion="muslim" data-letter="l"><strong>Liyana (लियाना)</strong> — नरमी, कोमलता</li>
-    <li data-name="Naira" data-meaning="चमकदार, उज्ज्वल" data-gender="girl" data-religion="muslim" data-letter="n"><strong>Naira (नायरा)</strong> — चमकदार, उज्ज्वल</li>
-    <li data-name="Haniya" data-meaning="खुश, प्रसन्न" data-gender="girl" data-religion="muslim" data-letter="h"><strong>Haniya (हानिया)</strong> — खुश, प्रसन्न</li>
-    <li data-name="Gurkirat" data-meaning="गुरु की कृपा" data-gender="boy" data-religion="sikh" data-letter="g"><strong>Gurkirat (गुरकीरत)</strong> — गुरु की कृपा</li>
-    <li data-name="Prabhjot" data-meaning="ईश्वर का प्रकाश" data-gender="boy" data-religion="sikh" data-letter="p"><strong>Prabhjot (प्रभजोत)</strong> — ईश्वर का प्रकाश</li>
-    <li data-name="Anhad" data-meaning="असीम, अनंत ध्वनि" data-gender="girl" data-religion="sikh" data-letter="a"><strong>Anhad (अनहद)</strong> — असीम, अनंत ध्वनि</li>
-    <li data-name="Eknoor" data-meaning="एक दिव्य प्रकाश" data-gender="girl" data-religion="sikh" data-letter="e"><strong>Eknoor (एकनूर)</strong> — एक दिव्य प्रकाश</li>
-    
-    <li data-name="Japnoor" data-meaning="जप का प्रकाश" data-gender="girl" data-religion="sikh" data-letter="j"><strong>Japnoor (जपנूर)</strong> — जप का प्रकाश</li>
-    <li data-name="Seerat" data-meaning="चरित्र, व्यक्तित्व" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Seerat (सीरत)</strong> — चरित्र, व्यक्तित्व</li>
-    <li data-name="Caleb" data-meaning="निष्ठावान, साहसी" data-gender="boy" data-religion="christian" data-letter="c"><strong>Caleb (केलेब)</strong> — निष्ठावान, साहसी</li>
-    <li data-name="Elijah" data-meaning="मेरा ईश्वर प्रभु है" data-gender="boy" data-religion="christian" data-letter="e"><strong>Elijah (एलियाह)</strong> — मेरा ईश्वर प्रभु है</li>
-    <li data-name="Levi" data-meaning="जुड़ा हुआ" data-gender="boy" data-religion="christian" data-letter="l"><strong>Levi (लेवी)</strong> — जुड़ा हुआ</li>
-    <li data-name="Mason" data-meaning="कारीगर, निर्माणकर्ता" data-gender="boy" data-religion="christian" data-letter="m"><strong>Mason (मेसन)</strong> — कारीगर, निर्माणकर्ता</li>
-    <li data-name="Lucas" data-meaning="प्रकाश देने वाला" data-gender="boy" data-religion="christian" data-letter="l"><strong>Lucas (लुकस)</strong> — प्रकाश देने वाला</li>
-    <li data-name="Ella" data-meaning="सुंदर परी, प्रकाश" data-gender="girl" data-religion="christian" data-letter="e"><strong>Ella (एला)</strong> — सुंदर परी, प्रकाश</li>
-    <li data-name="Lily" data-meaning="लिली का फूल" data-gender="girl" data-religion="christian" data-letter="l"><strong>Lily (लिली)</strong> — लिली का फूल</li>
-    <li data-name="Aria" data-meaning="गीत, मधुर धुन" data-gender="girl" data-religion="christian" data-letter="a"><strong>Aria (आरिया)</strong> — गीत, मधुर धुन</li>
-    <li data-name="Zoe" data-meaning="जीवन" data-gender="girl" data-religion="christian" data-letter="z"><strong>Zoe (ज़ोई)</strong> — जीवन</li>
-    <li data-name="Nora" data-meaning="प्रकाश, सम्मान" data-gender="girl" data-religion="christian" data-letter="n"><strong>Nora (नोरा)</strong> — प्रकाश, सम्मान</li>
-      <li data-name="Rudransh" data-meaning="भगवान शिव का अंश" data-gender="boy" data-religion="hindu" data-letter="r"><strong>Rudransh (रुद्रांश)</strong> — भगवान शिव का अंश</li>
-    <li data-name="Shaurya" data-meaning="वीरता, साहस" data-gender="boy" data-religion="hindu" data-letter="s"><strong>Shaurya (शौर्य)</strong> — वीरता, साहस</li>
-    <li data-name="Ritvik" data-meaning="यज्ञ करने वाला, विद्वान" data-gender="boy" data-religion="hindu" data-letter="r"><strong>Ritvik (ऋत्विक)</strong> — यज्ञ करने वाला, विद्वान</li>
-    <li data-name="Ishaan" data-meaning="सूर्य, भगवान शिव" data-gender="boy" data-religion="hindu" data-letter="i"><strong>Ishaan (ईशान)</strong> — सूर्य, भगवान शिव</li>
-    <li data-name="Vedant" data-meaning="वेदों का सार, ज्ञान" data-gender="boy" data-religion="hindu" data-letter="v"><strong>Vedant (वेदांत)</strong> — वेदों का सार, ज्ञान</li>
-    <li data-name="Siya" data-meaning="सीता जी का नाम" data-gender="girl" data-religion="hindu" data-letter="s"><strong>Siya (सिया)</strong> — सीता जी का नाम</li>
-    <li data-name="Vedika" data-meaning="ज्ञान की वेदी, पवित्र स्थान" data-gender="girl" data-religion="hindu" data-letter="v"><strong>Vedika (वेदिका)</strong> — ज्ञान की वेदी, पवित्र स्थान</li>
-    <li data-name="Kashvi" data-meaning="चमकदार, उज्ज्वल" data-gender="girl" data-religion="hindu" data-letter="k"><strong>Kashvi (काश्वी)</strong> — चमकदार, उज्ज्वल</li>
-    <li data-name="Mishika" data-meaning="प्रेम का उपहार" data-gender="girl" data-religion="hindu" data-letter="m"><strong>Mishika (मिशिका)</strong> — प्रेम का उपहार</li>
-    <li data-name="Dhwani" data-meaning="ध्वनि, मधुर आवाज़" data-gender="girl" data-religion="hindu" data-letter="d"><strong>Dhwani (ध्वनि)</strong> — ध्वनि, मधुर आवाज़</li>
-    <li data-name="Saif" data-meaning="तलवार" data-gender="boy" data-religion="muslim" data-letter="s"><strong>Saif (सैफ)</strong> — तलवार</li>
-    <li data-name="Taha" data-meaning="कुरआनी नाम; पवित्र अक्षर" data-gender="boy" data-religion="muslim" data-letter="t"><strong>Taha (ताहा)</strong> — कुरआनी नाम; पवित्र अक्षर</li>
-    <li data-name="Faris" data-meaning="घुड़सवार, शूरवीर" data-gender="boy" data-religion="muslim" data-letter="f"><strong>Faris (फ़ारिस)</strong> — घुड़सवार, शूरवीर</li>
-    <li data-name="Sami" data-meaning="उच्च, महान" data-gender="boy" data-religion="muslim" data-letter="s"><strong>Sami (सामी)</strong> — उच्च, महान</li>
-    <li data-name="Zubair" data-meaning="मजबूत, बुद्धिमान" data-gender="boy" data-religion="muslim" data-letter="z"><strong>Zubair (ज़ुबैर)</strong> — मजबूत, बुद्धिमान</li>
-    <li data-name="Zoya" data-meaning="जीवन, प्रेमपूर्ण" data-gender="girl" data-religion="muslim" data-letter="z"><strong>Zoya (ज़ोया)</strong> — जीवन, प्रेमपूर्ण</li>
-    <li data-name="Safa" data-meaning="पवित्रता, निर्मलता" data-gender="girl" data-religion="muslim" data-letter="s"><strong>Safa (सफ़ा)</strong> — पवित्रता, निर्मलता</li>
-    <li data-name="Eshal" data-meaning="जन्नत का फूल (प्रचलित अर्थ)" data-gender="girl" data-religion="muslim" data-letter="e"><strong>Eshal (एशल)</strong> — जन्नत का फूल (प्रचलित अर्थ)</li>
-    <li data-name="Insha" data-meaning="ईश्वर की इच्छा" data-gender="girl" data-religion="muslim" data-letter="i"><strong>Insha (इंशा)</strong> — ईश्वर की इच्छा</li>
-    <li data-name="Maira" data-meaning="प्रिय, सुंदर (प्रचलित अर्थ)" data-gender="girl" data-religion="muslim" data-letter="m"><strong>Maira (मायरा)</strong> — प्रिय, सुंदर (प्रचलित अर्थ)</li>
-    <li data-name="Basma" data-meaning="मुस्कान" data-gender="girl" data-religion="muslim" data-letter="b"><strong>Basma (बسمه)</strong> — मुस्कान</li>
-    <li data-name="Dalia" data-meaning="फूल; अर्थ मूल के अनुसार बदलता है" data-gender="girl" data-religion="muslim" data-letter="d"><strong>Dalia (दलिया)</strong> — फूल; अर्थ मूल के अनुसार बदलता है</li>
-    <li data-name="Dua" data-meaning="प्रार्थना, दुआ" data-gender="girl" data-religion="muslim" data-letter="d"><strong>Dua (दुआ)</strong> — प्रार्थना, दुआ</li>
-    <li data-name="Fariha" data-meaning="खुश, प्रसन्न" data-gender="girl" data-religion="muslim" data-letter="f"><strong>Fariha (फ़रीहा)</strong> — खुश, प्रसन्न</li>
-    <li data-name="Hiba" data-meaning="उपहार, भेंट" data-gender="girl" data-religion="muslim" data-letter="h"><strong>Hiba (हिबा)</strong> — उपहार, भेंट</li>
-    <li data-name="Jannat" data-meaning="स्वर्ग, जन्नत" data-gender="girl" data-religion="muslim" data-letter="j"><strong>Jannat (जन्नत)</strong> — स्वर्ग, जन्नत</li>
-    <li data-name="Khadija" data-meaning="पारंपरिक इस्लामी नाम" data-gender="girl" data-religion="muslim" data-letter="k"><strong>Khadija (खदीजा)</strong> — पारंपरिक इस्लामी नाम</li>
-    <li data-name="Mishal" data-meaning="रोशनी/मशाल; नामार्थ स्रोतों में भिन्नता" data-gender="girl" data-religion="muslim" data-letter="m"><strong>Mishal (मिशाल)</strong> — रोशनी/मशाल; नामार्थ स्रोतों में भिन्नता</li>
-    <li data-name="Nawal" data-meaning="उपहार, अनुग्रह" data-gender="girl" data-religion="muslim" data-letter="n"><strong>Nawal (नवाल)</strong> — उपहार, अनुग्रह</li>
-    <li data-name="Rania" data-meaning="रानी; नामार्थ विभिन्न संदर्भों में भिन्न" data-gender="girl" data-religion="muslim" data-letter="r"><strong>Rania (रानिया)</strong> — रानी; नामार्थ विभिन्न संदर्भों में भिन्न</li>
-    <li data-name="Ruqayya" data-meaning="उन्नति/ऊँचा उठना; पारंपरिक नाम" data-gender="girl" data-religion="muslim" data-letter="r"><strong>Ruqayya (रुकय्या)</strong> — उन्नति/ऊँचा उठना; पारंपरिक नाम</li>
-    <li data-name="Sana" data-meaning="चमक, प्रशंसा" data-gender="girl" data-religion="muslim" data-letter="s"><strong>Sana (सना)</strong> — चमक, प्रशंसा</li>
-    <li data-name="Tasneem" data-meaning="जन्नत के झरने का नाम" data-gender="girl" data-religion="muslim" data-letter="t"><strong>Tasneem (तसनीम)</strong> — जन्नत के झरने का नाम</li>
-    <li data-name="Urooj" data-meaning="उत्थान, बुलंदी" data-gender="girl" data-religion="muslim" data-letter="u"><strong>Urooj (उरूज)</strong> — उत्थान, बुलंदी</li>
-    <li data-name="Wafa" data-meaning="वफ़ादारी, निष्ठा" data-gender="girl" data-religion="muslim" data-letter="w"><strong>Wafa (वफ़ा)</strong> — वफ़ादारी, निष्ठा</li>
-    <li data-name="Yasmin" data-meaning="चमेली का फूल" data-gender="girl" data-religion="muslim" data-letter="y"><strong>Yasmin (यास्मीन)</strong> — चमेली का फूल</li>
-    <li data-name="Zainab" data-meaning="सुगंधित/सुंदर पौधे से जुड़ा नाम; अर्थों में भिन्नता" data-gender="girl" data-religion="muslim" data-letter="z"><strong>Zainab (ज़ैनब)</strong> — सुगंधित/सुंदर पौधे से जुड़ा नाम; अर्थों में भिन्नता</li>
-    <li data-name="Fiza" data-meaning="हवा, वातावरण" data-gender="girl" data-religion="muslim" data-letter="f"><strong>Fiza (फ़िज़ा)</strong> — हवा, वातावरण</li>
-    <li data-name="Kainat" data-meaning="संसार, कायनात" data-gender="girl" data-religion="muslim" data-letter="k"><strong>Kainat (कायनात)</strong> — संसार, कायनात</li>
-    <li data-name="Rimsha" data-meaning="प्रचलित नाम; अर्थ स्रोतों में भिन्न" data-gender="girl" data-religion="muslim" data-letter="r"><strong>Rimsha (रिम्शा)</strong> — प्रचलित नाम; अर्थ स्रोतों में भिन्न</li>
-    <li data-name="Dilraj" data-meaning="दिलों का राजा" data-gender="boy" data-religion="sikh" data-letter="d"><strong>Dilraj (दिलराज)</strong> — दिलों का राजा</li>
-    <li data-name="Amrit" data-meaning="अमृत, दिव्य रस" data-gender="boy" data-religion="sikh" data-letter="a"><strong>Amrit (अमृत)</strong> — अमृत, दिव्य रस</li>
-    <li data-name="Gurdeep" data-meaning="गुरु का प्रकाश" data-gender="boy" data-religion="sikh" data-letter="g"><strong>Gurdeep (गुरदीप)</strong> — गुरु का प्रकाश</li>
-    <li data-name="Jasraj" data-meaning="यश का राजा" data-gender="boy" data-religion="sikh" data-letter="j"><strong>Jasraj (जसराज)</strong> — यश का राजा</li>
-    <li data-name="Akaljot" data-meaning="अकाल/ईश्वर के प्रकाश से जुड़ा नाम" data-gender="boy" data-religion="sikh" data-letter="a"><strong>Akaljot (अकालजोत)</strong> — अकाल/ईश्वर के प्रकाश से जुड़ा नाम</li>
-    <li data-name="Ekjot" data-meaning="एक ईश्वर का प्रकाश" data-gender="boy" data-religion="sikh" data-letter="e"><strong>Ekjot (एकजोत)</strong> — एक ईश्वर का प्रकाश</li>
-    <li data-name="Harnoor" data-meaning="ईश्वर का प्रकाश" data-gender="boy" data-religion="sikh" data-letter="h"><strong>Harnoor (हरनूर)</strong> — ईश्वर का प्रकाश</li>
-    <li data-name="Jasmeet" data-meaning="यश/प्रशंसा का साथी" data-gender="boy" data-religion="sikh" data-letter="j"><strong>Jasmeet (जस्मीत)</strong> — यश/प्रशंसा का साथी</li>
-    <li data-name="Karamveer" data-meaning="कर्मशील और वीर" data-gender="boy" data-religion="sikh" data-letter="k"><strong>Karamveer (करमवीर)</strong> — कर्मशील और वीर</li>
-    <li data-name="Nirmal" data-meaning="स्वच्छ, निर्मल" data-gender="boy" data-religion="sikh" data-letter="n"><strong>Nirmal (निर्मल)</strong> — स्वच्छ, निर्मल</li>
-    <li data-name="Nanak" data-meaning="सिख परंपरा के गुरु नानक से जुड़ा नाम" data-gender="boy" data-religion="sikh" data-letter="n"><strong>Nanak (नानक)</strong> — सिख परंपरा के गुरु नानक से जुड़ा नाम</li>
-    <li data-name="Nirvair" data-meaning="बिना वैर, द्वेषरहित" data-gender="boy" data-religion="sikh" data-letter="n"><strong>Nirvair (निर्वैर)</strong> — बिना वैर, द्वेषरहित</li>
-    <li data-name="Amandeep" data-meaning="शांति और प्रकाश से जुड़ा नाम" data-gender="boy" data-religion="sikh" data-letter="a"><strong>Amandeep (अमनदीप)</strong> — शांति और प्रकाश से जुड़ा नाम</li>
-    <li data-name="Balraj" data-meaning="शक्तिशाली/सम्मानित राजा" data-gender="boy" data-religion="sikh" data-letter="b"><strong>Balraj (बलराज)</strong> — शक्तिशाली/सम्मानित राजा</li>
-    <li data-name="Charanjeet" data-meaning="ईश्वर/सत्य की विजय" data-gender="boy" data-religion="sikh" data-letter="c"><strong>Charanjeet (चरनजीत)</strong> — ईश्वर/सत्य की विजय</li>
-    <li data-name="Davinder" data-meaning="देवों के राजा; पंजाबी नाम-प्रयोग" data-gender="boy" data-religion="sikh" data-letter="d"><strong>Davinder (दविंदर)</strong> — देवों के राजा; पंजाबी नाम-प्रयोग</li>
-    <li data-name="Gurpreet" data-meaning="गुरु के प्रति प्रेम" data-gender="boy" data-religion="sikh" data-letter="g"><strong>Gurpreet (गुरप्रीत)</strong> — गुरु के प्रति प्रेम</li>
-    <li data-name="Inderjit" data-meaning="इंद्र/ईश्वर से जुड़ी विजय" data-gender="boy" data-religion="sikh" data-letter="i"><strong>Inderjit (इंदरजीत)</strong> — इंद्र/ईश्वर से जुड़ी विजय</li>
-    <li data-name="Jagdeep" data-meaning="जगत का दीपक" data-gender="boy" data-religion="sikh" data-letter="j"><strong>Jagdeep (जगदीप)</strong> — जगत का दीपक</li>
-    <li data-name="Navdeep" data-meaning="नया दीपक/नई रोशनी" data-gender="boy" data-religion="sikh" data-letter="n"><strong>Navdeep (नवदीप)</strong> — नया दीपक/नई रोशनी</li>
-    <li data-name="Paramveer" data-meaning="अत्यंत वीर" data-gender="boy" data-religion="sikh" data-letter="p"><strong>Paramveer (परमवीर)</strong> — अत्यंत वीर</li>
-    <li data-name="Sukhdeep" data-meaning="सुख का दीपक" data-gender="boy" data-religion="sikh" data-letter="s"><strong>Sukhdeep (सुखदीप)</strong> — सुख का दीपक</li>
-    <li data-name="Tejinder" data-meaning="तेज/प्रताप से जुड़ा नाम" data-gender="boy" data-religion="sikh" data-letter="t"><strong>Tejinder (तेजिंदर)</strong> — तेज/प्रताप से जुड़ा नाम</li>
-    <li data-name="Udayveer" data-meaning="उदयमान और वीर" data-gender="boy" data-religion="sikh" data-letter="u"><strong>Udayveer (उदयवीर)</strong> — उदयमान और वीर</li>
-    <li data-name="Baani" data-meaning="गुरबाणी, पवित्र वाणी" data-gender="girl" data-religion="sikh" data-letter="b"><strong>Baani (बाणी)</strong> — गुरबाणी, पवित्र वाणी</li>
-    <li data-name="Nimrat" data-meaning="विनम्रता" data-gender="girl" data-religion="sikh" data-letter="n"><strong>Nimrat (निमरत)</strong> — विनम्रता</li>
-    <li data-name="Jasnoor" data-meaning="यश का प्रकाश" data-gender="girl" data-religion="sikh" data-letter="j"><strong>Jasnoor (जस्नूर)</strong> — यश का प्रकाश</li>
-    <li data-name="Praneet" data-meaning="विनम्र, मार्गदर्शित" data-gender="girl" data-religion="sikh" data-letter="p"><strong>Praneet (प्रनीत)</strong> — विनम्र, मार्गदर्शित</li>
-    <li data-name="Gurkirpa" data-meaning="गुरु की कृपा" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Gurkirpa (गुरकिरपा)</strong> — गुरु की कृपा</li>
-    <li data-name="Asees" data-meaning="आशीर्वाद, कृपा" data-gender="girl" data-religion="sikh" data-letter="a"><strong>Asees (असीस)</strong> — आशीर्वाद, कृपा</li>
-    <li data-name="Charanpreet" data-meaning="चरणों से प्रेम/भक्ति" data-gender="girl" data-religion="sikh" data-letter="c"><strong>Charanpreet (चरणप्रीत)</strong> — चरणों से प्रेम/भक्ति</li>
-    <li data-name="Dilnoor" data-meaning="दिल का प्रकाश" data-gender="girl" data-religion="sikh" data-letter="d"><strong>Dilnoor (दिलनूर)</strong> — दिल का प्रकाश</li>
-    <li data-name="Ekamjot" data-meaning="एक ईश्वर का प्रकाश" data-gender="girl" data-religion="sikh" data-letter="e"><strong>Ekamjot (एकमजोत)</strong> — एक ईश्वर का प्रकाश</li>
-    <li data-name="Falak" data-meaning="आकाश; नाम का प्रयोग विभिन्न समुदायों में" data-gender="girl" data-religion="sikh" data-letter="f"><strong>Falak (फ़लक)</strong> — आकाश; नाम का प्रयोग विभिन्न समुदायों में</li>
-    <li data-name="Harleen" data-meaning="ईश्वर के नाम में लीन" data-gender="girl" data-religion="sikh" data-letter="h"><strong>Harleen (हरलीन)</strong> — ईश्वर के नाम में लीन</li>
-    <li data-name="Kamalpreet" data-meaning="कमल/सुंदरता से प्रेम" data-gender="girl" data-religion="sikh" data-letter="k"><strong>Kamalpreet (कमलप्रीत)</strong> — कमल/सुंदरता से प्रेम</li>
-    <li data-name="Lovepreet" data-meaning="प्रेम से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="l"><strong>Lovepreet (लवप्रीत)</strong> — प्रेम से जुड़ा नाम</li>
-    <li data-name="Mandeep" data-meaning="मन का दीप/प्रकाश" data-gender="girl" data-religion="sikh" data-letter="m"><strong>Mandeep (मनदीप)</strong> — मन का दीप/प्रकाश</li>
-    <li data-name="Prabhnoor" data-meaning="ईश्वर का प्रकाश" data-gender="girl" data-religion="sikh" data-letter="p"><strong>Prabhnoor (प्रभनूर)</strong> — ईश्वर का प्रकाश</li>
-    <li data-name="Rajveer" data-meaning="राजसी वीरता; gender use varies" data-gender="girl" data-religion="sikh" data-letter="r"><strong>Rajveer (राजवीर)</strong> — राजसी वीरता; gender use varies</li>
-    <li data-name="Sahiba" data-meaning="सम्मानित/आदरणीय" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Sahiba (साहिबा)</strong> — सम्मानित/आदरणीय</li>
-    <li data-name="Tavleen" data-meaning="ईश्वर में लीन" data-gender="girl" data-religion="sikh" data-letter="t"><strong>Tavleen (तवलीन)</strong> — ईश्वर में लीन</li>
-    <li data-name="Upneet" data-meaning="निकटता/जुड़ाव से संबंधित नाम" data-gender="girl" data-religion="sikh" data-letter="u"><strong>Upneet (उपनीत)</strong> — निकटता/जुड़ाव से संबंधित नाम</li>
-    <li data-name="Vaneet" data-meaning="विनम्र/सुंदर; अर्थ स्रोत भिन्न" data-gender="girl" data-religion="sikh" data-letter="v"><strong>Vaneet (वनीत)</strong> — विनम्र/सुंदर; अर्थ स्रोत भिन्न</li>
-    
-    <li data-name="Amanpreet" data-meaning="शांति और प्रेम से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="a"><strong>Amanpreet (अमनप्रीत)</strong> — शांति और प्रेम से जुड़ा नाम</li>
-    <li data-name="Baljeet" data-meaning="बलवान और विजयी" data-gender="girl" data-religion="sikh" data-letter="b"><strong>Baljeet (बलजीत)</strong> — बलवान और विजयी</li>
-        <li data-name="Dharamjit" data-meaning="धर्म में विजय पाने वाला" data-gender="girl" data-religion="sikh" data-letter="d"><strong>Dharamjit (धरमजीत)</strong> — धर्म में विजय पाने वाला</li>
-    <li data-name="Gursharan" data-meaning="गुरु की शरण" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Gursharan (गुरशरण)</strong> — गुरु की शरण</li>
-    <li data-name="Inderpreet" data-meaning="ईश्वर/इंद्र के प्रति प्रेम" data-gender="girl" data-religion="sikh" data-letter="i"><strong>Inderpreet (इंदरप्रीत)</strong> — ईश्वर/इंद्र के प्रति प्रेम</li>
-    <li data-name="Jasbir" data-meaning="यशस्वी और बहादुर" data-gender="girl" data-religion="sikh" data-letter="j"><strong>Jasbir (जसबीर)</strong> — यशस्वी और बहादुर</li>
-    <li data-name="Kamaljeet" data-meaning="कमल/विजय से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="k"><strong>Kamaljeet (कमलजीत)</strong> — कमल/विजय से जुड़ा नाम</li>
-    
-    <li data-name="Manpreet" data-meaning="मन का प्रेम, प्रेमपूर्ण" data-gender="girl" data-religion="sikh" data-letter="m"><strong>Manpreet (मनप्रीत)</strong> — मन का प्रेम, प्रेमपूर्ण</li>
-    <li data-name="Parminder" data-meaning="परमेश्वर से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="p"><strong>Parminder (परमिंदर)</strong> — परमेश्वर से जुड़ा नाम</li>
-    <li data-name="Prabhleen" data-meaning="ईश्वर में लीन" data-gender="girl" data-religion="sikh" data-letter="p"><strong>Prabhleen (प्रभलीन)</strong> — ईश्वर में लीन</li>
-    <li data-name="Rajdeep" data-meaning="राजसी/प्रकाश का दीप" data-gender="girl" data-religion="sikh" data-letter="r"><strong>Rajdeep (राजदीप)</strong> — राजसी/प्रकाश का दीप</li>
-    <li data-name="Ravneet" data-meaning="सूर्य/प्रकाश से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="r"><strong>Ravneet (रवनीत)</strong> — सूर्य/प्रकाश से जुड़ा नाम</li>
-    <li data-name="Sandeep" data-meaning="प्रकाश देने वाला" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Sandeep (संदीप)</strong> — प्रकाश देने वाला</li>
-    <li data-name="Sukhjit" data-meaning="सुख और विजय" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Sukhjit (सुखजीत)</strong> — सुख और विजय</li>
-    <li data-name="Taranjit" data-meaning="उद्धार/विजय से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="t"><strong>Taranjit (तरनजीत)</strong> — उद्धार/विजय से जुड़ा नाम</li>
-    <li data-name="Tejpreet" data-meaning="तेज/प्रकाश के प्रति प्रेम" data-gender="girl" data-religion="sikh" data-letter="t"><strong>Tejpreet (तेजप्रीत)</strong> — तेज/प्रकाश के प्रति प्रेम</li>
-    <li data-name="Virasat" data-meaning="विरासत, धरोहर" data-gender="girl" data-religion="sikh" data-letter="v"><strong>Virasat (विरासत)</strong> — विरासत, धरोहर</li>
-    <li data-name="Yashpreet" data-meaning="यश/प्रशंसा से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="y"><strong>Yashpreet (यशप्रीत)</strong> — यश/प्रशंसा से जुड़ा नाम</li>
-    <li data-name="Akalpreet" data-meaning="शाश्वत/अकाल से प्रेम" data-gender="girl" data-religion="sikh" data-letter="a"><strong>Akalpreet (अकालप्रीत)</strong> — शाश्वत/अकाल से प्रेम</li>
-    <li data-name="Bikramjit" data-meaning="वीरता/पराक्रम से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="b"><strong>Bikramjit (बिक्रमजीत)</strong> — वीरता/पराक्रम से जुड़ा नाम</li>
-    <li data-name="Chandni" data-meaning="चाँदनी, उजाला" data-gender="girl" data-religion="sikh" data-letter="c"><strong>Chandni (चाँदनी)</strong> — चाँदनी, उजाला</li>
-    <li data-name="Daya" data-meaning="दया, करुणा" data-gender="girl" data-religion="sikh" data-letter="d"><strong>Daya (दया)</strong> — दया, करुणा</li>
-    <li data-name="Eshmeet" data-meaning="ईश्वर से जुड़ा नाम; व्याख्या भिन्न" data-gender="girl" data-religion="sikh" data-letter="e"><strong>Eshmeet (ईशमीत)</strong> — ईश्वर से जुड़ा नाम; व्याख्या भिन्न</li>
-    <li data-name="Fatehnoor" data-meaning="विजय का प्रकाश; आधुनिक संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="f"><strong>Fatehnoor (फ़तेहनूर)</strong> — विजय का प्रकाश; आधुनिक संयुक्त नाम</li>
-    <li data-name="Gurshakti" data-meaning="गुरु की शक्ति से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Gurshakti (गुरशक्ति)</strong> — गुरु की शक्ति से जुड़ा नाम</li>
-    <li data-name="Harsimran" data-meaning="ईश्वर का स्मरण" data-gender="girl" data-religion="sikh" data-letter="h"><strong>Harsimran (हरसिमरन)</strong> — ईश्वर का स्मरण</li>
-    <li data-name="Karamjeet" data-meaning="कर्म/कृपा से विजय" data-gender="girl" data-religion="sikh" data-letter="k"><strong>Karamjeet (करमजीत)</strong> — कर्म/कृपा से विजय</li>
-    <li data-name="Lakhpreet" data-meaning="लाखों/समृद्धि से प्रेम; आधुनिक संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="l"><strong>Lakhpreet (लखप्रीत)</strong> — लाखों/समृद्धि से प्रेम; आधुनिक संयुक्त नाम</li>
-    <li data-name="Mannat" data-meaning="मन्नत, प्रार्थना" data-gender="girl" data-religion="sikh" data-letter="m"><strong>Mannat (मन्नत)</strong> — मन्नत, प्रार्थना</li>
-    <li data-name="Noorpreet" data-meaning="प्रकाश से प्रेम; आधुनिक संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="n"><strong>Noorpreet (नूरप्रीत)</strong> — प्रकाश से प्रेम; आधुनिक संयुक्त नाम</li>
-        <li data-name="Rajnoor" data-meaning="राजसी प्रकाश; आधुनिक संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="r"><strong>Rajnoor (राजनूर)</strong> — राजसी प्रकाश; आधुनिक संयुक्त नाम</li>
-    <li data-name="Sarabnoor" data-meaning="सर्वव्यापी प्रकाश; आधुनिक संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Sarabnoor (सरबनूर)</strong> — सर्वव्यापी प्रकाश; आधुनिक संयुक्त नाम</li>
-    <li data-name="Taranpreet" data-meaning="तारण/उद्धार से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="t"><strong>Taranpreet (तारणप्रीत)</strong> — तारण/उद्धार से जुड़ा नाम</li>
-    <li data-name="Udaypreet" data-meaning="उदय/उन्नति से प्रेम; आधुनिक संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="u"><strong>Udaypreet (उदयप्रीत)</strong> — उदय/उन्नति से प्रेम; आधुनिक संयुक्त नाम</li>
-    <li data-name="Veerpal" data-meaning="वीरता की रक्षा; संयुक्त नाम" data-gender="girl" data-religion="sikh" data-letter="v"><strong>Veerpal (वीरपाल)</strong> — वीरता की रक्षा; संयुक्त नाम</li>
-    <li data-name="Zeenat" data-meaning="शोभा, सुंदरता; पंजाबी/उर्दू प्रयोग" data-gender="girl" data-religion="sikh" data-letter="z"><strong>Zeenat (ज़ीनत)</strong> — शोभा, सुंदरता; पंजाबी/उर्दू प्रयोग</li>
-    <li data-name="Amritjot" data-meaning="अमृत से जुड़ा प्रकाश/ज्योति" data-gender="girl" data-religion="sikh" data-letter="a"><strong>Amritjot (अमृतजोत)</strong> — अमृत से जुड़ा प्रकाश/ज्योति</li>
-    <li data-name="Bhavneet" data-meaning="भाव/प्रेम से जुड़ा नाम; अर्थ-व्याख्या अलग" data-gender="girl" data-religion="sikh" data-letter="b"><strong>Bhavneet (भावनीत)</strong> — भाव/प्रेम से जुड़ा नाम; अर्थ-व्याख्या अलग</li>
-    <li data-name="Charanjot" data-meaning="चरणों की ज्योति; भक्ति से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="c"><strong>Charanjot (चरणजोत)</strong> — चरणों की ज्योति; भक्ति से जुड़ा नाम</li>
-    <li data-name="Dhanpreet" data-meaning="धन/समृद्धि से प्रेम" data-gender="girl" data-religion="sikh" data-letter="d"><strong>Dhanpreet (धनप्रीत)</strong> — धन/समृद्धि से प्रेम</li>
-    <li data-name="Eeshar" data-meaning="ईश्वर से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="e"><strong>Eeshar (ईश्वर)</strong> — ईश्वर से जुड़ा नाम</li>
-    <li data-name="Gurjashan" data-meaning="गुरु की महिमा/यश से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="g"><strong>Gurjashan (गुरजशन)</strong> — गुरु की महिमा/यश से जुड़ा नाम</li>
-    <li data-name="Harjot" data-meaning="हरि/ईश्वर की ज्योति" data-gender="girl" data-religion="sikh" data-letter="h"><strong>Harjot (हरजोत)</strong> — हरि/ईश्वर की ज्योति</li>
-    <li data-name="Ikroop" data-meaning="एक स्वरूप/एकता का भाव" data-gender="girl" data-religion="sikh" data-letter="i"><strong>Ikroop (इकरूप)</strong> — एक स्वरूप/एकता का भाव</li>
-    <li data-name="Kiranpreet" data-meaning="किरण/प्रकाश से प्रेम" data-gender="girl" data-religion="sikh" data-letter="k"><strong>Kiranpreet (किरणप्रीत)</strong> — किरण/प्रकाश से प्रेम</li>
-    <li data-name="Lakhnoor" data-meaning="लाखों में नूर/प्रकाश" data-gender="girl" data-religion="sikh" data-letter="l"><strong>Lakhnoor (लखनूर)</strong> — लाखों में नूर/प्रकाश</li>
-    <li data-name="Manjot" data-meaning="मन की ज्योति" data-gender="girl" data-religion="sikh" data-letter="m"><strong>Manjot (मनजोत)</strong> — मन की ज्योति</li>
-    <li data-name="Navroop" data-meaning="नया/नवीन स्वरूप" data-gender="girl" data-religion="sikh" data-letter="n"><strong>Navroop (नवरूप)</strong> — नया/नवीन स्वरूप</li>
-    <li data-name="Ojaspreet" data-meaning="ओज/तेज से प्रेम" data-gender="girl" data-religion="sikh" data-letter="o"><strong>Ojaspreet (ओजसप्रीत)</strong> — ओज/तेज से प्रेम</li>
-    <li data-name="Rupinder" data-meaning="सुंदर रूप/ईश्वर से जुड़ा नाम; अर्थ स्रोत अनुसार" data-gender="girl" data-religion="sikh" data-letter="r"><strong>Rupinder (रुपिंदर)</strong> — सुंदर रूप/ईश्वर से जुड़ा नाम; अर्थ स्रोत अनुसार</li>
-    <li data-name="Simarpreet" data-meaning="स्मरण/भक्ति से प्रेम" data-gender="girl" data-religion="sikh" data-letter="s"><strong>Simarpreet (सिमरप्रीत)</strong> — स्मरण/भक्ति से प्रेम</li>
-    <li data-name="Taranjot" data-meaning="तारने/उद्धार से जुड़ी ज्योति" data-gender="girl" data-religion="sikh" data-letter="t"><strong>Taranjot (तरनजोत)</strong> — तारने/उद्धार से जुड़ी ज्योति</li>
-    <li data-name="Udayjot" data-meaning="उदय/उगते प्रकाश से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="u"><strong>Udayjot (उदयजोत)</strong> — उदय/उगते प्रकाश से जुड़ा नाम</li>
-    <li data-name="Waris" data-meaning="वारिस/उत्तराधिकारी; पंजाबी प्रयोग" data-gender="girl" data-religion="sikh" data-letter="w"><strong>Waris (वारिस)</strong> — वारिस/उत्तराधिकारी; पंजाबी प्रयोग</li>
-    <li data-name="Zorjot" data-meaning="शक्ति/तेज से जुड़ा नाम" data-gender="girl" data-religion="sikh" data-letter="z"><strong>Zorjot (ज़ोरजोत)</strong> — शक्ति/तेज से जुड़ा नाम</li>
-    <li data-name="Adam" data-meaning="मानव, पृथ्वी से बना" data-gender="boy" data-religion="christian" data-letter="a"><strong>Adam (एडम)</strong> — मानव, पृथ्वी से बना</li>
-    <li data-name="Oliver" data-meaning="जैतून का वृक्ष" data-gender="boy" data-religion="christian" data-letter="o"><strong>Oliver (ऑलिवर)</strong> — जैतून का वृक्ष</li>
-    <li data-name="Henry" data-meaning="घर का शासक" data-gender="boy" data-religion="christian" data-letter="h"><strong>Henry (हेनरी)</strong> — घर का शासक</li>
-    <li data-name="Ryan" data-meaning="छोटा राजा (प्रचलित अर्थ)" data-gender="boy" data-religion="christian" data-letter="r"><strong>Ryan (रायन)</strong> — छोटा राजा (प्रचलित अर्थ)</li>
-    <li data-name="Michael" data-meaning="ईश्वर के समान कौन?" data-gender="boy" data-religion="christian" data-letter="m"><strong>Michael (माइकल)</strong> — ईश्वर के समान कौन?</li>
-    <li data-name="Jonathan" data-meaning="ईश्वर ने दिया" data-gender="boy" data-religion="christian" data-letter="j"><strong>Jonathan (जोनाथन)</strong> — ईश्वर ने दिया</li>
-    <li data-name="Joseph" data-meaning="ईश्वर बढ़ाए/जोड़े; पारंपरिक नामार्थ" data-gender="boy" data-religion="christian" data-letter="j"><strong>Joseph (जोसेफ़)</strong> — ईश्वर बढ़ाए/जोड़े; पारंपरिक नामार्थ</li>
-    <li data-name="Thomas" data-meaning="जुड़वाँ; पारंपरिक नामार्थ" data-gender="boy" data-religion="christian" data-letter="t"><strong>Thomas (थॉमस)</strong> — जुड़वाँ; पारंपरिक नामार्थ</li>
-    <li data-name="Charles" data-meaning="स्वतंत्र व्यक्ति; पारंपरिक नामार्थ" data-gender="boy" data-religion="christian" data-letter="c"><strong>Charles (चार्ल्स)</strong> — स्वतंत्र व्यक्ति; पारंपरिक नामार्थ</li>
-    <li data-name="Christopher" data-meaning="मसीह को धारण करने वाला" data-gender="boy" data-religion="christian" data-letter="c"><strong>Christopher (क्रिस्टोफ़र)</strong> — मसीह को धारण करने वाला</li>
-    <li data-name="Anthony" data-meaning="नामार्थ स्रोतों में अलग-अलग व्याख्याएँ" data-gender="boy" data-religion="christian" data-letter="a"><strong>Anthony (एंथनी)</strong> — नामार्थ स्रोतों में अलग-अलग व्याख्याएँ</li>
-    <li data-name="Andrew" data-meaning="बहादुर, साहसी" data-gender="boy" data-religion="christian" data-letter="a"><strong>Andrew (एंड्रयू)</strong> — बहादुर, साहसी</li>
-    <li data-name="Mark" data-meaning="पारंपरिक बाइबिलीय नाम" data-gender="boy" data-religion="christian" data-letter="m"><strong>Mark (मार्क)</strong> — पारंपरिक बाइबिलीय नाम</li>
-    <li data-name="Peter" data-meaning="चट्टान, पत्थर" data-gender="boy" data-religion="christian" data-letter="p"><strong>Peter (पीटर)</strong> — चट्टान, पत्थर</li>
-    <li data-name="Paul" data-meaning="छोटा/विनम्र; लैटिन मूल" data-gender="boy" data-religion="christian" data-letter="p"><strong>Paul (पॉल)</strong> — छोटा/विनम्र; लैटिन मूल</li>
-    <li data-name="Stephen" data-meaning="मुकुट, सम्मान" data-gender="boy" data-religion="christian" data-letter="s"><strong>Stephen (स्टीफ़न)</strong> — मुकुट, सम्मान</li>
-    <li data-name="George" data-meaning="किसान, धरती से जुड़ा" data-gender="boy" data-religion="christian" data-letter="g"><strong>George (जॉर्ज)</strong> — किसान, धरती से जुड़ा</li>
-    <li data-name="Dominic" data-meaning="प्रभु से संबंधित" data-gender="boy" data-religion="christian" data-letter="d"><strong>Dominic (डॉमिनिक)</strong> — प्रभु से संबंधित</li>
-    <li data-name="Francis" data-meaning="फ्रांसीसी/स्वतंत्र से जुड़ा नामार्थ" data-gender="boy" data-religion="christian" data-letter="f"><strong>Francis (फ़्रांसिस)</strong> — फ्रांसीसी/स्वतंत्र से जुड़ा नामार्थ</li>
-    <li data-name="Vincent" data-meaning="विजयी" data-gender="boy" data-religion="christian" data-letter="v"><strong>Vincent (विन्सेंट)</strong> — विजयी</li>
-    <li data-name="Simon" data-meaning="सुना गया; पारंपरिक नामार्थ" data-gender="boy" data-religion="christian" data-letter="s"><strong>Simon (साइमन)</strong> — सुना गया; पारंपरिक नामार्थ</li>
-    <li data-name="Philip" data-meaning="घोड़ों से प्रेम करने वाला" data-gender="boy" data-religion="christian" data-letter="p"><strong>Philip (फ़िलिप)</strong> — घोड़ों से प्रेम करने वाला</li>
-    <li data-name="Eric" data-meaning="शासक/नेता; नॉर्स मूल" data-gender="boy" data-religion="christian" data-letter="e"><strong>Eric (एरिक)</strong> — शासक/नेता; नॉर्स मूल</li>
-    <li data-name="Oscar" data-meaning="भाषाई मूल के अनुसार अर्थ अलग" data-gender="boy" data-religion="christian" data-letter="o"><strong>Oscar (ऑस्कर)</strong> — भाषाई मूल के अनुसार अर्थ अलग</li>
-    <li data-name="Felix" data-meaning="भाग्यशाली, खुशहाल" data-gender="boy" data-religion="christian" data-letter="f"><strong>Felix (फ़ेलिक्स)</strong> — भाग्यशाली, खुशहाल</li>
-    <li data-name="Cyrus" data-meaning="सूर्य/सिंहासन से जुड़े पारंपरिक अर्थ; स्रोत अनुसार" data-gender="boy" data-religion="christian" data-letter="c"><strong>Cyrus (सायरस)</strong> — सूर्य/सिंहासन से जुड़े पारंपरिक अर्थ; स्रोत अनुसार</li>
-    <li data-name="David" data-meaning="प्रिय, beloved" data-gender="boy" data-religion="christian" data-letter="d"><strong>David (डेविड)</strong> — प्रिय, beloved</li>
-    <li data-name="Emmanuel" data-meaning="ईश्वर हमारे साथ है" data-gender="boy" data-religion="christian" data-letter="e"><strong>Emmanuel (इमैनुएल)</strong> — ईश्वर हमारे साथ है</li>
-    <li data-name="Hugo" data-meaning="मन, बुद्धि" data-gender="boy" data-religion="christian" data-letter="h"><strong>Hugo (ह्यूगो)</strong> — मन, बुद्धि</li>
-    <li data-name="Isaiah" data-meaning="ईश्वर उद्धार है" data-gender="boy" data-religion="christian" data-letter="i"><strong>Isaiah (यशायाह)</strong> — ईश्वर उद्धार है</li>
-    <li data-name="Julian" data-meaning="युवा, यौवन से जुड़ा" data-gender="boy" data-religion="christian" data-letter="j"><strong>Julian (जूलियन)</strong> — युवा, यौवन से जुड़ा</li>
-    <li data-name="Kai" data-meaning="समुद्र; भाषा/मूल के अनुसार अर्थ बदलता है" data-gender="boy" data-religion="christian" data-letter="k"><strong>Kai (काई)</strong> — समुद्र; भाषा/मूल के अनुसार अर्थ बदलता है</li>
-    <li data-name="Logan" data-meaning="छोटी घाटी; स्कॉटिश मूल" data-gender="boy" data-religion="christian" data-letter="l"><strong>Logan (लोगन)</strong> — छोटी घाटी; स्कॉटिश मूल</li>
-    <li data-name="Miles" data-meaning="सैनिक/दयालु; मूल स्रोत अनुसार" data-gender="boy" data-religion="christian" data-letter="m"><strong>Miles (माइल्स)</strong> — सैनिक/दयालु; मूल स्रोत अनुसार</li>
-    <li data-name="Nolan" data-meaning="प्रसिद्ध/प्रतिष्ठित; मूल अनुसार" data-gender="boy" data-religion="christian" data-letter="n"><strong>Nolan (नोलन)</strong> — प्रसिद्ध/प्रतिष्ठित; मूल अनुसार</li>
-    <li data-name="Patrick" data-meaning="श्रेष्ठ/कुलीन" data-gender="boy" data-religion="christian" data-letter="p"><strong>Patrick (पैट्रिक)</strong> — श्रेष्ठ/कुलीन</li>
-    <li data-name="Quentin" data-meaning="पाँचवाँ" data-gender="boy" data-religion="christian" data-letter="q"><strong>Quentin (क्वेंटिन)</strong> — पाँचवाँ</li>
-    <li data-name="Rafael" data-meaning="ईश्वर ने चंगा किया" data-gender="boy" data-religion="christian" data-letter="r"><strong>Rafael (राफेल)</strong> — ईश्वर ने चंगा किया</li>
-    <li data-name="Sebastian" data-meaning="सम्मानित/पूजनीय" data-gender="boy" data-religion="christian" data-letter="s"><strong>Sebastian (सेबेस्टियन)</strong> — सम्मानित/पूजनीय</li>
-    <li data-name="Timothy" data-meaning="ईश्वर का सम्मान करने वाला" data-gender="boy" data-religion="christian" data-letter="t"><strong>Timothy (टिमोथी)</strong> — ईश्वर का सम्मान करने वाला</li>
-    <li data-name="Uriel" data-meaning="ईश्वर मेरा प्रकाश है" data-gender="boy" data-religion="christian" data-letter="u"><strong>Uriel (उरीएल)</strong> — ईश्वर मेरा प्रकाश है</li>
-    <li data-name="Victor" data-meaning="विजेता" data-gender="boy" data-religion="christian" data-letter="v"><strong>Victor (विक्टर)</strong> — विजेता</li>
-    <li data-name="William" data-meaning="दृढ़ रक्षक" data-gender="boy" data-religion="christian" data-letter="w"><strong>William (विलियम)</strong> — दृढ़ रक्षक</li>
-    <li data-name="Zachary" data-meaning="ईश्वर ने याद किया" data-gender="boy" data-religion="christian" data-letter="z"><strong>Zachary (ज़करिया)</strong> — ईश्वर ने याद किया</li>
-    <li data-name="Blake" data-meaning="गहरे/हल्के रंग से जुड़ा पुराना अंग्रेज़ी नाम; अर्थ स्रोत अनुसार" data-gender="boy" data-religion="christian" data-letter="b"><strong>Blake (ब्लेक)</strong> — गहरे/हल्के रंग से जुड़ा पुराना अंग्रेज़ी नाम; अर्थ स्रोत अनुसार</li>
-    <li data-name="Brooks" data-meaning="छोटी जलधारा के पास रहने वाला" data-gender="boy" data-religion="christian" data-letter="b"><strong>Brooks (ब्रूक्स)</strong> — छोटी जलधारा के पास रहने वाला</li>
-    <li data-name="Carter" data-meaning="गाड़ी/माल ढोने वाले से जुड़ा उपनाम-आधारित नाम" data-gender="boy" data-religion="christian" data-letter="c"><strong>Carter (कार्टर)</strong> — गाड़ी/माल ढोने वाले से जुड़ा उपनाम-आधारित नाम</li>
-    <li data-name="Damian" data-meaning="वश में करना/संयम से जुड़ा ग्रीक मूल का नाम" data-gender="boy" data-religion="christian" data-letter="d"><strong>Damian (डेमियन)</strong> — वश में करना/संयम से जुड़ा ग्रीक मूल का नाम</li>
-    <li data-name="Everett" data-meaning="बहादुर/मजबूत से जुड़ा नाम" data-gender="boy" data-religion="christian" data-letter="e"><strong>Everett (एवरेट)</strong> — बहादुर/मजबूत से जुड़ा नाम</li>
-    <li data-name="Finley" data-meaning="उज्ज्वल/वीर योद्धा से जुड़ा आयरिश मूल का नाम" data-gender="boy" data-religion="christian" data-letter="f"><strong>Finley (फ़िनले)</strong> — उज्ज्वल/वीर योद्धा से जुड़ा आयरिश मूल का नाम</li>
-    <li data-name="Grayson" data-meaning="ग्रे के पुत्र; उपनाम-आधारित नाम" data-gender="boy" data-religion="christian" data-letter="g"><strong>Grayson (ग्रेसन)</strong> — ग्रे के पुत्र; उपनाम-आधारित नाम</li>
-    <li data-name="Hudson" data-meaning="ह्यू का पुत्र; उपनाम-आधारित नाम" data-gender="boy" data-religion="christian" data-letter="h"><strong>Hudson (हडसन)</strong> — ह्यू का पुत्र; उपनाम-आधारित नाम</li>
-    <li data-name="Ian" data-meaning="ईश्वर कृपालु है" data-gender="boy" data-religion="christian" data-letter="i"><strong>Ian (इयान)</strong> — ईश्वर कृपालु है</li>
-    <li data-name="Jasper" data-meaning="खज़ाना रखने वाला; रत्न से जुड़ा नाम" data-gender="boy" data-religion="christian" data-letter="j"><strong>Jasper (जैस्पर)</strong> — खज़ाना रखने वाला; रत्न से जुड़ा नाम</li>
-    <li data-name="Kingston" data-meaning="राजा का नगर/बस्ती" data-gender="boy" data-religion="christian" data-letter="k"><strong>Kingston (किंग्स्टन)</strong> — राजा का नगर/बस्ती</li>
-    <li data-name="Landon" data-meaning="लंबी पहाड़ी/भूमि से जुड़ा नाम" data-gender="boy" data-religion="christian" data-letter="l"><strong>Landon (लैंडन)</strong> — लंबी पहाड़ी/भूमि से जुड़ा नाम</li>
-    <li data-name="Maddox" data-meaning="मैडॉक का पुत्र; वेल्श मूल" data-gender="boy" data-religion="christian" data-letter="m"><strong>Maddox (मैडॉक्स)</strong> — मैडॉक का पुत्र; वेल्श मूल</li>
-    <li data-name="Orion" data-meaning="ग्रीक पौराणिक शिकारी/तारामंडल" data-gender="boy" data-religion="christian" data-letter="o"><strong>Orion (ओरायन)</strong> — ग्रीक पौराणिक शिकारी/तारामंडल</li>
-    <li data-name="Preston" data-meaning="पुजारी की बस्ती से जुड़ा नाम" data-gender="boy" data-religion="christian" data-letter="p"><strong>Preston (प्रेस्टन)</strong> — पुजारी की बस्ती से जुड़ा नाम</li>
-    <li data-name="Reid" data-meaning="लाल बालों/रंगत से जुड़ा स्कॉटिश नाम" data-gender="boy" data-religion="christian" data-letter="r"><strong>Reid (रीड)</strong> — लाल बालों/रंगत से जुड़ा स्कॉटिश नाम</li>
-    <li data-name="Tristan" data-meaning="दुख/शोर से जुड़ा वेल्श-फ्रांसीसी नामार्थ" data-gender="boy" data-religion="christian" data-letter="t"><strong>Tristan (ट्रिस्टन)</strong> — दुख/शोर से जुड़ा वेल्श-फ्रांसीसी नामार्थ</li>
-    <li data-name="Wesley" data-meaning="पश्चिमी मैदान/घासभूमि" data-gender="boy" data-religion="christian" data-letter="w"><strong>Wesley (वेस्ली)</strong> — पश्चिमी मैदान/घासभूमि</li>
-    <li data-name="Zane" data-meaning="ईश्वर कृपालु है; मूल/व्याख्या अलग-अलग" data-gender="boy" data-religion="christian" data-letter="z"><strong>Zane (ज़ेन)</strong> — ईश्वर कृपालु है; मूल/व्याख्या अलग-अलग</li>
-    <li data-name="Colton" data-meaning="कोल की बस्ती/कोयला नगर से जुड़ा नाम" data-gender="boy" data-religion="christian" data-letter="c"><strong>Colton (कोल्टन)</strong> — कोल की बस्ती/कोयला नगर से जुड़ा नाम</li>
-    <li data-name="Emily" data-meaning="परिश्रमी, उत्साही" data-gender="girl" data-religion="christian" data-letter="e"><strong>Emily (एमिली)</strong> — परिश्रमी, उत्साही</li>
-    <li data-name="Stella" data-meaning="तारा" data-gender="girl" data-religion="christian" data-letter="s"><strong>Stella (स्टेला)</strong> — तारा</li>
-    <li data-name="Hazel" data-meaning="हेज़ल वृक्ष/रंग" data-gender="girl" data-religion="christian" data-letter="h"><strong>Hazel (हेज़ल)</strong> — हेज़ल वृक्ष/रंग</li>
-    <li data-name="Clara" data-meaning="उज्ज्वल, स्पष्ट" data-gender="girl" data-religion="christian" data-letter="c"><strong>Clara (क्लारा)</strong> — उज्ज्वल, स्पष्ट</li>
-    <li data-name="Layla" data-meaning="रात (विभिन्न भाषाई परंपराओं में)" data-gender="girl" data-religion="christian" data-letter="l"><strong>Layla (लेला)</strong> — रात (विभिन्न भाषाई परंपराओं में)</li>
-    <li data-name="Annabelle" data-meaning="कृपा/सुंदरता से जुड़े विभिन्न नाम-मूल" data-gender="girl" data-religion="christian" data-letter="a"><strong>Annabelle (ऐनाबेल)</strong> — कृपा/सुंदरता से जुड़े विभिन्न नाम-मूल</li>
-    <li data-name="Brielle" data-meaning="ईश्वर मेरी शक्ति हैं—Gabrielle से जुड़ा रूप" data-gender="girl" data-religion="christian" data-letter="b"><strong>Brielle (ब्रिएल)</strong> — ईश्वर मेरी शक्ति हैं—Gabrielle से जुड़ा रूप</li>
-    <li data-name="Celine" data-meaning="स्वर्गीय/आकाश से जुड़ा अर्थ; मूल अनुसार" data-gender="girl" data-religion="christian" data-letter="c"><strong>Celine (सेलीन)</strong> — स्वर्गीय/आकाश से जुड़ा अर्थ; मूल अनुसार</li>
-    <li data-name="Deborah" data-meaning="मधुमक्खी; बाइबिल में Deborah का नाम" data-gender="girl" data-religion="christian" data-letter="d"><strong>Deborah (डेबोरा)</strong> — मधुमक्खी; बाइबिल में Deborah का नाम</li>
-    <li data-name="Eden" data-meaning="आनंद का स्थान; बाइबिल का नाम" data-gender="girl" data-religion="christian" data-letter="e"><strong>Eden (ईडन)</strong> — आनंद का स्थान; बाइबिल का नाम</li>
-    <li data-name="Evangeline" data-meaning="सुसमाचार/शुभ समाचार से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="e"><strong>Evangeline (इवैंजलीन)</strong> — सुसमाचार/शुभ समाचार से जुड़ा नाम</li>
-    <li data-name="Felicity" data-meaning="खुशी, सौभाग्य" data-gender="girl" data-religion="christian" data-letter="f"><strong>Felicity (फ़ेलिसिटी)</strong> — खुशी, सौभाग्य</li>
-    <li data-name="Hope" data-meaning="आशा" data-gender="girl" data-religion="christian" data-letter="h"><strong>Hope (होप)</strong> — आशा</li>
-    <li data-name="Joanna" data-meaning="ईश्वर कृपालु हैं" data-gender="girl" data-religion="christian" data-letter="j"><strong>Joanna (जोआना)</strong> — ईश्वर कृपालु हैं</li>
-    <li data-name="Josephine" data-meaning="ईश्वर बढ़ाएँ/वृद्धि दें—Joseph से जुड़ा रूप" data-gender="girl" data-religion="christian" data-letter="j"><strong>Josephine (जोसेफीन)</strong> — ईश्वर बढ़ाएँ/वृद्धि दें—Joseph से जुड़ा रूप</li>
-    <li data-name="Miriam" data-meaning="बाइबिल का नाम; अर्थ-व्याख्याएँ अलग" data-gender="girl" data-religion="christian" data-letter="m"><strong>Miriam (मिरियम)</strong> — बाइबिल का नाम; अर्थ-व्याख्याएँ अलग</li>
-    <li data-name="Natalie" data-meaning="जन्म/क्रिसमस से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="n"><strong>Natalie (नैटली)</strong> — जन्म/क्रिसमस से जुड़ा नाम</li>
-    <li data-name="Ophelia" data-meaning="मदद/सहायता से जुड़ा संभावित अर्थ" data-gender="girl" data-religion="christian" data-letter="o"><strong>Ophelia (ओफ़ीलिया)</strong> — मदद/सहायता से जुड़ा संभावित अर्थ</li>
-    <li data-name="Priscilla" data-meaning="प्राचीन/सम्मानित; बाइबिल में नाम" data-gender="girl" data-religion="christian" data-letter="p"><strong>Priscilla (प्रिसिला)</strong> — प्राचीन/सम्मानित; बाइबिल में नाम</li>
-    <li data-name="Ruth" data-meaning="संगिनी/मित्र से जुड़ा अर्थ" data-gender="girl" data-religion="christian" data-letter="r"><strong>Ruth (रूथ)</strong> — संगिनी/मित्र से जुड़ा अर्थ</li>
-    <li data-name="Seraphina" data-meaning="सेराफ़िम से जुड़ा नाम; दिव्य/आकाशीय संदर्भ" data-gender="girl" data-religion="christian" data-letter="s"><strong>Seraphina (सेराफ़िना)</strong> — सेराफ़िम से जुड़ा नाम; दिव्य/आकाशीय संदर्भ</li>
-    <li data-name="Tabitha" data-meaning="गज़ेल/हिरणी; बाइबिल में नाम" data-gender="girl" data-religion="christian" data-letter="t"><strong>Tabitha (तबीथा)</strong> — गज़ेल/हिरणी; बाइबिल में नाम</li>
-    <li data-name="Yvonne" data-meaning="यू वृक्ष से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="y"><strong>Yvonne (इवोन)</strong> — यू वृक्ष से जुड़ा नाम</li>
-    <li data-name="Christina" data-meaning="मसीह से जुड़ा नाम" data-gender="girl" data-religion="christian" data-letter="c"><strong>Christina (क्रिस्टीना)</strong> — मसीह से जुड़ा नाम</li>
-    <li data-name="Diana" data-meaning="दिव्य/स्वर्गीय; विभिन्न मूलों में अर्थ" data-gender="girl" data-religion="christian" data-letter="d"><strong>Diana (डायना)</strong> — दिव्य/स्वर्गीय; विभिन्न मूलों में अर्थ</li>
-      <li data-name="Bhavesh" data-meaning="भव के स्वामी; शिव से जुड़ा नाम" data-gender="boy" data-religion="hindu" data-letter="b"><strong>Bhavesh (भावेश)</strong> — भव के स्वामी; शिव से जुड़ा नाम</li>
-    <li data-name="Bharat" data-meaning="भारत; प्राचीन राजा भरत से जुड़ा नाम" data-gender="boy" data-religion="hindu" data-letter="b"><strong>Bharat (भरत)</strong> — भारत; प्राचीन राजा भरत से जुड़ा नाम</li>
-    <li data-name="Chaitanya" data-meaning="चेतना, जागरूकता" data-gender="boy" data-religion="hindu" data-letter="c"><strong>Chaitanya (चैतन्य)</strong> — चेतना, जागरूकता</li>
-    <li data-name="Charan" data-meaning="चरण, सम्मान और विनम्रता से जुड़ा" data-gender="boy" data-religion="hindu" data-letter="c"><strong>Charan (चरण)</strong> — चरण, सम्मान और विनम्रता से जुड़ा</li>
-    <li data-name="Devansh" data-meaning="ईश्वर का अंश" data-gender="boy" data-religion="hindu" data-letter="d"><strong>Devansh (देवांश)</strong> — ईश्वर का अंश</li>
-    <li data-name="Darsh" data-meaning="दर्शन; भगवान के दर्शन से जुड़ा" data-gender="boy" data-religion="hindu" data-letter="d"><strong>Darsh (दर्श)</strong> — दर्शन; भगवान के दर्शन से जुड़ा</li>
-    <li data-name="Eklavya" data-meaning="समर्पित शिष्य; महाभारत का पात्र" data-gender="boy" data-religion="hindu" data-letter="e"><strong>Eklavya (एकलव्य)</strong> — समर्पित शिष्य; महाभारत का पात्र</li>
-    <li data-name="Gaurav" data-meaning="गौरव, सम्मान" data-gender="boy" data-religion="hindu" data-letter="g"><strong>Gaurav (गौरव)</strong> — गौरव, सम्मान</li>
-    <li data-name="Harsh" data-meaning="हर्ष, खुशी" data-gender="boy" data-religion="hindu" data-letter="h"><strong>Harsh (हर्ष)</strong> — हर्ष, खुशी</li>
-    <li data-name="Jai" data-meaning="विजय, जय" data-gender="boy" data-religion="hindu" data-letter="j"><strong>Jai (जय)</strong> — विजय, जय</li>
-    <li data-name="Lakshya" data-meaning="लक्ष्य, उद्देश्य" data-gender="boy" data-religion="hindu" data-letter="l"><strong>Lakshya (लक्ष्य)</strong> — लक्ष्य, उद्देश्य</li>
-    <li data-name="Nakul" data-meaning="महाभारत के पांडवों में एक; पारंपरिक नाम" data-gender="boy" data-religion="hindu" data-letter="n"><strong>Nakul (नकुल)</strong> — महाभारत के पांडवों में एक; पारंपरिक नाम</li>
-    <li data-name="Om" data-meaning="पवित्र प्रणव ध्वनि" data-gender="boy" data-religion="hindu" data-letter="o"><strong>Om (ॐ)</strong> — पवित्र प्रणव ध्वनि</li>
-    <li data-name="Pranav" data-meaning="ॐ; पवित्र ध्वनि" data-gender="boy" data-religion="hindu" data-letter="p"><strong>Pranav (प्रणव)</strong> — ॐ; पवित्र ध्वनि</li>
-    <li data-name="Tanay" data-meaning="पुत्र" data-gender="boy" data-religion="hindu" data-letter="t"><strong>Tanay (तनय)</strong> — पुत्र</li>
-    <li data-name="Tejas" data-meaning="तेज, चमक, ऊर्जा" data-gender="boy" data-religion="hindu" data-letter="t"><strong>Tejas (तेजस)</strong> — तेज, चमक, ऊर्जा</li>
-    <li data-name="Uday" data-meaning="उदय, उगना; नई शुरुआत से जुड़ा" data-gender="boy" data-religion="hindu" data-letter="u"><strong>Uday (उदय)</strong> — उदय, उगना; नई शुरुआत से जुड़ा</li>
-    <li data-name="Yash" data-meaning="यश, कीर्ति" data-gender="boy" data-religion="hindu" data-letter="y"><strong>Yash (यश)</strong> — यश, कीर्ति</li>
-      <li data-name="Bhavya" data-meaning="भव्य, शानदार" data-gender="girl" data-religion="hindu" data-letter="b"><strong>Bhavya (भव्या)</strong> — भव्य, शानदार</li>
-    <li data-name="Charvi" data-meaning="सुंदर, आकर्षक" data-gender="girl" data-religion="hindu" data-letter="c"><strong>Charvi (चार्वी)</strong> — सुंदर, आकर्षक</li>
-    <li data-name="Devika" data-meaning="देवी से जुड़ा नाम; छोटी देवी" data-gender="girl" data-religion="hindu" data-letter="d"><strong>Devika (देविका)</strong> — देवी से जुड़ा नाम; छोटी देवी</li>
-    <li data-name="Esha" data-meaning="इच्छा; देवी से जुड़ा नाम" data-gender="girl" data-religion="hindu" data-letter="e"><strong>Esha (ईशा)</strong> — इच्छा; देवी से जुड़ा नाम</li>
-    <li data-name="Gauri" data-meaning="गौरी; पार्वती का नाम" data-gender="girl" data-religion="hindu" data-letter="g"><strong>Gauri (गौरी)</strong> — गौरी; पार्वती का नाम</li>
-    <li data-name="Hridya" data-meaning="हृदय को प्रिय; मनमोहक" data-gender="girl" data-religion="hindu" data-letter="h"><strong>Hridya (हृद्या)</strong> — हृदय को प्रिय; मनमोहक</li>
-    <li data-name="Jiya" data-meaning="जीवन, दिल" data-gender="girl" data-religion="hindu" data-letter="j"><strong>Jiya (जिया)</strong> — जीवन, दिल</li>
-    <li data-name="Lavanya" data-meaning="सुंदरता, आकर्षण" data-gender="girl" data-religion="hindu" data-letter="l"><strong>Lavanya (लावण्या)</strong> — सुंदरता, आकर्षण</li>
-    <li data-name="Nitya" data-meaning="नित्य, शाश्वत" data-gender="girl" data-religion="hindu" data-letter="n"><strong>Nitya (नित्या)</strong> — नित्य, शाश्वत</li>
-    <li data-name="Ojasvi" data-meaning="तेजस्वी, ऊर्जा से भरपूर" data-gender="girl" data-religion="hindu" data-letter="o"><strong>Ojasvi (ओजस्वी)</strong> — तेजस्वी, ऊर्जा से भरपूर</li>
-    <li data-name="Pavitra" data-meaning="पवित्र, शुद्ध" data-gender="girl" data-religion="hindu" data-letter="p"><strong>Pavitra (पवित्रा)</strong> — पवित्र, शुद्ध</li>
-    <li data-name="Riya" data-meaning="गायिका; अर्थ स्रोत के अनुसार भिन्न" data-gender="girl" data-religion="hindu" data-letter="r"><strong>Riya (रिया)</strong> — गायिका; अर्थ स्रोत के अनुसार भिन्न</li>
-    <li data-name="Saumya" data-meaning="सौम्य, शांत स्वभाव" data-gender="girl" data-religion="hindu" data-letter="s"><strong>Saumya (सौम्या)</strong> — सौम्य, शांत स्वभाव</li>
-    
-    <li data-name="Yashvi" data-meaning="यशस्वी, प्रसिद्ध" data-gender="girl" data-religion="hindu" data-letter="y"><strong>Yashvi (यश्वी)</strong> — यशस्वी, प्रसिद्ध</li>
-    <li data-name="Ziya" data-meaning="प्रकाश, चमक; अलग-अलग मूलों में अर्थ भिन्न" data-gender="girl" data-religion="hindu" data-letter="z"><strong>Ziya (ज़िया)</strong> — प्रकाश, चमक; अलग-अलग मूलों में अर्थ भिन्न</li>
-    <li data-name="Tanvi" data-meaning="कोमल, सुंदर" data-gender="girl" data-religion="hindu" data-letter="t"><strong>Tanvi (तन्वी)</strong> — कोमल, सुंदर</li>
-    <li data-name="Bhumika" data-meaning="भूमिका, धरती से जुड़ा शब्द" data-gender="girl" data-religion="hindu" data-letter="b"><strong>Bhumika (भूमिका)</strong> — भूमिका, धरती से जुड़ा शब्द</li>
-    <li data-name="Chhavi" data-meaning="छवि, सुंदर प्रतिबिंब" data-gender="girl" data-religion="hindu" data-letter="c"><strong>Chhavi (छवि)</strong> — छवि, सुंदर प्रतिबिंब</li>
-    <li data-name="Radhika" data-meaning="राधा से जुड़ा नाम" data-gender="girl" data-religion="hindu" data-letter="r"><strong>Radhika (राधिका)</strong> — राधा से जुड़ा नाम</li>
-      <li data-name="Bilal" data-meaning="पानी देने वाला; ऐतिहासिक इस्लामी नाम" data-gender="boy" data-religion="muslim" data-letter="b"><strong>Bilal (बिलाल)</strong> — पानी देने वाला; ऐतिहासिक इस्लामी नाम</li>
-    <li data-name="Burhan" data-meaning="प्रमाण, स्पष्ट तर्क" data-gender="boy" data-religion="muslim" data-letter="b"><strong>Burhan (बुरहान)</strong> — प्रमाण, स्पष्ट तर्क</li>
-    <li data-name="Danish" data-meaning="ज्ञान, बुद्धिमत्ता (दक्षिण एशियाई नाम-प्रयोग)" data-gender="boy" data-religion="muslim" data-letter="d"><strong>Danish (दानिश)</strong> — ज्ञान, बुद्धिमत्ता (दक्षिण एशियाई नाम-प्रयोग)</li>
-    <li data-name="Dawood" data-meaning="दाऊद; पैगंबर का नाम" data-gender="boy" data-religion="muslim" data-letter="d"><strong>Dawood (दाऊद)</strong> — दाऊद; पैगंबर का नाम</li>
-    <li data-name="Ehsan" data-meaning="दयालुता, उपकार" data-gender="boy" data-religion="muslim" data-letter="e"><strong>Ehsan (एहसान)</strong> — दयालुता, उपकार</li>
-    <li data-name="Emad" data-meaning="सहारा, स्तंभ" data-gender="boy" data-religion="muslim" data-letter="e"><strong>Emad (इमाद)</strong> — सहारा, स्तंभ</li>
-    <li data-name="Fahad" data-meaning="चीता; नामार्थ संदर्भों में भिन्न हो सकता है" data-gender="boy" data-religion="muslim" data-letter="f"><strong>Fahad (फ़हद)</strong> — चीता; नामार्थ संदर्भों में भिन्न हो सकता है</li>
-    <li data-name="Faisal" data-meaning="निर्णय करने वाला, निर्णायक" data-gender="boy" data-religion="muslim" data-letter="f"><strong>Faisal (फ़ैसल)</strong> — निर्णय करने वाला, निर्णायक</li>
-    <li data-name="Ghalib" data-meaning="विजयी, प्रबल" data-gender="boy" data-religion="muslim" data-letter="g"><strong>Ghalib (ग़ालिब)</strong> — विजयी, प्रबल</li>
-    <li data-name="Hamza" data-meaning="मज़बूत, दृढ़; इस्लामी इतिहास में प्रसिद्ध नाम" data-gender="boy" data-religion="muslim" data-letter="h"><strong>Hamza (हमज़ा)</strong> — मज़बूत, दृढ़; इस्लामी इतिहास में प्रसिद्ध नाम</li>
-    <li data-name="Junaid" data-meaning="योद्धा/सैनिक; पारंपरिक नाम" data-gender="boy" data-religion="muslim" data-letter="j"><strong>Junaid (जुनैद)</strong> — योद्धा/सैनिक; पारंपरिक नाम</li>
-    <li data-name="Kamil" data-meaning="पूर्ण, संपूर्ण" data-gender="boy" data-religion="muslim" data-letter="k"><strong>Kamil (कामिल)</strong> — पूर्ण, संपूर्ण</li>
-    <li data-name="Laith" data-meaning="शेर" data-gender="boy" data-religion="muslim" data-letter="l"><strong>Laith (लैथ)</strong> — शेर</li>
-    <li data-name="Nabeel" data-meaning="सम्मानित, उदार" data-gender="boy" data-religion="muslim" data-letter="n"><strong>Nabeel (नबील)</strong> — सम्मानित, उदार</li>
-    <li data-name="Omar" data-meaning="दीर्घायु; नामार्थ स्रोत भिन्न हो सकते हैं" data-gender="boy" data-religion="muslim" data-letter="o"><strong>Omar (उमर)</strong> — दीर्घायु; नामार्थ स्रोत भिन्न हो सकते हैं</li>
-    <li data-name="Qasim" data-meaning="वितरित करने वाला" data-gender="boy" data-religion="muslim" data-letter="q"><strong>Qasim (क़ासिम)</strong> — वितरित करने वाला</li>
-    <li data-name="Rashid" data-meaning="सही राह पर चलने वाला" data-gender="boy" data-religion="muslim" data-letter="r"><strong>Rashid (राशिद)</strong> — सही राह पर चलने वाला</li>
-    <li data-name="Suhail" data-meaning="मृदु; एक तारे का नाम भी" data-gender="boy" data-religion="muslim" data-letter="s"><strong>Suhail (सुहैल)</strong> — मृदु; एक तारे का नाम भी</li>
-    <li data-name="Usman" data-meaning="उस्मान; पारंपरिक इस्लामी नाम" data-gender="boy" data-religion="muslim" data-letter="u"><strong>Usman (उस्मान)</strong> — उस्मान; पारंपरिक इस्लामी नाम</li>
-    <li data-name="Waleed" data-meaning="नवजात, बच्चा" data-gender="boy" data-religion="muslim" data-letter="w"><strong>Waleed (वलीद)</strong> — नवजात, बच्चा</li>
-  </ul>
+  <ul id="baby-name-results" aria-live="polite" aria-busy="true"></ul>
 </section>
 
 <style>
@@ -799,62 +270,39 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 </style>
 <script>
 (function () {
-  var search = document.getElementById('baby-name-search');
-  var gender = document.getElementById('baby-name-gender');
-  var religion = document.getElementById('baby-name-religion');
-  var letter = document.getElementById('baby-name-letter');
-  var list = document.getElementById('baby-name-results');
-  var items = Array.prototype.slice.call(list.querySelectorAll('li'));
-  var count = document.getElementById('baby-name-result-count');
-  var empty = document.getElementById('baby-name-no-results');
-  var reset = document.getElementById('baby-name-reset');
-  // Normalize search text without removing Hindi vowel signs (matras).
-  // This makes Unicode and nukta spelling variants easier to match.
-  function normalizeSearchText(value) {
-    return String(value || '')
-      .toLocaleLowerCase()
-      .normalize('NFC')
-      .replace(/[़]/g, '')
-      .replace(/[\u200c\u200d]/g, '')
-      .replace(/[.,،؛:!?।\-_/]+/g, ' ')
-      .replace(/\\s+/g, ' ')
-      .trim();
-  }
-  function applyFilters() {
-    var q = normalizeSearchText(search.value);
-    var shown = 0;
-    items.forEach(function (item) {
-      var searchableText = normalizeSearchText(item.dataset.name + ' ' + item.dataset.meaning + ' ' + item.textContent);
-      var matches = (!q || searchableText.indexOf(q) !== -1)
-        && (gender.value === 'all' || item.dataset.gender === gender.value)
-        && (religion.value === 'all' || item.dataset.religion === religion.value)
-        && (letter.value === 'all' || item.dataset.letter === letter.value);
-      item.hidden = !matches;
-      if (matches) shown++;
-    });
-    count.textContent = shown + (shown === 1 ? ' name' : ' names') + ' found';
-    empty.hidden = shown !== 0;
-    list.hidden = shown === 0;
-  }
-  [search, gender, religion, letter].forEach(function (control) {
-    control.addEventListener(control === search ? 'input' : 'change', applyFilters);
-  });
-  document.querySelectorAll('.baby-name-meaning-chip').forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      search.value = chip.dataset.meaningQuery || '';
-      applyFilters();
-      search.focus();
-    });
-  });
-  reset.addEventListener('click', function () {
-    search.value = '';
-    gender.value = 'all';
-    religion.value = 'all';
-    letter.value = 'all';
-    applyFilters();
-    search.focus();
-  });
-  applyFilters();
+'use strict';
+var DATA_URL='/baby-names/names-data.json', STORAGE_KEY='marjanBabyNamesShortlistV1';
+var search=document.getElementById('baby-name-search'), gender=document.getElementById('baby-name-gender'), religion=document.getElementById('baby-name-religion'), letter=document.getElementById('baby-name-letter'), list=document.getElementById('baby-name-results'), count=document.getElementById('baby-name-result-count'), empty=document.getElementById('baby-name-no-results'), reset=document.getElementById('baby-name-reset'), shortlistFilter=document.getElementById('baby-name-shortlist-filter');
+var allNames=[], shortlist=new Set(), showShortlistOnly=false;
+var giftLabels={'personalized-name-frame':'Personalized Name Frame','custom-name-plate':'Custom Name Plate','personalized-keepsake':'Personalized Keepsake'};
+function normalize(value){return String(value||'').toLocaleLowerCase().normalize('NFC').replace(/[़]/g,'').replace(/[\u200c\u200d]/g,'').replace(/[.,،؛:!?।\-_/]+/g,' ').replace(/\s+/g,' ').trim();}
+function loadShortlist(){try{var saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');if(Array.isArray(saved))saved.forEach(function(id){if(typeof id==='string')shortlist.add(id);});}catch(error){}}
+function saveShortlist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(Array.from(shortlist)));}catch(error){}}
+function updateShortlistFilterLabel(){shortlistFilter.textContent=showShortlistOnly?'♥ Show All Names':'♥ Show Shortlist ('+shortlist.size+')';shortlistFilter.setAttribute('aria-pressed',String(showShortlistOnly));}
+function makeCard(item){
+ var li=document.createElement('li');li.className='baby-name-card';
+ var heading=document.createElement('h3');heading.className='baby-name-card-title';heading.textContent=item.name+(item.hindiName?' ('+item.hindiName+')':'');
+ var meaning=document.createElement('p');meaning.className='baby-name-card-meaning';meaning.textContent=item.meaning;
+ var meta=document.createElement('p');meta.className='baby-name-card-meta';meta.textContent=item.gender+' · '+item.religion+' · '+item.letter.toUpperCase();
+ var gift=document.createElement('p');gift.className='baby-name-card-gift';gift.textContent='Gift idea: '+(giftLabels[item.giftCategory]||'Personalized Baby Gift');
+ var save=document.createElement('button');save.type='button';save.className='baby-name-shortlist-button';save.setAttribute('aria-pressed',String(shortlist.has(item.id)));save.textContent=shortlist.has(item.id)?'♥ Shortlisted':'♡ Shortlist';
+ save.addEventListener('click',function(){if(shortlist.has(item.id))shortlist.delete(item.id);else shortlist.add(item.id);saveShortlist();save.setAttribute('aria-pressed',String(shortlist.has(item.id)));save.textContent=shortlist.has(item.id)?'♥ Shortlisted':'♡ Shortlist';if(showShortlistOnly&&!shortlist.has(item.id))applyFilters();updateShortlistFilterLabel();});
+ li.append(heading,meaning,meta,gift,save);return li;
+}
+function applyFilters(){
+ var q=normalize(search.value),fragment=document.createDocumentFragment(),shown=0;
+ allNames.forEach(function(item){var haystack=normalize(item.name+' '+item.hindiName+' '+item.meaning);
+ var match=(!q||haystack.indexOf(q)!==-1)&&(gender.value==='all'||item.gender===gender.value)&&(religion.value==='all'||item.religion===religion.value)&&(letter.value==='all'||item.letter===letter.value)&&(!showShortlistOnly||shortlist.has(item.id));
+ if(match){fragment.appendChild(makeCard(item));shown++;}});
+ list.replaceChildren(fragment);list.hidden=shown===0;list.setAttribute('aria-busy','false');empty.hidden=shown!==0;
+ count.textContent=showShortlistOnly?shown+' shortlisted '+(shown===1?'name':'names'):shown+' '+(shown===1?'name':'names');updateShortlistFilterLabel();
+}
+[search,gender,religion,letter].forEach(function(control){control.addEventListener(control===search?'input':'change',applyFilters);});
+document.querySelectorAll('.baby-name-meaning-chip').forEach(function(chip){chip.addEventListener('click',function(){search.value=chip.dataset.meaningQuery||'';applyFilters();search.focus();});});
+reset.addEventListener('click',function(){search.value='';gender.value='all';religion.value='all';letter.value='all';showShortlistOnly=false;applyFilters();search.focus();});
+shortlistFilter.addEventListener('click',function(){showShortlistOnly=!showShortlistOnly;applyFilters();});
+loadShortlist();updateShortlistFilterLabel();
+fetch(DATA_URL,{cache:'force-cache'}).then(function(response){if(!response.ok)throw new Error('Data request failed');return response.json();}).then(function(data){if(!Array.isArray(data)||data.length!==538)throw new Error('Data validation failed');allNames=data;applyFilters();}).catch(function(){list.hidden=true;list.setAttribute('aria-busy','false');count.textContent='नामों की सूची अभी लोड नहीं हो सकी। कृपया थोड़ी देर बाद फिर कोशिश करें।';empty.hidden=true;});
 })();
 </script>
 
@@ -897,11 +345,11 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 <p>अभी 244 Boy Names उपलब्ध हैं: Hindu 54, Muslim 56, Sikh 47 और Christian 87।</p>
 
 <h2 id="girl-names">Girl Names</h2>
-<p>अभी 299 Girl Names उपलब्ध हैं: Hindu 46, Muslim 64, Sikh 96 और Christian 93।</p>
+<p>अभी 294 Girl Names उपलब्ध हैं: Hindu 46, Muslim 64, Sikh 96 और Christian 88।</p>
 <ul><li><a href="/baby-names/a-letter-muslim-girl-names/">Muslim Girl Names Starting with A</a></li></ul>
 
 <h2 id="a-z-names">A–Z Baby Names</h2>
-Directory में कुल 543 नाम हैं। फिलहाल कुछ धर्मों और categories के A-letter pages उपलब्ध हैं; बाकी letter-wise pages आगे बनाए जाएँगे।
+Directory में कुल 538 unique नाम हैं। फिलहाल कुछ धर्मों और categories के A-letter pages उपलब्ध हैं; बाकी letter-wise pages आगे बनाए जाएँगे।
 <ul>
 <li><a href="/baby-names/a-letter-hindu-boy-names/">Hindu Boy Names (26 names)</a></li>
 <li><a href="/baby-names/a-letter-muslim-boy-names/">Muslim Boy Names (26 names)</a></li>
