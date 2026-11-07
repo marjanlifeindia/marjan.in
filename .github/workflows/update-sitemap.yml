@@ -35,6 +35,8 @@ jobs:
               "", "about", "parenting", "kids-education",
               "activities", "mobile-habit", "kids-corner", "baby-names/",
               "baby-names/a-letter-hindu-boy-names/",
+              "baby-names/a-letter-muslim-boy-names/",
+              "baby-names/a-letter-muslim-girl-names/",
               "privacy-policy", "contact", "terms", "affiliate-disclosure"
           ]
           urls = [base + page for page in static_pages]
