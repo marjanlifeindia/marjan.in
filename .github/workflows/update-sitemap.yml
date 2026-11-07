@@ -9,6 +9,13 @@ on:
       - '.pages.yml'
       - 'article.html'
       - '.github/workflows/update-sitemap.yml'
+  pull_request:
+    paths:
+      - 'posts/**/*.md'
+      - 'posts/*.md'
+      - '.pages.yml'
+      - 'article.html'
+      - '.github/workflows/update-sitemap.yml'
   workflow_dispatch:
 
 permissions:
@@ -79,9 +86,22 @@ jobs:
               return meta, match.group(2).strip()
 
           def inline(text):
+              # Escape source HTML; restore only supported, sanitized Markdown links.
+              links = {}
+              def keep_link(match):
+                  label, url = match.group(1), match.group(2)
+                  if not url.startswith(("/", "#", "https://", "http://", "mailto:")):
+                      return match.group(0)
+                  key = "MARJANLINK" + str(len(links)) + "TOKEN"
+                  links[key] = '<a href="' + html.escape(url, quote=True) + '">' + html.escape(label) + '</a>'
+                  return key
+              text = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", keep_link, text)
               value = html.escape(text, quote=False)
               value = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", value)
-              value = re.sub(r"\*(.+?)\*", r"<em>\1</em>", value)
+              value = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", value)
+              value = re.sub(r"~~(.+?)~~", r"<del>\1</del>", value)
+              for key, link in links.items():
+                  value = value.replace(key, link)
               return value
 
           def render_markdown(body, title):
@@ -105,13 +125,24 @@ jobs:
                   if heading:
                       flush()
                       level = len(heading.group(1))
-                      blocks.append(f"<h{level}>{inline(heading.group(2))}</h{level}>")
+                      blocks.append("<h" + str(level) + ">" + inline(heading.group(2)) + "</h" + str(level) + ">")
                       i += 1
                       continue
                   if re.match(r"^\d+[.)]\s+\S+", line):
                       flush()
-                      blocks.append("<h2>" + inline(line) + "</h2>")
-                      i += 1
+                      items = []
+                      first_number = int(re.match(r"^(\d+)", line).group(1))
+                      while i < len(lines) and re.match(r"^\s*\d+[.)]\s+\S+", lines[i]):
+                          item_match = re.match(r"^\s*(\d+)[.)]\s+(\S.*)$", lines[i])
+                          items.append((int(item_match.group(1)), item_match.group(2).strip()))
+                          i += 1
+                      if len(items) == 1:
+                          number, item = items[0]
+                          blocks.append("<h2>" + str(number) + ". " + inline(item) + "</h2>")
+                      else:
+                          list_items = "".join("<li>" + inline(item) + "</li>" for _, item in items)
+                          start_attr = ' start="' + str(first_number) + '"' if first_number != 1 else ""
+                          blocks.append("<ol" + start_attr + ">" + list_items + "</ol>")
                       continue
                   if line.startswith(("- ", "* ")):
                       flush()
@@ -120,6 +151,19 @@ jobs:
                           items.append("<li>" + inline(lines[i].strip()[2:]) + "</li>")
                           i += 1
                       blocks.append("<ul>" + "".join(items) + "</ul>")
+                      continue
+                  if line.startswith(">"):
+                      flush()
+                      quote_lines = []
+                      while i < len(lines) and lines[i].strip().startswith(">"):
+                          quote_lines.append(inline(lines[i].strip()[1:].lstrip()))
+                          i += 1
+                      blocks.append("<blockquote><p>" + " ".join(quote_lines) + "</p></blockquote>")
+                      continue
+                  if re.fullmatch(r"([-*_])\1{2,}", line):
+                      flush()
+                      blocks.append("<hr>")
+                      i += 1
                       continue
                   paragraph.append(line)
                   i += 1
@@ -175,8 +219,55 @@ jobs:
               ET.tostring(root, encoding="utf-8")
           )
           PY
+      - name: Validate generated articles and sitemap
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import json
+          import re
+          import xml.etree.ElementTree as ET
+
+          index = json.loads(Path("posts/index.json").read_text(encoding="utf-8"))
+          sitemap = ET.parse("sitemap.xml").getroot()
+          ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = {node.text for node in sitemap.findall(".//sm:loc", ns)}
+          for slug in index:
+              if not re.fullmatch(r"[A-Za-z0-9-]+", slug):
+                  raise SystemExit("Invalid slug: " + slug)
+              page = Path("article-" + slug + ".html")
+              if not page.exists():
+                  raise SystemExit("Missing generated page: " + str(page))
+              html = page.read_text(encoding="utf-8")
+              checks = {
+                  "canonical": '<link rel="canonical" href="https://marjan.in/article-' + slug + '">' in html,
+                  "single H1": len(re.findall(r"<h1\b", html, re.I)) == 1,
+                  "article body": bool(re.search(r'<div id="articleBody">.+?</div>', html, re.S)),
+                  "description": bool(re.search(r'<meta name="description" content="[^"]+">', html)),
+                  "sitemap URL": "https://marjan.in/article-" + slug in urls,
+              }
+              failed = [name for name, ok in checks.items() if not ok]
+              if failed:
+                  raise SystemExit(slug + ": failed checks: " + ", ".join(failed))
+          print("Validated " + str(len(index)) + " generated articles and sitemap entries.")
+          PY
+      - name: Upload generated article preview files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: marjan-article-preview
+          path: |
+            sitemap.xml
+            posts/index.json
+            articles/
+            article-*.html
+          if-no-files-found: error
+          retention-days: 7
       - name: Commit updated slug index and sitemap
         run: |
+          if [ "$GITHUB_EVENT_NAME" != "push" ] || [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Validation-only event; generated files are not committed."
+            exit 0
+          fi
           if [ -z "$(git status --porcelain -- sitemap.xml posts/index.json articles article-*.html)" ]; then
             echo "Sitemap, article slug index, and static article pages are already up to date."
             exit 0

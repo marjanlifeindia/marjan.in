@@ -191,17 +191,17 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
         <img class="card-image" src="media/toys-learning.jpg" alt="बच्चों के लिए रंगीन शैक्षिक खिलौने और लकड़ी के ब्लॉक्स" width="800" height="600" loading="lazy">
         <h2>Toys & Learning</h2>
         <p>बच्चों की उम्र, रुचि और सीखने में मदद करने वाले खिलौनों की जानकारी।</p>
-        <div class="status" id="articles-toys">लेख लोड हो रहे हैं…</div>
+        <div class="status" id="articles-toys"><ul><li><a href="/article-bachon-ke-liye-educational-toys">4-8 साल के बच्चों के लिए 15 Best Educational Toys</a></li></ul></div>
       </article>
       <article class="card">
         <h2>Kids Books</h2>
         <p>कहानी की किताबें, पढ़ने की आदत और बच्चों के लिए किताब चुनने के सुझाव।</p>
-        <div class="status" id="articles-books">लेख लोड हो रहे हैं…</div>
+        <div class="status" id="articles-books"><ul><li><a href="/article-bachon-ke-liye-hindi-story-books">5-10 साल के बच्चों के लिए 15 Best Hindi Story Books</a></li></ul></div>
       </article>
       <article class="card">
         <h2>School Supplies</h2>
         <p>बच्चों के लिए स्कूल बैग, स्टेशनरी और पढ़ाई के उपयोगी सामान की जानकारी।</p>
-        <div class="status" id="articles-school">लेख लोड हो रहे हैं…</div>
+        <div class="status" id="articles-school">इस कैटेगरी के लेख जल्द प्रकाशित किए जाएँगे।</div>
       </article>
       <article class="card">
         <h2>Kids Education</h2>
@@ -217,68 +217,52 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
   </main>
 
   <script>
-  (function(){
-    const groups = {
-      "Toys & Learning": "articles-toys",
-      "Kids Books": "articles-books",
-      "School Supplies": "articles-school"
-    };
-    function field(front, name) {
-      const match = front.match(new RegExp("^" + name + ":\\s*(.*)$", "m"));
-      return match ? match[1].trim().replace(/^["']|["']$/g, "") : "";
-    }
-    function render(target, posts) {
-      if (!posts.length) {
-        target.textContent = "इस कैटेगरी के लेख अभी प्रकाशित नहीं हैं।";
-        return;
-      }
-      const list = document.createElement("ul");
-      posts.sort((a,b) => (b.date || "").localeCompare(a.date || ""));
-      posts.slice(0,5).forEach(post => {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-        link.href = "/article.html?post=" + encodeURIComponent(post.filename);
-        link.textContent = post.title || post.slug;
-        li.appendChild(link);
-        list.appendChild(li);
-      });
-      target.textContent = "";
-      target.appendChild(list);
-    }
-    async function load() {
-      try {
-        const response = await fetch("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main");
-        if (!response.ok) throw new Error("posts list unavailable");
-        const files = (await response.json()).filter(file => file.name.endsWith(".md"));
-        const records = await Promise.all(files.map(async file => {
-          const res = await fetch(file.download_url);
-          if (!res.ok) return null;
-          const md = await res.text();
-          const match = md.match(/^---\s*\n([\s\S]*?)\n---/);
-          if (!match) return null;
-          const front = match[1];
-          return {
-            title: field(front, "title"),
-            slug: field(front, "slug") || file.name.replace(/\.md$/, ""),
-            date: field(front, "date"),
-            category: field(front, "category"),
-            filename: file.name
-          };
-        }));
-        const posts = records.filter(Boolean);
-        Object.entries(groups).forEach(([category, id]) => {
-          render(document.getElementById(id), posts.filter(post => post.category === category));
-        });
-      } catch (error) {
-        Object.values(groups).forEach(id => {
-          const target = document.getElementById(id);
-          if (target) target.textContent = "लेख अभी लोड नहीं हो सके। कृपया थोड़ी देर बाद फिर कोशिश करें।";
-        });
-      }
-    }
-    load();
-  })();
-  </script>
+(function(){
+ const groups={"Toys & Learning":"articles-toys","Kids Books":"articles-books","School Supplies":"articles-school"};
+ function field(front,name){
+  const match=front.match(new RegExp("^"+name+":\\s*(.*)$","m"));
+  return match?match[1].trim().replace(/^["']|["']$/g,""):"";
+ }
+ function render(target,posts){
+  if(!target)return;
+  if(!posts.length){target.textContent="इस कैटेगरी के लेख अभी प्रकाशित नहीं हैं।";return;}
+  posts.sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
+  const list=document.createElement("ul");
+  posts.slice(0,5).forEach(function(post){
+   const li=document.createElement("li"),link=document.createElement("a");
+   link.href="/article-"+encodeURIComponent(post.slug);
+   link.textContent=post.title||post.slug;
+   li.appendChild(link);list.appendChild(li);
+  });
+  target.textContent="";target.appendChild(list);
+ }
+ function load(){
+  fetch("/posts/index.json",{cache:"no-cache"})
+   .then(function(response){if(!response.ok)throw new Error("Article index unavailable");return response.json();})
+   .then(function(index){return Promise.all(Object.entries(index||{}).map(function(entry){
+    const slug=entry[0],filename=entry[1];
+    return fetch("https://raw.githubusercontent.com/marjanlifeindia/marjan.in/main/posts/"+encodeURIComponent(filename))
+     .then(function(response){if(!response.ok)throw new Error("Article unavailable");return response.text();})
+     .then(function(md){
+      const match=md.match(/^---\\s*\\n([\\s\\S]*?)\\n---/);
+      if(!match)return null;
+      const front=match[1];
+      return {title:field(front,"title"),slug:field(front,"slug")||slug,date:field(front,"date"),category:field(front,"category")};
+     });
+   }));})
+   .then(function(records){
+    const posts=records.filter(Boolean);
+    Object.entries(groups).forEach(function(entry){
+     render(document.getElementById(entry[1]),posts.filter(function(post){return post.category===entry[0];}));
+    });
+   })
+   .catch(function(){
+    /* Keep the server-rendered category links visible if remote metadata is unavailable. */
+   });
+ }
+ load();
+})();
+</script>
 
   <footer>
 
