@@ -376,18 +376,7 @@ Directory में कुल 538 unique नाम हैं। फिलहा�
 </div>
 
 </main>
-<script>
-(() => {
-  const toggle = document.querySelector(".mobile-menu-toggle");
-  const navigation = document.querySelector(".primary-navigation");
-  if (!toggle || !navigation) return;
-  toggle.addEventListener("click", () => {
-    const isOpen = navigation.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-    toggle.querySelector(".menu-icon").textContent = isOpen ? "✕" : "☰";
-  });
-})();
-</script>
+
 <footer>
 
 <p class="footer-follow-line"><a href="/" aria-label="MARJAN.IN ko Follow karein - Home Page"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120" loading="lazy" decoding="async"><span>को Follow करें।</span></a></p>
