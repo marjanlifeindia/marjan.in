@@ -41,6 +41,38 @@ footer .social-mark.x-mark{background:#000;border-radius:50%}
 footer p{margin-bottom:0}
 @media(max-width:480px){footer{padding:22px 4%}footer .social-links{gap:8px}footer .social-links>a{font-size:13px;padding:7px 10px;min-height:38px}}
 
+
+/* Homepage-matched header and main navigation for legal/info pages */
+header{background:#fff;color:#243047;padding:10px 5% 0;border-bottom:1px solid #e9eaf0}
+header .brand{display:flex;align-items:center;width:max-content;max-width:100%;margin:0;text-decoration:none}
+header .brand img{display:block;width:340px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:left center}
+header>.menu-toggle{display:none}
+header>nav.primary-navigation{display:flex;flex-wrap:wrap;gap:4px 6px;background:#243047;margin:0 -5.56%;padding:7px 5.56%;align-items:center;min-width:0}
+header>nav.primary-navigation>a,header>nav.primary-navigation>.baby-names-nav-item>.baby-names-main-link{display:inline-block;color:#fff;text-decoration:none;padding:7px 9px;border-radius:6px;line-height:1.4;font-size:15px}
+header>nav.primary-navigation>a:hover,header>nav.primary-navigation>.baby-names-nav-item>.baby-names-main-link:hover{background:#40516e}
+header>nav.primary-navigation .baby-names-nav-item{display:inline-flex;align-items:center;gap:0;position:relative}
+header>nav.primary-navigation .baby-names-categories{position:relative;display:inline-flex;align-items:center}
+header>nav.primary-navigation .baby-names-categories>summary{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:30px;min-height:34px;padding:5px 9px;cursor:pointer;color:#fff;list-style:none;border-radius:6px;white-space:nowrap}
+header>nav.primary-navigation .baby-names-categories>summary::-webkit-details-marker{display:none}
+header>nav.primary-navigation .baby-names-categories>summary:after{content:"▾";font-size:13px}
+header>nav.primary-navigation .baby-names-categories[open]>summary,header>nav.primary-navigation .baby-names-categories>summary:hover{background:#40516e}
+header>nav.primary-navigation .baby-names-categories .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:200px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}
+header>nav.primary-navigation .baby-names-categories .nav-menu a{display:block;color:#243047;padding:9px 10px;text-decoration:none;font-size:14px}
+header>nav.primary-navigation .baby-names-categories .nav-menu a:hover{background:#f0f5ff}
+@media(max-width:760px){
+ header{padding:10px 4% 0}
+ header .brand img{width:290px;max-width:100%;height:auto;max-height:none}
+ header>.menu-toggle{display:inline-flex;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:8px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+ header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}
+ header>nav.primary-navigation.is-open{display:flex}
+ header>nav.primary-navigation>a{display:block;width:100%;font-size:15px!important;padding:9px 10px;line-height:1.4}
+ header>nav.primary-navigation>.baby-names-nav-item{display:flex;align-items:center;width:100%;gap:0}
+ header>nav.primary-navigation>.baby-names-nav-item>.baby-names-main-link{flex:1;width:auto;padding:9px 10px;font-size:15px!important}
+ header>nav.primary-navigation>.baby-names-nav-item>.baby-names-categories>summary{min-width:42px;min-height:40px}
+ header>nav.primary-navigation>.baby-names-nav-item>.baby-names-categories .nav-menu{position:absolute;top:100%;left:auto;right:0;width:min(340px,calc(100vw - 40px));min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;box-shadow:0 10px 28px #17243a30;background:#fff}
+}
+@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+
 </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -131,6 +163,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
   window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
 })();
+</script>
+<script>
+
+/* Homepage-matched accessible mobile main menu */
+(function(){
+  var menu=document.getElementById('primary-navigation');
+  var toggle=document.querySelector('header>.menu-toggle');
+  if(!menu||!toggle)return;
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open main menu');
+  }
+  toggle.addEventListener('click',function(){
+    var open=!menu.classList.contains('is-open');
+    menu.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',closeMenu);
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){
+      closeMenu();
+      var dropdown=menu.querySelector('.baby-names-categories[open]');
+      if(dropdown)dropdown.removeAttribute('open');
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
+})();
+
 </script>
 </body>
 </html>
