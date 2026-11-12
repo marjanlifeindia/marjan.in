@@ -8,12 +8,14 @@ on:
       - work/phase-3-navigation
       - work/phase-4-homepage-footer-v2
       - work/phase-5-blog-content
+      - work/phase-6-digital-products
   push:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
       - work/phase-4-homepage-footer-v2
       - work/phase-5-blog-content
+      - work/phase-6-digital-products
 
 jobs:
   build:
@@ -37,6 +39,8 @@ jobs:
           test -f _site/assets/css/marjan-article.css
           test -f _site/assets/js/marjan-article.js
           test -f _site/blog/index.html
+          test -f _site/digital-products/index.html
+          grep -q '120 Baby Names' _site/ebooks-pdfs/index.html
           test -f _site/index.html
           for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
             test -f "_site/$page/index.html"
