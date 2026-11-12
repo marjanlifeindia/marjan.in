@@ -90,13 +90,14 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+
   // Phase 5: add breadcrumbs and related articles to each published article page.
   eleventyConfig.addTransform("enhanceMarjanArticles", function(content, outputPath) {
-    const route = String(outputPath || "").replace(/\\\\/g, "/");
-    const routeMatch = route.match(/\\/(?:article-([^/]+)|articles\\/([^/]+))\\/index\\.html$/i);
+    const route = String(outputPath || "").replaceAll("\\", "/");
+    const routeMatch = route.match(/\/(?:article-([^/]+)|articles\/([^/]+))\/index\.html$/i);
     if (!routeMatch) return content;
     const slug = routeMatch[1] || routeMatch[2];
-    const titleMatch = content.match(/<h1[^>]*>([\\s\\S]*?)<\\/h1>/i);
+    const titleMatch = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
     const rawTitle = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "लेख";
     const safeTitle = rawTitle.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     if (!content.includes("marjan-article-breadcrumbs")) {
@@ -145,10 +146,10 @@ module.exports = function (eleventyConfig) {
       content = content.replace("</article>", relatedHtml + "</article>");
     }
     if (!content.includes("/assets/css/marjan-article.css")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-article.css?v=1">\\n</head>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-article.css?v=1">\n</head>');
     }
     if (!content.includes("/assets/js/marjan-article.js")) {
-      content = content.replace("</body>", '<script src="/assets/js/marjan-article.js?v=1"></script>\\n</body>');
+      content = content.replace("</body>", '<script src="/assets/js/marjan-article.js?v=1"></script>\n</body>');
     }
     return content;
   });
