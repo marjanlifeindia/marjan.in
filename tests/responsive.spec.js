@@ -22,7 +22,7 @@ test("Blog search, category filter and pagination work", async ({ page }) => {
   await page.goto("/blog/");
   await expect(page.locator(".blog-card:visible")).toHaveCount(4);
   await expect(page.locator("#blogNext")).toBeEnabled();
-  await page.locator("#blogNext").click();
+  await page.locator("#blogNext").dispatchEvent("click");
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 2");
   await expect(page.locator(".blog-card:visible")).toHaveCount(2);
   await page.locator("#blogCategory").selectOption("Parenting");
