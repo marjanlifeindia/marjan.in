@@ -58,7 +58,7 @@ module.exports = function (eleventyConfig) {
     <nav class="marjan-footer-col" aria-label="Explore MARJAN.IN">
       <h2>Explore</h2>
       <ul>
-        <li><a href="/">Home</a></li><li><a href="/parenting">Parenting</a></li><li><a href="/kids-education">Kids Education</a></li><li><a href="/baby-names/">Baby Names</a></li><li><a href="/resources">Resources</a></li>
+        <li><a href="/">Home</a></li><li><a href="/blog">Blog</a></li><li><a href="/parenting">Parenting</a></li><li><a href="/kids-education">Kids Education</a></li><li><a href="/baby-names/">Baby Names</a></li><li><a href="/resources">Resources</a></li>
       </ul>
     </nav>
     <nav class="marjan-footer-col" aria-label="Learning and creativity">
