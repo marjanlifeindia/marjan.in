@@ -16,7 +16,9 @@ test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
   await expect(page.locator("#primary-navigation")).toBeHidden();
   await toggle.click();
   await expect(page.locator("#primary-navigation")).toHaveClass(/is-open/);
-  await page.locator("#primary-navigation").getByRole("link", { name: "Blog", exact: true }).click();
+  const resources = page.locator("#primary-navigation .nav-group").last();
+  await resources.locator("summary").click();
+  await resources.getByRole("link", { name: "Blog & Latest Articles" }).click();
   await expect(page).toHaveURL(/\/blog\/?$/);
 });
 
@@ -24,7 +26,7 @@ test("Blog search, category filter and pagination work", async ({ page }) => {
   await page.goto("/blog/");
   await expect(page.locator(".blog-card:visible")).toHaveCount(4);
   await expect(page.locator("#blogNext")).toBeEnabled();
-  await page.locator("#blogNext").dispatchEvent("click");
+  await page.locator("#blogNext").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 2");
   await expect(page.locator(".blog-card:visible")).toHaveCount(2);
   await page.locator("#blogCategory").selectOption("Parenting");
@@ -55,7 +57,8 @@ test("Digital Products page distinguishes available and planned products", async
 test("mobile pages do not create horizontal overflow", async ({ page }) => {
   test.skip(test.info().project.name !== "mobile");
   for (const path of ["/", "/blog/", "/digital-products/", "/worksheets/", "/ebooks-pdfs/"]) {
-    await page.goto(path);
+    await page.goto(path, { waitUntil: "networkidle" });
+    await page.locator("body").waitFor();
     const dimensions = await page.evaluate(() => ({
       width: window.innerWidth,
       scrollWidth: document.documentElement.scrollWidth
