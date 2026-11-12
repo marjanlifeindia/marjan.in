@@ -46,7 +46,7 @@ var navHTML=`
 <div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a class="nav-mega-feature" href="/resources">All Resources</a></div></div></details>`;
 menu.innerHTML=navHTML;
 var oldToggle=header.querySelector('.menu-toggle'),toggle=oldToggle;
-if(oldToggle){toggle=oldToggle.cloneNode(true);toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span>';oldToggle.replaceWith(toggle);}
+if(oldToggle){toggle=oldToggle.cloneNode(true);toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h12M4 18h8"/></svg><span>Menu</span>';oldToggle.replaceWith(toggle);}
 var actions=header.querySelector('.marjan-header-actions');if(!actions){actions=document.createElement('div');actions.className='marjan-header-actions';header.appendChild(actions);}var search=header.querySelector('.nav-search');if(!search){search=document.createElement('a');search.className='nav-search';search.href='/search/';search.setAttribute('aria-label','Search MARJAN.IN');search.setAttribute('title','Search MARJAN.IN');search.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>';}else{search.href='/search/';}actions.appendChild(search);if(toggle)actions.appendChild(toggle);header.classList.add('marjan-header');var tagline=header.querySelector('.tagline');if(tagline)tagline.remove();
 function mobile(){return matchMedia('(max-width:760px)').matches;}
 function close(focus){menu.classList.remove('is-open');if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open main menu');}menu.querySelectorAll('.nav-group[open]').forEach(function(d){d.open=false;});if(focus&&toggle)toggle.focus();}
