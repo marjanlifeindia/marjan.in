@@ -334,7 +334,8 @@ function applyFilters(){
  renderedCount=0;list.replaceChildren();list.hidden=filteredNames.length===0;list.setAttribute('aria-busy','false');empty.hidden=filteredNames.length!==0;
  count.textContent=showShortlistOnly?filteredNames.length+' shortlisted '+(filteredNames.length===1?'name':'names'):filteredNames.length+' '+(filteredNames.length===1?'name':'names');updateShortlistFilterLabel();renderNextBatch();
 }
-[search,gender,religion,letter].forEach(function(control){control.addEventListener(control===search?'input':'change',applyFilters);});
+search.addEventListener('input',applyFilters);
+[gender,religion,letter].forEach(function(control){control.addEventListener('input',applyFilters);control.addEventListener('change',applyFilters);control.oninput=applyFilters;control.onchange=applyFilters;});
 document.querySelectorAll('.baby-name-meaning-chip').forEach(function(chip){chip.addEventListener('click',function(){search.value=chip.dataset.meaningQuery||'';applyFilters();search.focus();});});
 reset.addEventListener('click',function(){search.value='';gender.value='all';religion.value='all';letter.value='all';showShortlistOnly=false;applyFilters();search.focus();});
 shortlistFilter.addEventListener('click',function(){showShortlistOnly=!showShortlistOnly;applyFilters();});
