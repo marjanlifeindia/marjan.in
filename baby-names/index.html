@@ -340,7 +340,7 @@ reset.addEventListener('click',function(){search.value='';gender.value='all';rel
 shortlistFilter.addEventListener('click',function(){showShortlistOnly=!showShortlistOnly;applyFilters();});
 loadMore.addEventListener('click',renderNextBatch);
 loadShortlist();updateShortlistFilterLabel();
-fetch(DATA_URL,{cache:'force-cache'}).then(function(response){if(!response.ok)throw new Error('Data request failed');return response.json();}).then(function(data){if(!Array.isArray(data)||data.length!==538)throw new Error('Data validation failed');allNames=data;applyFilters();}).catch(function(){list.hidden=true;loadMore.hidden=true;list.setAttribute('aria-busy','false');count.textContent='नामों की सूची अभी लोड नहीं हो सकी। कृपया थोड़ी देर बाद फिर कोशिश करें।';empty.hidden=true;});
+fetch(DATA_URL).then(function(response){if(!response.ok)throw new Error('Data request failed');return response.json();}).then(function(data){if(!Array.isArray(data)||data.length!==538)throw new Error('Data validation failed');allNames=data;applyFilters();}).catch(function(){list.hidden=true;loadMore.hidden=true;list.setAttribute('aria-busy','false');count.textContent='नामों की सूची अभी लोड नहीं हो सकी। कृपया थोड़ी देर बाद फिर कोशिश करें।';empty.hidden=true;});
 </script>
 
 <h2>Browse Baby Names by Religion</h2>
