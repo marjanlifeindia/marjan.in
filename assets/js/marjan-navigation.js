@@ -77,7 +77,7 @@ function mobile(){return matchMedia('(max-width:900px)').matches;}
 function close(focus){menu.classList.remove('is-open');if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open main menu');}menu.querySelectorAll('.nav-group[open]').forEach(function(d){d.open=false;});if(focus&&toggle)toggle.focus();}
 if(toggle)toggle.onclick=function(event){event.preventDefault();var open=!menu.classList.contains('is-open');menu.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');};
 menu.querySelectorAll('.nav-group').forEach(function(group){group.addEventListener('toggle',function(){if(group.open)menu.querySelectorAll('.nav-group').forEach(function(other){if(other!==group)other.open=false;});});});
-menu.addEventListener('click',function(e){if(e.target.closest('a')&&mobile())close(false);});
+
 document.addEventListener('click',function(e){if(!header.contains(e.target)&&mobile()&&menu.classList.contains('is-open'))close(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var open=menu.querySelector('.nav-group[open]');if(open)open.open=false;else if(menu.classList.contains('is-open'))close(true);}});
 window.addEventListener('resize',function(){if(!mobile())close(false);});
