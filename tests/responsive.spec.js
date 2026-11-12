@@ -12,6 +12,8 @@ test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
   await page.goto("/");
   const toggle = page.locator("header .menu-toggle");
   await expect(toggle).toBeVisible();
+  await expect(page.locator("header .nav-search")).toBeVisible();
+  await expect(page.locator("#primary-navigation")).toBeHidden();
   await toggle.click();
   await expect(page.locator("#primary-navigation")).toHaveClass(/is-open/);
   await page.locator("#primary-navigation").getByRole("link", { name: "Blog", exact: true }).click();
@@ -80,6 +82,11 @@ test("desktop header has no hamburger and exposes search beside the main navigat
   await expect(page.locator("header .menu-toggle")).toBeHidden();
   await expect(page.locator("header .nav-search")).toBeVisible();
   await expect(page.locator("#primary-navigation .nav-group")).toHaveCount(8);
+  await expect(page.locator("#primary-navigation > .nav-home")).toHaveCount(1);
+  await expect(page.locator("#primary-navigation > .nav-direct")).toHaveCount(0);
+  const navBox = await page.locator("#primary-navigation").boundingBox();
+  expect(navBox.height).toBeLessThan(48);
+  await expect(page.locator("#primary-navigation .nav-group").last().locator(".nav-mega a", { hasText: "Blog & Latest Articles" })).toBeAttached();
 });
 
 test("mobile header keeps logo, search and compact menu on one row", async ({ page }) => {
