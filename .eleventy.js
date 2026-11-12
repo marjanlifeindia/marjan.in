@@ -8,6 +8,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("posts/**/*.md");
   eleventyConfig.ignores.add("articles/**/*.html");
   eleventyConfig.ignores.add("article.html");
+  eleventyConfig.ignores.add("test-results/**");
+  eleventyConfig.ignores.add("playwright-report/**");
 
   // 2. MailerLite Pop-up injector (यह हर पेज पर पॉप-अप लगाएगा)
   eleventyConfig.addTransform("injectMailerLite", function(content, outputPath) {
