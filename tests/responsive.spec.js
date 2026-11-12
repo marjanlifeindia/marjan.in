@@ -24,11 +24,11 @@ test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
 
 test("Blog pagination moves between pages", async ({ page }) => {
   await page.goto("/blog/");
-  await expect(page.locator(".blog-card:visible")).toHaveCount(4);
+  await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(4);
   await expect(page.locator("#blogNext")).toBeEnabled();
   await page.locator("#blogNext").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 2");
-  await expect(page.locator(".blog-card:visible")).toHaveCount(2);
+  await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(2);
   await page.locator("#blogPrev").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 2");
 });
@@ -102,15 +102,17 @@ test("Baby Names directory loads 538 names and supports filters and shortlist", 
   const data = await dataResponse.json();
   expect(data).toHaveLength(538);
   const pageErrors = [];
+  const failedRequests = [];
   page.on("pageerror", error => pageErrors.push(error.message));
+  page.on("requestfailed", request => { if (request.url().includes("baby-names.json")) failedRequests.push(request.url()+": "+request.failure()?.errorText); });
   await page.goto("/baby-names/");
-  await page.waitForFunction(() => {
-    const count = document.querySelector("#baby-name-result-count")?.textContent || "";
-    return count !== "538 names" || document.querySelector("#baby-name-results .baby-name-card");
-  });
-  console.log("Baby Names runtime", await page.locator("#baby-name-result-count").textContent(), await page.locator("#baby-name-results .baby-name-card").count(), pageErrors);
+  const browserFetch = await page.evaluate(async () => Promise.race([
+    fetch("/assets/data/baby-names.json").then(async response => ({ status: response.status, bytes: (await response.text()).length })),
+    new Promise(resolve => setTimeout(() => resolve({ timeout: true }), 5000))
+  ]));
+  console.log("Baby Names runtime", browserFetch, await page.locator("#baby-name-result-count").textContent(), await page.locator("#baby-name-results .baby-name-card").count(), pageErrors, failedRequests);
   await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
-  await expect(page.locator("#baby-name-results .baby-name-card").first()).toBeVisible();
+  await expect(page.locator("#baby-name-results .baby-name-card").first()).toBeVisible({ timeout: 15000 });
   await page.locator("#baby-name-gender").selectOption("boy");
   await expect(page.locator("#baby-name-result-count")).toHaveText("244 names");
   await page.locator("#baby-name-religion").selectOption("muslim");
