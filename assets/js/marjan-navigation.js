@@ -1,6 +1,11 @@
 /* MARJAN.IN Phase 3 navigation: mega menu, mobile drawer and real content links */
 (function(){
-var header=document.querySelector('header'),menu=document.getElementById('primary-navigation');
+var header=document.querySelector('header');
+/* Legacy pages (notably the original homepage) use an unclassified nav.
+   Promote that existing nav instead of exiting before the shared header is built. */
+var menu=header&&(header.querySelector('#primary-navigation')||header.querySelector(':scope > nav'));
+if(header&&!menu){menu=document.createElement('nav');header.appendChild(menu);}
+if(menu){menu.id='primary-navigation';menu.classList.add('primary-navigation');}
 /* Mobile fixed bottom shortcuts, modeled on the reference layout */
 var bottom=document.createElement('nav');
 bottom.className='marjan-mobile-bottom';
