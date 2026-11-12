@@ -27,7 +27,7 @@ var navHTML=`
 <details class="nav-group"><summary>Ebooks & PDFs</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Books</h3><a href="/ebooks-pdfs#story-books">Story Books</a><a href="/ebooks-pdfs#poems">Poems</a><a href="/ebooks-pdfs#activity-books">Activity Books</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Learning</h3><a href="/ebooks-pdfs#learning-ebooks">Learning Ebooks</a><a href="/ebooks-pdfs#handwriting-books">Handwriting Books</a></div>
-<div class="nav-mega-col"><h3 class="nav-mega-title">Downloads</h3><a href="/ebooks-pdfs#printable-bundles">Printable PDF Bundles</a><a href="/ebooks-pdfs#free-downloads">Free Downloads</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Downloads</h3><a href="/ebooks-pdfs#printable-bundles">Printable PDF Bundles</a><a href="/ebooks-pdfs#free-downloads">Free Downloads</a><a href="/digital-products">Digital Products Catalog</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a class="nav-mega-feature" href="/ebooks-pdfs">All Ebooks & PDFs</a></div></div></details>
 <a class="nav-direct" href="/baby-names">Baby Names</a>
 <details class="nav-group"><summary>Products & Reviews</summary><div class="nav-mega">
