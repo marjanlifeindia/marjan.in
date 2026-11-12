@@ -5,6 +5,9 @@ module.exports = function (eleventyConfig) {
 
   // Keep legacy Markdown drafts as source material, but do not render them: each has a maintained HTML page at the same output route.
   eleventyConfig.ignores.add("baby-names/**/*.md");
+  eleventyConfig.ignores.add("posts/**/*.md");
+  eleventyConfig.ignores.add("articles/**/*.html");
+  eleventyConfig.ignores.add("article.html");
 
   // 2. MailerLite Pop-up injector (यह हर पेज पर पॉप-अप लगाएगा)
   eleventyConfig.addTransform("injectMailerLite", function(content, outputPath) {
