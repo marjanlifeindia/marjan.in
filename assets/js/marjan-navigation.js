@@ -3,7 +3,6 @@
 var header=document.querySelector('header'),menu=document.getElementById('primary-navigation');if(!header||!menu)return;
 var navHTML=`
 <a class="nav-home" href="/">Home</a>
-<a class="nav-direct" href="/blog">Blog</a>
 <details class="nav-group"><summary>Parenting</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Age-wise Parenting</h3><a href="/parenting#baby-care">Baby Care</a><a href="/parenting#toddler-care">Toddler Care</a><a href="/parenting#preschool-parenting">Preschool Parenting</a><a href="/parenting#parenting-tips">Parenting Tips</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Growth & Behaviour</h3><a href="/parenting#child-development">Child Development</a><a href="/parenting#child-behaviour">Child Behaviour</a></div>
@@ -42,13 +41,13 @@ var navHTML=`
 <details class="nav-group"><summary>Resources</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Parent Resources</h3><a href="/resources#parenting-guides">Parenting Guides</a><a href="/resources#learning-resources">Learning Resources</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Downloads & Tools</h3><a href="/resources#free-downloads">Free Downloads</a><a href="/resources#useful-tools">Useful Tools</a></div>
-<div class="nav-mega-col"><h3 class="nav-mega-title">Explore MARJAN.IN</h3><a href="/kids-corner">Latest Learning & Activities</a><a href="/contact">Contact</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Explore MARJAN.IN</h3><a href="/blog/">Blog & Latest Articles</a><a href="/kids-corner">Latest Learning & Activities</a><a href="/contact">Contact</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a class="nav-mega-feature" href="/resources">All Resources</a></div></div></details>`;
 menu.innerHTML=navHTML;
 var oldToggle=header.querySelector('.menu-toggle'),toggle=oldToggle;
 if(oldToggle){toggle=oldToggle.cloneNode(true);toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h12M4 18h8"/></svg><span>Menu</span>';oldToggle.replaceWith(toggle);}
 var actions=header.querySelector('.marjan-header-actions');if(!actions){actions=document.createElement('div');actions.className='marjan-header-actions';header.appendChild(actions);}var search=header.querySelector('.nav-search');if(!search){search=document.createElement('a');search.className='nav-search';search.href='/search/';search.setAttribute('aria-label','Search MARJAN.IN');search.setAttribute('title','Search MARJAN.IN');search.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>';}else{search.href='/search/';}actions.appendChild(search);if(toggle)actions.appendChild(toggle);header.classList.add('marjan-header');var tagline=header.querySelector('.tagline');if(tagline)tagline.remove();
-function mobile(){return matchMedia('(max-width:760px)').matches;}
+function mobile(){return matchMedia('(max-width:900px)').matches;}
 function close(focus){menu.classList.remove('is-open');if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open main menu');}menu.querySelectorAll('.nav-group[open]').forEach(function(d){d.open=false;});if(focus&&toggle)toggle.focus();}
 if(toggle)toggle.addEventListener('click',function(){var open=!menu.classList.contains('is-open');menu.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');});
 menu.querySelectorAll('.nav-group').forEach(function(group){group.addEventListener('toggle',function(){if(group.open)menu.querySelectorAll('.nav-group').forEach(function(other){if(other!==group)other.open=false;});});});
