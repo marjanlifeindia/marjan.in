@@ -322,23 +322,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">☰ Menu</button>
 <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
-<a href="/">Home</a>
-<a href="/parenting">Parenting</a>
-<a href="/kids-education">Kids Education</a>
-<a href="/activities">Kids Activities</a>
-<a href="/kids-corner">Kids Corner</a>
-<div class="baby-names-nav-item">
-<a class="baby-names-main-link" href="/baby-names/">Baby Names</a>
-<details class="nav-dropdown baby-names-categories">
-<summary aria-label="Open Baby Names categories" title="Baby Names categories"><span>Categories</span></summary>
-<div class="nav-menu">
-<a href="/baby-names/#hindu-names">Hindu Names</a>
-<a href="/baby-names/#boy-names">Boy Names</a>
-<a href="/baby-names/#a-z-names">A–Z Names</a>
-</div>
-</details>
-</div>
-<a href="/about">About Us</a>
+<a class="nav-home" href="/">Home</a><a class="nav-direct" href="/blog/">Blog</a>
+<a class="nav-direct" href="/parenting">Parenting</a><a class="nav-direct" href="/kids-education">Kids Education</a>
+<a class="nav-direct" href="/worksheets">Worksheets</a><a class="nav-direct" href="/art-creativity">Art &amp; Creativity</a>
+<a class="nav-direct" href="/ebooks-pdfs">Ebooks &amp; PDFs</a><a class="nav-direct" href="/baby-names/">Baby Names</a>
+<a class="nav-direct" href="/products-reviews">Products &amp; Reviews</a><a class="nav-direct" href="/resources">Resources</a>
 </nav>
 </header>
 
@@ -559,37 +547,6 @@ message.textContent=query?(visible+" परिणाम मिले"):"";
     ml('account', '2723810');
 </script>
 <!-- End MailerLite Universal -->
-
-<script>
-(function(){
-  var menu=document.getElementById('primary-navigation');
-  var toggle=document.querySelector('.menu-toggle');
-  if(!menu||!toggle)return;
-  function closeMenu(){
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded','false');
-    toggle.setAttribute('aria-label','Open main menu');
-  }
-  toggle.addEventListener('click',function(){
-    var open=!menu.classList.contains('is-open');
-    menu.classList.toggle('is-open',open);
-    toggle.setAttribute('aria-expanded',String(open));
-    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
-  });
-  menu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click',function(){closeMenu();});
-  });
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'){
-      closeMenu();
-      var dropdown=menu.querySelector('.nav-dropdown[open]');
-      if(dropdown)dropdown.removeAttribute('open');
-      toggle.focus();
-    }
-  });
-  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
-})();
-</script>
 
 </body>
 </html>
