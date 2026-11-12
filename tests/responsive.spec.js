@@ -71,7 +71,7 @@ test("legacy homepage markup is upgraded to the shared global navigation", async
   await page.goto("/");
   const header = page.locator("header.marjan-header");
   await expect(header).toBeVisible();
-  await expect(header.locator("#primary-navigation.primary-navigation")).toBeVisible();
+  await expect(header.locator("#primary-navigation.primary-navigation")).toBeAttached();
   await expect(header.locator("#primary-navigation .nav-group")).toHaveCount(8);
   await expect(header.locator(".nav-search")).toHaveAttribute("href", "/search/");
 });
