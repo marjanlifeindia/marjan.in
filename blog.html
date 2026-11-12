@@ -133,8 +133,8 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
  category.addEventListener("change",applyFilters);
  category.oninput=applyFilters;
  category.onchange=applyFilters;
- prev.addEventListener("click",()=>{page=Math.max(1,page-1);render();});
- next.addEventListener("click",()=>{page++;render();});
+ prev.onclick=function(){page=Math.max(1,page-1);render();};
+ next.onclick=function(){page++;render();};
  render();
 })();
 </script>
