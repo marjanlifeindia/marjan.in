@@ -29,9 +29,11 @@ test("Blog search, category filter and pagination work", async ({ page }) => {
   await page.locator("#blogNext").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 2");
   await expect(page.locator(".blog-card:visible")).toHaveCount(2);
-  await page.locator("#blogCategory").selectOption("Parenting");
-  await expect(page.locator(".blog-card:visible")).toHaveCount(1);
-  await expect(page.locator("#blogCount")).toContainText("1 लेख मिले");
+  const category = page.locator("#blogCategory");
+  await category.selectOption("Parenting");
+  await expect(category).toHaveValue("Parenting");
+  await expect(page.locator("#blogCount")).toHaveText("1 लेख मिले");
+  await expect(page.locator(".blog-card:not([hidden])")).toHaveCount(1);
   await page.locator("#blogSearch").evaluate((input) => { input.value = "कोई लेख नहीं"; input.dispatchEvent(new Event("input", { bubbles: true })); });
   await expect(page.locator("#blogCount")).toHaveText("0 लेख मिले");
   await expect(page.locator("#blogEmpty")).toBeVisible();
