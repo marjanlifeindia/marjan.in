@@ -101,6 +101,12 @@ test("mobile bottom navigation is present across key page types", async ({ page 
 });
 
 test("Baby Names directory loads 538 names and supports filters and shortlist", async ({ page }) => {
+  const dataResponse = await page.request.get("/baby-names/names-data.json");
+  expect(dataResponse.status()).toBe(200);
+  const data = await dataResponse.json();
+  expect(data).toHaveLength(538);
+  const pageErrors = [];
+  page.on("pageerror", error => pageErrors.push(error.message));
   await page.goto("/baby-names/");
   await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
   await expect(page.locator("#baby-name-results .baby-name-card").first()).toBeVisible();
@@ -115,6 +121,7 @@ test("Baby Names directory loads 538 names and supports filters and shortlist", 
   await page.locator("#baby-name-shortlist-filter").click();
   await expect(page.locator("#baby-name-result-count")).toHaveText("1 shortlisted name");
   await expect(page.locator("#baby-name-results .baby-name-card")).toHaveCount(1);
+  expect(pageErrors).toEqual([]);
 });
 
 test("global header search is visible and searches site sections and articles", async ({ page }) => {
