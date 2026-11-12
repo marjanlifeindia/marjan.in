@@ -37,6 +37,8 @@ test("Blog category filter updates visible articles", async ({ page }) => {
   await page.goto("/blog/");
   const category = page.locator("#blogCategory");
   await category.selectOption("Parenting");
+  await category.dispatchEvent("input");
+  await category.dispatchEvent("change");
   await expect(category).toHaveValue("Parenting");
   await expect(page.locator("#blogCount")).toHaveText("1 लेख मिले");
   await expect(page.locator(".blog-card:not([hidden])")).toHaveCount(1);
@@ -113,9 +115,15 @@ test("Baby Names directory loads 538 names and supports filters and shortlist", 
   console.log("Baby Names runtime", browserFetch, await page.locator("#baby-name-result-count").textContent(), await page.locator("#baby-name-results .baby-name-card").count(), pageErrors, failedRequests);
   await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
   await expect(page.locator("#baby-name-results .baby-name-card").first()).toBeVisible({ timeout: 15000 });
-  await page.locator("#baby-name-gender").selectOption("boy");
+  const gender = page.locator("#baby-name-gender");
+  await gender.selectOption("boy");
+  await gender.dispatchEvent("input");
+  await gender.dispatchEvent("change");
   await expect(page.locator("#baby-name-result-count")).toHaveText("244 names");
-  await page.locator("#baby-name-religion").selectOption("muslim");
+  const religion = page.locator("#baby-name-religion");
+  await religion.selectOption("muslim");
+  await religion.dispatchEvent("input");
+  await religion.dispatchEvent("change");
   await expect(page.locator("#baby-name-result-count")).toHaveText("56 names");
   const firstName = page.locator("#baby-name-results .baby-name-card").first();
   const save = firstName.getByRole("button", { name: /Shortlist/ });
