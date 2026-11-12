@@ -127,8 +127,10 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
   prev.disabled=page<=1||filtered.length===0;next.disabled=page>=pages||filtered.length===0;
   status.textContent="Page "+page+" of "+pages;
  }
- search.addEventListener("input",()=>{page=1;render();});
- category.addEventListener("change",()=>{page=1;render();});
+ function applyFilters(){page=1;render();}
+ search.addEventListener("input",applyFilters);
+ category.addEventListener("input",applyFilters);
+ category.addEventListener("change",applyFilters);
  prev.addEventListener("click",()=>{page=Math.max(1,page-1);render();});
  next.addEventListener("click",()=>{page++;render();});
  render();
