@@ -1,0 +1,5382 @@
+[
+  {
+    "id": "bn-0001",
+    "name": "Aarav",
+    "hindiName": "आरव",
+    "meaning": "शांत शांतिपूर्ण",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0002",
+    "name": "Advik",
+    "hindiName": "अद्विक",
+    "meaning": "अनोखा अद्वितीय",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0003",
+    "name": "Arjun",
+    "hindiName": "अर्जुन",
+    "meaning": "उज्ज्वल चमकदार",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0004",
+    "name": "Atharv",
+    "hindiName": "अथर्व",
+    "meaning": "पहला वेद",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0005",
+    "name": "Ayaan",
+    "hindiName": "अयान",
+    "meaning": "ईश्वर का उपहार",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0006",
+    "name": "Ayaansh",
+    "hindiName": "आयांश",
+    "meaning": "ईश्वर का एक हिस्सा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0007",
+    "name": "Aditya",
+    "hindiName": "आदित्य",
+    "meaning": "सूर्य",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0008",
+    "name": "Akash",
+    "hindiName": "आकाश",
+    "meaning": "आसमान",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0009",
+    "name": "Ansh",
+    "hindiName": "अंश",
+    "meaning": "भगवान का हिस्सा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0010",
+    "name": "Abhay",
+    "hindiName": "अभय",
+    "meaning": "निडर बहादुर",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0011",
+    "name": "Anay",
+    "hindiName": "अनय",
+    "meaning": "भगवान का आशीर्वाद",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0012",
+    "name": "Akshat",
+    "hindiName": "अक्षत",
+    "meaning": "जिसे कोई हरा न सके",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0013",
+    "name": "Anirudh",
+    "hindiName": "अनिरुद्ध",
+    "meaning": "जिसे कोई रोक न सके",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0014",
+    "name": "Avyukt",
+    "hindiName": "अव्युक्त",
+    "meaning": "जो स्पष्ट रूप से जाना जाए",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0015",
+    "name": "Anvay",
+    "hindiName": "अन्वय",
+    "meaning": "एकता जुड़ाव",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0016",
+    "name": "Arhaan",
+    "hindiName": "अरहान",
+    "meaning": "बादशाह राजा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0017",
+    "name": "Anuj",
+    "hindiName": "अनुज",
+    "meaning": "छोटा भाई",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0018",
+    "name": "Agastya",
+    "hindiName": "अगस्त्य",
+    "meaning": "प्रसिद्ध ऋषि",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0019",
+    "name": "Avyansh",
+    "hindiName": "अव्यांश",
+    "meaning": "शक्तिशाली अटल",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0020",
+    "name": "Arin",
+    "hindiName": "अरिन",
+    "meaning": "शांतिपूर्ण",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0021",
+    "name": "Aayan",
+    "hindiName": "आयान",
+    "meaning": "ईश्वर का उपहार; अर्थ स्रोतों में भिन्न हो सकता है",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0022",
+    "name": "Abbas",
+    "hindiName": "अब्बास",
+    "meaning": "गंभीर, दृढ़; कुछ स्रोत इसे शेर से भी जोड़ते हैं",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0023",
+    "name": "Abdullah",
+    "hindiName": "अब्दुल्लाह",
+    "meaning": "अल्लाह का बंदा / सेवक",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0024",
+    "name": "Adeel",
+    "hindiName": "अदील",
+    "meaning": "न्यायप्रिय, नेक और निष्पक्ष",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0025",
+    "name": "Adnan",
+    "hindiName": "अदनान",
+    "meaning": "लंबे समय तक किसी स्थान पर बसने से संबंधित पारंपरिक अर्थ",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0026",
+    "name": "Ahmed",
+    "hindiName": "अहमद",
+    "meaning": "बहुत प्रशंसनीय; प्रशंसा के योग्य",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0027",
+    "name": "Ahsan",
+    "hindiName": "अहसन",
+    "meaning": "सबसे अच्छा, सबसे सुंदर",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0028",
+    "name": "Ali",
+    "hindiName": "अली",
+    "meaning": "ऊँचा, महान, प्रतिष्ठित",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0029",
+    "name": "Amir",
+    "hindiName": "अमीर",
+    "meaning": "राजकुमार, नेता या शासक",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0030",
+    "name": "Anas",
+    "hindiName": "अनस",
+    "meaning": "मित्रता, अपनापन या सौहार्द",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0031",
+    "name": "Aqib",
+    "hindiName": "आक़िब",
+    "meaning": "उत्तराधिकारी या बाद में आने वाला",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0032",
+    "name": "Arham",
+    "hindiName": "अरहम",
+    "meaning": "दयालु, करुणामय",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0033",
+    "name": "Arif",
+    "hindiName": "आरिफ़",
+    "meaning": "जानकार, समझदार या ज्ञानी",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0034",
+    "name": "Arsalan",
+    "hindiName": "अरसलान",
+    "meaning": "शेर; बहादुरी से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0035",
+    "name": "Arshad",
+    "hindiName": "अरशद",
+    "meaning": "सही राह पर चलने वाला",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0036",
+    "name": "Asad",
+    "hindiName": "असद",
+    "meaning": "शेर",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0037",
+    "name": "Ashar",
+    "hindiName": "अशर",
+    "meaning": "कुछ नाम-सूचियों में बुद्धिमत्ता से संबंधित",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0038",
+    "name": "Asif",
+    "hindiName": "आसिफ़",
+    "meaning": "मज़बूत, शक्तिशाली; अर्थ स्रोत के अनुसार बदल सकता है",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0039",
+    "name": "Asim",
+    "hindiName": "आसिम",
+    "meaning": "रक्षक, संरक्षक",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0040",
+    "name": "Atif",
+    "hindiName": "आतिफ़",
+    "meaning": "दयालु, सहानुभूति रखने वाला",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0041",
+    "name": "Azaan",
+    "hindiName": "अज़ान",
+    "meaning": "नमाज़ के लिए पुकार",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0042",
+    "name": "Aaliyah",
+    "hindiName": "आलिया",
+    "meaning": "ऊँचा, महान या उच्च स्थान से जुड़ा अर्थ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0043",
+    "name": "Aamaal",
+    "hindiName": "आमाल",
+    "meaning": "आशाएँ, आकांक्षाएँ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0044",
+    "name": "Amina",
+    "hindiName": "आमिना",
+    "meaning": "सुरक्षित, निश्चिंत; भरोसेमंद होने से जुड़ा अर्थ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0045",
+    "name": "Abeer",
+    "hindiName": "अबीर",
+    "meaning": "सुगंध, खुशबू",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0046",
+    "name": "Abrar",
+    "hindiName": "अब्रार",
+    "meaning": "नेक, सदाचारी; क्षेत्र के अनुसार gender usage बदल सकता है",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0047",
+    "name": "Afaf",
+    "hindiName": "अफ़ाफ़",
+    "meaning": "पवित्रता, संयम या शालीनता",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0048",
+    "name": "Afifa",
+    "hindiName": "अफ़ीफ़ा",
+    "meaning": "पाकदामनी या शालीनता से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0049",
+    "name": "Afnan",
+    "hindiName": "अफ़नान",
+    "meaning": "पेड़ों की शाखाएँ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0050",
+    "name": "Ahlam",
+    "hindiName": "अहलाम",
+    "meaning": "सपने",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0051",
+    "name": "Aisha",
+    "hindiName": "आयशा",
+    "meaning": "जीवित, जीवन से भरपूर",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0052",
+    "name": "Alaa",
+    "hindiName": "अला",
+    "meaning": "नेमतें, उपकार या बरकतें",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0053",
+    "name": "Alya",
+    "hindiName": "आल्या",
+    "meaning": "आसमान, ऊँचाई या बुलंदी",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0054",
+    "name": "Amal",
+    "hindiName": "अमल",
+    "meaning": "आशा, उम्मीद या आकांक्षा",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0055",
+    "name": "Amani",
+    "hindiName": "अमानी",
+    "meaning": "इच्छाएँ, अभिलाषाएँ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0056",
+    "name": "Amira",
+    "hindiName": "अमीरा",
+    "meaning": "राजकुमारी",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0057",
+    "name": "Amna",
+    "hindiName": "अमना",
+    "meaning": "सुरक्षा, महफ़ूज़ होने से जुड़ा अर्थ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0058",
+    "name": "Aqsa",
+    "hindiName": "अक़्सा",
+    "meaning": "सबसे दूर; मस्जिद अल-अक़्सा के नाम से भी संबंध",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0059",
+    "name": "Areej",
+    "hindiName": "अरीज",
+    "meaning": "सुगंध या खुशबू",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0060",
+    "name": "Asma",
+    "hindiName": "अस्मा",
+    "meaning": "ऊँचा, सर्वोच्च या बुलंद",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0061",
+    "name": "Atika",
+    "hindiName": "अतीका",
+    "meaning": "स्वच्छ या पवित्र से जुड़ा अर्थ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0062",
+    "name": "Aya",
+    "hindiName": "आया",
+    "meaning": "निशानी, प्रमाण; क़ुरआन की आयत के अर्थ में भी प्रयुक्त",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0063",
+    "name": "Dania",
+    "hindiName": "दानिया",
+    "meaning": "निकट, समीप; नामार्थ स्रोतों में अंतर",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0064",
+    "name": "Ghazal",
+    "hindiName": "ग़ज़ल",
+    "meaning": "कविता/गीत",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0065",
+    "name": "Hafsa",
+    "hindiName": "हफ़्सा",
+    "meaning": "युवा सिंहनी से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "h",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0066",
+    "name": "Huda",
+    "hindiName": "हुदा",
+    "meaning": "मार्गदर्शन, सही राह",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0067",
+    "name": "Juwairiya",
+    "hindiName": "जुवैरिया",
+    "meaning": "एक ऐतिहासिक इस्लामी नाम; अर्थ-व्याख्या अलग",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0068",
+    "name": "Laila",
+    "hindiName": "लैला",
+    "meaning": "रात/रात्रि से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "l",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0069",
+    "name": "Mariam",
+    "hindiName": "मरियम",
+    "meaning": "मरियम; पवित्र धार्मिक नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0070",
+    "name": "Aarush",
+    "hindiName": "आरुष",
+    "meaning": "सूर्य की पहली किरण",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0071",
+    "name": "Aariv",
+    "hindiName": "आरिव",
+    "meaning": "शांतिपूर्ण; आधुनिक नाम-प्रयोग",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0072",
+    "name": "Ahaan",
+    "hindiName": "अहान",
+    "meaning": "सुबह, भोर",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0073",
+    "name": "Aaravya",
+    "hindiName": "आरव्या",
+    "meaning": "आधुनिक नाम; अर्थ स्रोतों में भिन्न",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0074",
+    "name": "Aadya",
+    "hindiName": "आद्या",
+    "meaning": "प्रथम, आदि शक्ति",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0075",
+    "name": "Anvi",
+    "hindiName": "अन्वी",
+    "meaning": "लक्ष्मी से जुड़ा नाम; अर्थ परंपरा अनुसार",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0076",
+    "name": "Aarohi",
+    "hindiName": "आरोही",
+    "meaning": "संगीत की आरोही स्वर-श्रृंखला",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0077",
+    "name": "Avni",
+    "hindiName": "अवनि",
+    "meaning": "पृथ्वी",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0078",
+    "name": "Ira",
+    "hindiName": "इरा",
+    "meaning": "पृथ्वी/सरस्वती से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "i",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0079",
+    "name": "Kiara",
+    "hindiName": "कियारा",
+    "meaning": "उज्ज्वल/प्रकाशमान; कई भाषाई मूल",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0080",
+    "name": "Reyansh",
+    "hindiName": "रेयांश",
+    "meaning": "प्रकाश की किरण; अर्थ स्रोत अनुसार",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0081",
+    "name": "Vihaan",
+    "hindiName": "विहान",
+    "meaning": "सुबह, नया आरंभ",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "v",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0082",
+    "name": "Aahil",
+    "hindiName": "आहिल",
+    "meaning": "राजकुमार/नेता; नामार्थ स्रोत अलग-अलग",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0083",
+    "name": "Aydin",
+    "hindiName": "आयदिन",
+    "meaning": "प्रबुद्ध, उज्ज्वल (तुर्की मूल)",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0084",
+    "name": "Zayan",
+    "hindiName": "ज़ायान",
+    "meaning": "सुंदर, शोभायमान; transliteration/meaning vary",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "z",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0085",
+    "name": "Rayyan",
+    "hindiName": "रैयान",
+    "meaning": "तृप्त/स्वर्ग के द्वार से जुड़ा इस्लामी नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0086",
+    "name": "Aariz",
+    "hindiName": "आरिज़",
+    "meaning": "सम्मानित/बुद्धिमान—नामार्थ स्रोतों में अंतर",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0087",
+    "name": "Inaya",
+    "hindiName": "इनाया",
+    "meaning": "देखभाल, कृपा",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "i",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0088",
+    "name": "Zara",
+    "hindiName": "ज़ारा",
+    "meaning": "चमक/फूल; अलग-अलग मूलों में अर्थ अलग",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "z",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0089",
+    "name": "Ayla",
+    "hindiName": "आयला",
+    "meaning": "चाँदनी/चंद्र-प्रभामंडल; मूल अनुसार",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0090",
+    "name": "Alina",
+    "hindiName": "अलीना",
+    "meaning": "सुंदर/उज्ज्वल; कई भाषाई मूल",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0091",
+    "name": "Mahira",
+    "hindiName": "माहिरा",
+    "meaning": "कुशल, प्रतिभाशाली",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0092",
+    "name": "Areeba",
+    "hindiName": "अरीबा",
+    "meaning": "समझदार, बुद्धिमती",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0093",
+    "name": "Aaradhya",
+    "hindiName": "आराध्या",
+    "meaning": "पूजनीय, आदरणीय",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0094",
+    "name": "Anika",
+    "hindiName": "अनिका",
+    "meaning": "अर्थ स्रोत के अनुसार सुंदरता/कृपा से जुड़ा",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0095",
+    "name": "Ishita",
+    "hindiName": "इशिता",
+    "meaning": "इच्छित, वांछित",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0096",
+    "name": "Myra",
+    "hindiName": "मायरा",
+    "meaning": "आधुनिक नाम; अर्थ स्रोतों में अलग-अलग",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0097",
+    "name": "Saanvi",
+    "hindiName": "सान्वी",
+    "meaning": "लक्ष्मी से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "s",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0098",
+    "name": "Arjan",
+    "hindiName": "अर्जन",
+    "meaning": "कमाई/सृजन; पंजाबी नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0099",
+    "name": "Charanjit",
+    "hindiName": "चरणजीत",
+    "meaning": "चरणों/आध्यात्मिक मार्ग से विजय",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0100",
+    "name": "Gurjot",
+    "hindiName": "गुरजोत",
+    "meaning": "गुरु का प्रकाश",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0101",
+    "name": "Karanveer",
+    "hindiName": "करनवीर",
+    "meaning": "वीर और साहसी",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0102",
+    "name": "Kuldeep",
+    "hindiName": "कुलदीप",
+    "meaning": "कुल/परिवार का दीप",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0103",
+    "name": "Lakhwinder",
+    "hindiName": "लखविंदर",
+    "meaning": "लक्ष्मी/समृद्धि से विजय का भाव",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "l",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0104",
+    "name": "Navjot",
+    "hindiName": "नवजोत",
+    "meaning": "नया प्रकाश",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0105",
+    "name": "Onkar",
+    "hindiName": "ओंकार",
+    "meaning": "ईश्वर के एकत्व का प्रतीक",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "o",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0106",
+    "name": "Ranjit",
+    "hindiName": "रणजीत",
+    "meaning": "विजयी",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0107",
+    "name": "Vikramjit",
+    "hindiName": "विक्रमजीत",
+    "meaning": "पराक्रम से विजय",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "v",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0108",
+    "name": "Yuvraj",
+    "hindiName": "युवराज",
+    "meaning": "राजकुमार",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "y",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0109",
+    "name": "Zorawar",
+    "hindiName": "ज़ोरावर",
+    "meaning": "शक्तिशाली, बहादुर",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "z",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0110",
+    "name": "Akal",
+    "hindiName": "अकाल",
+    "meaning": "कालातीत, शाश्वत",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0111",
+    "name": "Gurveer",
+    "hindiName": "गुरवीर",
+    "meaning": "गुरु का वीर/बहादुर",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0112",
+    "name": "Harman",
+    "hindiName": "हरमन",
+    "meaning": "सबका प्रिय; पंजाबी नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0113",
+    "name": "Jasdeep",
+    "hindiName": "जसदीप",
+    "meaning": "यश/प्रशंसा का दीप",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0114",
+    "name": "Gurleen",
+    "hindiName": "गुरलीन",
+    "meaning": "गुरु में लीन",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0115",
+    "name": "Jasleen",
+    "hindiName": "जसलीन",
+    "meaning": "यश/प्रशंसा में लीन",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0116",
+    "name": "Kirandeep",
+    "hindiName": "किरनदीप",
+    "meaning": "किरणों का दीप",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0117",
+    "name": "Ujjal",
+    "hindiName": "उज्जल",
+    "meaning": "उज्ज्वल, प्रकाशमान",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "u",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0118",
+    "name": "Jaspreet",
+    "hindiName": "जसप्रीत",
+    "meaning": "यश/प्रशंसा से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0119",
+    "name": "Gurshabad",
+    "hindiName": "गुरशब्द",
+    "meaning": "गुरु का शब्द",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0120",
+    "name": "Navleen",
+    "hindiName": "नवलीन",
+    "meaning": "नया/नवीन और समर्पित भाव",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0121",
+    "name": "Simran",
+    "hindiName": "सिमरन",
+    "meaning": "स्मरण, ध्यान",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0122",
+    "name": "Aiden",
+    "hindiName": "एडेन",
+    "meaning": "आयरिश मूल: छोटा अग्निमय/उत्साही",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0123",
+    "name": "Ethan",
+    "hindiName": "ईथन",
+    "meaning": "दृढ़, मजबूत",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0124",
+    "name": "Liam",
+    "hindiName": "लियाम",
+    "meaning": "दृढ़ रक्षक से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0125",
+    "name": "Noah",
+    "hindiName": "नोआ",
+    "meaning": "विश्राम, आराम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0126",
+    "name": "Theo",
+    "hindiName": "थियो",
+    "meaning": "ईश्वर का उपहार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0127",
+    "name": "Jacob",
+    "hindiName": "जेकब",
+    "meaning": "अनुसरण करने वाला; पारंपरिक नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0128",
+    "name": "Benjamin",
+    "hindiName": "बेंजामिन",
+    "meaning": "दाहिने हाथ का पुत्र; पारंपरिक नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0129",
+    "name": "James",
+    "hindiName": "जेम्स",
+    "meaning": "पारंपरिक बाइबिलीय नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0130",
+    "name": "Matthew",
+    "hindiName": "मैथ्यू",
+    "meaning": "ईश्वर का उपहार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0131",
+    "name": "Adrian",
+    "hindiName": "एड्रियन",
+    "meaning": "आद्रियाई/समुद्र क्षेत्र से जुड़ा लैटिन नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0132",
+    "name": "Nathan",
+    "hindiName": "नेथन",
+    "meaning": "उपहार/दिया हुआ; मूल अनुसार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "n",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0133",
+    "name": "Aaron",
+    "hindiName": "एरॉन",
+    "meaning": "उच्च/बलवान; नामार्थ स्रोतों में अंतर",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0134",
+    "name": "Evan",
+    "hindiName": "एवन",
+    "meaning": "ईश्वर कृपालु है; वेल्श मूल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0135",
+    "name": "Ava",
+    "hindiName": "एवा",
+    "meaning": "जीवन/पक्षी से जुड़े संभावित अर्थ; मूल अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0136",
+    "name": "Ariana",
+    "hindiName": "एरियाना",
+    "meaning": "पवित्र/श्रेष्ठ; अर्थ मूल के अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0137",
+    "name": "Beverly",
+    "hindiName": "बेवरली",
+    "meaning": "झरने/धारा के पास रहने से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0138",
+    "name": "Cecilia",
+    "hindiName": "सीसिलिया",
+    "meaning": "लैटिन मूल का पारंपरिक नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0139",
+    "name": "Delilah",
+    "hindiName": "डेलिला",
+    "meaning": "नाज़ुक/कोमल; व्याख्याएँ अलग",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0140",
+    "name": "Francesca",
+    "hindiName": "फ्रांसेस्का",
+    "meaning": "स्वतंत्र/फ्रांसीसी मूल से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "f",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0141",
+    "name": "Georgia",
+    "hindiName": "जॉर्जिया",
+    "meaning": "किसान/पृथ्वी से जुड़ा ग्रीक मूल",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0142",
+    "name": "Isabel",
+    "hindiName": "इज़ाबेल",
+    "meaning": "ईश्वर से जुड़ा पारंपरिक नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "i",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0143",
+    "name": "Kiera",
+    "hindiName": "कीरा",
+    "meaning": "गहरे रंग/काले बालों से जुड़ा आयरिश मूल",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0144",
+    "name": "Lauren",
+    "hindiName": "लॉरेन",
+    "meaning": "लॉरेल/विजय-प्रतीक से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0145",
+    "name": "Margaret",
+    "hindiName": "मार्गरेट",
+    "meaning": "मोती",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0146",
+    "name": "Olive",
+    "hindiName": "ऑलिव",
+    "meaning": "जैतून का वृक्ष",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "o",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0147",
+    "name": "Paige",
+    "hindiName": "पेज",
+    "meaning": "सहायक/सेवक से जुड़ा अंग्रेज़ी नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0148",
+    "name": "Sabrina",
+    "hindiName": "सबरीना",
+    "meaning": "परंपरागत नाम; व्युत्पत्ति पर मतभेद",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0149",
+    "name": "Talia",
+    "hindiName": "तालिया",
+    "meaning": "ईश्वर की ओस; नामार्थ स्रोत अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0150",
+    "name": "Uma",
+    "hindiName": "उमा",
+    "meaning": "विभिन्न मूलों में प्रयुक्त नाम; अर्थ स्रोत अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "u",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0151",
+    "name": "Vanessa",
+    "hindiName": "वैनेसा",
+    "meaning": "साहित्यिक रूप से निर्मित नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "v",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0152",
+    "name": "Willow",
+    "hindiName": "विलो",
+    "meaning": "विलो वृक्ष",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "w",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0153",
+    "name": "Xenia",
+    "hindiName": "ज़ेनिया",
+    "meaning": "अतिथि-सत्कार से जुड़ा यूनानी नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "x",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0154",
+    "name": "Yara",
+    "hindiName": "यारा",
+    "meaning": "अलग मूलों में अर्थ भिन्न",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "y",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0155",
+    "name": "Zelda",
+    "hindiName": "ज़ेल्डा",
+    "meaning": "नामार्थ स्रोतों में भिन्न व्याख्याएँ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "z",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0156",
+    "name": "Adelaide",
+    "hindiName": "एडिलेड",
+    "meaning": "उच्च कुल/श्रेष्ठता से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0157",
+    "name": "Amelia",
+    "hindiName": "अमेलिया",
+    "meaning": "परिश्रमी, कर्मठ; मूल के अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0158",
+    "name": "Audrey",
+    "hindiName": "ऑड्रे",
+    "meaning": "श्रेष्ठ शक्ति से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0159",
+    "name": "Aurora",
+    "hindiName": "ऑरोरा",
+    "meaning": "भोर, उषा",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0160",
+    "name": "Bella",
+    "hindiName": "बेला",
+    "meaning": "सुंदर",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0161",
+    "name": "Caroline",
+    "hindiName": "कैरोलिन",
+    "meaning": "स्वतंत्र/मजबूत; मूल अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0162",
+    "name": "Daisy",
+    "hindiName": "डेज़ी",
+    "meaning": "डेज़ी फूल",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0163",
+    "name": "Eliza",
+    "hindiName": "एलाइज़ा",
+    "meaning": "ईश्वर मेरी शपथ है; परंपरागत अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0164",
+    "name": "Esther",
+    "hindiName": "एस्थर",
+    "meaning": "तारा; पारंपरिक अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0165",
+    "name": "Gabriella",
+    "hindiName": "गैब्रिएला",
+    "meaning": "ईश्वर मेरी शक्ति है; पारंपरिक अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0166",
+    "name": "Ivy",
+    "hindiName": "आइवी",
+    "meaning": "आइवी पौधा; निष्ठा का प्रतीक",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "i",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0167",
+    "name": "Julia",
+    "hindiName": "जूलिया",
+    "meaning": "युवा/कोमल; मूल अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0168",
+    "name": "Katherine",
+    "hindiName": "कैथरीन",
+    "meaning": "शुद्धता से जुड़ा पारंपरिक अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "k",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0169",
+    "name": "Madeline",
+    "hindiName": "मैडेलिन",
+    "meaning": "मगदला से संबंधित नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0170",
+    "name": "Penelope",
+    "hindiName": "पेनेलोप",
+    "meaning": "ग्रीक मूल का पारंपरिक नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0171",
+    "name": "Quinn",
+    "hindiName": "क्विन",
+    "meaning": "बुद्धिमान/नेतृत्व; व्याख्या अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "q",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0172",
+    "name": "Ruby",
+    "hindiName": "रूबी",
+    "meaning": "लाल रत्न",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0173",
+    "name": "Summer",
+    "hindiName": "समर",
+    "meaning": "गर्मी का मौसम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0174",
+    "name": "Violet",
+    "hindiName": "वायलेट",
+    "meaning": "बैंगनी फूल",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "v",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0175",
+    "name": "Grace",
+    "hindiName": "ग्रेस",
+    "meaning": "अनुग्रह, कृपा",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0176",
+    "name": "Emma",
+    "hindiName": "एम्मा",
+    "meaning": "सम्पूर्ण/सार्वभौमिक से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0177",
+    "name": "Mia",
+    "hindiName": "मिया",
+    "meaning": "प्रिय/मेरा; मूल के अनुसार अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0178",
+    "name": "Olivia",
+    "hindiName": "ओलिविया",
+    "meaning": "जैतून के वृक्ष से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "o",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0179",
+    "name": "Bethany",
+    "hindiName": "बेथनी",
+    "meaning": "बाइबिल से जुड़ा स्थान-नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0180",
+    "name": "Eleanor",
+    "hindiName": "एलेनोर",
+    "meaning": "प्रकाश/उज्ज्वलता से जुड़ी व्याख्या; मूल पर मतभेद",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0181",
+    "name": "Faith",
+    "hindiName": "फेथ",
+    "meaning": "विश्वास",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "f",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0182",
+    "name": "Joy",
+    "hindiName": "जॉय",
+    "meaning": "आनंद, खुशी",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0183",
+    "name": "Leah",
+    "hindiName": "लिया",
+    "meaning": "बाइबिल का पारंपरिक नाम; अर्थ-व्याख्याएँ अलग",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0184",
+    "name": "Lydia",
+    "hindiName": "लिडिया",
+    "meaning": "लिडिया क्षेत्र से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0185",
+    "name": "Naomi",
+    "hindiName": "नाओमी",
+    "meaning": "मधुरता, सुखदता",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0186",
+    "name": "Phoebe",
+    "hindiName": "फीबी",
+    "meaning": "उज्ज्वल, चमकदार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0187",
+    "name": "Rachel",
+    "hindiName": "रेचल",
+    "meaning": "भेड़/मेमने से जुड़ा बाइबिल नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0188",
+    "name": "Rebecca",
+    "hindiName": "रेबेका",
+    "meaning": "जोड़ने/बंधन से जुड़ी पारंपरिक व्याख्या",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0189",
+    "name": "Sarah",
+    "hindiName": "सारा",
+    "meaning": "राजकुमारी",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0190",
+    "name": "Theresa",
+    "hindiName": "टेरेसा",
+    "meaning": "नाम का मूल/अर्थ विवादित",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0191",
+    "name": "Victoria",
+    "hindiName": "विक्टोरिया",
+    "meaning": "विजय",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "v",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0192",
+    "name": "Eve",
+    "hindiName": "ईव",
+    "meaning": "जीवन; बाइबिल का नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0193",
+    "name": "Riddhi",
+    "hindiName": "ऋद्धि",
+    "meaning": "समृद्धि, उन्नति",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0194",
+    "name": "Navya",
+    "hindiName": "नव्या",
+    "meaning": "नई, आधुनिक",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0195",
+    "name": "Vamika",
+    "hindiName": "वामिका",
+    "meaning": "दुर्गा से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "v",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0196",
+    "name": "Prisha",
+    "hindiName": "प्रिशा",
+    "meaning": "प्रिय, ईश्वर का उपहार—अर्थ स्रोतों में भिन्न",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "p",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0197",
+    "name": "Pari",
+    "hindiName": "परी",
+    "meaning": "परी, सुंदरता से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0198",
+    "name": "Ekam",
+    "hindiName": "एकम",
+    "meaning": "एक, परम सत्ता से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0199",
+    "name": "Fateh",
+    "hindiName": "फ़तेह",
+    "meaning": "विजय",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "f",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0200",
+    "name": "Manveer",
+    "hindiName": "मनवीर",
+    "meaning": "मन का वीर",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "m",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0201",
+    "name": "Gurshaan",
+    "hindiName": "गुरशान",
+    "meaning": "गुरु की शान",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0202",
+    "name": "Jujhar",
+    "hindiName": "जुझार",
+    "meaning": "बहादुर, संघर्षशील",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0203",
+    "name": "Sukhmani",
+    "hindiName": "सुखमनी",
+    "meaning": "शांति/सुख से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0204",
+    "name": "Guneet",
+    "hindiName": "गुणीत",
+    "meaning": "गुणों से भरपूर",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0205",
+    "name": "Kirat",
+    "hindiName": "किरत",
+    "meaning": "मेहनत, नेक कर्म",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0206",
+    "name": "Mehar",
+    "hindiName": "मेहर",
+    "meaning": "कृपा, दया",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "m",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0207",
+    "name": "Avneet",
+    "hindiName": "अवनीत",
+    "meaning": "पृथ्वी/नम्रता से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0208",
+    "name": "Daniel",
+    "hindiName": "डैनियल",
+    "meaning": "ईश्वर मेरा न्यायाधीश है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0209",
+    "name": "Joshua",
+    "hindiName": "जोशुआ",
+    "meaning": "ईश्वर उद्धार करता है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0210",
+    "name": "Samuel",
+    "hindiName": "सैमुअल",
+    "meaning": "ईश्वर ने सुना",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0211",
+    "name": "Gabriel",
+    "hindiName": "गेब्रियल",
+    "meaning": "ईश्वर मेरी शक्ति है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0212",
+    "name": "Isaac",
+    "hindiName": "आइज़ैक",
+    "meaning": "हँसी, आनंद",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0213",
+    "name": "Sophia",
+    "hindiName": "सोफिया",
+    "meaning": "ज्ञान",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0214",
+    "name": "Isabella",
+    "hindiName": "इज़ाबेला",
+    "meaning": "ईश्वर को समर्पित से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "i",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0215",
+    "name": "Chloe",
+    "hindiName": "क्लोई",
+    "meaning": "हरी-भरी, नवांकुर",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0216",
+    "name": "Hannah",
+    "hindiName": "हैना",
+    "meaning": "कृपा, अनुग्रह",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0217",
+    "name": "Abigail",
+    "hindiName": "एबिगेल",
+    "meaning": "पिता की खुशी",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0218",
+    "name": "Ivaan",
+    "hindiName": "इवान",
+    "meaning": "ईश्वर का उपहार",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0219",
+    "name": "Kiaan",
+    "hindiName": "कियान",
+    "meaning": "कृपा, राजसी भाव",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "k",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0220",
+    "name": "Dhruv",
+    "hindiName": "ध्रुव",
+    "meaning": "अटल, स्थिर",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0221",
+    "name": "Krishiv",
+    "hindiName": "कृषिव",
+    "meaning": "कृष्ण और शिव से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0222",
+    "name": "Yuvaan",
+    "hindiName": "युवान",
+    "meaning": "युवा, ऊर्जावान",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "y",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0223",
+    "name": "Aadhya",
+    "hindiName": "आध्या",
+    "meaning": "प्रथम शक्ति",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0224",
+    "name": "Aarika",
+    "hindiName": "आरिका",
+    "meaning": "सम्मानित, सुंदर",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0225",
+    "name": "Ishani",
+    "hindiName": "इशानी",
+    "meaning": "देवी दुर्गा, शक्ति",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "i",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0226",
+    "name": "Tara",
+    "hindiName": "तारा",
+    "meaning": "तारा, सितारा",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0227",
+    "name": "Aarna",
+    "hindiName": "आर्णा",
+    "meaning": "लक्ष्मी, जल",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0228",
+    "name": "Zaid",
+    "hindiName": "ज़ैद",
+    "meaning": "वृद्धि, प्रचुरता",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "z",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0229",
+    "name": "Izaan",
+    "hindiName": "इज़ान",
+    "meaning": "आज्ञाकारिता, सम्मान",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "i",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0230",
+    "name": "Rihan",
+    "hindiName": "रिहान",
+    "meaning": "सुगंधित, खुशबू",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0231",
+    "name": "Mikail",
+    "hindiName": "मिकाइल",
+    "meaning": "फ़रिश्ते का नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0232",
+    "name": "Huzaifa",
+    "hindiName": "हुज़ैफ़ा",
+    "meaning": "एक सहाबी का नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0233",
+    "name": "Inara",
+    "hindiName": "इनारा",
+    "meaning": "रोशनी, चमक",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0234",
+    "name": "Yusra",
+    "hindiName": "युसरा",
+    "meaning": "आसानी, खुशहाली",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "y",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0235",
+    "name": "Liyana",
+    "hindiName": "लियाना",
+    "meaning": "नरमी, कोमलता",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "l",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0236",
+    "name": "Naira",
+    "hindiName": "नायरा",
+    "meaning": "चमकदार, उज्ज्वल",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0237",
+    "name": "Haniya",
+    "hindiName": "हानिया",
+    "meaning": "खुश, प्रसन्न",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0238",
+    "name": "Gurkirat",
+    "hindiName": "गुरकीरत",
+    "meaning": "गुरु की कृपा",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0239",
+    "name": "Prabhjot",
+    "hindiName": "प्रभजोत",
+    "meaning": "ईश्वर का प्रकाश",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0240",
+    "name": "Anhad",
+    "hindiName": "अनहद",
+    "meaning": "असीम, अनंत ध्वनि",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0241",
+    "name": "Eknoor",
+    "hindiName": "एकनूर",
+    "meaning": "एक दिव्य प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0242",
+    "name": "Japnoor",
+    "hindiName": "जपנूर",
+    "meaning": "जप का प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0243",
+    "name": "Seerat",
+    "hindiName": "सीरत",
+    "meaning": "चरित्र, व्यक्तित्व",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0244",
+    "name": "Caleb",
+    "hindiName": "केलेब",
+    "meaning": "निष्ठावान, साहसी",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0245",
+    "name": "Elijah",
+    "hindiName": "एलियाह",
+    "meaning": "मेरा ईश्वर प्रभु है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0246",
+    "name": "Levi",
+    "hindiName": "लेवी",
+    "meaning": "जुड़ा हुआ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0247",
+    "name": "Mason",
+    "hindiName": "मेसन",
+    "meaning": "कारीगर, निर्माणकर्ता",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0248",
+    "name": "Lucas",
+    "hindiName": "लुकस",
+    "meaning": "प्रकाश देने वाला",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0249",
+    "name": "Ella",
+    "hindiName": "एला",
+    "meaning": "सुंदर परी, प्रकाश",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0250",
+    "name": "Lily",
+    "hindiName": "लिली",
+    "meaning": "लिली का फूल",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0251",
+    "name": "Aria",
+    "hindiName": "आरिया",
+    "meaning": "गीत, मधुर धुन",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0252",
+    "name": "Zoe",
+    "hindiName": "ज़ोई",
+    "meaning": "जीवन",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "z",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0253",
+    "name": "Nora",
+    "hindiName": "नोरा",
+    "meaning": "प्रकाश, सम्मान",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0254",
+    "name": "Rudransh",
+    "hindiName": "रुद्रांश",
+    "meaning": "भगवान शिव का अंश",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0255",
+    "name": "Shaurya",
+    "hindiName": "शौर्य",
+    "meaning": "वीरता, साहस",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0256",
+    "name": "Ritvik",
+    "hindiName": "ऋत्विक",
+    "meaning": "यज्ञ करने वाला, विद्वान",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0257",
+    "name": "Ishaan",
+    "hindiName": "ईशान",
+    "meaning": "सूर्य, भगवान शिव",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0258",
+    "name": "Vedant",
+    "hindiName": "वेदांत",
+    "meaning": "वेदों का सार, ज्ञान",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "v",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0259",
+    "name": "Siya",
+    "hindiName": "सिया",
+    "meaning": "सीता जी का नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "s",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0260",
+    "name": "Vedika",
+    "hindiName": "वेदिका",
+    "meaning": "ज्ञान की वेदी, पवित्र स्थान",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "v",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0261",
+    "name": "Kashvi",
+    "hindiName": "काश्वी",
+    "meaning": "चमकदार, उज्ज्वल",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "k",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0262",
+    "name": "Mishika",
+    "hindiName": "मिशिका",
+    "meaning": "प्रेम का उपहार",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0263",
+    "name": "Dhwani",
+    "hindiName": "ध्वनि",
+    "meaning": "ध्वनि, मधुर आवाज़",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0264",
+    "name": "Saif",
+    "hindiName": "सैफ",
+    "meaning": "तलवार",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0265",
+    "name": "Taha",
+    "hindiName": "ताहा",
+    "meaning": "कुरआनी नाम; पवित्र अक्षर",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0266",
+    "name": "Faris",
+    "hindiName": "फ़ारिस",
+    "meaning": "घुड़सवार, शूरवीर",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "f",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0267",
+    "name": "Sami",
+    "hindiName": "सामी",
+    "meaning": "उच्च, महान",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0268",
+    "name": "Zubair",
+    "hindiName": "ज़ुबैर",
+    "meaning": "मजबूत, बुद्धिमान",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "z",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0269",
+    "name": "Zoya",
+    "hindiName": "ज़ोया",
+    "meaning": "जीवन, प्रेमपूर्ण",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "z",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0270",
+    "name": "Safa",
+    "hindiName": "सफ़ा",
+    "meaning": "पवित्रता, निर्मलता",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0271",
+    "name": "Eshal",
+    "hindiName": "एशल",
+    "meaning": "जन्नत का फूल (प्रचलित अर्थ)",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0272",
+    "name": "Insha",
+    "hindiName": "इंशा",
+    "meaning": "ईश्वर की इच्छा",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0273",
+    "name": "Maira",
+    "hindiName": "मायरा",
+    "meaning": "प्रिय, सुंदर (प्रचलित अर्थ)",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0274",
+    "name": "Basma",
+    "hindiName": "बسمه",
+    "meaning": "मुस्कान",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "b",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0275",
+    "name": "Dalia",
+    "hindiName": "दलिया",
+    "meaning": "फूल; अर्थ मूल के अनुसार बदलता है",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0276",
+    "name": "Dua",
+    "hindiName": "दुआ",
+    "meaning": "प्रार्थना, दुआ",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0277",
+    "name": "Fariha",
+    "hindiName": "फ़रीहा",
+    "meaning": "खुश, प्रसन्न",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "f",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0278",
+    "name": "Hiba",
+    "hindiName": "हिबा",
+    "meaning": "उपहार, भेंट",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "h",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0279",
+    "name": "Jannat",
+    "hindiName": "जन्नत",
+    "meaning": "स्वर्ग, जन्नत",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0280",
+    "name": "Khadija",
+    "hindiName": "खदीजा",
+    "meaning": "पारंपरिक इस्लामी नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0281",
+    "name": "Mishal",
+    "hindiName": "मिशाल",
+    "meaning": "रोशनी/मशाल; नामार्थ स्रोतों में भिन्नता",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "m",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0282",
+    "name": "Nawal",
+    "hindiName": "नवाल",
+    "meaning": "उपहार, अनुग्रह",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "n",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0283",
+    "name": "Rania",
+    "hindiName": "रानिया",
+    "meaning": "रानी; नामार्थ विभिन्न संदर्भों में भिन्न",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0284",
+    "name": "Ruqayya",
+    "hindiName": "रुकय्या",
+    "meaning": "उन्नति/ऊँचा उठना; पारंपरिक नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0285",
+    "name": "Sana",
+    "hindiName": "सना",
+    "meaning": "चमक, प्रशंसा",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0286",
+    "name": "Tasneem",
+    "hindiName": "तसनीम",
+    "meaning": "जन्नत के झरने का नाम",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0287",
+    "name": "Urooj",
+    "hindiName": "उरूज",
+    "meaning": "उत्थान, बुलंदी",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "u",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0288",
+    "name": "Wafa",
+    "hindiName": "वफ़ा",
+    "meaning": "वफ़ादारी, निष्ठा",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "w",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0289",
+    "name": "Yasmin",
+    "hindiName": "यास्मीन",
+    "meaning": "चमेली का फूल",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "y",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0290",
+    "name": "Zainab",
+    "hindiName": "ज़ैनब",
+    "meaning": "सुगंधित/सुंदर पौधे से जुड़ा नाम; अर्थों में भिन्नता",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "z",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0291",
+    "name": "Fiza",
+    "hindiName": "फ़िज़ा",
+    "meaning": "हवा, वातावरण",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "f",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0292",
+    "name": "Kainat",
+    "hindiName": "कायनात",
+    "meaning": "संसार, कायनात",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0293",
+    "name": "Rimsha",
+    "hindiName": "रिम्शा",
+    "meaning": "प्रचलित नाम; अर्थ स्रोतों में भिन्न",
+    "gender": "girl",
+    "religion": "muslim",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0294",
+    "name": "Dilraj",
+    "hindiName": "दिलराज",
+    "meaning": "दिलों का राजा",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0295",
+    "name": "Amrit",
+    "hindiName": "अमृत",
+    "meaning": "अमृत, दिव्य रस",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0296",
+    "name": "Gurdeep",
+    "hindiName": "गुरदीप",
+    "meaning": "गुरु का प्रकाश",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0297",
+    "name": "Jasraj",
+    "hindiName": "जसराज",
+    "meaning": "यश का राजा",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0298",
+    "name": "Akaljot",
+    "hindiName": "अकालजोत",
+    "meaning": "अकाल/ईश्वर के प्रकाश से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0299",
+    "name": "Ekjot",
+    "hindiName": "एकजोत",
+    "meaning": "एक ईश्वर का प्रकाश",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0300",
+    "name": "Harnoor",
+    "hindiName": "हरनूर",
+    "meaning": "ईश्वर का प्रकाश",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0301",
+    "name": "Jasmeet",
+    "hindiName": "जस्मीत",
+    "meaning": "यश/प्रशंसा का साथी",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0302",
+    "name": "Karamveer",
+    "hindiName": "करमवीर",
+    "meaning": "कर्मशील और वीर",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0303",
+    "name": "Nirmal",
+    "hindiName": "निर्मल",
+    "meaning": "स्वच्छ, निर्मल",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0304",
+    "name": "Nanak",
+    "hindiName": "नानक",
+    "meaning": "सिख परंपरा के गुरु नानक से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0305",
+    "name": "Nirvair",
+    "hindiName": "निर्वैर",
+    "meaning": "बिना वैर, द्वेषरहित",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0306",
+    "name": "Amandeep",
+    "hindiName": "अमनदीप",
+    "meaning": "शांति और प्रकाश से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0307",
+    "name": "Balraj",
+    "hindiName": "बलराज",
+    "meaning": "शक्तिशाली/सम्मानित राजा",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "b",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0308",
+    "name": "Charanjeet",
+    "hindiName": "चरनजीत",
+    "meaning": "ईश्वर/सत्य की विजय",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "c",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0309",
+    "name": "Davinder",
+    "hindiName": "दविंदर",
+    "meaning": "देवों के राजा; पंजाबी नाम-प्रयोग",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0310",
+    "name": "Gurpreet",
+    "hindiName": "गुरप्रीत",
+    "meaning": "गुरु के प्रति प्रेम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0311",
+    "name": "Inderjit",
+    "hindiName": "इंदरजीत",
+    "meaning": "इंद्र/ईश्वर से जुड़ी विजय",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0312",
+    "name": "Jagdeep",
+    "hindiName": "जगदीप",
+    "meaning": "जगत का दीपक",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0313",
+    "name": "Navdeep",
+    "hindiName": "नवदीप",
+    "meaning": "नया दीपक/नई रोशनी",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0314",
+    "name": "Paramveer",
+    "hindiName": "परमवीर",
+    "meaning": "अत्यंत वीर",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0315",
+    "name": "Sukhdeep",
+    "hindiName": "सुखदीप",
+    "meaning": "सुख का दीपक",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0316",
+    "name": "Tejinder",
+    "hindiName": "तेजिंदर",
+    "meaning": "तेज/प्रताप से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0317",
+    "name": "Udayveer",
+    "hindiName": "उदयवीर",
+    "meaning": "उदयमान और वीर",
+    "gender": "boy",
+    "religion": "sikh",
+    "letter": "u",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0318",
+    "name": "Baani",
+    "hindiName": "बाणी",
+    "meaning": "गुरबाणी, पवित्र वाणी",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0319",
+    "name": "Nimrat",
+    "hindiName": "निमरत",
+    "meaning": "विनम्रता",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0320",
+    "name": "Jasnoor",
+    "hindiName": "जस्नूर",
+    "meaning": "यश का प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0321",
+    "name": "Praneet",
+    "hindiName": "प्रनीत",
+    "meaning": "विनम्र, मार्गदर्शित",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "p",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0322",
+    "name": "Gurkirpa",
+    "hindiName": "गुरकिरपा",
+    "meaning": "गुरु की कृपा",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0323",
+    "name": "Asees",
+    "hindiName": "असीस",
+    "meaning": "आशीर्वाद, कृपा",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0324",
+    "name": "Charanpreet",
+    "hindiName": "चरणप्रीत",
+    "meaning": "चरणों से प्रेम/भक्ति",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0325",
+    "name": "Dilnoor",
+    "hindiName": "दिलनूर",
+    "meaning": "दिल का प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0326",
+    "name": "Ekamjot",
+    "hindiName": "एकमजोत",
+    "meaning": "एक ईश्वर का प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0327",
+    "name": "Falak",
+    "hindiName": "फ़लक",
+    "meaning": "आकाश; नाम का प्रयोग विभिन्न समुदायों में",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "f",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0328",
+    "name": "Harleen",
+    "hindiName": "हरलीन",
+    "meaning": "ईश्वर के नाम में लीन",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0329",
+    "name": "Kamalpreet",
+    "hindiName": "कमलप्रीत",
+    "meaning": "कमल/सुंदरता से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0330",
+    "name": "Lovepreet",
+    "hindiName": "लवप्रीत",
+    "meaning": "प्रेम से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0331",
+    "name": "Mandeep",
+    "hindiName": "मनदीप",
+    "meaning": "मन का दीप/प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0332",
+    "name": "Prabhnoor",
+    "hindiName": "प्रभनूर",
+    "meaning": "ईश्वर का प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0333",
+    "name": "Rajveer",
+    "hindiName": "राजवीर",
+    "meaning": "राजसी वीरता; gender use varies",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "r",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0334",
+    "name": "Sahiba",
+    "hindiName": "साहिबा",
+    "meaning": "सम्मानित/आदरणीय",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0335",
+    "name": "Tavleen",
+    "hindiName": "तवलीन",
+    "meaning": "ईश्वर में लीन",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "t",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0336",
+    "name": "Upneet",
+    "hindiName": "उपनीत",
+    "meaning": "निकटता/जुड़ाव से संबंधित नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "u",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0337",
+    "name": "Vaneet",
+    "hindiName": "वनीत",
+    "meaning": "विनम्र/सुंदर; अर्थ स्रोत भिन्न",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "v",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0338",
+    "name": "Amanpreet",
+    "hindiName": "अमनप्रीत",
+    "meaning": "शांति और प्रेम से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0339",
+    "name": "Baljeet",
+    "hindiName": "बलजीत",
+    "meaning": "बलवान और विजयी",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0340",
+    "name": "Dharamjit",
+    "hindiName": "धरमजीत",
+    "meaning": "धर्म में विजय पाने वाला",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0341",
+    "name": "Gursharan",
+    "hindiName": "गुरशरण",
+    "meaning": "गुरु की शरण",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0342",
+    "name": "Inderpreet",
+    "hindiName": "इंदरप्रीत",
+    "meaning": "ईश्वर/इंद्र के प्रति प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "i",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0343",
+    "name": "Jasbir",
+    "hindiName": "जसबीर",
+    "meaning": "यशस्वी और बहादुर",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0344",
+    "name": "Kamaljeet",
+    "hindiName": "कमलजीत",
+    "meaning": "कमल/विजय से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0345",
+    "name": "Manpreet",
+    "hindiName": "मनप्रीत",
+    "meaning": "मन का प्रेम, प्रेमपूर्ण",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0346",
+    "name": "Parminder",
+    "hindiName": "परमिंदर",
+    "meaning": "परमेश्वर से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "p",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0347",
+    "name": "Prabhleen",
+    "hindiName": "प्रभलीन",
+    "meaning": "ईश्वर में लीन",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0348",
+    "name": "Rajdeep",
+    "hindiName": "राजदीप",
+    "meaning": "राजसी/प्रकाश का दीप",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "r",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0349",
+    "name": "Ravneet",
+    "hindiName": "रवनीत",
+    "meaning": "सूर्य/प्रकाश से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0350",
+    "name": "Sandeep",
+    "hindiName": "संदीप",
+    "meaning": "प्रकाश देने वाला",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0351",
+    "name": "Sukhjit",
+    "hindiName": "सुखजीत",
+    "meaning": "सुख और विजय",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0352",
+    "name": "Taranjit",
+    "hindiName": "तरनजीत",
+    "meaning": "उद्धार/विजय से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0353",
+    "name": "Tejpreet",
+    "hindiName": "तेजप्रीत",
+    "meaning": "तेज/प्रकाश के प्रति प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "t",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0354",
+    "name": "Virasat",
+    "hindiName": "विरासत",
+    "meaning": "विरासत, धरोहर",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "v",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0355",
+    "name": "Yashpreet",
+    "hindiName": "यशप्रीत",
+    "meaning": "यश/प्रशंसा से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "y",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0356",
+    "name": "Akalpreet",
+    "hindiName": "अकालप्रीत",
+    "meaning": "शाश्वत/अकाल से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0357",
+    "name": "Bikramjit",
+    "hindiName": "बिक्रमजीत",
+    "meaning": "वीरता/पराक्रम से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0358",
+    "name": "Chandni",
+    "hindiName": "चाँदनी",
+    "meaning": "चाँदनी, उजाला",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0359",
+    "name": "Daya",
+    "hindiName": "दया",
+    "meaning": "दया, करुणा",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0360",
+    "name": "Eshmeet",
+    "hindiName": "ईशमीत",
+    "meaning": "ईश्वर से जुड़ा नाम; व्याख्या भिन्न",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0361",
+    "name": "Fatehnoor",
+    "hindiName": "फ़तेहनूर",
+    "meaning": "विजय का प्रकाश; आधुनिक संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "f",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0362",
+    "name": "Gurshakti",
+    "hindiName": "गुरशक्ति",
+    "meaning": "गुरु की शक्ति से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0363",
+    "name": "Harsimran",
+    "hindiName": "हरसिमरन",
+    "meaning": "ईश्वर का स्मरण",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0364",
+    "name": "Karamjeet",
+    "hindiName": "करमजीत",
+    "meaning": "कर्म/कृपा से विजय",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0365",
+    "name": "Lakhpreet",
+    "hindiName": "लखप्रीत",
+    "meaning": "लाखों/समृद्धि से प्रेम; आधुनिक संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "l",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0366",
+    "name": "Mannat",
+    "hindiName": "मन्नत",
+    "meaning": "मन्नत, प्रार्थना",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0367",
+    "name": "Noorpreet",
+    "hindiName": "नूरप्रीत",
+    "meaning": "प्रकाश से प्रेम; आधुनिक संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0368",
+    "name": "Rajnoor",
+    "hindiName": "राजनूर",
+    "meaning": "राजसी प्रकाश; आधुनिक संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0369",
+    "name": "Sarabnoor",
+    "hindiName": "सरबनूर",
+    "meaning": "सर्वव्यापी प्रकाश; आधुनिक संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0370",
+    "name": "Taranpreet",
+    "hindiName": "तारणप्रीत",
+    "meaning": "तारण/उद्धार से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0371",
+    "name": "Udaypreet",
+    "hindiName": "उदयप्रीत",
+    "meaning": "उदय/उन्नति से प्रेम; आधुनिक संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "u",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0372",
+    "name": "Veerpal",
+    "hindiName": "वीरपाल",
+    "meaning": "वीरता की रक्षा; संयुक्त नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "v",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0373",
+    "name": "Zeenat",
+    "hindiName": "ज़ीनत",
+    "meaning": "शोभा, सुंदरता; पंजाबी/उर्दू प्रयोग",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "z",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0374",
+    "name": "Amritjot",
+    "hindiName": "अमृतजोत",
+    "meaning": "अमृत से जुड़ा प्रकाश/ज्योति",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0375",
+    "name": "Bhavneet",
+    "hindiName": "भावनीत",
+    "meaning": "भाव/प्रेम से जुड़ा नाम; अर्थ-व्याख्या अलग",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0376",
+    "name": "Charanjot",
+    "hindiName": "चरणजोत",
+    "meaning": "चरणों की ज्योति; भक्ति से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0377",
+    "name": "Dhanpreet",
+    "hindiName": "धनप्रीत",
+    "meaning": "धन/समृद्धि से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0378",
+    "name": "Eeshar",
+    "hindiName": "ईश्वर",
+    "meaning": "ईश्वर से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0379",
+    "name": "Gurjashan",
+    "hindiName": "गुरजशन",
+    "meaning": "गुरु की महिमा/यश से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0380",
+    "name": "Harjot",
+    "hindiName": "हरजोत",
+    "meaning": "हरि/ईश्वर की ज्योति",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "h",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0381",
+    "name": "Ikroop",
+    "hindiName": "इकरूप",
+    "meaning": "एक स्वरूप/एकता का भाव",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "i",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0382",
+    "name": "Kiranpreet",
+    "hindiName": "किरणप्रीत",
+    "meaning": "किरण/प्रकाश से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0383",
+    "name": "Lakhnoor",
+    "hindiName": "लखनूर",
+    "meaning": "लाखों में नूर/प्रकाश",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "l",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0384",
+    "name": "Manjot",
+    "hindiName": "मनजोत",
+    "meaning": "मन की ज्योति",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0385",
+    "name": "Navroop",
+    "hindiName": "नवरूप",
+    "meaning": "नया/नवीन स्वरूप",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0386",
+    "name": "Ojaspreet",
+    "hindiName": "ओजसप्रीत",
+    "meaning": "ओज/तेज से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "o",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0387",
+    "name": "Rupinder",
+    "hindiName": "रुपिंदर",
+    "meaning": "सुंदर रूप/ईश्वर से जुड़ा नाम; अर्थ स्रोत अनुसार",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "r",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0388",
+    "name": "Simarpreet",
+    "hindiName": "सिमरप्रीत",
+    "meaning": "स्मरण/भक्ति से प्रेम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "s",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0389",
+    "name": "Taranjot",
+    "hindiName": "तरनजोत",
+    "meaning": "तारने/उद्धार से जुड़ी ज्योति",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "t",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0390",
+    "name": "Udayjot",
+    "hindiName": "उदयजोत",
+    "meaning": "उदय/उगते प्रकाश से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "u",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0391",
+    "name": "Waris",
+    "hindiName": "वारिस",
+    "meaning": "वारिस/उत्तराधिकारी; पंजाबी प्रयोग",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "w",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0392",
+    "name": "Zorjot",
+    "hindiName": "ज़ोरजोत",
+    "meaning": "शक्ति/तेज से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "sikh",
+    "letter": "z",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0393",
+    "name": "Adam",
+    "hindiName": "एडम",
+    "meaning": "मानव, पृथ्वी से बना",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0394",
+    "name": "Oliver",
+    "hindiName": "ऑलिवर",
+    "meaning": "जैतून का वृक्ष",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "o",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0395",
+    "name": "Henry",
+    "hindiName": "हेनरी",
+    "meaning": "घर का शासक",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "h",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0396",
+    "name": "Ryan",
+    "hindiName": "रायन",
+    "meaning": "छोटा राजा (प्रचलित अर्थ)",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0397",
+    "name": "Michael",
+    "hindiName": "माइकल",
+    "meaning": "ईश्वर के समान कौन?",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0398",
+    "name": "Jonathan",
+    "hindiName": "जोनाथन",
+    "meaning": "ईश्वर ने दिया",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0399",
+    "name": "Joseph",
+    "hindiName": "जोसेफ़",
+    "meaning": "ईश्वर बढ़ाए/जोड़े; पारंपरिक नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0400",
+    "name": "Thomas",
+    "hindiName": "थॉमस",
+    "meaning": "जुड़वाँ; पारंपरिक नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0401",
+    "name": "Charles",
+    "hindiName": "चार्ल्स",
+    "meaning": "स्वतंत्र व्यक्ति; पारंपरिक नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0402",
+    "name": "Christopher",
+    "hindiName": "क्रिस्टोफ़र",
+    "meaning": "मसीह को धारण करने वाला",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0403",
+    "name": "Anthony",
+    "hindiName": "एंथनी",
+    "meaning": "नामार्थ स्रोतों में अलग-अलग व्याख्याएँ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0404",
+    "name": "Andrew",
+    "hindiName": "एंड्रयू",
+    "meaning": "बहादुर, साहसी",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0405",
+    "name": "Mark",
+    "hindiName": "मार्क",
+    "meaning": "पारंपरिक बाइबिलीय नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0406",
+    "name": "Peter",
+    "hindiName": "पीटर",
+    "meaning": "चट्टान, पत्थर",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0407",
+    "name": "Paul",
+    "hindiName": "पॉल",
+    "meaning": "छोटा/विनम्र; लैटिन मूल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0408",
+    "name": "Stephen",
+    "hindiName": "स्टीफ़न",
+    "meaning": "मुकुट, सम्मान",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0409",
+    "name": "George",
+    "hindiName": "जॉर्ज",
+    "meaning": "किसान, धरती से जुड़ा",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "g",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0410",
+    "name": "Dominic",
+    "hindiName": "डॉमिनिक",
+    "meaning": "प्रभु से संबंधित",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0411",
+    "name": "Francis",
+    "hindiName": "फ़्रांसिस",
+    "meaning": "फ्रांसीसी/स्वतंत्र से जुड़ा नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "f",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0412",
+    "name": "Vincent",
+    "hindiName": "विन्सेंट",
+    "meaning": "विजयी",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "v",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0413",
+    "name": "Simon",
+    "hindiName": "साइमन",
+    "meaning": "सुना गया; पारंपरिक नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0414",
+    "name": "Philip",
+    "hindiName": "फ़िलिप",
+    "meaning": "घोड़ों से प्रेम करने वाला",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0415",
+    "name": "Eric",
+    "hindiName": "एरिक",
+    "meaning": "शासक/नेता; नॉर्स मूल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0416",
+    "name": "Oscar",
+    "hindiName": "ऑस्कर",
+    "meaning": "भाषाई मूल के अनुसार अर्थ अलग",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "o",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0417",
+    "name": "Felix",
+    "hindiName": "फ़ेलिक्स",
+    "meaning": "भाग्यशाली, खुशहाल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "f",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0418",
+    "name": "Cyrus",
+    "hindiName": "सायरस",
+    "meaning": "सूर्य/सिंहासन से जुड़े पारंपरिक अर्थ; स्रोत अनुसार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0419",
+    "name": "David",
+    "hindiName": "डेविड",
+    "meaning": "प्रिय, beloved",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0420",
+    "name": "Emmanuel",
+    "hindiName": "इमैनुएल",
+    "meaning": "ईश्वर हमारे साथ है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0421",
+    "name": "Hugo",
+    "hindiName": "ह्यूगो",
+    "meaning": "मन, बुद्धि",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0422",
+    "name": "Isaiah",
+    "hindiName": "यशायाह",
+    "meaning": "ईश्वर उद्धार है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "i",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0423",
+    "name": "Julian",
+    "hindiName": "जूलियन",
+    "meaning": "युवा, यौवन से जुड़ा",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0424",
+    "name": "Kai",
+    "hindiName": "काई",
+    "meaning": "समुद्र; भाषा/मूल के अनुसार अर्थ बदलता है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "k",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0425",
+    "name": "Logan",
+    "hindiName": "लोगन",
+    "meaning": "छोटी घाटी; स्कॉटिश मूल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0426",
+    "name": "Miles",
+    "hindiName": "माइल्स",
+    "meaning": "सैनिक/दयालु; मूल स्रोत अनुसार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0427",
+    "name": "Nolan",
+    "hindiName": "नोलन",
+    "meaning": "प्रसिद्ध/प्रतिष्ठित; मूल अनुसार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0428",
+    "name": "Patrick",
+    "hindiName": "पैट्रिक",
+    "meaning": "श्रेष्ठ/कुलीन",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0429",
+    "name": "Quentin",
+    "hindiName": "क्वेंटिन",
+    "meaning": "पाँचवाँ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "q",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0430",
+    "name": "Rafael",
+    "hindiName": "राफेल",
+    "meaning": "ईश्वर ने चंगा किया",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0431",
+    "name": "Sebastian",
+    "hindiName": "सेबेस्टियन",
+    "meaning": "सम्मानित/पूजनीय",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0432",
+    "name": "Timothy",
+    "hindiName": "टिमोथी",
+    "meaning": "ईश्वर का सम्मान करने वाला",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0433",
+    "name": "Uriel",
+    "hindiName": "उरीएल",
+    "meaning": "ईश्वर मेरा प्रकाश है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "u",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0434",
+    "name": "Victor",
+    "hindiName": "विक्टर",
+    "meaning": "विजेता",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "v",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0435",
+    "name": "William",
+    "hindiName": "विलियम",
+    "meaning": "दृढ़ रक्षक",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "w",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0436",
+    "name": "Zachary",
+    "hindiName": "ज़करिया",
+    "meaning": "ईश्वर ने याद किया",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "z",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0437",
+    "name": "Blake",
+    "hindiName": "ब्लेक",
+    "meaning": "गहरे/हल्के रंग से जुड़ा पुराना अंग्रेज़ी नाम; अर्थ स्रोत अनुसार",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0438",
+    "name": "Brooks",
+    "hindiName": "ब्रूक्स",
+    "meaning": "छोटी जलधारा के पास रहने वाला",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0439",
+    "name": "Carter",
+    "hindiName": "कार्टर",
+    "meaning": "गाड़ी/माल ढोने वाले से जुड़ा उपनाम-आधारित नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0440",
+    "name": "Damian",
+    "hindiName": "डेमियन",
+    "meaning": "वश में करना/संयम से जुड़ा ग्रीक मूल का नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0441",
+    "name": "Everett",
+    "hindiName": "एवरेट",
+    "meaning": "बहादुर/मजबूत से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0442",
+    "name": "Finley",
+    "hindiName": "फ़िनले",
+    "meaning": "उज्ज्वल/वीर योद्धा से जुड़ा आयरिश मूल का नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "f",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0443",
+    "name": "Grayson",
+    "hindiName": "ग्रेसन",
+    "meaning": "ग्रे के पुत्र; उपनाम-आधारित नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "g",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0444",
+    "name": "Hudson",
+    "hindiName": "हडसन",
+    "meaning": "ह्यू का पुत्र; उपनाम-आधारित नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0445",
+    "name": "Ian",
+    "hindiName": "इयान",
+    "meaning": "ईश्वर कृपालु है",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "i",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0446",
+    "name": "Jasper",
+    "hindiName": "जैस्पर",
+    "meaning": "खज़ाना रखने वाला; रत्न से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0447",
+    "name": "Kingston",
+    "hindiName": "किंग्स्टन",
+    "meaning": "राजा का नगर/बस्ती",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "k",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0448",
+    "name": "Landon",
+    "hindiName": "लैंडन",
+    "meaning": "लंबी पहाड़ी/भूमि से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0449",
+    "name": "Maddox",
+    "hindiName": "मैडॉक्स",
+    "meaning": "मैडॉक का पुत्र; वेल्श मूल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0450",
+    "name": "Orion",
+    "hindiName": "ओरायन",
+    "meaning": "ग्रीक पौराणिक शिकारी/तारामंडल",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "o",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0451",
+    "name": "Preston",
+    "hindiName": "प्रेस्टन",
+    "meaning": "पुजारी की बस्ती से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0452",
+    "name": "Reid",
+    "hindiName": "रीड",
+    "meaning": "लाल बालों/रंगत से जुड़ा स्कॉटिश नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0453",
+    "name": "Tristan",
+    "hindiName": "ट्रिस्टन",
+    "meaning": "दुख/शोर से जुड़ा वेल्श-फ्रांसीसी नामार्थ",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0454",
+    "name": "Wesley",
+    "hindiName": "वेस्ली",
+    "meaning": "पश्चिमी मैदान/घासभूमि",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "w",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0455",
+    "name": "Zane",
+    "hindiName": "ज़ेन",
+    "meaning": "ईश्वर कृपालु है; मूल/व्याख्या अलग-अलग",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "z",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0456",
+    "name": "Colton",
+    "hindiName": "कोल्टन",
+    "meaning": "कोल की बस्ती/कोयला नगर से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0457",
+    "name": "Emily",
+    "hindiName": "एमिली",
+    "meaning": "परिश्रमी, उत्साही",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0458",
+    "name": "Stella",
+    "hindiName": "स्टेला",
+    "meaning": "तारा",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0459",
+    "name": "Hazel",
+    "hindiName": "हेज़ल",
+    "meaning": "हेज़ल वृक्ष/रंग",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0460",
+    "name": "Clara",
+    "hindiName": "क्लारा",
+    "meaning": "उज्ज्वल, स्पष्ट",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0461",
+    "name": "Layla",
+    "hindiName": "लेला",
+    "meaning": "रात (विभिन्न भाषाई परंपराओं में)",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "l",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0462",
+    "name": "Annabelle",
+    "hindiName": "ऐनाबेल",
+    "meaning": "कृपा/सुंदरता से जुड़े विभिन्न नाम-मूल",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "a",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0463",
+    "name": "Brielle",
+    "hindiName": "ब्रिएल",
+    "meaning": "ईश्वर मेरी शक्ति हैं—Gabrielle से जुड़ा रूप",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "b",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0464",
+    "name": "Celine",
+    "hindiName": "सेलीन",
+    "meaning": "स्वर्गीय/आकाश से जुड़ा अर्थ; मूल अनुसार",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0465",
+    "name": "Deborah",
+    "hindiName": "डेबोरा",
+    "meaning": "मधुमक्खी; बाइबिल में Deborah का नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0466",
+    "name": "Eden",
+    "hindiName": "ईडन",
+    "meaning": "आनंद का स्थान; बाइबिल का नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0467",
+    "name": "Evangeline",
+    "hindiName": "इवैंजलीन",
+    "meaning": "सुसमाचार/शुभ समाचार से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0468",
+    "name": "Felicity",
+    "hindiName": "फ़ेलिसिटी",
+    "meaning": "खुशी, सौभाग्य",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "f",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0469",
+    "name": "Hope",
+    "hindiName": "होप",
+    "meaning": "आशा",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0470",
+    "name": "Joanna",
+    "hindiName": "जोआना",
+    "meaning": "ईश्वर कृपालु हैं",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0471",
+    "name": "Josephine",
+    "hindiName": "जोसेफीन",
+    "meaning": "ईश्वर बढ़ाएँ/वृद्धि दें—Joseph से जुड़ा रूप",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "j",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0472",
+    "name": "Miriam",
+    "hindiName": "मिरियम",
+    "meaning": "बाइबिल का नाम; अर्थ-व्याख्याएँ अलग",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "m",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0473",
+    "name": "Natalie",
+    "hindiName": "नैटली",
+    "meaning": "जन्म/क्रिसमस से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "n",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0474",
+    "name": "Ophelia",
+    "hindiName": "ओफ़ीलिया",
+    "meaning": "मदद/सहायता से जुड़ा संभावित अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "o",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0475",
+    "name": "Priscilla",
+    "hindiName": "प्रिसिला",
+    "meaning": "प्राचीन/सम्मानित; बाइबिल में नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "p",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0476",
+    "name": "Ruth",
+    "hindiName": "रूथ",
+    "meaning": "संगिनी/मित्र से जुड़ा अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0477",
+    "name": "Seraphina",
+    "hindiName": "सेराफ़िना",
+    "meaning": "सेराफ़िम से जुड़ा नाम; दिव्य/आकाशीय संदर्भ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "s",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0478",
+    "name": "Tabitha",
+    "hindiName": "तबीथा",
+    "meaning": "गज़ेल/हिरणी; बाइबिल में नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0479",
+    "name": "Yvonne",
+    "hindiName": "इवोन",
+    "meaning": "यू वृक्ष से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "y",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0480",
+    "name": "Christina",
+    "hindiName": "क्रिस्टीना",
+    "meaning": "मसीह से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0481",
+    "name": "Diana",
+    "hindiName": "डायना",
+    "meaning": "दिव्य/स्वर्गीय; विभिन्न मूलों में अर्थ",
+    "gender": "girl",
+    "religion": "christian",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0482",
+    "name": "Bhavesh",
+    "hindiName": "भावेश",
+    "meaning": "भव के स्वामी; शिव से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "b",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0483",
+    "name": "Bharat",
+    "hindiName": "भरत",
+    "meaning": "भारत; प्राचीन राजा भरत से जुड़ा नाम",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0484",
+    "name": "Chaitanya",
+    "hindiName": "चैतन्य",
+    "meaning": "चेतना, जागरूकता",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0485",
+    "name": "Charan",
+    "hindiName": "चरण",
+    "meaning": "चरण, सम्मान और विनम्रता से जुड़ा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "c",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0486",
+    "name": "Devansh",
+    "hindiName": "देवांश",
+    "meaning": "ईश्वर का अंश",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0487",
+    "name": "Darsh",
+    "hindiName": "दर्श",
+    "meaning": "दर्शन; भगवान के दर्शन से जुड़ा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0488",
+    "name": "Eklavya",
+    "hindiName": "एकलव्य",
+    "meaning": "समर्पित शिष्य; महाभारत का पात्र",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0489",
+    "name": "Gaurav",
+    "hindiName": "गौरव",
+    "meaning": "गौरव, सम्मान",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0490",
+    "name": "Harsh",
+    "hindiName": "हर्ष",
+    "meaning": "हर्ष, खुशी",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0491",
+    "name": "Jai",
+    "hindiName": "जय",
+    "meaning": "विजय, जय",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0492",
+    "name": "Lakshya",
+    "hindiName": "लक्ष्य",
+    "meaning": "लक्ष्य, उद्देश्य",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0493",
+    "name": "Nakul",
+    "hindiName": "नकुल",
+    "meaning": "महाभारत के पांडवों में एक; पारंपरिक नाम",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0494",
+    "name": "Om",
+    "hindiName": "ॐ",
+    "meaning": "पवित्र प्रणव ध्वनि",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "o",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0495",
+    "name": "Pranav",
+    "hindiName": "प्रणव",
+    "meaning": "ॐ; पवित्र ध्वनि",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "p",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0496",
+    "name": "Tanay",
+    "hindiName": "तनय",
+    "meaning": "पुत्र",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "t",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0497",
+    "name": "Tejas",
+    "hindiName": "तेजस",
+    "meaning": "तेज, चमक, ऊर्जा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "t",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0498",
+    "name": "Uday",
+    "hindiName": "उदय",
+    "meaning": "उदय, उगना; नई शुरुआत से जुड़ा",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "u",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0499",
+    "name": "Yash",
+    "hindiName": "यश",
+    "meaning": "यश, कीर्ति",
+    "gender": "boy",
+    "religion": "hindu",
+    "letter": "y",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0500",
+    "name": "Bhavya",
+    "hindiName": "भव्या",
+    "meaning": "भव्य, शानदार",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "b",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0501",
+    "name": "Charvi",
+    "hindiName": "चार्वी",
+    "meaning": "सुंदर, आकर्षक",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "c",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0502",
+    "name": "Devika",
+    "hindiName": "देविका",
+    "meaning": "देवी से जुड़ा नाम; छोटी देवी",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "d",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0503",
+    "name": "Esha",
+    "hindiName": "ईशा",
+    "meaning": "इच्छा; देवी से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0504",
+    "name": "Gauri",
+    "hindiName": "गौरी",
+    "meaning": "गौरी; पार्वती का नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "g",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0505",
+    "name": "Hridya",
+    "hindiName": "हृद्या",
+    "meaning": "हृदय को प्रिय; मनमोहक",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "h",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0506",
+    "name": "Jiya",
+    "hindiName": "जिया",
+    "meaning": "जीवन, दिल",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "j",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0507",
+    "name": "Lavanya",
+    "hindiName": "लावण्या",
+    "meaning": "सुंदरता, आकर्षण",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0508",
+    "name": "Nitya",
+    "hindiName": "नित्या",
+    "meaning": "नित्य, शाश्वत",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0509",
+    "name": "Ojasvi",
+    "hindiName": "ओजस्वी",
+    "meaning": "तेजस्वी, ऊर्जा से भरपूर",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "o",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0510",
+    "name": "Pavitra",
+    "hindiName": "पवित्रा",
+    "meaning": "पवित्र, शुद्ध",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "p",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0511",
+    "name": "Riya",
+    "hindiName": "रिया",
+    "meaning": "गायिका; अर्थ स्रोत के अनुसार भिन्न",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0512",
+    "name": "Saumya",
+    "hindiName": "सौम्या",
+    "meaning": "सौम्य, शांत स्वभाव",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0513",
+    "name": "Yashvi",
+    "hindiName": "यश्वी",
+    "meaning": "यशस्वी, प्रसिद्ध",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "y",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0514",
+    "name": "Ziya",
+    "hindiName": "ज़िया",
+    "meaning": "प्रकाश, चमक; अलग-अलग मूलों में अर्थ भिन्न",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "z",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0515",
+    "name": "Tanvi",
+    "hindiName": "तन्वी",
+    "meaning": "कोमल, सुंदर",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "t",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0516",
+    "name": "Bhumika",
+    "hindiName": "भूमिका",
+    "meaning": "भूमिका, धरती से जुड़ा शब्द",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0517",
+    "name": "Chhavi",
+    "hindiName": "छवि",
+    "meaning": "छवि, सुंदर प्रतिबिंब",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "c",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0518",
+    "name": "Radhika",
+    "hindiName": "राधिका",
+    "meaning": "राधा से जुड़ा नाम",
+    "gender": "girl",
+    "religion": "hindu",
+    "letter": "r",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0519",
+    "name": "Bilal",
+    "hindiName": "बिलाल",
+    "meaning": "पानी देने वाला; ऐतिहासिक इस्लामी नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "b",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0520",
+    "name": "Burhan",
+    "hindiName": "बुरहान",
+    "meaning": "प्रमाण, स्पष्ट तर्क",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "b",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0521",
+    "name": "Danish",
+    "hindiName": "दानिश",
+    "meaning": "ज्ञान, बुद्धिमत्ता (दक्षिण एशियाई नाम-प्रयोग)",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "d",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0522",
+    "name": "Dawood",
+    "hindiName": "दाऊद",
+    "meaning": "दाऊद; पैगंबर का नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "d",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0523",
+    "name": "Ehsan",
+    "hindiName": "एहसान",
+    "meaning": "दयालुता, उपकार",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "e",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0524",
+    "name": "Emad",
+    "hindiName": "इमाद",
+    "meaning": "सहारा, स्तंभ",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "e",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0525",
+    "name": "Fahad",
+    "hindiName": "फ़हद",
+    "meaning": "चीता; नामार्थ संदर्भों में भिन्न हो सकता है",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "f",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0526",
+    "name": "Faisal",
+    "hindiName": "फ़ैसल",
+    "meaning": "निर्णय करने वाला, निर्णायक",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "f",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0527",
+    "name": "Ghalib",
+    "hindiName": "ग़ालिब",
+    "meaning": "विजयी, प्रबल",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "g",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0528",
+    "name": "Hamza",
+    "hindiName": "हमज़ा",
+    "meaning": "मज़बूत, दृढ़; इस्लामी इतिहास में प्रसिद्ध नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "h",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0529",
+    "name": "Junaid",
+    "hindiName": "जुनैद",
+    "meaning": "योद्धा/सैनिक; पारंपरिक नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "j",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0530",
+    "name": "Kamil",
+    "hindiName": "कामिल",
+    "meaning": "पूर्ण, संपूर्ण",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "k",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0531",
+    "name": "Laith",
+    "hindiName": "लैथ",
+    "meaning": "शेर",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "l",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0532",
+    "name": "Nabeel",
+    "hindiName": "नबील",
+    "meaning": "सम्मानित, उदार",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "n",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0533",
+    "name": "Omar",
+    "hindiName": "उमर",
+    "meaning": "दीर्घायु; नामार्थ स्रोत भिन्न हो सकते हैं",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "o",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0534",
+    "name": "Qasim",
+    "hindiName": "क़ासिम",
+    "meaning": "वितरित करने वाला",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "q",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0535",
+    "name": "Rashid",
+    "hindiName": "राशिद",
+    "meaning": "सही राह पर चलने वाला",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "r",
+    "giftCategory": "personalized-name-frame"
+  },
+  {
+    "id": "bn-0536",
+    "name": "Suhail",
+    "hindiName": "सुहैल",
+    "meaning": "मृदु; एक तारे का नाम भी",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "s",
+    "giftCategory": "custom-name-plate"
+  },
+  {
+    "id": "bn-0537",
+    "name": "Usman",
+    "hindiName": "उस्मान",
+    "meaning": "उस्मान; पारंपरिक इस्लामी नाम",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "u",
+    "giftCategory": "personalized-keepsake"
+  },
+  {
+    "id": "bn-0538",
+    "name": "Waleed",
+    "hindiName": "वलीद",
+    "meaning": "नवजात, बच्चा",
+    "gender": "boy",
+    "religion": "muslim",
+    "letter": "w",
+    "giftCategory": "personalized-name-frame"
+  }
+]

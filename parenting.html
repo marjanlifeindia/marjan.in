@@ -215,30 +215,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     
-<section class="card"><h2>नए Parenting लेख</h2><div id="cmsArticles"><p>लेख लोड हो रहे हैं…</p></div></section>
-<script>
-(function(){
-const target=document.getElementById("cmsArticles");
-function parse(md){
- const m=md.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);if(!m)return null;
- const meta={};let key="";
- m[1].split("\n").forEach(function(line){const x=line.match(/^([a-zA-Z_]+):\s*(.*)$/);if(x){key=x[1];meta[key]=x[2].trim().replace(/^["']|["']$/g,"");}else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}});
- return meta;
-}
-function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-fetch("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main")
-.then(function(r){if(!r.ok)throw Error();return r.json();})
-.then(function(files){return Promise.all(files.filter(function(f){return f.type==="file"&&/\.md$/i.test(f.name);}).map(function(f){return fetch(f.download_url).then(function(r){return r.ok?r.text():"";}).then(function(md){return {file:f.name,meta:parse(md)};});}));})
-.then(function(posts){
-const found=posts.filter(function(p){return p.meta&&p.meta.title&&(p.meta.category||"").toLowerCase()==="parenting";}).sort(function(a,b){return (b.meta.date||"").localeCompare(a.meta.date||"");});
-if(!found.length){target.innerHTML="<p>इस category में अभी कोई नया CMS लेख नहीं है।</p>";return;}
-target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"/article-"+encodeURIComponent(p.meta.slug||p.file.replace(/\.md$/i,""))+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
-})
-.catch(function(){target.innerHTML="<p>लेख अभी लोड नहीं हो सके। कुछ देर बाद फिर कोशिश करें।</p>";});
-})();
-</script>
+<section class="card" aria-labelledby="parenting-articles-title">
+<h2 id="parenting-articles-title">Parenting के उपयोगी लेख</h2>
+<div class="grid">
+<article class="card"><h3>बच्चों में अच्छी नींद की आदत: 10 आसान तरीके</h3><p>बच्चों के लिए नियमित Sleep Routine बनाने और सोने से पहले शांत दिनचर्या अपनाने के व्यावहारिक सुझाव।</p><a href="/article-kids-sleep-routine">पूरा लेख पढ़ें →</a></article>
+<article class="card"><h3>बच्चों की Mobile Habit को संतुलित कैसे करें?</h3><p>Screen Time, घर के नियम और मोबाइल के बिना खेल व परिवार के साथ समय बढ़ाने के तरीके।</p><a href="/mobile-habit">Mobile Habit गाइड पढ़ें →</a></article>
+<article class="card"><h3>बच्चों में पढ़ने की आदत कैसे डालें?</h3><p>कहानी, रोज़ पढ़ने का छोटा समय और बच्चे की रुचि के अनुसार किताब चुनने के सुझाव।</p><a href="/article-reading-habit">पूरा लेख पढ़ें →</a></article>
+</div></section>
 <p><a class="button" href="/">मुख्य पेज पर वापस जाएँ</a></p>
-  </main>
+  
+<section class="card" id="baby-care"><h2>Baby Care</h2><p>शिशु की रोजमर्रा की देखभाल में feeding cues, सुरक्षित नींद, साफ-सफाई और प्यार भरा responsive care महत्वपूर्ण हैं। स्वास्थ्य समस्या में बाल रोग विशेषज्ञ से सलाह लें।</p></section>
+<section class="card" id="toddler-care"><h2>Toddler Care</h2><p>Toddler उम्र में बच्चा भाषा, चलना-फिरना और self-help skills सीखता है। सुरक्षित वातावरण, नियमित दिनचर्या और खेल के अवसर दें।</p></section>
+<section class="card" id="preschool-parenting"><h2>Preschool Parenting</h2><p>कहानी, बातचीत, pretend play और छोटे कामों में भागीदारी preschool बच्चों के सीखने का अच्छा आधार बनाते हैं।</p></section>
+<section class="card" id="child-development"><h2>Child Development</h2><p>शारीरिक, भाषा, सामाजिक और संज्ञानात्मक विकास अलग-अलग गति से होता है। Milestones को मार्गदर्शन की तरह देखें, निदान की तरह नहीं।</p></section>
+<section class="card" id="child-behaviour"><h2>Child Behaviour</h2><p>व्यवहार बच्चे की भावना, थकान या जरूरत बता सकता है। शांत प्रतिक्रिया, स्पष्ट सीमाएँ और उम्र के अनुसार विकल्प मदद कर सकते हैं।</p></section>
+<section class="card" id="child-health"><h2>Child Health</h2><p>नियमित स्वास्थ्य जाँच, संतुलित भोजन, पर्याप्त नींद, स्वच्छता और सुरक्षित खेल महत्वपूर्ण हैं। व्यक्तिगत सलाह के लिए योग्य स्वास्थ्य विशेषज्ञ से संपर्क करें।</p></section>
+<section class="card" id="immunization-vaccination"><h2>Immunization & Vaccination</h2><p>टीकाकरण कई गंभीर संक्रामक बीमारियों से बचाव का महत्वपूर्ण तरीका है। भारत के National Immunization Schedule और बच्चे के vaccination record के अनुसार स्वास्थ्यकर्मी से समय-सारणी की पुष्टि करें।</p></section>
+<section class="card" id="health-safety"><h2>Health & Safety</h2><p>दवाइयाँ और छोटे हिस्से बच्चों की पहुँच से दूर रखें, पानी के पास लगातार निगरानी करें और उम्र के अनुरूप road-safety नियम अपनाएँ।</p></section>
+<section class="card" id="parenting-tips"><h2>Parenting Tips</h2><p>बच्चे को ध्यान से सुनें, रोज थोड़ा one-to-one समय दें, स्पष्ट और स्नेहपूर्ण सीमाएँ रखें और अच्छे प्रयास की प्रशंसा करें।</p></section>
+</main>
 
   <footer>
 

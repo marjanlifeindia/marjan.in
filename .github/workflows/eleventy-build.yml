@@ -1,0 +1,76 @@
+name: Validate Eleventy build
+
+on:
+  pull_request:
+    branches:
+      - main
+      - work/phase-2-design-system
+      - backup/phase-1-baseline-2026-11-12
+      - work/phase-3-navigation
+      - work/phase-4-homepage-footer-v2
+      - work/phase-5-blog-content
+      - work/phase-6-digital-products
+      - work/phase-7-responsive-testing
+      - work/phase-8-menu-footer-correction
+      - work/phase-9-global-header-search
+      - work/phase-10-mobile-bottom-nav
+      - work/phase-11-bottom-nav-init-fix
+      - work/phase-12-legacy-header-fix
+  push:
+    branches:
+      - main
+      - work/phase-2-design-system
+      - work/phase-3-navigation
+      - work/phase-7-responsive-testing
+      - work/phase-8-menu-footer-correction
+      - work/phase-9-global-header-search
+      - work/phase-10-mobile-bottom-nav
+      - work/phase-11-bottom-nav-init-fix
+      - work/phase-12-legacy-header-fix
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
+      - name: Build static website
+        run: npm run build
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: Run responsive browser tests
+        run: npm run test:responsive
+      - name: Verify generated navigation assets and category pages
+        run: |
+          test -f _site/assets/css/marjan-navigation.css
+          test -f _site/assets/js/marjan-navigation.js
+          test -f _site/assets/css/marjan-footer.css
+          test -f _site/assets/css/marjan-article.css
+          test -f _site/assets/js/marjan-article.js
+          test -f _site/blog/index.html
+          test -f _site/search/index.html
+          test -f _site/digital-products/index.html
+          grep -q '/assets/js/marjan-navigation.js' _site/digital-products/index.html
+          grep -q 'noindex,follow' _site/search/index.html
+          grep -q '120 Baby Names' _site/ebooks-pdfs/index.html
+          test -f _site/index.html
+          for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
+            test -f "_site/$page/index.html"
+          done
+          grep -q 'class="marjan-site-footer"' _site/index.html
+          grep -q 'class="marjan-site-footer"' _site/parenting/index.html
+          grep -q 'class="marjan-site-footer"' _site/article-reading-habit/index.html
+          ! grep -R -q 'लेख लोड हो रहे हैं' _site/parenting/index.html _site/kids-education/index.html _site/activities/index.html _site/kids-corner/index.html
+          grep -q '538 unique नाम' _site/baby-names/index.html
+          test -s _site/assets/data/baby-names.json
+          node -e "const d=JSON.parse(require('fs').readFileSync('_site/assets/data/baby-names.json','utf8')); if(d.length!==538) process.exit(1)"
+          grep -q 'class="marjan-site-footer"' _site/worksheets/index.html
+          grep -q 'class="marjan-site-footer"' _site/baby-names/index.html
+          grep -q 'marjan-article-breadcrumbs' _site/article-reading-habit/index.html
+          grep -q 'marjan-related-articles' _site/article-reading-habit/index.html

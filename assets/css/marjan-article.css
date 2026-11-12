@@ -1,0 +1,18 @@
+/* MARJAN.IN article reading experience */
+.marjan-article-breadcrumbs{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 18px;color:#68748a;font-size:13px;line-height:1.5}
+.marjan-article-breadcrumbs a{color:#2464a5;text-decoration:none}
+.marjan-article-breadcrumbs a:hover{text-decoration:underline}
+.marjan-article-toc{margin:22px 0;padding:16px 18px;border:1px solid #e4e8ef;border-radius:12px;background:#f7f9fc}
+.marjan-article-toc summary{color:#243047;font-weight:800;cursor:pointer}
+.marjan-article-toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 20px;margin:12px 0 0;padding-left:22px}
+.marjan-article-toc li{margin:0;padding:0}
+.marjan-article-toc a{color:#315c9b;text-decoration:none;font-size:14px;line-height:1.5}
+.marjan-article-toc a:hover{text-decoration:underline;text-underline-offset:3px}
+.marjan-related-articles{margin:30px 0 4px;padding-top:22px;border-top:1px solid #e7eaf0}
+.marjan-related-articles h2{margin:0 0 14px;color:#243047;font-size:22px}
+.marjan-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.marjan-related-card{display:block;padding:14px;border:1px solid #e7eaf0;border-radius:11px;background:#fff;text-decoration:none}
+.marjan-related-card strong{display:block;color:#243047;font-size:15px;line-height:1.45}
+.marjan-related-card span{display:block;margin-top:6px;color:#5e6878;font-size:13px;line-height:1.5}
+.marjan-related-card:hover{border-color:#b7c8df;background:#f9fbff}
+@media(max-width:650px){.marjan-article-toc ol{grid-template-columns:1fr;gap:8px}.marjan-related-grid{grid-template-columns:1fr}.marjan-article-toc{padding:14px}.marjan-related-articles h2{font-size:20px}}

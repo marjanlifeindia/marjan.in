@@ -309,7 +309,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 (function () {
 'use strict';
-var DATA_URL='/baby-names/names-data.json', STORAGE_KEY='marjanBabyNamesShortlistV1', PAGE_SIZE=48;
+var DATA_URL='/assets/data/baby-names.json', STORAGE_KEY='marjanBabyNamesShortlistV1', PAGE_SIZE=48;
 var search=document.getElementById('baby-name-search'), gender=document.getElementById('baby-name-gender'), religion=document.getElementById('baby-name-religion'), letter=document.getElementById('baby-name-letter'), list=document.getElementById('baby-name-results'), count=document.getElementById('baby-name-result-count'), empty=document.getElementById('baby-name-no-results'), reset=document.getElementById('baby-name-reset'), shortlistFilter=document.getElementById('baby-name-shortlist-filter'), loadMore=document.getElementById('baby-name-load-more');
 var allNames=[], filteredNames=[], renderedCount=0, shortlist=new Set(), showShortlistOnly=false;
 var giftLabels={'personalized-name-frame':'Personalized Name Frame','custom-name-plate':'Custom Name Plate','personalized-keepsake':'Personalized Keepsake'};
@@ -334,13 +334,15 @@ function applyFilters(){
  renderedCount=0;list.replaceChildren();list.hidden=filteredNames.length===0;list.setAttribute('aria-busy','false');empty.hidden=filteredNames.length!==0;
  count.textContent=showShortlistOnly?filteredNames.length+' shortlisted '+(filteredNames.length===1?'name':'names'):filteredNames.length+' '+(filteredNames.length===1?'name':'names');updateShortlistFilterLabel();renderNextBatch();
 }
-[search,gender,religion,letter].forEach(function(control){control.addEventListener(control===search?'input':'change',applyFilters);});
+search.addEventListener('input',applyFilters);
+[gender,religion,letter].forEach(function(control){control.addEventListener('input',applyFilters);control.addEventListener('change',applyFilters);control.oninput=applyFilters;control.onchange=applyFilters;});
 document.querySelectorAll('.baby-name-meaning-chip').forEach(function(chip){chip.addEventListener('click',function(){search.value=chip.dataset.meaningQuery||'';applyFilters();search.focus();});});
 reset.addEventListener('click',function(){search.value='';gender.value='all';religion.value='all';letter.value='all';showShortlistOnly=false;applyFilters();search.focus();});
 shortlistFilter.addEventListener('click',function(){showShortlistOnly=!showShortlistOnly;applyFilters();});
 loadMore.addEventListener('click',renderNextBatch);
 loadShortlist();updateShortlistFilterLabel();
-fetch(DATA_URL,{cache:'force-cache'}).then(function(response){if(!response.ok)throw new Error('Data request failed');return response.json();}).then(function(data){if(!Array.isArray(data)||data.length!==538)throw new Error('Data validation failed');allNames=data;applyFilters();}).catch(function(){list.hidden=true;loadMore.hidden=true;list.setAttribute('aria-busy','false');count.textContent='नामों की सूची अभी लोड नहीं हो सकी। कृपया थोड़ी देर बाद फिर कोशिश करें।';empty.hidden=true;});
+fetch(DATA_URL).then(function(response){if(!response.ok)throw new Error('Data request failed');return response.json();}).then(function(data){if(!Array.isArray(data)||data.length!==538)throw new Error('Data validation failed');allNames=data;applyFilters();}).catch(function(){list.hidden=true;loadMore.hidden=true;list.setAttribute('aria-busy','false');count.textContent='नामों की सूची अभी लोड नहीं हो सकी। कृपया थोड़ी देर बाद फिर कोशिश करें।';empty.hidden=true;});
+})();
 </script>
 
 <h2>Browse Baby Names by Religion</h2>
