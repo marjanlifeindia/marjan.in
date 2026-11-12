@@ -4,7 +4,7 @@ test("homepage exposes all nine master-plan categories and the shared footer", a
   await page.goto("/");
   await expect(page.locator("#categoryGrid .search-item")).toHaveCount(9);
   await expect(page.locator(".marjan-site-footer")).toBeVisible();
-  await expect(page.locator(".marjan-site-footer a[href='/blog']")).toBeVisible();
+  await expect(page.locator(".marjan-site-footer a[href='/blog/']")).toBeVisible();
 });
 
 test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
