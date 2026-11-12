@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   // 1. Cloudflare redirects (यह आपका पुराना कोड है)
   eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("assets");
 
   // 2. MailerLite Pop-up injector (यह हर पेज पर पॉप-अप लगाएगा)
   eleventyConfig.addTransform("injectMailerLite", function(content, outputPath) {
@@ -29,8 +30,8 @@ module.exports = function (eleventyConfig) {
   // Phase 3: shared navigation assets are added to every generated HTML page.
   eleventyConfig.addTransform("injectMarjanNavigation", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html") && !content.includes("/assets/js/marjan-navigation.js")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=3">\\n</head>');
-      content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=3"></script>\\n</body>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=3">\n</head>');
+      content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=3"></script>\n</body>');
     }
     return content;
   });
