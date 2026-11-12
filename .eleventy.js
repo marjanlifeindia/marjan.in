@@ -90,4 +90,67 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  // Phase 5: add breadcrumbs and related articles to each published article page.
+  eleventyConfig.addTransform("enhanceMarjanArticles", function(content, outputPath) {
+    const route = String(outputPath || "").replace(/\\\\/g, "/");
+    const routeMatch = route.match(/\\/(?:article-([^/]+)|articles\\/([^/]+))\\/index\\.html$/i);
+    if (!routeMatch) return content;
+    const slug = routeMatch[1] || routeMatch[2];
+    const titleMatch = content.match(/<h1[^>]*>([\\s\\S]*?)<\\/h1>/i);
+    const rawTitle = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "लेख";
+    const safeTitle = rawTitle.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    if (!content.includes("marjan-article-breadcrumbs")) {
+      const breadcrumb = '<nav class="marjan-article-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/blog">Blog</a><span aria-hidden="true">›</span><span aria-current="page">' + safeTitle + '</span></nav>';
+      content = content.replace('<article class="article">', breadcrumb + '<article class="article">');
+      content = content.replace('<a class="back" href="/index.html">', '<a class="back" href="/">');
+    }
+    const related = {
+      "reading-habit": [
+        ["/article-bachon-ke-liye-hindi-story-books", "बच्चों के लिए Hindi Story Books", "उम्र और रुचि के अनुसार कहानी की किताबें चुनें"],
+        ["/article-kids-sleep-routine", "बच्चों की अच्छी नींद", "एक सरल और नियमित Sleep Routine बनाने के तरीके"],
+        ["/article-kids-activities-ghar-par", "घर पर 15 मज़ेदार Activities", "खेल-खेल में सीखने के रचनात्मक विचार"]
+      ],
+      "kids-sleep-routine": [
+        ["/article-reading-habit", "पढ़ने की आदत कैसे डालें?", "सोने से पहले कहानी पढ़ने की अच्छी आदत"],
+        ["/mobile-habit", "बच्चों की Screen Time आदतें", "मोबाइल उपयोग को संतुलित करने के सुझाव"],
+        ["/article-kids-activities-ghar-par", "घर पर बच्चों की Activities", "दिन में सक्रिय रहने के आसान तरीके"]
+      ],
+      "kids-science-experiments-home": [
+        ["/article-kids-activities-ghar-par", "घर पर 15 मज़ेदार Activities", "बच्चों के लिए खेल और प्रयोग"],
+        ["/art-creativity", "Art & Creativity", "Drawing, Painting और Craft के विचार"],
+        ["/worksheets", "Worksheets और Printables", "सीखने की Practice के लिए सामग्री"]
+      ],
+      "kids-activities-ghar-par": [
+        ["/article-kids-science-experiments-home", "Home Science Experiments", "घर की चीज़ों से विज्ञान सीखें"],
+        ["/art-creativity", "Art & Creativity", "बच्चों की कल्पनाशक्ति को बढ़ावा दें"],
+        ["/worksheets", "Worksheets और Printables", "घर पर अभ्यास करने के संसाधन"]
+      ],
+      "bachon-ke-liye-educational-toys": [
+        ["/article-bachon-ke-liye-hindi-story-books", "Hindi Story Books", "बच्चों की उम्र के अनुसार किताबें"],
+        ["/products-reviews", "Products & Reviews", "खरीदने से पहले उपयोगी जानकारी"],
+        ["/article-kids-activities-ghar-par", "घर पर सीखने वाली Activities", "खेल के साथ सीखने के तरीके"]
+      ],
+      "bachon-ke-liye-hindi-story-books": [
+        ["/article-reading-habit", "पढ़ने की आदत कैसे डालें?", "बच्चों को किताबों से जोड़ने के तरीके"],
+        ["/ebooks-pdfs", "Ebooks & PDFs", "कहानियाँ, Poems और Activity Books"],
+        ["/article-bachon-ke-liye-educational-toys", "Educational Toys", "खेल के साथ सीखने के विकल्प"]
+      ]
+    };
+    const items = related[slug] || related["reading-habit"];
+    if (!content.includes("marjan-related-articles")) {
+      const cards = items.map(function(item) {
+        return '<a class="marjan-related-card" href="' + item[0] + '"><strong>' + item[1] + '</strong><span>' + item[2] + '</span></a>';
+      }).join("");
+      const relatedHtml = '<section class="marjan-related-articles" aria-labelledby="marjan-related-title"><h2 id="marjan-related-title">आपके लिए और उपयोगी लेख</h2><div class="marjan-related-grid">' + cards + '</div><p><a href="/blog">सभी लेख देखें →</a></p></section>';
+      content = content.replace("</article>", relatedHtml + "</article>");
+    }
+    if (!content.includes("/assets/css/marjan-article.css")) {
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-article.css?v=1">\\n</head>');
+    }
+    if (!content.includes("/assets/js/marjan-article.js")) {
+      content = content.replace("</body>", '<script src="/assets/js/marjan-article.js?v=1"></script>\\n</body>');
+    }
+    return content;
+  });
+
 };
