@@ -14,7 +14,7 @@ test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
   await expect(toggle).toBeVisible();
   await toggle.click();
   await expect(page.locator("#primary-navigation")).toHaveClass(/is-open/);
-  await page.getByRole("link", { name: "Blog", exact: true }).click();
+  await page.locator("#primary-navigation").getByRole("link", { name: "Blog", exact: true }).click();
   await expect(page).toHaveURL(/\/blog\/?$/);
 });
 
