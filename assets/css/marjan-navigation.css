@@ -60,3 +60,20 @@ header.marjan-header a:focus-visible,header.marjan-header summary:focus-visible,
  header.marjan-header>nav.primary-navigation .nav-mega-title{margin:0 0 2px;font-size:13px}
  header.marjan-header>nav.primary-navigation .nav-mega a{padding:7px 8px;color:#40516e;font-size:14px}
 }
+
+/* Fixed mobile bottom navigation inspired by the supplied Parentune reference */
+.marjan-mobile-bottom,.marjan-bottom-more{display:none}
+@media(max-width:900px){
+ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))!important}
+ .marjan-mobile-bottom{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch;min-height:64px;padding:5px 4px calc(5px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #e2e5eb;box-shadow:0 -3px 12px rgba(24,36,58,.08)}
+ .marjan-mobile-bottom .bottom-item{display:flex;min-width:0;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:2px 1px;border:0;background:transparent;color:#505968;text-decoration:none;font:inherit;cursor:pointer}
+ .marjan-mobile-bottom .bottom-item svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+ .marjan-mobile-bottom .bottom-item span{max-width:100%;overflow:hidden;color:inherit;font-size:11px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap}
+ .marjan-mobile-bottom .bottom-item.is-active{color:#d35d72}
+ .marjan-mobile-bottom .bottom-item.is-active span{font-weight:750}
+ .marjan-mobile-bottom .bottom-item:focus-visible,.marjan-bottom-more a:focus-visible{outline:2px solid #d35d72;outline-offset:-2px;border-radius:6px}
+ .marjan-bottom-more{position:fixed;right:8px;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:1001;display:grid;grid-template-columns:1fr 1fr;gap:2px;width:min(310px,calc(100vw - 16px));padding:10px;background:#fff;border:1px solid #e1e5ec;border-radius:13px;box-shadow:0 10px 30px rgba(24,36,58,.2)}
+ .marjan-bottom-more[hidden]{display:none}
+ .marjan-bottom-more a{padding:11px 9px;border-radius:7px;color:#243047;text-decoration:none;font-size:13px;font-weight:650}
+ .marjan-bottom-more a:hover{background:#f4f6f9}
+}
