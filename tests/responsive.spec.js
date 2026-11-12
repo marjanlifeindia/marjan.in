@@ -81,3 +81,19 @@ test("desktop header has no hamburger and exposes search beside the main navigat
   await expect(page.locator("header .nav-search")).toBeVisible();
   await expect(page.locator("#primary-navigation .nav-group")).toHaveCount(8);
 });
+
+test("mobile header keeps logo, search and compact menu on one row", async ({ page }) => {
+  test.skip(test.info().project.name !== "mobile");
+  await page.goto("/");
+  const logo = page.locator("header.marjan-header > .brand");
+  const actions = page.locator("header.marjan-header > .marjan-header-actions");
+  const search = page.locator("header .nav-search");
+  const toggle = page.locator("header .menu-toggle");
+  await expect(search).toBeVisible();
+  await expect(toggle).toBeVisible();
+  await expect(toggle.locator("span")).toBeHidden();
+  await expect(page.locator("#primary-navigation")).not.toHaveClass(/is-open/);
+  const logoBox = await logo.boundingBox();
+  const actionsBox = await actions.boundingBox();
+  expect(Math.abs((logoBox.y + logoBox.height / 2) - (actionsBox.y + actionsBox.height / 2))).toBeLessThan(12);
+});
