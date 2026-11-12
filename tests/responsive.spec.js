@@ -28,7 +28,8 @@ test("Blog search, category filter and pagination work", async ({ page }) => {
   await page.locator("#blogCategory").selectOption("Parenting");
   await expect(page.locator(".blog-card:visible")).toHaveCount(1);
   await expect(page.locator("#blogCount")).toContainText("1 लेख मिले");
-  await page.locator("#blogSearch").fill("कोई लेख नहीं");
+  await page.locator("#blogSearch").evaluate((input) => { input.value = "कोई लेख नहीं"; input.dispatchEvent(new Event("input", { bubbles: true })); });
+  await expect(page.locator("#blogCount")).toHaveText("0 लेख मिले");
   await expect(page.locator("#blogEmpty")).toBeVisible();
 });
 
