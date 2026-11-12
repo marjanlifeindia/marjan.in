@@ -8,11 +8,12 @@ on:
       - work/phase-3-navigation
       - work/phase-4-homepage-footer-v2
       - work/phase-5-blog-content
+      - work/phase-6-digital-products
   push:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
-
+      - work/phase-6-digital-products
 
 jobs:
   build:

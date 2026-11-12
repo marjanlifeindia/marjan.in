@@ -64,7 +64,7 @@ module.exports = function (eleventyConfig) {
     <nav class="marjan-footer-col" aria-label="Learning and creativity">
       <h2>Learning & Creativity</h2>
       <ul>
-        <li><a href="/worksheets">Worksheets & Printables</a></li><li><a href="/art-creativity">Art & Creativity</a></li><li><a href="/ebooks-pdfs">Ebooks & PDFs</a></li><li><a href="/activities">Kids Activities</a></li><li><a href="/kids-corner">Kids Corner</a></li>
+        <li><a href="/worksheets">Worksheets & Printables</a></li><li><a href="/art-creativity">Art & Creativity</a></li><li><a href="/ebooks-pdfs">Ebooks & PDFs</a></li><li><a href="/digital-products">Digital Products</a></li><li><a href="/activities">Kids Activities</a></li><li><a href="/kids-corner">Kids Corner</a></li>
       </ul>
     </nav>
     <nav class="marjan-footer-col" aria-label="Products and support">
