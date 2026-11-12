@@ -120,8 +120,8 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
   const selected=category.value;
   filtered=cards.filter(card=>(selected==="all"||card.dataset.category===selected)&&(!query||(card.innerText+" "+card.dataset.search).toLocaleLowerCase().includes(query)));
   const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);
-  cards.forEach(card=>card.setAttribute("hidden",""));
-  filtered.slice((page-1)*pageSize,page*pageSize).forEach(card=>card.removeAttribute("hidden"));
+  cards.forEach(card=>{card.setAttribute("hidden","");card.style.display="none";});
+  filtered.slice((page-1)*pageSize,page*pageSize).forEach(card=>{card.removeAttribute("hidden");card.style.display="flex";});
   count.textContent=filtered.length+" लेख मिले";
   empty.hidden=filtered.length!==0;
   prev.disabled=page<=1||filtered.length===0;next.disabled=page>=pages||filtered.length===0;
@@ -129,7 +129,10 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
  }
  function applyFilters(){page=1;render();}
  search.addEventListener("input",applyFilters);
+ category.addEventListener("input",applyFilters);
  category.addEventListener("change",applyFilters);
+ category.oninput=applyFilters;
+ category.onchange=applyFilters;
  prev.addEventListener("click",()=>{page=Math.max(1,page-1);render();});
  next.addEventListener("click",()=>{page++;render();});
  render();
