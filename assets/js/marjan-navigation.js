@@ -7,7 +7,7 @@ var navHTML=`
 <div class="nav-mega-col"><h3 class="nav-mega-title">Age-wise Parenting</h3><a href="/parenting#baby-care">Baby Care</a><a href="/parenting#toddler-care">Toddler Care</a><a href="/parenting#preschool-parenting">Preschool Parenting</a><a href="/parenting#parenting-tips">Parenting Tips</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Growth & Behaviour</h3><a href="/parenting#child-development">Child Development</a><a href="/parenting#child-behaviour">Child Behaviour</a><a href="/parenting#development-milestones">Development Milestones</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Child Health</h3><a href="/parenting#child-health">Child Health</a><a href="/parenting#immunization-vaccination">Immunization & Vaccination</a><a href="/parenting#health-safety">Health & Safety</a></div>
-<div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a href="/parenting">All Parenting Guides</a><a href="/articles">Latest Articles</a></div></div></details>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a href="/parenting">All Parenting Guides</a><a href="/kids-corner">Latest Learning & Activities</a></div></div></details>
 <details class="nav-group"><summary>Kids Education</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Learning Stages</h3><a href="/kids-education#early-learning">Early Learning</a><a href="/kids-education#preschool-learning">Preschool Learning</a><a href="/kids-education#school-education">School Education</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Subjects</h3><a href="/kids-education#hindi-learning">Hindi Learning</a><a href="/kids-education#english-learning">English Learning</a><a href="/kids-education#maths">Maths</a><a href="/kids-education#science">Science</a></div>
@@ -37,12 +37,12 @@ var navHTML=`
 <details class="nav-group"><summary>Resources</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Parent Resources</h3><a href="/resources#parenting-guides">Parenting Guides</a><a href="/resources#learning-resources">Learning Resources</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Downloads & Tools</h3><a href="/resources#free-downloads">Free Downloads</a><a href="/resources#useful-tools">Useful Tools</a></div>
-<div class="nav-mega-col"><h3 class="nav-mega-title">Explore MARJAN.IN</h3><a href="/articles">Latest Articles</a><a href="/contact">Contact</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Explore MARJAN.IN</h3><a href="/kids-corner">Latest Learning & Activities</a><a href="/contact">Contact</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a class="nav-mega-feature" href="/resources">All Resources</a></div></div></details>`;
 menu.innerHTML=navHTML;
 var oldToggle=header.querySelector('.menu-toggle'),toggle=oldToggle;
 if(oldToggle){toggle=oldToggle.cloneNode(true);toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span>';oldToggle.replaceWith(toggle);}
-var search=header.querySelector('.nav-search');if(!search){search=document.createElement('a');search.className='nav-search';search.href='/#siteSearch';search.setAttribute('aria-label','Search MARJAN.IN');search.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>';menu.insertAdjacentElement('afterend',search);}
+var search=header.querySelector('.nav-search');if(!search){search=document.createElement('a');search.className='nav-search';search.href='/#siteSearch';search.setAttribute('aria-label','Search MARJAN.IN');search.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>';menu.appendChild(search);}
 function mobile(){return matchMedia('(max-width:760px)').matches;}
 function close(focus){menu.classList.remove('is-open');if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open main menu');}menu.querySelectorAll('.nav-group[open]').forEach(function(d){d.open=false;});if(focus&&toggle)toggle.focus();}
 if(toggle)toggle.addEventListener('click',function(){var open=!menu.classList.contains('is-open');menu.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');});
