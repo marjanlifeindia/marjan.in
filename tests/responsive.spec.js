@@ -107,3 +107,20 @@ test("mobile header keeps logo, search and compact menu on one row", async ({ pa
   const actionsBox = await actions.boundingBox();
   expect(Math.abs((logoBox.y + logoBox.height / 2) - (actionsBox.y + actionsBox.height / 2))).toBeLessThan(12);
 });
+
+
+test("mobile fixed bottom navigation shows primary shortcuts and More categories", async ({ page }) => {
+  test.skip(test.info().project.name !== "mobile");
+  await page.goto("/");
+  const bar = page.locator(".marjan-mobile-bottom");
+  await expect(bar).toBeVisible();
+  for (const label of ["Home", "Blog", "Learn", "Worksheets", "More"]) {
+    await expect(bar.getByText(label, { exact: true })).toBeVisible();
+  }
+  await bar.getByRole("button", { name: "More" }).click();
+  const panel = page.locator("#marjan-bottom-more");
+  await expect(panel).toBeVisible();
+  await expect(panel.getByRole("link", { name: "Parenting" })).toBeVisible();
+  await expect(panel.getByRole("link", { name: "Baby Names" })).toBeVisible();
+  await expect(panel.getByRole("link", { name: "Products & Reviews" })).toBeVisible();
+});
