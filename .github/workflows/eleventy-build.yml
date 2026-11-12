@@ -22,6 +22,9 @@ on:
       - work/phase-7-responsive-testing
       - work/phase-8-menu-footer-correction
       - work/phase-9-global-header-search
+      - work/phase-10-mobile-bottom-nav
+      - work/phase-11-bottom-nav-init-fix
+      - work/phase-12-legacy-header-fix
 
 jobs:
   build:
