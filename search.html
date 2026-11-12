@@ -1,0 +1,110 @@
+---
+permalink: /search/index.html
+---
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MARJAN.IN पर Parenting, Kids Education, Worksheets, Baby Names, Art, Ebooks और बच्चों के लिए उपयोगी सामग्री खोजें।">
+<link rel="canonical" href="https://marjan.in/search/">
+<title>Search MARJAN.IN | Parenting, Kids Learning & Resources</title>
+<style>
+:root{--ink:#243047;--muted:#626d7d;--line:#e4e8ef;--blue:#2464a5;--rose:#e97885}
+*{box-sizing:border-box}
+body{margin:0;background:#fffaf8;color:#303747;font:16px/1.75 Arial,"Noto Sans Devanagari",sans-serif}
+main{max-width:1000px;margin:auto;padding:42px 5% 64px}
+.search-hero{padding:30px clamp(18px,4vw,38px);border:1px solid #f0dfe3;border-radius:18px;background:linear-gradient(120deg,#fff0f1,#f2f6ff)}
+h1{margin:0 0 8px;color:var(--ink);font-size:clamp(28px,4vw,40px);line-height:1.25}
+.search-hero p{margin:0;color:#505a6b}
+.search-form{display:flex;gap:10px;margin-top:22px}
+.search-form input{flex:1;min-width:0;min-height:52px;padding:12px 15px;border:1px solid #cbd3df;border-radius:10px;background:#fff;font:inherit}
+.search-form button{min-width:112px;border:0;border-radius:10px;background:var(--ink);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.search-form input:focus,.search-form button:focus-visible{outline:3px solid #2464a526;outline-offset:2px}
+#search-status{margin:22px 0 12px;color:var(--muted);font-size:14px}
+.search-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.search-result{display:block;padding:17px 18px;border:1px solid var(--line);border-radius:12px;background:#fff;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+.search-result:hover{border-color:#9eafc7;transform:translateY(-2px)}
+.search-result strong{display:block;margin-bottom:5px;color:var(--ink);font-size:17px}
+.search-result span{display:block;color:#596273;font-size:14px;line-height:1.65}
+.search-result small{display:inline-block;margin-top:8px;color:#a74357;font-size:12px;font-weight:700}
+.search-empty{padding:22px;border:1px dashed #cbd3df;border-radius:12px;background:#fff;color:var(--muted)}
+@media(max-width:620px){main{padding:24px 4% 42px}.search-hero{padding:22px 17px}.search-form{flex-direction:column}.search-form button{min-height:48px}.search-results{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120"></a>
+<button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu">Menu</button>
+<nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation"></nav>
+</header>
+<main>
+<section class="search-hero">
+<h1>MARJAN.IN पर खोजें</h1>
+<p>Parenting, बच्चों की शिक्षा, Worksheets, Baby Names, Art & Creativity, Ebooks और उपयोगी Guides खोजें।</p>
+<form class="search-form" id="global-search-form" role="search">
+<input id="global-search-input" type="search" name="q" placeholder="क्या खोज रहे हैं? जैसे Baby Care, Hindi Worksheets…" autocomplete="off" aria-label="वेबसाइट पर खोजें">
+<button type="submit">Search करें</button>
+</form>
+</section>
+<p id="search-status" aria-live="polite">लोकप्रिय Sections और Articles</p>
+<div class="search-results" id="search-results"></div>
+</main>
+<script>
+(function(){
+const pages=[
+{url:"/",title:"Home — MARJAN.IN",desc:"Parenting, Kids Education, Worksheets, Art & Creativity, Ebooks, Baby Names और Product Reviews का मुख्य पेज।",tags:"home मुख्य पेज"},
+{url:"/blog/",title:"Blog — सभी लेख",desc:"Parenting, Kids Education, बच्चों की Activities, किताबों और Learning Toys पर उपयोगी हिंदी लेख।",tags:"blog लेख articles"},
+{url:"/parenting",title:"Parenting",desc:"Baby Care, Toddler Care, Preschool Parenting, Child Development, Child Behaviour, Child Health, टीकाकरण और Parenting Tips।",tags:"baby care toddler care preschool child development behaviour health immunization vaccination टीका टीकाकरण parenting"},
+{url:"/kids-education",title:"Kids Education",desc:"Early Learning, Preschool Learning, School Education, Hindi, English, Maths, Science और Educational Activities।",tags:"education early learning preschool school hindi english maths science"},
+{url:"/worksheets",title:"Worksheets & Free Printables",desc:"Handwriting Practice, Hindi Worksheets, English Worksheets, Maths, Alphabet, Numbers और Class-wise Worksheets।",tags:"worksheets handwriting practice printable pdf"},
+{url:"/art-creativity",title:"Art & Creativity",desc:"Drawing, Painting, Colouring, Craft Activities, Calligraphy और Creative Projects।",tags:"art drawing painting colouring craft calligraphy creativity"},
+{url:"/ebooks-pdfs",title:"Ebooks & PDFs",desc:"Story Books, Poems, Activity Books, Learning Ebooks, Handwriting Books और Printable PDF Bundles।",tags:"ebooks pdf story books poems activity books handwriting"},
+{url:"/baby-names/",title:"Baby Names",desc:"बच्चों के नाम, Boy Names, Girl Names, Hindi Names, A–Z और नामों के अर्थ।",tags:"baby names boy girl hindi meaning name"},
+{url:"/products-reviews",title:"Products & Reviews",desc:"Baby Products, Educational Toys, Learning Kits, School Supplies, Product Reviews और Buying Guides।",tags:"products reviews toys baby products learning kits school supplies comparison buying guides"},
+{url:"/resources",title:"Resources",desc:"Parenting Guides, Learning Resources, Free Downloads और Useful Tools।",tags:"resources guides downloads tools"},
+{url:"/digital-products/",title:"Digital Products Catalog",desc:"Handwriting Books, Calligraphy Sheets, Learning Worksheets, Story Ebooks, Poems और Activity Books।",tags:"digital products ebooks pdf printable books calligraphy"},
+{url:"/activities",title:"Kids Activities",desc:"घर पर बच्चों के लिए मज़ेदार और सीखने वाली गतिविधियाँ।",tags:"kids activities games play"},
+{url:"/kids-corner",title:"Kids Corner",desc:"बच्चों के लिए सीखने, पढ़ने और रचनात्मक गतिविधियों का कोना।",tags:"kids corner learning"},
+{url:"/mobile-habit",title:"बच्चों की Mobile Habit",desc:"बच्चों के Screen Time और मोबाइल उपयोग को संतुलित करने के सुझाव।",tags:"mobile habit screen time digital habits"},
+{url:"/article-reading-habit",title:"बच्चों में पढ़ने की आदत कैसे विकसित करें?",desc:"किताबों, कहानियों और रोज़ पढ़ने की आदत के लिए उपयोगी सुझाव।",tags:"reading habit books stories"},
+{url:"/article-kids-sleep-routine",title:"बच्चों की अच्छी नींद और Sleep Routine",desc:"बच्चों के लिए नियमित और आरामदायक नींद की दिनचर्या।",tags:"sleep routine नींद"},
+{url:"/article-kids-science-experiments-home",title:"घर पर बच्चों के लिए Science Experiments",desc:"सरल गतिविधियों के माध्यम से विज्ञान सीखने के विचार।",tags:"science experiments विज्ञान"},
+{url:"/article-kids-activities-ghar-par",title:"घर पर बच्चों के लिए 15 मज़ेदार Activities",desc:"खेल और रचनात्मक गतिविधियों के साथ सीखने के तरीके।",tags:"activities ghar par खेल"},
+{url:"/article-bachon-ke-liye-educational-toys",title:"बच्चों के लिए Educational Toys कैसे चुनें?",desc:"उम्र, सुरक्षा और सीखने की जरूरत के अनुसार खिलौने चुनने की Guide।",tags:"educational toys खिलौने"},
+{url:"/article-bachon-ke-liye-hindi-story-books",title:"बच्चों के लिए Hindi Story Books",desc:"बच्चों की उम्र और रुचि के अनुसार कहानी की किताबें चुनें।",tags:"hindi story books कहानियां"},
+{url:"/baby-names/a-letter-hindu-boy-names/",title:"A Letter Hindu Boy Names",desc:"A अक्षर से हिंदू लड़कों के नाम और अर्थ।",tags:"baby names hindu boy a letter"},
+{url:"/baby-names/a-letter-muslim-boy-names/",title:"A Letter Muslim Boy Names",desc:"A अक्षर से मुस्लिम लड़कों के नाम और अर्थ।",tags:"baby names muslim boy a letter"},
+{url:"/baby-names/a-letter-muslim-girl-names/",title:"A Letter Muslim Girl Names",desc:"A अक्षर से मुस्लिम लड़कियों के नाम और अर्थ।",tags:"baby names muslim girl a letter"},
+{url:"/about",title:"About MARJAN.IN",desc:"MARJAN.IN और इसके उद्देश्य के बारे में जानकारी।",tags:"about founder"},
+{url:"/contact",title:"Contact",desc:"MARJAN.IN से संपर्क करने की जानकारी।",tags:"contact"},
+{url:"/affiliate-disclosure",title:"Affiliate Disclosure",desc:"Affiliate Links और पारदर्शिता से जुड़ी जानकारी।",tags:"affiliate disclosure"},
+{url:"/privacy-policy",title:"Privacy Policy",desc:"वेबसाइट की Privacy Policy।",tags:"privacy policy"},
+{url:"/terms",title:"Terms & Conditions",desc:"वेबसाइट के उपयोग की शर्तें।",tags:"terms conditions"}
+];
+const form=document.getElementById('global-search-form');
+const input=document.getElementById('global-search-input');
+const results=document.getElementById('search-results');
+const status=document.getElementById('search-status');
+function render(){
+ const q=input.value.trim().toLocaleLowerCase();
+ const found=pages.filter(p=>!q||(p.title+' '+p.desc+' '+p.tags).toLocaleLowerCase().includes(q));
+ results.replaceChildren();
+ status.textContent=q?found.length+' परिणाम मिले': 'लोकप्रिय Sections और Articles';
+ if(!found.length){const empty=document.createElement('div');empty.className='search-empty';empty.textContent='इस खोज से मेल खाता कोई पेज नहीं मिला। दूसरे शब्दों से खोजें।';results.appendChild(empty);return;}
+ found.forEach(p=>{
+  const a=document.createElement('a');a.className='search-result';a.href=p.url;
+  const title=document.createElement('strong');title.textContent=p.title;
+  const desc=document.createElement('span');desc.textContent=p.desc;
+  const tag=document.createElement('small');tag.textContent='पेज खोलें →';
+  a.append(title,desc,tag);results.appendChild(a);
+ });
+}
+const params=new URLSearchParams(location.search);input.value=params.get('q')||'';
+form.addEventListener('submit',function(e){e.preventDefault();const q=input.value.trim();history.replaceState(null,'',q?'?q='+encodeURIComponent(q):location.pathname);render();});
+input.addEventListener('input',render);
+render();
+})();
+</script>
+</body>
+</html>
