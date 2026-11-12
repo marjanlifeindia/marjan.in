@@ -67,6 +67,24 @@ test("mobile pages do not create horizontal overflow", async ({ page }) => {
   }
 });
 
+test("legacy homepage markup is upgraded to the shared global navigation", async ({ page }) => {
+  await page.goto("/");
+  const header = page.locator("header.marjan-header");
+  await expect(header).toBeVisible();
+  await expect(header.locator("#primary-navigation.primary-navigation")).toBeVisible();
+  await expect(header.locator("#primary-navigation .nav-group")).toHaveCount(8);
+  await expect(header.locator(".nav-search")).toHaveAttribute("href", "/search/");
+});
+
+test("mobile bottom navigation is present across key page types", async ({ page }) => {
+  test.skip(test.info().project.name !== "mobile");
+  for (const path of ["/", "/blog/", "/parenting/", "/kids-education/", "/worksheets/", "/baby-names/", "/digital-products/"]) {
+    await page.goto(path);
+    await expect(page.locator(".marjan-mobile-bottom")).toBeVisible();
+    await expect(page.locator(".marjan-mobile-bottom .bottom-more")).toBeVisible();
+  }
+});
+
 test("global header search is visible and searches site sections and articles", async ({ page }) => {
   await page.goto("/");
   const searchLink = page.locator("header .nav-search");
