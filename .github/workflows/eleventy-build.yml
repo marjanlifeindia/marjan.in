@@ -13,7 +13,7 @@ on:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
-      - work/phase-6-digital-products
+      - work/phase-7-responsive-testing
 
 jobs:
   build:
@@ -29,6 +29,10 @@ jobs:
         run: npm install
       - name: Build static website
         run: npm run build
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: Run responsive browser tests
+        run: npm run test:responsive
       - name: Verify generated navigation assets and category pages
         run: |
           test -f _site/assets/css/marjan-navigation.css
