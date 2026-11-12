@@ -14,7 +14,7 @@ module.exports = defineConfig({
     { name: "mobile", use: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } }
   ],
   webServer: {
-    command: "npx @11ty/eleventy --serve --port=8080",
+    command: "npm run build && node tests/serve.js",
     url: "http://127.0.0.1:8080",
     reuseExistingServer: !process.env.CI,
     timeout: 120000
