@@ -1,0 +1,223 @@
+/* MARJAN.IN Design System — Phase 2
+   Version: 1.0
+   Scope: reusable tokens and components; intentionally not imported site-wide yet.
+   This keeps the current live design unchanged until Phase 3 integration.
+*/
+:root {
+  color-scheme: light;
+  --marjan-brand: #243047;
+  --marjan-brand-strong: #18243a;
+  --marjan-brand-soft: #40516e;
+  --marjan-accent: #e97885;
+  --marjan-accent-soft: #fff0f1;
+  --marjan-accent-pale: #f5c4cc;
+  --marjan-canvas: #fffaf8;
+  --marjan-surface: #ffffff;
+  --marjan-surface-muted: #f5f7fb;
+  --marjan-text: #303747;
+  --marjan-text-muted: #5c6576;
+  --marjan-border: #e4e8ef;
+  --marjan-success: #236346;
+  --marjan-focus: #2464a5;
+
+  --marjan-font-sans: "Noto Sans Devanagari", "Noto Sans", Arial, sans-serif;
+  --marjan-font-display: "Noto Sans Devanagari", "Noto Sans", Arial, sans-serif;
+
+  --marjan-space-1: .25rem;
+  --marjan-space-2: .5rem;
+  --marjan-space-3: .75rem;
+  --marjan-space-4: 1rem;
+  --marjan-space-5: 1.25rem;
+  --marjan-space-6: 1.5rem;
+  --marjan-space-8: 2rem;
+  --marjan-space-10: 2.5rem;
+  --marjan-space-12: 3rem;
+
+  --marjan-radius-sm: .5rem;
+  --marjan-radius-md: .875rem;
+  --marjan-radius-lg: 1.25rem;
+  --marjan-radius-pill: 999px;
+  --marjan-shadow-card: 0 8px 28px rgba(36, 48, 71, .08);
+  --marjan-shadow-menu: 0 18px 42px rgba(24, 36, 58, .16);
+
+  --marjan-container: 1200px;
+  --marjan-header-height: 76px;
+  --marjan-transition: 180ms ease;
+}
+
+/* Opt-in base: apply with .marjan-design to avoid changing legacy pages early. */
+.marjan-design {
+  color: var(--marjan-text);
+  background: var(--marjan-canvas);
+  font-family: var(--marjan-font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+.marjan-design *,
+.marjan-design *::before,
+.marjan-design *::after { box-sizing: border-box; }
+.marjan-design img { max-width: 100%; height: auto; }
+.marjan-design a { color: var(--marjan-brand); text-underline-offset: .18em; }
+.marjan-design a:hover { color: var(--marjan-brand-soft); }
+.marjan-design :focus-visible {
+  outline: 3px solid var(--marjan-focus);
+  outline-offset: 3px;
+}
+.marjan-container {
+  width: min(calc(100% - 2rem), var(--marjan-container));
+  margin-inline: auto;
+}
+.marjan-section { padding-block: clamp(2rem, 5vw, 4rem); }
+.marjan-section__heading {
+  margin: 0 0 var(--marjan-space-2);
+  color: var(--marjan-brand);
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  line-height: 1.3;
+  font-weight: 800;
+}
+.marjan-section__intro {
+  max-width: 68ch;
+  margin: 0 0 var(--marjan-space-6);
+  color: var(--marjan-text-muted);
+}
+
+/* Brand mark: use the existing supplied asset; do not add a tagline beneath it. */
+.marjan-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  text-decoration: none;
+}
+.marjan-brand-lockup img {
+  display: block;
+  width: clamp(112px, 15vw, 164px);
+  max-height: 58px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Desktop header foundation. Main navigation and mega-menu behavior are Phase 3. */
+.marjan-site-header {
+  position: relative;
+  z-index: 50;
+  background: var(--marjan-surface);
+  border-bottom: 1px solid var(--marjan-border);
+}
+.marjan-site-header__inner {
+  min-height: var(--marjan-header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--marjan-space-5);
+}
+.marjan-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--marjan-space-3);
+  margin-inline-start: auto;
+}
+
+/* Reusable cards, category tiles and buttons. */
+.marjan-card {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--marjan-surface);
+  border: 1px solid var(--marjan-border);
+  border-radius: var(--marjan-radius-lg);
+  box-shadow: var(--marjan-shadow-card);
+}
+.marjan-card__body { padding: var(--marjan-space-5); }
+.marjan-card__title {
+  margin: 0 0 var(--marjan-space-2);
+  color: var(--marjan-brand);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 750;
+}
+.marjan-card__text { margin: 0; color: var(--marjan-text-muted); }
+.marjan-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--marjan-space-4);
+}
+.marjan-category-tile {
+  display: flex;
+  min-height: 128px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--marjan-space-2);
+  padding: var(--marjan-space-5);
+  color: var(--marjan-brand);
+  background: var(--marjan-surface);
+  border: 1px solid var(--marjan-border);
+  border-radius: var(--marjan-radius-lg);
+  text-decoration: none;
+  transition: transform var(--marjan-transition), box-shadow var(--marjan-transition), border-color var(--marjan-transition);
+}
+.marjan-category-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--marjan-accent-pale);
+  box-shadow: var(--marjan-shadow-card);
+}
+.marjan-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--marjan-space-2);
+  padding: .65rem 1.1rem;
+  color: #fff;
+  background: var(--marjan-brand);
+  border: 1px solid var(--marjan-brand);
+  border-radius: var(--marjan-radius-pill);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--marjan-transition), transform var(--marjan-transition);
+}
+.marjan-button:hover { color: #fff; background: var(--marjan-brand-soft); }
+.marjan-button--accent {
+  color: var(--marjan-brand-strong);
+  background: var(--marjan-accent-pale);
+  border-color: var(--marjan-accent-pale);
+}
+.marjan-button--accent:hover { color: var(--marjan-brand-strong); background: var(--marjan-accent); }
+
+/* Content reading rhythm. */
+.marjan-article {
+  width: min(100%, 780px);
+  margin-inline: auto;
+  color: var(--marjan-text);
+}
+.marjan-article h1,
+.marjan-article h2,
+.marjan-article h3 { color: var(--marjan-brand); line-height: 1.35; }
+.marjan-article p,
+.marjan-article li { line-height: 1.85; }
+.marjan-meta { color: var(--marjan-text-muted); font-size: .9rem; }
+
+/* Responsive layout tokens. */
+@media (max-width: 900px) {
+  :root { --marjan-header-height: 68px; }
+  .marjan-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  :root { --marjan-header-height: 60px; }
+  .marjan-container { width: min(calc(100% - 1.25rem), var(--marjan-container)); }
+  .marjan-category-grid { gap: var(--marjan-space-3); }
+  .marjan-category-tile { min-height: 108px; padding: var(--marjan-space-4); }
+  .marjan-card__body { padding: var(--marjan-space-4); }
+  .marjan-brand-lockup img { width: 112px; max-height: 46px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marjan-design *, .marjan-design *::before, .marjan-design *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
