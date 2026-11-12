@@ -32,7 +32,8 @@ jobs:
           test -f _site/assets/css/marjan-navigation.css
           test -f _site/assets/js/marjan-navigation.js
           test -f _site/assets/css/marjan-footer.css
-          for page in index worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
+          test -f _site/index.html
+          for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
             test -f "_site/$page/index.html"
           done
           grep -q 'class="marjan-site-footer"' _site/index.html
