@@ -129,7 +129,6 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
  }
  function applyFilters(){page=1;render();}
  search.addEventListener("input",applyFilters);
- category.addEventListener("input",applyFilters);
  category.addEventListener("change",applyFilters);
  prev.addEventListener("click",()=>{page=Math.max(1,page-1);render();});
  next.addEventListener("click",()=>{page++;render();});
