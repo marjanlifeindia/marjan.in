@@ -222,29 +222,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     
-<section class="card"><h2>नए Kids Education लेख</h2><div id="cmsArticles"><p>लेख लोड हो रहे हैं…</p></div></section>
-<script>
-(function(){
-const target=document.getElementById("cmsArticles");
-function fetchWithTimeout(url,options){const controller=new AbortController();const timer=setTimeout(function(){controller.abort();},10000);return fetch(url,Object.assign({},options||{},{signal:controller.signal})).finally(function(){clearTimeout(timer);});}
-function parse(md){
- const m=md.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);if(!m)return null;
- const meta={};let key="";
- m[1].split("\n").forEach(function(line){const x=line.match(/^([a-zA-Z_]+):\s*(.*)$/);if(x){key=x[1];meta[key]=x[2].trim().replace(/^["']|["']$/g,"");}else if(key&&/^\s{2,}\S/.test(line)){meta[key]+=" "+line.trim();}});
- return meta;
-}
-function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-fetchWithTimeout("https://api.github.com/repos/marjanlifeindia/marjan.in/contents/posts?ref=main")
-.then(function(r){if(!r.ok)throw Error();return r.json();})
-.then(function(files){return Promise.all(files.filter(function(f){return f.type==="file"&&/\.md$/i.test(f.name);}).map(function(f){return fetchWithTimeout(f.download_url).then(function(r){return r.ok?r.text():"";}).then(function(md){return {file:f.name,meta:parse(md)};});}));})
-.then(function(posts){
-const found=posts.filter(function(p){return p.meta&&p.meta.title&&(p.meta.category||"").toLowerCase()==="kids education";}).sort(function(a,b){return (b.meta.date||"").localeCompare(a.meta.date||"");});
-if(!found.length){target.innerHTML="<p>इस category में अभी कोई नया CMS लेख नहीं है।</p>";return;}
-target.innerHTML=found.map(function(p){return "<article style=\"padding:14px 0;border-bottom:1px solid #eee5e2\">"+(p.meta.image?"<img src=\""+esc(p.meta.image)+"\" alt=\""+esc(p.meta.title)+"\" loading=\"lazy\" style=\"display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:360px;object-fit:cover;object-position:center;background:#fffaf8;border-radius:10px;margin:8px 0 14px\" onerror=\"this.style.display='none'\">":"")+"<h3>"+esc(p.meta.title)+"</h3><p>"+esc(p.meta.excerpt||"")+"</p><a href=\"/article-"+encodeURIComponent(p.meta.slug||p.file.replace(/\.md$/i,""))+"\">पूरा लेख पढ़ें →</a></article>";}).join("");
-})
-.catch(function(){target.innerHTML="<p>लेख अभी लोड नहीं हो सके। कुछ देर बाद फिर कोशिश करें।</p>";});
-})();
-</script>
+<section class="card" aria-labelledby="education-articles-title">
+<h2 id="education-articles-title">Kids Education के उपयोगी लेख</h2>
+<div class="grid">
+<article class="card"><h3>बच्चों में पढ़ने की आदत कैसे डालें?</h3><p>किताबें चुनने, कहानी पढ़ने और रोज़ाना Reading Habit विकसित करने के आसान तरीके।</p><a href="/article-reading-habit">पूरा लेख पढ़ें →</a></article>
+<article class="card"><h3>घर पर बच्चों के लिए आसान Science Experiments</h3><p>सुरक्षित और सरल प्रयोगों के माध्यम से बच्चों में सवाल पूछने और खोजने की आदत बढ़ाएँ।</p><a href="/article-kids-science-experiments-home">पूरा लेख पढ़ें →</a></article>
+<article class="card"><h3>5–10 साल के बच्चों के लिए Hindi Story Books</h3><p>उम्र और रुचि के अनुसार कहानी की किताबें चुनने के लिए उपयोगी मार्गदर्शन।</p><a href="/article-bachon-ke-liye-hindi-story-books">पूरा लेख पढ़ें →</a></article>
+</div></section>
 <p><a class="button" href="/">मुख्य पेज पर वापस जाएँ</a></p>
   
 <section class="card" id="early-learning"><h2>Early Learning</h2><p>बातचीत, कहानी, गिनती, sorting, blocks और sensory play शुरुआती सीखने को रोजमर्रा के अनुभवों से जोड़ते हैं।</p></section>
