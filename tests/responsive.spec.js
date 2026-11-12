@@ -36,11 +36,7 @@ test("Blog pagination moves between pages", async ({ page }) => {
 test("Blog category filter updates visible articles", async ({ page }) => {
   await page.goto("/blog/");
   const category = page.locator("#blogCategory");
-  await category.evaluate((select) => {
-    select.value = "Parenting";
-    select.dispatchEvent(new Event("input", { bubbles: true }));
-    select.dispatchEvent(new Event("change", { bubbles: true }));
-  });
+  await category.selectOption("Parenting");
   await expect(category).toHaveValue("Parenting");
   await expect(page.locator("#blogCount")).toHaveText("1 लेख मिले");
   await expect(page.locator(".blog-card:not([hidden])")).toHaveCount(1);
@@ -108,6 +104,11 @@ test("Baby Names directory loads 538 names and supports filters and shortlist", 
   const pageErrors = [];
   page.on("pageerror", error => pageErrors.push(error.message));
   await page.goto("/baby-names/");
+  await page.waitForFunction(() => {
+    const count = document.querySelector("#baby-name-result-count")?.textContent || "";
+    return count !== "538 names" || document.querySelector("#baby-name-results .baby-name-card");
+  });
+  console.log("Baby Names runtime", await page.locator("#baby-name-result-count").textContent(), await page.locator("#baby-name-results .baby-name-card").count(), pageErrors);
   await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
   await expect(page.locator("#baby-name-results .baby-name-card").first()).toBeVisible();
   await page.locator("#baby-name-gender").selectOption("boy");
