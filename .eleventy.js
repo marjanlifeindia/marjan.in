@@ -25,4 +25,13 @@ module.exports = function (eleventyConfig) {
     }
     return content;
   });
+
+  // Phase 3: shared navigation assets are added to every generated HTML page.
+  eleventyConfig.addTransform("injectMarjanNavigation", function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html") && !content.includes("/assets/js/marjan-navigation.js")) {
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=3">\\n</head>');
+      content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=3"></script>\\n</body>');
+    }
+    return content;
+  });
 };
