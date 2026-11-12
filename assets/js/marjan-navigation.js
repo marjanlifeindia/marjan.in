@@ -1,6 +1,26 @@
 /* MARJAN.IN Phase 3 navigation: mega menu, mobile drawer and real content links */
 (function(){
-var header=document.querySelector('header'),menu=document.getElementById('primary-navigation');if(!header||!menu)return;
+var header=document.querySelector('header'),menu=document.getElementById('primary-navigation');
+/* Mobile fixed bottom shortcuts, modeled on the reference layout */
+var bottom=document.createElement('nav');
+bottom.className='marjan-mobile-bottom';
+bottom.setAttribute('aria-label','Quick navigation');
+bottom.innerHTML='<a class="bottom-item" href="/" data-path="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a><a class="bottom-item" href="/blog/" data-path="/blog/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg><span>Blog</span></a><a class="bottom-item" href="/kids-education" data-path="/kids-education"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v17H5.5A2.5 2.5 0 0 0 3 22zM21 5.5A2.5 2.5 0 0 0 18.5 3H13v17h5.5A2.5 2.5 0 0 1 21 22z"/></svg><span>Learn</span></a><a class="bottom-item" href="/worksheets/" data-path="/worksheets/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg><span>Worksheets</span></a><button class="bottom-item bottom-more" type="button" aria-expanded="false" aria-controls="marjan-bottom-more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>More</span></button>';
+var more=document.createElement('div');
+more.className='marjan-bottom-more';
+more.id='marjan-bottom-more';
+more.hidden=true;
+more.innerHTML='<a href="/parenting">Parenting</a><a href="/art-creativity/">Art &amp; Creativity</a><a href="/ebooks-pdfs/">Ebooks &amp; PDFs</a><a href="/baby-names/">Baby Names</a><a href="/products-reviews/">Products &amp; Reviews</a><a href="/resources/">Resources</a><a href="/digital-products/">Digital Products</a>';
+document.body.appendChild(more);
+document.body.appendChild(bottom);
+var moreButton=bottom.querySelector('.bottom-more');
+function closeMore(){more.hidden=true;moreButton.setAttribute('aria-expanded','false');}
+moreButton.addEventListener('click',function(){var open=more.hidden;more.hidden=!open;moreButton.setAttribute('aria-expanded',String(open));});
+document.addEventListener('click',function(e){if(!more.contains(e.target)&&!moreButton.contains(e.target))closeMore();});
+var current=location.pathname.replace(/\/?$/,'/')||'/';
+bottom.querySelectorAll('a.bottom-item').forEach(function(a){var target=a.getAttribute('data-path');if(target==='/'?current==='/':current.indexOf(target)===0){a.classList.add('is-active');a.setAttribute('aria-current','page');}});
+
+if(!header||!menu)return;
 var navHTML=`
 <a class="nav-home" href="/">Home</a>
 <details class="nav-group"><summary>Parenting</summary><div class="nav-mega">
@@ -56,23 +76,5 @@ document.addEventListener('click',function(e){if(!header.contains(e.target)&&mob
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var open=menu.querySelector('.nav-group[open]');if(open)open.open=false;else if(menu.classList.contains('is-open'))close(true);}});
 window.addEventListener('resize',function(){if(!mobile())close(false);});
 
-/* Mobile fixed bottom shortcuts, modeled on the reference layout */
-var bottom=document.createElement('nav');
-bottom.className='marjan-mobile-bottom';
-bottom.setAttribute('aria-label','Quick navigation');
-bottom.innerHTML='<a class="bottom-item" href="/" data-path="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a><a class="bottom-item" href="/blog/" data-path="/blog/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg><span>Blog</span></a><a class="bottom-item" href="/kids-education" data-path="/kids-education"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v17H5.5A2.5 2.5 0 0 0 3 22zM21 5.5A2.5 2.5 0 0 0 18.5 3H13v17h5.5A2.5 2.5 0 0 1 21 22z"/></svg><span>Learn</span></a><a class="bottom-item" href="/worksheets/" data-path="/worksheets/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg><span>Worksheets</span></a><button class="bottom-item bottom-more" type="button" aria-expanded="false" aria-controls="marjan-bottom-more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>More</span></button>';
-var more=document.createElement('div');
-more.className='marjan-bottom-more';
-more.id='marjan-bottom-more';
-more.hidden=true;
-more.innerHTML='<a href="/parenting">Parenting</a><a href="/art-creativity/">Art &amp; Creativity</a><a href="/ebooks-pdfs/">Ebooks &amp; PDFs</a><a href="/baby-names/">Baby Names</a><a href="/products-reviews/">Products &amp; Reviews</a><a href="/resources/">Resources</a><a href="/digital-products/">Digital Products</a>';
-document.body.appendChild(more);
-document.body.appendChild(bottom);
-var moreButton=bottom.querySelector('.bottom-more');
-function closeMore(){more.hidden=true;moreButton.setAttribute('aria-expanded','false');}
-moreButton.addEventListener('click',function(){var open=more.hidden;more.hidden=!open;moreButton.setAttribute('aria-expanded',String(open));});
-document.addEventListener('click',function(e){if(!more.contains(e.target)&&!moreButton.contains(e.target))closeMore();});
-var current=location.pathname.replace(/\/?$/,'/')||'/';
-bottom.querySelectorAll('a.bottom-item').forEach(function(a){var target=a.getAttribute('data-path');if(target==='/'?current==='/':current.indexOf(target)===0){a.classList.add('is-active');a.setAttribute('aria-current','page');}});
 
 })();
