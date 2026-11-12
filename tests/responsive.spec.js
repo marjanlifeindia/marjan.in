@@ -78,8 +78,8 @@ test("legacy homepage markup is upgraded to the shared global navigation", async
 
 test("mobile bottom navigation is present across key page types", async ({ page }) => {
   test.skip(test.info().project.name !== "mobile");
-  for (const path of ["/", "/blog/", "/parenting/", "/kids-education/", "/worksheets/", "/baby-names/", "/digital-products/"]) {
-    await page.goto(path);
+  for (const path of ["/", "/blog/", "/parenting", "/kids-education", "/worksheets", "/baby-names/", "/digital-products/"]) {
+    await page.goto(path, { waitUntil: "domcontentloaded" });
     await expect(page.locator(".marjan-mobile-bottom")).toBeVisible();
     await expect(page.locator(".marjan-mobile-bottom .bottom-more")).toBeVisible();
   }
@@ -135,7 +135,9 @@ test("mobile fixed bottom navigation shows primary shortcuts and More categories
   for (const label of ["Home", "Blog", "Learn", "Worksheets", "More"]) {
     await expect(bar.getByText(label, { exact: true })).toBeVisible();
   }
-  await bar.getByRole("button", { name: "More" }).click();
+  const moreButton = bar.getByRole("button", { name: "More" });
+  await moreButton.click();
+  await expect(moreButton).toHaveAttribute("aria-expanded", "true");
   const panel = page.locator("#marjan-bottom-more");
   await expect(panel).toBeVisible();
   await expect(panel.getByRole("link", { name: "Parenting" })).toBeVisible();
