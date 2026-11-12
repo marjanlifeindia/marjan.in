@@ -5,6 +5,8 @@ on:
     branches:
       - work/phase-2-design-system
       - backup/phase-1-baseline-2026-11-12
+      - work/phase-3-navigation
+      - work/phase-4-homepage-footer-v2
   push:
     branches:
       - work/phase-2-design-system
