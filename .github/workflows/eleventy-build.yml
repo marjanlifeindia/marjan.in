@@ -9,6 +9,11 @@ on:
       - work/phase-4-homepage-footer-v2
       - work/phase-5-blog-content
       - work/phase-6-digital-products
+      - work/phase-7-responsive-testing
+      - work/phase-8-menu-footer-correction
+      - work/phase-9-global-header-search
+      - work/phase-8-menu-footer-correction
+      - work/phase-9-global-header-search
   push:
     branches:
       - work/phase-2-design-system
