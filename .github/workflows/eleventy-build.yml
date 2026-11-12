@@ -11,6 +11,7 @@ on:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
+      - work/phase-4-homepage-footer-v2
 
 jobs:
   build:
@@ -30,6 +31,10 @@ jobs:
         run: |
           test -f _site/assets/css/marjan-navigation.css
           test -f _site/assets/js/marjan-navigation.js
-          for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
+          test -f _site/assets/css/marjan-footer.css
+          for page in index worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
             test -f "_site/$page.html"
           done
+          grep -q 'class="marjan-site-footer"' _site/index.html
+          grep -q 'class="marjan-site-footer"' _site/parenting.html
+          grep -q 'class="marjan-site-footer"' _site/article-reading-habit.html
