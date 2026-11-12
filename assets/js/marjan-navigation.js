@@ -29,7 +29,11 @@ var navHTML=`
 <div class="nav-mega-col"><h3 class="nav-mega-title">Learning</h3><a href="/ebooks-pdfs#learning-ebooks">Learning Ebooks</a><a href="/ebooks-pdfs#handwriting-books">Handwriting Books</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Downloads</h3><a href="/ebooks-pdfs#printable-bundles">Printable PDF Bundles</a><a href="/ebooks-pdfs#free-downloads">Free Downloads</a><a href="/digital-products">Digital Products Catalog</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a class="nav-mega-feature" href="/ebooks-pdfs">All Ebooks & PDFs</a></div></div></details>
-<a class="nav-direct" href="/baby-names">Baby Names</a>
+<details class="nav-group"><summary>Baby Names</summary><div class="nav-mega">
+<div class="nav-mega-col"><h3 class="nav-mega-title">By Gender</h3><a href="/baby-names/#boy-names">Boy Names</a><a href="/baby-names/#girl-names">Girl Names</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">By Religion</h3><a href="/baby-names/#hindu-names">Hindu Names</a><a href="/baby-names/#muslim-names">Muslim Names</a><a href="/baby-names/#sikh-names">Sikh Names</a><a href="/baby-names/#christian-names">Christian Names</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Explore Names</h3><a href="/baby-names/#a-z-names">Names A–Z</a><a href="/baby-names/#names-by-meaning">Names by Meaning</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a class="nav-mega-feature" href="/baby-names/">All Baby Names</a></div></div></details>
 <details class="nav-group"><summary>Products & Reviews</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Baby & Kids</h3><a href="/products-reviews#baby-products">Baby Products</a><a href="/products-reviews#educational-toys">Educational Toys</a><a href="/products-reviews#learning-kits">Learning Kits</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">School</h3><a href="/products-reviews#school-supplies">School Supplies</a><a href="/products-reviews#buying-guides">Buying Guides</a></div>
