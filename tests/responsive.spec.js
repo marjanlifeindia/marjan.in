@@ -100,6 +100,22 @@ test("mobile bottom navigation is present across key page types", async ({ page 
   }
 });
 
+test("Baby Names directory loads 538 names and supports filters and shortlist", async ({ page }) => {
+  await page.goto("/baby-names/");
+  await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
+  await page.locator("#baby-name-gender").selectOption("boy");
+  await expect(page.locator("#baby-name-result-count")).toHaveText("244 names");
+  await page.locator("#baby-name-religion").selectOption("muslim");
+  await expect(page.locator("#baby-name-result-count")).toHaveText("56 names");
+  const firstName = page.locator("#baby-name-results .baby-name-card").first();
+  const save = firstName.getByRole("button", { name: /Shortlist/ });
+  await save.click();
+  await expect(save).toHaveAttribute("aria-pressed", "true");
+  await page.locator("#baby-name-shortlist-filter").click();
+  await expect(page.locator("#baby-name-result-count")).toHaveText("1 shortlisted name");
+  await expect(page.locator("#baby-name-results .baby-name-card")).toHaveCount(1);
+});
+
 test("global header search is visible and searches site sections and articles", async ({ page }) => {
   await page.goto("/");
   const searchLink = page.locator("header .nav-search");
