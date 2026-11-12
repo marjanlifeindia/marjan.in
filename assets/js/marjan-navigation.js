@@ -20,8 +20,9 @@ document.body.appendChild(more);
 document.body.appendChild(bottom);
 var moreButton=bottom.querySelector('.bottom-more');
 function closeMore(){more.hidden=true;moreButton.setAttribute('aria-expanded','false');}
-moreButton.addEventListener('click',function(){var open=more.hidden;more.hidden=!open;moreButton.setAttribute('aria-expanded',String(open));});
-document.addEventListener('click',function(e){if(!more.contains(e.target)&&!moreButton.contains(e.target))closeMore();});
+moreButton.onclick=function(event){event.preventDefault();event.stopPropagation();var open=more.hasAttribute('hidden');if(open)more.removeAttribute('hidden');else more.setAttribute('hidden','');moreButton.setAttribute('aria-expanded',String(open));};
+more.addEventListener('click',function(event){event.stopPropagation();});
+document.addEventListener('click',function(e){if(e.target.closest('.bottom-more')||more.contains(e.target))return;closeMore();});
 var current=location.pathname.replace(/\/?$/,'/')||'/';
 bottom.querySelectorAll('a.bottom-item').forEach(function(a){var target=a.getAttribute('data-path');if(target==='/'?current==='/':current.indexOf(target)===0){a.classList.add('is-active');a.setAttribute('aria-current','page');}});
 
