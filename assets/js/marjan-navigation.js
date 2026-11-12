@@ -6,7 +6,7 @@ var navHTML=`
 <a class="nav-direct" href="/blog">Blog</a>
 <details class="nav-group"><summary>Parenting</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Age-wise Parenting</h3><a href="/parenting#baby-care">Baby Care</a><a href="/parenting#toddler-care">Toddler Care</a><a href="/parenting#preschool-parenting">Preschool Parenting</a><a href="/parenting#parenting-tips">Parenting Tips</a></div>
-<div class="nav-mega-col"><h3 class="nav-mega-title">Growth & Behaviour</h3><a href="/parenting#child-development">Child Development</a><a href="/parenting#child-behaviour">Child Behaviour</a><a href="/parenting#development-milestones">Development Milestones</a></div>
+<div class="nav-mega-col"><h3 class="nav-mega-title">Growth & Behaviour</h3><a href="/parenting#child-development">Child Development</a><a href="/parenting#child-behaviour">Child Behaviour</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Child Health</h3><a href="/parenting#child-health">Child Health</a><a href="/parenting#immunization-vaccination">Immunization & Vaccination</a><a href="/parenting#health-safety">Health & Safety</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Explore</h3><a href="/parenting">All Parenting Guides</a><a href="/kids-corner">Latest Learning & Activities</a></div></div></details>
 <details class="nav-group"><summary>Kids Education</summary><div class="nav-mega">
