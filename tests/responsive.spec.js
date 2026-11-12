@@ -128,7 +128,11 @@ test("Baby Names directory loads 538 names and supports filters and shortlist", 
 });
 
 test("global header search is visible and searches site sections and articles", async ({ page }) => {
+  const pageErrors = [];
+  page.on("pageerror", error => pageErrors.push(error.message));
   await page.goto("/");
+  const headerDebug = await page.evaluate(() => ({ headerCount: document.querySelectorAll("header").length, navCount: document.querySelectorAll("header #primary-navigation").length, actionCount: document.querySelectorAll("header .marjan-header-actions").length, searchCount: document.querySelectorAll("header .nav-search").length, scriptLoaded: Array.from(document.scripts).map(s => s.src).filter(Boolean) }));
+  console.log("Global header DOM", headerDebug, pageErrors);
   const searchLink = page.locator("header .nav-search");
   await expect(searchLink).toBeVisible();
   await searchLink.click();
