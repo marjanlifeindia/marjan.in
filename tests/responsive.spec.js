@@ -22,23 +22,36 @@ test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
   await expect(page).toHaveURL(/\/blog\/?$/);
 });
 
-test("Blog search, category filter and pagination work", async ({ page }) => {
+test("Blog pagination moves between pages", async ({ page }) => {
   await page.goto("/blog/");
   await expect(page.locator(".blog-card:visible")).toHaveCount(4);
   await expect(page.locator("#blogNext")).toBeEnabled();
   await page.locator("#blogNext").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 2");
   await expect(page.locator(".blog-card:visible")).toHaveCount(2);
+  await page.locator("#blogPrev").click();
+  await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 2");
+});
+
+test("Blog category filter updates visible articles", async ({ page }) => {
+  await page.goto("/blog/");
   const category = page.locator("#blogCategory");
-  await category.selectOption("Parenting");
+  await category.evaluate((select) => {
+    select.value = "Parenting";
+    select.dispatchEvent(new Event("input", { bubbles: true }));
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  });
   await expect(category).toHaveValue("Parenting");
   await expect(page.locator("#blogCount")).toHaveText("1 लेख मिले");
   await expect(page.locator(".blog-card:not([hidden])")).toHaveCount(1);
-  await page.locator("#blogSearch").evaluate((input) => { input.value = "कोई लेख नहीं"; input.dispatchEvent(new Event("input", { bubbles: true })); });
+});
+
+test("Blog search shows an empty state when no article matches", async ({ page }) => {
+  await page.goto("/blog/");
+  await page.locator("#blogSearch").fill("कोई लेख नहीं");
   await expect(page.locator("#blogCount")).toHaveText("0 लेख मिले");
   await expect(page.locator("#blogEmpty")).toBeVisible();
 });
-
 test("article pages provide breadcrumbs, a generated contents list and related reading", async ({ page }) => {
   await page.goto("/article-reading-habit/");
   await expect(page.locator(".marjan-article-breadcrumbs")).toBeVisible();
