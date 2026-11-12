@@ -58,3 +58,23 @@ test("mobile pages do not create horizontal overflow", async ({ page }) => {
     expect(dimensions.scrollWidth, path).toBeLessThanOrEqual(dimensions.width + 1);
   }
 });
+
+test("global header search is visible and searches site sections and articles", async ({ page }) => {
+  await page.goto("/");
+  const searchLink = page.locator("header .nav-search");
+  await expect(searchLink).toBeVisible();
+  await searchLink.click();
+  await expect(page).toHaveURL(/\/search\//);
+  await page.locator("#global-search-input").fill("vaccination");
+  await expect(page.locator("#search-results a[href='/parenting']")).toBeVisible();
+  await page.locator("#global-search-input").fill("Hindi Story Books");
+  await expect(page.locator("#search-results a[href='/article-bachon-ke-liye-hindi-story-books']")).toBeVisible();
+});
+
+test("desktop header has no hamburger and exposes search beside the main navigation", async ({ page }) => {
+  test.skip(test.info().project.name !== "desktop");
+  await page.goto("/");
+  await expect(page.locator("header .menu-toggle")).toBeHidden();
+  await expect(page.locator("header .nav-search")).toBeVisible();
+  await expect(page.locator("#primary-navigation .nav-group")).toHaveCount(8);
+});
