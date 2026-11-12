@@ -103,6 +103,7 @@ test("mobile bottom navigation is present across key page types", async ({ page 
 test("Baby Names directory loads 538 names and supports filters and shortlist", async ({ page }) => {
   await page.goto("/baby-names/");
   await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
+  await expect(page.locator("#baby-name-results .baby-name-card").first()).toBeVisible();
   await page.locator("#baby-name-gender").selectOption("boy");
   await expect(page.locator("#baby-name-result-count")).toHaveText("244 names");
   await page.locator("#baby-name-religion").selectOption("muslim");
