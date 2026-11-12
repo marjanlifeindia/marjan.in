@@ -65,6 +65,7 @@ jobs:
           grep -q 'class="marjan-site-footer"' _site/article-reading-habit/index.html
           ! grep -R -q 'लेख लोड हो रहे हैं' _site/parenting/index.html _site/kids-education/index.html _site/activities/index.html _site/kids-corner/index.html
           grep -q '538 unique नाम' _site/baby-names/index.html
+          test -f _site/baby-names/names-data.json
           grep -q 'class="marjan-site-footer"' _site/worksheets/index.html
           grep -q 'class="marjan-site-footer"' _site/baby-names/index.html
           grep -q 'marjan-article-breadcrumbs' _site/article-reading-habit/index.html
