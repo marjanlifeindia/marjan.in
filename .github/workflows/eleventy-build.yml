@@ -12,8 +12,6 @@ on:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
-      - work/phase-4-homepage-footer-v2
-      - work/phase-5-blog-content
 
 jobs:
   build:
