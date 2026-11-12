@@ -56,6 +56,7 @@ jobs:
           test -f _site/blog/index.html
           test -f _site/search/index.html
           test -f _site/digital-products/index.html
+          grep -q '/assets/js/marjan-navigation.js' _site/digital-products/index.html
           grep -q 'noindex,follow' _site/search/index.html
           grep -q '120 Baby Names' _site/ebooks-pdfs/index.html
           test -f _site/index.html
