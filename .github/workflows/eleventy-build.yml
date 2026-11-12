@@ -33,8 +33,8 @@ jobs:
           test -f _site/assets/js/marjan-navigation.js
           test -f _site/assets/css/marjan-footer.css
           for page in index worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
-            test -f "_site/$page.html"
+            test -f "_site/$page/index.html"
           done
           grep -q 'class="marjan-site-footer"' _site/index.html
-          grep -q 'class="marjan-site-footer"' _site/parenting.html
-          grep -q 'class="marjan-site-footer"' _site/article-reading-habit.html
+          grep -q 'class="marjan-site-footer"' _site/parenting/index.html
+          grep -q 'class="marjan-site-footer"' _site/article-reading-habit/index.html
