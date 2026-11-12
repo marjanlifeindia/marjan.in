@@ -12,13 +12,13 @@ on:
       - work/phase-7-responsive-testing
       - work/phase-8-menu-footer-correction
       - work/phase-9-global-header-search
-      - work/phase-8-menu-footer-correction
-      - work/phase-9-global-header-search
   push:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
       - work/phase-7-responsive-testing
+      - work/phase-8-menu-footer-correction
+      - work/phase-9-global-header-search
 
 jobs:
   build:
@@ -46,7 +46,9 @@ jobs:
           test -f _site/assets/css/marjan-article.css
           test -f _site/assets/js/marjan-article.js
           test -f _site/blog/index.html
+          test -f _site/search/index.html
           test -f _site/digital-products/index.html
+          grep -q 'noindex,follow' _site/search/index.html
           grep -q '120 Baby Names' _site/ebooks-pdfs/index.html
           test -f _site/index.html
           for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
