@@ -79,13 +79,13 @@ module.exports = function (eleventyConfig) {
     <div class="marjan-footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms & Conditions</a><a href="/contact">Contact</a></div>
   </div>
 </footer>`;
-    if (/<footer\\b[\\s\\S]*?<\\/footer>/i.test(content)) {
-      content = content.replace(/<footer\\b[\\s\\S]*?<\\/footer>/i, footerHtml);
+    if (/<footer\b[\s\\S]*?<\/footer>/i.test(content)) {
+      content = content.replace(/<footer\b[\s\\S]*?<\/footer>/i, footerHtml);
     } else {
-      content = content.replace("</body>", footerHtml + "\\n</body>");
+      content = content.replace("</body>", footerHtml + "\n</body>");
     }
     if (!content.includes("/assets/css/marjan-footer.css")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=1">\\n</head>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=1">\n</head>');
     }
     return content;
   });
