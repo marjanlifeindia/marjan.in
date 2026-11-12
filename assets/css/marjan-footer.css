@@ -20,3 +20,13 @@
 .marjan-footer-legal a{color:#e2e8f0}
 @media(max-width:760px){.marjan-site-footer{padding:30px 5% 18px}.marjan-footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}.marjan-footer-about{grid-column:1/-1}.marjan-footer-brand img{width:160px}.marjan-footer-bottom{align-items:flex-start;flex-direction:column}}
 @media(max-width:420px){.marjan-footer-top{grid-template-columns:1fr 1fr;gap:22px 12px}.marjan-footer-col h2{font-size:14px}.marjan-footer-col a{font-size:13px}.marjan-footer-about p{font-size:13px}}
+
+
+/* Full Master Plan category navigation in the footer */
+.marjan-footer-category-menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 28px;padding:28px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);text-align:left}
+.marjan-footer-category{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:6px}
+.marjan-footer-category h2{margin:0 0 5px;color:#fff;font-size:15px;line-height:1.4}
+.marjan-footer-category a{margin:0;color:#fff;text-decoration:none;font-size:13px;line-height:1.5;opacity:.9}
+.marjan-footer-category a:hover,.marjan-footer-category a:focus-visible{text-decoration:underline;opacity:1}
+@media(max-width:760px){.marjan-footer-category-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;padding:22px 0}.marjan-footer-category h2{font-size:14px}.marjan-footer-category a{font-size:12px}}
+@media(max-width:380px){.marjan-footer-category-menu{grid-template-columns:1fr 1fr;gap:18px 12px}}
