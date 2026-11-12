@@ -46,10 +46,10 @@ module.exports = function (eleventyConfig) {
   // Phase 4: render one crawlable, consistent footer on every generated HTML page.
   eleventyConfig.addTransform("ensureMarjanSearchControl", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
-    const headerMatch = content.match(/<header\\b[\\s\\S]*?<\\/header>/i);
-    if (!headerMatch || /class=["'][^"']*\\bnav-search\\b/.test(headerMatch[0])) return content;
+    const headerMatch = content.match(/<header\b[\s\S]*?<\/header>/i);
+    if (!headerMatch || /class=["'][^"']*\bnav-search\b/.test(headerMatch[0])) return content;
     const searchLink = '<a class="nav-search" href="/search/" aria-label="Search MARJAN.IN" title="Search MARJAN.IN"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></a>';
-    return content.replace(/<\\/header>/i, searchLink + "\\n</header>");
+    return content.replace(/<\/header>/i, searchLink + "\n</header>");
   });
 
   eleventyConfig.addTransform("standardizeMarjanFooter", function(content, outputPath) {
