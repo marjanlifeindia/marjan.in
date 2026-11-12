@@ -120,8 +120,8 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
   const selected=category.value;
   filtered=cards.filter(card=>(selected==="all"||card.dataset.category===selected)&&(!query||(card.innerText+" "+card.dataset.search).toLocaleLowerCase().includes(query)));
   const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);
-  cards.forEach(card=>card.hidden=true);
-  filtered.slice((page-1)*pageSize,page*pageSize).forEach(card=>card.hidden=false);
+  cards.forEach(card=>card.setAttribute("hidden",""));
+  filtered.slice((page-1)*pageSize,page*pageSize).forEach(card=>card.removeAttribute("hidden"));
   count.textContent=filtered.length+" लेख मिले";
   empty.hidden=filtered.length!==0;
   prev.disabled=page<=1||filtered.length===0;next.disabled=page>=pages||filtered.length===0;
