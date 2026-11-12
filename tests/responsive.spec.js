@@ -101,7 +101,7 @@ test("mobile bottom navigation is present across key page types", async ({ page 
 });
 
 test("Baby Names directory loads 538 names and supports filters and shortlist", async ({ page }) => {
-  const dataResponse = await page.request.get("/baby-names/names-data.json");
+  const dataResponse = await page.request.get("/assets/data/baby-names.json");
   expect(dataResponse.status()).toBe(200);
   const data = await dataResponse.json();
   expect(data).toHaveLength(538);
