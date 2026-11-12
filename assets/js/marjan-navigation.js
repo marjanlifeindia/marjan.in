@@ -3,6 +3,7 @@
 var header=document.querySelector('header'),menu=document.getElementById('primary-navigation');if(!header||!menu)return;
 var navHTML=`
 <a class="nav-home" href="/">Home</a>
+<a class="nav-direct" href="/blog">Blog</a>
 <details class="nav-group"><summary>Parenting</summary><div class="nav-mega">
 <div class="nav-mega-col"><h3 class="nav-mega-title">Age-wise Parenting</h3><a href="/parenting#baby-care">Baby Care</a><a href="/parenting#toddler-care">Toddler Care</a><a href="/parenting#preschool-parenting">Preschool Parenting</a><a href="/parenting#parenting-tips">Parenting Tips</a></div>
 <div class="nav-mega-col"><h3 class="nav-mega-title">Growth & Behaviour</h3><a href="/parenting#child-development">Child Development</a><a href="/parenting#child-behaviour">Child Behaviour</a><a href="/parenting#development-milestones">Development Milestones</a></div>
