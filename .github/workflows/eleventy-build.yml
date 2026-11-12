@@ -7,11 +7,13 @@ on:
       - backup/phase-1-baseline-2026-11-12
       - work/phase-3-navigation
       - work/phase-4-homepage-footer-v2
+      - work/phase-5-blog-content
   push:
     branches:
       - work/phase-2-design-system
       - work/phase-3-navigation
       - work/phase-4-homepage-footer-v2
+      - work/phase-5-blog-content
 
 jobs:
   build:
@@ -32,6 +34,9 @@ jobs:
           test -f _site/assets/css/marjan-navigation.css
           test -f _site/assets/js/marjan-navigation.js
           test -f _site/assets/css/marjan-footer.css
+          test -f _site/assets/css/marjan-article.css
+          test -f _site/assets/js/marjan-article.js
+          test -f _site/blog/index.html
           test -f _site/index.html
           for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
             test -f "_site/$page/index.html"
@@ -39,3 +44,5 @@ jobs:
           grep -q 'class="marjan-site-footer"' _site/index.html
           grep -q 'class="marjan-site-footer"' _site/parenting/index.html
           grep -q 'class="marjan-site-footer"' _site/article-reading-habit/index.html
+          grep -q 'marjan-article-breadcrumbs' _site/article-reading-habit/index.html
+          grep -q 'marjan-related-articles' _site/article-reading-habit/index.html
