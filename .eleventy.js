@@ -2,7 +2,7 @@ module.exports = function (eleventyConfig) {
   // 1. Cloudflare redirects (यह आपका पुराना कोड है)
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("baby-names/names-data.json");
+  eleventyConfig.addPassthroughCopy({ "baby-names/names-data.json": "assets/data/baby-names.json" });
 
   // Keep legacy Markdown drafts as source material, but do not render them: each has a maintained HTML page at the same output route.
   eleventyConfig.ignores.add("baby-names/**/*.md");
