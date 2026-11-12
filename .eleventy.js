@@ -30,12 +30,16 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  // Phase 3: shared navigation assets are added to every generated HTML page.
+  // Phase 3/9: guarantee the shared header CSS and JS on every generated HTML page.
+  // Remove stale/duplicate references first; this prevents a pre-existing JS reference
+  // from accidentally suppressing the stylesheet (the old conditional did exactly that).
   eleventyConfig.addTransform("injectMarjanNavigation", function(content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html") && !content.includes("/assets/js/marjan-navigation.js")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=3">\n</head>');
-      content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=3"></script>\n</body>');
-    }
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    content = content
+      .replace(/<link[^>]+href=["'][^"']*marjan-navigation\\.css[^"']*["'][^>]*>\\s*/gi, "")
+      .replace(/<script[^>]+src=["'][^"']*marjan-navigation\\.js[^"']*["'][^>]*><\\/script>\\s*/gi, "");
+    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=4">\\n</head>');
+    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=4"></script>\\n</body>');
     return content;
   });
   // Phase 4: render one crawlable, consistent footer on every generated HTML page.
