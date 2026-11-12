@@ -90,7 +90,7 @@ test("legacy homepage markup is upgraded to the shared global navigation", async
 test("mobile bottom navigation is present across key page types", async ({ page }) => {
   test.skip(test.info().project.name !== "mobile");
   for (const path of ["/", "/blog/", "/parenting", "/kids-education", "/worksheets", "/baby-names/", "/digital-products/"]) {
-    await page.goto(path, { waitUntil: "domcontentloaded" });
+    await page.goto(path, { waitUntil: "load" });
     await expect(page.locator(".marjan-mobile-bottom")).toBeVisible();
     await expect(page.locator(".marjan-mobile-bottom .bottom-more")).toBeVisible();
   }
