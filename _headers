@@ -26,6 +26,10 @@
 /baby-names/names-data.json
   Cache-Control: public, max-age=86400
 
+/assets/js/marjan-navigation.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: application/javascript; charset=utf-8
+
 /assets/js/*.js
   Content-Type: application/javascript; charset=utf-8
 
