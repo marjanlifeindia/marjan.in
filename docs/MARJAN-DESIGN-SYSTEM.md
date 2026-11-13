@@ -11,9 +11,9 @@ Status: Complete design-system foundation on isolated branch; not applied to pro
 - Language: Hindi in Devanagari by default; retain standard English terms when they are clearer.
 
 ## 2. Logo rules
-- Use the existing supplied asset: `media/marjan-logo.webp`.
-- Do not redraw, replace, recolor or distort the logo.
-- Preserve aspect ratio with `object-fit: contain`.
+- Use the dedicated header and footer brand assets configured by the shared layout.
+- Keep the asset paths synchronized between `.eleventy.js` and `assets/js/marjan-navigation.js`.
+- Do not crop, stretch, recolor or distort either wordmark; preserve its intrinsic aspect ratio with `object-fit: contain`.
 - No tagline, “Painting”, “Printing”, or other descriptor below the logo.
 - Header actions/navigation sit to the right of the logo on desktop.
 - Source asset remains untouched in this phase; any background/resolution correction requires separate visual inspection.
