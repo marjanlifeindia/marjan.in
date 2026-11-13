@@ -85,6 +85,8 @@ const pages=[
 ];
 const form=document.getElementById('global-search-form');
 const input=document.getElementById('global-search-input');
+const initialQuery=new URLSearchParams(window.location.search).get('q');
+if(initialQuery) input.value=initialQuery;
 const results=document.getElementById('search-results');
 const status=document.getElementById('search-status');
 function render(){
