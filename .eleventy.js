@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("baby-names/**/*.md");
   eleventyConfig.ignores.add("posts/**/*.md");
   eleventyConfig.ignores.add("README.md"); // Repository documentation is not a public website route.
+  eleventyConfig.ignores.add("docs/**/*.md"); // Internal design and implementation notes are not public pages.
   eleventyConfig.ignores.add("articles/**/*.html");
   eleventyConfig.ignores.add("article.html");
   eleventyConfig.ignores.add("test-results/**");
