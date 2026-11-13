@@ -128,3 +128,22 @@ footer.marjan-site-footer a.marjan-footer-brand{
 .marjan-footer-brand{width:180px!important;height:auto!important;max-width:100%;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
 .marjan-footer-brand img{display:block;width:180px!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;position:static!important;left:auto!important;top:auto!important}
 @media(max-width:760px){.marjan-footer-brand{width:160px!important}.marjan-footer-brand img{width:160px!important}}
+
+
+/* Preserve the homepage's original follow line and branded social icon pills. */
+.marjan-site-footer .footer-follow-line{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin:8px auto 14px;text-align:center}
+.marjan-site-footer .footer-follow-line>a{display:inline-flex;align-items:center;justify-content:center;margin:0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+.marjan-site-footer .footer-follow-line>a img{display:block;width:180px!important;max-width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;clip-path:none;border-radius:0;transform:none;margin:0}
+.marjan-site-footer .footer-follow-line>span{color:#fff;font-size:14px;font-weight:600}
+.marjan-site-footer .marjan-footer-description{max-width:360px;margin:0 0 12px;color:#e5eaf2;font-size:14px;line-height:1.8}
+.marjan-site-footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:620px}
+.marjan-site-footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s ease,border-color .2s ease}
+.marjan-site-footer .social-links a:hover,.marjan-site-footer .social-links a:focus-visible{background:#40516e;border-color:#fff;outline-offset:3px}
+.marjan-site-footer .social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;color:#fff;font-weight:800;font-size:17px;line-height:1;background:#1877F2}
+.marjan-site-footer .social-mark svg{display:block;width:17px;height:17px;fill:currentColor}
+.marjan-site-footer .social-mark.youtube-mark{background:#FF0033;border-radius:7px}
+.marjan-site-footer .social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
+.marjan-site-footer .social-mark.instagram-mark{background:#C13584}
+.marjan-site-footer .social-mark.x-mark{background:#000;border-radius:50%}
+@media(min-width:768px){.marjan-site-footer .social-links{flex-flow:row nowrap;justify-content:center;align-items:center;width:max-content;max-width:100%;gap:8px}.marjan-site-footer .social-links a{flex:0 0 auto;gap:6px;padding:8px 10px;font-size:13px}}
+@media(max-width:480px){.marjan-site-footer .social-links{gap:8px}.marjan-site-footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}.marjan-site-footer .footer-follow-line>a img{width:150px!important}}
