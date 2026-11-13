@@ -11,6 +11,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("article.html");
   eleventyConfig.ignores.add("test-results/**");
   eleventyConfig.ignores.add("playwright-report/**");
+  // Authoring template is copied into the site root only when creating a new page.
+  eleventyConfig.ignores.add("_templates/**");
 
   // 2. MailerLite Pop-up injector (यह हर पेज पर पॉप-अप लगाएगा)
   eleventyConfig.addTransform("injectMailerLite", function(content, outputPath) {
@@ -41,7 +43,7 @@ module.exports = function (eleventyConfig) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
     const sharedHeader = `
 <header class="marjan-header">
-  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=5" alt="MARJAN.IN" decoding="async"></a>
+  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo.webp?v=6" alt="MARJAN.IN" width="480" height="126" decoding="async" fetchpriority="high"></a>
   <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
     <a class="nav-home" href="/">Home</a>
     <a class="nav-direct" href="/parenting">Parenting</a>
@@ -91,7 +93,7 @@ module.exports = function (eleventyConfig) {
 <footer class="marjan-site-footer" aria-label="MARJAN.IN footer">
   <div class="marjan-footer-top">
     <div class="marjan-footer-about">
-      <a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=5" alt="MARJAN.IN" width="180" height="42" loading="lazy" decoding="async"></a>
+      <a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo.webp?v=6" alt="MARJAN.IN" width="480" height="126" loading="lazy" decoding="async"></a>
       <p>MARJAN.IN पर Parenting, बच्चों की शिक्षा, रचनात्मक गतिविधियों और सीखने के संसाधनों से जुड़ी उपयोगी जानकारी सरल हिंदी में पढ़ें। हमारा उद्देश्य माता-पिता को बच्चों की सीखने की यात्रा में मदद देना है।</p>
       <div class="marjan-footer-social" aria-label="MARJAN.IN social media links">
         <a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer">Facebook</a>

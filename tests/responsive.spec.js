@@ -204,3 +204,39 @@ test("mobile fixed bottom navigation shows primary shortcuts and More categories
   await expect(panel.getByRole("link", { name: "Baby Names" })).toBeVisible();
   await expect(panel.getByRole("link", { name: "Products & Reviews" })).toBeVisible();
 });
+
+
+test("all page types receive the same central header, logo and complete footer", async ({ page }) => {
+  const paths = ["/", "/about", "/blog/", "/baby-names/", "/article-reading-habit/", "/privacy-policy"];
+  let referenceFooterLinks = null;
+  for (const path of paths) {
+    await page.goto(path, { waitUntil: "networkidle" });
+    const header = page.locator("header.marjan-header");
+    const footer = page.locator("footer.marjan-site-footer");
+    await expect(header).toBeVisible();
+    await expect(footer).toBeAttached();
+    await expect(header.locator(".brand img")).toHaveAttribute("src", /\/media\/marjan-logo\.webp/);
+    await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", /\/media\/marjan-logo\.webp/);
+    await expect(footer.getByRole("link", { name: "Facebook" })).toHaveAttribute("href", "https://www.facebook.com/marjaninindia");
+    const links = await footer.locator("a").evaluateAll(nodes => nodes.map(node => node.getAttribute("href")).sort());
+    if (referenceFooterLinks === null) referenceFooterLinks = links;
+    else expect(links, path).toEqual(referenceFooterLinks);
+    const ratio = await header.locator(".brand img").evaluate(img => img.naturalWidth / img.naturalHeight);
+    expect(ratio).toBeGreaterThan(3.5);
+    expect(ratio).toBeLessThan(4.1);
+  }
+});
+
+test("shared footer logo is fully visible inside its white capsule", async ({ page }) => {
+  await page.goto("/");
+  const brand = page.locator(".marjan-footer-brand");
+  const image = brand.locator("img");
+  await expect(brand).toBeVisible();
+  const box = await brand.boundingBox();
+  const imageBox = await image.boundingBox();
+  expect(box.width).toBeGreaterThan(imageBox.width);
+  expect(box.height).toBeGreaterThan(imageBox.height);
+  const styles = await brand.evaluate(node => getComputedStyle(node));
+  expect(styles.backgroundColor).toBe("rgb(255, 255, 255)");
+  expect(styles.overflow).not.toBe("hidden");
+});

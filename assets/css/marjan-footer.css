@@ -30,3 +30,66 @@
 .marjan-footer-category a:hover,.marjan-footer-category a:focus-visible{text-decoration:underline;opacity:1}
 @media(max-width:760px){.marjan-footer-category-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;padding:22px 0}.marjan-footer-category h2{font-size:14px}.marjan-footer-category a{font-size:12px}}
 @media(max-width:380px){.marjan-footer-category-menu{grid-template-columns:1fr 1fr;gap:18px 12px}}
+
+
+/* 2026 shared footer refinement: full, uncropped master logo on a clean white capsule. */
+.marjan-site-footer{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:linear-gradient(145deg,#18243a 0%,#243047 54%,#202e48 100%);
+  border-top:3px solid #e97885;
+}
+.marjan-site-footer::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:340px;height:340px;
+  top:-230px;right:-90px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  box-shadow:0 0 0 34px rgba(255,255,255,.025),0 0 0 68px rgba(255,255,255,.018);
+  pointer-events:none;
+}
+.marjan-footer-brand{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%;
+  overflow:visible!important;
+  margin:0 0 16px!important;
+  padding:9px 15px;
+  background:#fff;
+  border:1px solid rgba(255,255,255,.86);
+  border-radius:999px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+.marjan-footer-brand img{
+  display:block!important;
+  position:static!important;
+  left:auto!important;top:auto!important;
+  width:clamp(150px,19vw,220px)!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.marjan-footer-about p{max-width:360px;color:#e5eaf2}
+.marjan-footer-col a,.marjan-footer-category a{transition:color .18s ease,opacity .18s ease}
+.marjan-footer-col a:hover,.marjan-footer-category a:hover{color:#ffd5dc;opacity:1}
+.marjan-footer-social a{min-height:40px;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.045);transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.marjan-footer-social a:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.65);transform:translateY(-1px)}
+.marjan-footer-category-menu{border-color:rgba(255,255,255,.14)}
+.marjan-footer-category h2{letter-spacing:.01em}
+.marjan-footer-bottom{border-color:rgba(255,255,255,.17)}
+@media(max-width:760px){
+ .marjan-site-footer{padding:28px 5% calc(22px + env(safe-area-inset-bottom,0px))}
+ .marjan-footer-brand{padding:8px 13px}
+ .marjan-footer-brand img{width:clamp(145px,48vw,190px)!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .marjan-site-footer *{transition:none!important}
+}
