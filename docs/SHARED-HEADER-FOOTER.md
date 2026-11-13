@@ -19,3 +19,8 @@ Every generated HTML page receives the official header, navigation, search contr
 
 ## Regression guard
 The Playwright suite checks shared chrome across homepage, static pages, blog, Baby Names, article and policy routes at desktop and mobile viewports. A new page must pass the same header/footer checks before release.
+
+## Footer social identity
+- Preserve the homepage's original five social pills in this order: Facebook, YouTube, Pinterest, Instagram, X.
+- Keep the colored circular/square brand marks using the existing `.social-mark` variants and retain the current link-label typography.
+- Keep the footer wordmark and “को Follow करें।” in the same linked follow-line; do not rewrite or restyle the label.
