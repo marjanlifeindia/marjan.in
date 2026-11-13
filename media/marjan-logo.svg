@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="620" viewBox="0 0 1700 620" role="img" aria-labelledby="title desc">
-<title id="title">marjan.in — Parenting • Education • Learning</title>
-<desc id="desc">Pink rounded square with white M symbol, blue marjan.in wordmark and tagline.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="430" viewBox="0 70 1700 430" role="img" aria-labelledby="title desc">
+<title id="title">marjan.in</title>
+<desc id="desc">Pink rounded square with white M symbol and blue marjan.in wordmark.</desc>
 <defs><linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff1768"/><stop offset="1" stop-color="#ec1d62"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0878df"/><stop offset="1" stop-color="#0566c8"/></linearGradient></defs>
 <g transform="translate(42 112)">
 <rect x="0" y="0" width="350" height="350" rx="94" fill="url(#pink)"/>
@@ -10,9 +10,5 @@
 <path d="M390 93Q414 80 425 99Q435 117 413 128L384 139Q366 144 361 129Q357 115 374 105Z" fill="url(#blue)"/>
 </g>
 <text x="425" y="365" fill="url(#blue)" font-family="Arial, Helvetica, sans-serif" font-size="245" font-weight="800" letter-spacing="-9">marjan.in</text>
-<text x="425" y="500" fill="#233b6d" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="600" letter-spacing="-1.5">Parenting</text>
-<circle cx="755" cy="477" r="17" fill="#ff1768"/>
-<text x="800" y="500" fill="#233b6d" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="600" letter-spacing="-1.5">Education</text>
-<circle cx="1180" cy="477" r="17" fill="#ff1768"/>
-<text x="1225" y="500" fill="#233b6d" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="600" letter-spacing="-1.5">Learning</text>
+
 </svg>
