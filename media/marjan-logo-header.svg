@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" role="img" aria-labelledby="title desc">
+<title id="title">MARJAN.IN</title><desc id="desc">Pink rounded-square M symbol with blue marjan.in wordmark</desc>
+<defs><linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff1680"/><stop offset="1" stop-color="#ed0870"/></linearGradient></defs>
+<rect x="12" y="22" width="210" height="210" rx="66" fill="url(#pink)"/>
+<path d="M67 187V91c0-14 13-20 23-9l43 49 48-51" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M181 91v96" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round"/>
+<path d="M202 42l14-24M224 57l24-16M231 82l25-3" fill="none" stroke="#0759b9" stroke-width="13" stroke-linecap="round"/>
+<text x="255" y="183" font-family="Nunito,Arial,sans-serif" font-size="153" font-weight="650" letter-spacing="-5" fill="#0864c8">marjan</text>
+<circle cx="778" cy="155" r="13" fill="#f51679"/>
+<text x="803" y="183" font-family="Nunito,Arial,sans-serif" font-size="153" font-weight="650" letter-spacing="-5" fill="#0864c8">in</text>
+</svg>
