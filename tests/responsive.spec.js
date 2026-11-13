@@ -221,7 +221,9 @@ test("all page types receive the same central header, logo and complete footer",
     const links = await footer.locator("a").evaluateAll(nodes => nodes.map(node => node.getAttribute("href")).sort());
     if (referenceFooterLinks === null) referenceFooterLinks = links;
     else expect(links, path).toEqual(referenceFooterLinks);
-    const ratio = await header.locator(".brand img").evaluate(img => img.naturalWidth / img.naturalHeight);
+    const headerLogo = header.locator(".brand img");
+    await headerLogo.evaluate(img => img.decode());
+    const ratio = await headerLogo.evaluate(img => img.naturalWidth / img.naturalHeight);
     expect(ratio).toBeGreaterThan(3.5);
     expect(ratio).toBeLessThan(4.1);
   }
