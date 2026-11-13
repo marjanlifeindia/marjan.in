@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
     <nav class="marjan-footer-col" aria-label="Explore MARJAN.IN">
       <h2>Explore</h2>
       <ul>
-        <li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/parenting">Parenting</a></li><li><a href="/kids-education">Kids Education</a></li><li><a href="/baby-names/">Baby Names</a></li><li><a href="/resources">Resources</a></li>
+        <li><a href="/">Home</a></li><li><a href="/blog">Blog</a></li><li><a href="/parenting">Parenting</a></li><li><a href="/kids-education">Kids Education</a></li><li><a href="/baby-names/">Baby Names</a></li><li><a href="/resources">Resources</a></li>
       </ul>
     </nav>
     <nav class="marjan-footer-col" aria-label="Learning and creativity">
@@ -127,7 +127,7 @@ module.exports = function (eleventyConfig) {
     const rawTitle = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "लेख";
     const safeTitle = rawTitle.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     if (!content.includes("marjan-article-breadcrumbs")) {
-      const breadcrumb = '<nav class="marjan-article-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/blog/">Blog</a><span aria-hidden="true">›</span><span aria-current="page">' + safeTitle + '</span></nav>';
+      const breadcrumb = '<nav class="marjan-article-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/blog">Blog</a><span aria-hidden="true">›</span><span aria-current="page">' + safeTitle + '</span></nav>';
       content = content.replace('<article class="article">', breadcrumb + '<article class="article">');
       content = content.replace('<a class="back" href="/index.html">', '<a class="back" href="/">');
     }
@@ -168,7 +168,7 @@ module.exports = function (eleventyConfig) {
       const cards = items.map(function(item) {
         return '<a class="marjan-related-card" href="' + item[0] + '"><strong>' + item[1] + '</strong><span>' + item[2] + '</span></a>';
       }).join("");
-      const relatedHtml = '<section class="marjan-related-articles" aria-labelledby="marjan-related-title"><h2 id="marjan-related-title">आपके लिए और उपयोगी लेख</h2><div class="marjan-related-grid">' + cards + '</div><p><a href="/blog/">सभी लेख देखें →</a></p></section>';
+      const relatedHtml = '<section class="marjan-related-articles" aria-labelledby="marjan-related-title"><h2 id="marjan-related-title">आपके लिए और उपयोगी लेख</h2><div class="marjan-related-grid">' + cards + '</div><p><a href="/blog">सभी लेख देखें →</a></p></section>';
       content = content.replace("</article>", relatedHtml + "</article>");
     }
     if (!content.includes("/assets/css/marjan-article.css")) {
