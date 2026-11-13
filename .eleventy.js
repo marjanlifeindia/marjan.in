@@ -1,3 +1,4 @@
+// Phase 3 deployment verification: trigger a fresh production build from the current main branch.
 module.exports = function (eleventyConfig) {
   // 1. Cloudflare redirects (यह आपका पुराना कोड है)
   eleventyConfig.addPassthroughCopy("_redirects");
