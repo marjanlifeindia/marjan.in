@@ -149,7 +149,7 @@ test("global header search opens in place and submits to site results", async ({
   const searchInput = panel.locator("#marjan-header-search-input");
   await searchInput.fill("vaccination");
   await searchInput.press("Enter");
-  await expect(page).toHaveURL(/\\/search\\/\\?q=vaccination/);
+  await expect(page).toHaveURL(/\/search\/\?q=vaccination/);
   await expect(page.locator("#global-search-input")).toHaveValue("vaccination");
   await expect(page.locator("#search-results a[href='/parenting']")).toBeVisible();
   await page.locator("#global-search-input").fill("Hindi Story Books");
