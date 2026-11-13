@@ -1,4 +1,13 @@
 const { test, expect } = require("@playwright/test");
+const fs = require("node:fs");
+const path = require("node:path");
+
+function listHtmlFiles(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const full = path.join(dir, entry.name);
+    return entry.isDirectory() ? listHtmlFiles(full) : (entry.isFile() && entry.name.endsWith(".html") ? [full] : []);
+  });
+}
 
 test("homepage exposes all nine master-plan categories and the shared footer", async ({ page }) => {
   await page.goto("/");
@@ -215,8 +224,8 @@ test("all page types receive the same central header, logo and complete footer",
     const footer = page.locator("footer.marjan-site-footer");
     await expect(header).toBeVisible();
     await expect(footer).toBeAttached();
-    await expect(header.locator(".brand img")).toHaveAttribute("src", /\/media\/marjan-logo-header\.webp/);
-    await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", /\/media\/marjan-logo-footer\.webp/);
+    await expect(header.locator(".brand img")).toHaveAttribute("src", /\/media\/marjan-logo-header\.svg/);
+    await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", /\/media\/marjan-logo-footer\.svg/);
     await expect(footer.getByRole("link", { name: "Facebook" })).toHaveAttribute("href", "https://www.facebook.com/marjaninindia");
     const links = await footer.locator("a").evaluateAll(nodes => nodes.map(node => node.getAttribute("href")).sort());
     if (referenceFooterLinks === null) referenceFooterLinks = links;
@@ -226,6 +235,34 @@ test("all page types receive the same central header, logo and complete footer",
     const ratio = await headerLogo.evaluate(img => img.naturalWidth / img.naturalHeight);
     expect(ratio).toBeGreaterThan(3.5);
     expect(ratio).toBeLessThan(4.1);
+  }
+});
+
+test("every generated HTML page uses the exact same shared header and footer", async () => {
+  const outputRoot = path.join(process.cwd(), "_site");
+  const files = listHtmlFiles(outputRoot);
+  expect(files.length).toBeGreaterThan(20);
+  let referenceHeader = null;
+  let referenceFooter = null;
+  for (const file of files) {
+    const html = fs.readFileSync(file, "utf8");
+    const headers = html.match(/<header\\b[\\s\\S]*?<\\/header>/gi) || [];
+    const footers = html.match(/<footer\\b[\\s\\S]*?<\\/footer>/gi) || [];
+    const relative = path.relative(outputRoot, file).replaceAll(path.sep, "/");
+    expect(headers, relative).toHaveLength(1);
+    expect(footers, relative).toHaveLength(1);
+    expect(headers[0], relative).toContain("/media/marjan-logo-header.svg");
+    expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg");
+    expect(footers[0], relative).toContain("class=\"social-links\"");
+    expect(footers[0], relative).toContain("facebook-mark");
+    expect(footers[0], relative).toContain("youtube-mark");
+    expect(footers[0], relative).toContain("pinterest-mark");
+    expect(footers[0], relative).toContain("instagram-mark");
+    expect(footers[0], relative).toContain("x-mark");
+    if (referenceHeader === null) referenceHeader = headers[0];
+    else expect(headers[0], relative).toBe(referenceHeader);
+    if (referenceFooter === null) referenceFooter = footers[0];
+    else expect(footers[0], relative).toBe(referenceFooter);
   }
 });
 
