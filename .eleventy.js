@@ -184,24 +184,23 @@ module.exports = function (eleventyConfig) {
   // Final output guard: keep the Blog canonical and Facebook footer link consistent on every built page.
   eleventyConfig.addTransform("ensureMarjanBlogCanonicalAndFacebook", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
-    const route = String(outputPath).replaceAll("\\\\", "/");
-    if (/\\/blog\\/index\\.html$/i.test(route)) {
-      content = content.replace(/<link\\b[^>]*rel=["']canonical["'][^>]*>\\s*/gi, "");
-      content = content.replace("</head>", '<link rel="canonical" href="https://marjan.in/blog/">\\n</head>');
-      content = content.replace(/<meta\\b(?=[^>]*property=["']og:url["'])[^>]*>/i, '<meta property="og:url" content="https://marjan.in/blog/">');
+    const route = String(outputPath).replaceAll("\\", "/");
+    if (/\/blog\/index\.html$/i.test(route)) {
+      content = content.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>\s*/gi, "");
+      content = content.replace("</head>", '<link rel="canonical" href="https://marjan.in/blog/">\n</head>');
+      content = content.replace(/<meta\b(?=[^>]*property=["']og:url["'])[^>]*>/i, '<meta property="og:url" content="https://marjan.in/blog/">');
     }
-    const footerMatch = content.match(/<footer\\b[\\s\\S]*?<\\/footer>/i);
+    const footerMatch = content.match(/<footer\b[\s\S]*?<\/footer>/i);
     if (footerMatch && !footerMatch[0].includes("https://www.facebook.com/marjaninindia")) {
       const socialLink = '<a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer">Facebook</a>';
       let footer = footerMatch[0];
       if (/<div[^>]*class=["'][^"']*(?:marjan-footer-social|social-links)[^"']*["'][^>]*>/i.test(footer)) {
-        footer = footer.replace(/(<div[^>]*class=["'][^"']*(?:marjan-footer-social|social-links)[^"']*["'][^>]*>[\\s\\S]*?)(<\\/div>)/i, "$1" + socialLink + "$2");
+        footer = footer.replace(/(<div[^>]*class=["'][^"']*(?:marjan-footer-social|social-links)[^"']*["'][^>]*>[\s\S]*?)(<\/div>)/i, "$1" + socialLink + "$2");
       } else {
-        footer = footer.replace("</footer>", '<div class="marjan-footer-social">' + socialLink + '</div>\\n</footer>');
+        footer = footer.replace("</footer>", '<div class="marjan-footer-social">' + socialLink + '</div>\n</footer>');
       }
       content = content.replace(footerMatch[0], footer);
     }
     return content;
   });
-
 };
