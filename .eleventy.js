@@ -59,7 +59,7 @@ module.exports = function (eleventyConfig) {
   </div>
 </header>`;
     if (/<header\b[\s\S]*?<\/header>/i.test(content)) {
-      content = content.replace(/<header\\b[\\s\\S]*?<\\/header>/i, sharedHeader);
+      content = content.replace(/<header\b[\s\S]*?<\/header>/i, sharedHeader);
     } else {
       content = content.replace(/<body\b[^>]*>/i, function(match) { return match + "\n" + sharedHeader; });
     }
