@@ -58,10 +58,10 @@ module.exports = function (eleventyConfig) {
     <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h12M4 18h8"></path></svg></button>
   </div>
 </header>`;
-    if (/<header\\b[\\s\\S]*?<\\/header>/i.test(content)) {
+    if (/<header\b[\s\S]*?<\/header>/i.test(content)) {
       content = content.replace(/<header\\b[\\s\\S]*?<\\/header>/i, sharedHeader);
     } else {
-      content = content.replace(/<body\\b[^>]*>/i, function(match) { return match + "\\n" + sharedHeader; });
+      content = content.replace(/<body\b[^>]*>/i, function(match) { return match + "\n" + sharedHeader; });
     }
     return content;
   });
