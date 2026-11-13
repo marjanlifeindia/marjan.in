@@ -146,7 +146,7 @@ module.exports = function (eleventyConfig) {
       content = content.replace("</body>", footerHtml + "\n</body>");
     }
     if (!content.includes("/assets/css/marjan-footer.css")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=3">\n</head>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=4">\n</head>');
     }
     return content;
   });
