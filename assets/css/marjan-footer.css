@@ -122,3 +122,9 @@ footer.marjan-site-footer a.marjan-footer-brand{
   box-shadow:none!important;
   padding:0!important;
 }
+
+
+/* Use the supplied white wordmark directly on the existing navy footer. */
+.marjan-footer-brand{width:180px!important;height:auto!important;max-width:100%;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+.marjan-footer-brand img{display:block;width:180px!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;position:static!important;left:auto!important;top:auto!important}
+@media(max-width:760px){.marjan-footer-brand{width:160px!important}.marjan-footer-brand img{width:160px!important}}
