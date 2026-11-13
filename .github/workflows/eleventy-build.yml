@@ -51,6 +51,8 @@ jobs:
           test -f _site/assets/css/marjan-navigation.css
           test -f _site/assets/js/marjan-navigation.js
           test -f _site/assets/css/marjan-footer.css
+          test -s _site/media/marjan-logo-header.svg
+          test -s _site/media/marjan-logo-footer.svg
           test -f _site/assets/css/marjan-article.css
           test -f _site/assets/js/marjan-article.js
           test -f _site/blog/index.html
