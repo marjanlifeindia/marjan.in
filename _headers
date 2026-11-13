@@ -25,3 +25,9 @@
 
 /baby-names/names-data.json
   Cache-Control: public, max-age=86400
+
+/assets/js/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/css/*.css
+  Content-Type: text/css; charset=utf-8
