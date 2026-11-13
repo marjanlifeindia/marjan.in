@@ -36,14 +36,44 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  // Phase 3/10: replace legacy page-specific headers with one shared, crawlable header shell.
+  eleventyConfig.addTransform("standardizeMarjanHeader", function(content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    const sharedHeader = `
+<header class="marjan-header">
+  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=2" alt="MARJAN.IN" decoding="async"></a>
+  <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+    <a class="nav-home" href="/">Home</a>
+    <a class="nav-direct" href="/parenting">Parenting</a>
+    <a class="nav-direct" href="/kids-education">Kids Education</a>
+    <a class="nav-direct" href="/worksheets">Worksheets</a>
+    <a class="nav-direct" href="/art-creativity">Art &amp; Creativity</a>
+    <a class="nav-direct" href="/ebooks-pdfs">Ebooks &amp; PDFs</a>
+    <a class="nav-direct" href="/baby-names/">Baby Names</a>
+    <a class="nav-direct" href="/products-reviews">Products &amp; Reviews</a>
+    <a class="nav-direct" href="/resources">Resources</a>
+  </nav>
+  <div class="marjan-header-actions">
+    <a class="nav-search" href="/search/" aria-label="Search MARJAN.IN" title="Search MARJAN.IN"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h12M4 18h8"></path></svg></button>
+  </div>
+</header>`;
+    if (/<header\\b[\\s\\S]*?<\\/header>/i.test(content)) {
+      content = content.replace(/<header\\b[\\s\\S]*?<\\/header>/i, sharedHeader);
+    } else {
+      content = content.replace(/<body\\b[^>]*>/i, function(match) { return match + "\\n" + sharedHeader; });
+    }
+    return content;
+  });
+
   // Phase 3/9: guarantee shared header assets on every generated HTML page.
   eleventyConfig.addTransform("injectMarjanNavigation", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
     content = content
       .replace(/<link[^>]+href=["'][^"']*marjan-navigation[.]css[^"']*["'][^>]*>\s*/gi, "")
       .replace(/<script[^>]+src=["'][^"']*marjan-navigation[.]js[^"']*["'][^>]*><[/]script>\s*/gi, "");
-    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=5">\n</head>');
-    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=5"></script>\n</body>');
+    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=6">\n</head>');
+    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=6"></script>\n</body>');
     return content;
   });
   // Phase 4: render one crawlable, consistent footer on every generated HTML page.
