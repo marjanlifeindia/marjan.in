@@ -11,7 +11,7 @@ Every generated HTML page receives the official header, navigation, search contr
 5. Run `npm run build` and `npm run test:responsive`.
 
 ## Design rules
-- Official logo asset: `/media/marjan-logo.webp`. Do not redraw, crop, stretch, recolor, or substitute it.
+- Official logo asset: `/media/marjan-master-logo.jpg`. Do not redraw, crop, stretch, recolor, or substitute it.
 - Header: transparent/white canvas, full-ratio logo, shared navigation, same-page expandable search, accessible mobile menu.
 - Footer: deep navy surface, complete logo shown uncropped inside a white rounded capsule, shared category links, social links and legal links.
 - All spacing, typography, focus states, breakpoints and responsive behavior are controlled centrally by `assets/css/marjan-navigation.css` and `assets/css/marjan-footer.css`.
