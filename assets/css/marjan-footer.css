@@ -114,3 +114,11 @@
 @media(max-width:760px){
   .marjan-footer-brand img{width:clamp(155px,48vw,205px)!important}
 }
+
+footer.marjan-site-footer a.marjan-footer-brand{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}

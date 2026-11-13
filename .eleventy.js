@@ -94,7 +94,7 @@ module.exports = function (eleventyConfig) {
 <footer class="marjan-site-footer" aria-label="MARJAN.IN footer">
   <div class="marjan-footer-top">
     <div class="marjan-footer-about">
-      <a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-footer.webp?v=1" alt="MARJAN.IN" width="300" height="82" loading="lazy" decoding="async"></a>
+      <a class="marjan-footer-brand" style="background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-footer.webp?v=1" alt="MARJAN.IN" width="300" height="82" loading="lazy" decoding="async"></a>
       <p>MARJAN.IN पर Parenting, बच्चों की शिक्षा, रचनात्मक गतिविधियों और सीखने के संसाधनों से जुड़ी उपयोगी जानकारी सरल हिंदी में पढ़ें। हमारा उद्देश्य माता-पिता को बच्चों की सीखने की यात्रा में मदद देना है।</p>
       <div class="marjan-footer-social" aria-label="MARJAN.IN social media links">
         <a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -144,7 +144,7 @@ module.exports = function (eleventyConfig) {
       content = content.replace("</body>", footerHtml + "\n</body>");
     }
     if (!content.includes("/assets/css/marjan-footer.css")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=1">\n</head>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=2">\n</head>');
     }
     return content;
   });
