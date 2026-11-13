@@ -185,7 +185,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addTransform("ensureMarjanBlogCanonicalAndFacebook", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
     const route = String(outputPath).replaceAll("\\", "/");
-    if (/\/blog\/index\.html$/i.test(route)) {
+    if (/\/blog\/index\.html$/i.test(route) || /<title>[^<]*Blog/i.test(content)) {
       content = content.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>\s*/gi, "");
       content = content.replace("</head>", '<link rel="canonical" href="https://marjan.in/blog/">\n</head>');
       content = content.replace(/<meta\b(?=[^>]*property=["']og:url["'])[^>]*>/i, '<meta property="og:url" content="https://marjan.in/blog/">');
