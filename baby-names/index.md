@@ -44,7 +44,7 @@ footer p{margin:8px 0}
 </head>
 <body>
 <header class="site-header">
-<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan.in%20logo%20png.png?v=1" alt="MARJAN.IN" width="220" height="120"></a>
+<a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo.webp?v=1" alt="MARJAN.IN" width="220" height="120"></a>
 <nav class="primary-navigation" aria-label="Main navigation">
 <a href="/">Home</a>
 <a href="/parenting">Parenting</a>
