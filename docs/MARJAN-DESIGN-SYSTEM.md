@@ -11,7 +11,7 @@ Status: Complete design-system foundation on isolated branch; not applied to pro
 - Language: Hindi in Devanagari by default; retain standard English terms when they are clearer.
 
 ## 2. Logo rules
-- Use the existing supplied asset: `media/marjan.in logo png.png`.
+- Use the existing supplied asset: `media/marjan-logo.webp`.
 - Do not redraw, replace, recolor or distort the logo.
 - Preserve aspect ratio with `object-fit: contain`.
 - No tagline, “Painting”, “Printing”, or other descriptor below the logo.
