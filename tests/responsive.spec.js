@@ -241,6 +241,7 @@ test("shared white footer logo is fully visible directly on the navy surface", a
   const styles = await brand.evaluate(node => getComputedStyle(node));
   expect(styles.backgroundColor).toBe("rgba(0, 0, 0, 0)");
   expect(styles.overflow).not.toBe("hidden");
+  await image.scrollIntoViewIfNeeded();
   await image.evaluate(img => img.decode());
   const ratio = await image.evaluate(img => img.naturalWidth / img.naturalHeight);
   expect(ratio).toBeGreaterThan(3.5);
