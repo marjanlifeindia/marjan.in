@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
   // 1. Cloudflare redirects (यह आपका पुराना कोड है)
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("media"); // Serve the official brand assets and page media explicitly.
 
   // Keep legacy Markdown drafts as source material, but do not render them: each has a maintained HTML page at the same output route.
   eleventyConfig.ignores.add("baby-names/**/*.md");
