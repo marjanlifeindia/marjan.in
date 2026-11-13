@@ -44,7 +44,7 @@ module.exports = function (eleventyConfig) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
     const sharedHeader = `
 <header class="marjan-header">
-  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-master-logo.jpg?v=7" alt="MARJAN.IN" width="450" height="116" decoding="async" fetchpriority="high"></a>
+  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-header.webp?v=1" alt="MARJAN.IN" width="300" height="82" decoding="async" fetchpriority="high"></a>
   <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
     <a class="nav-home" href="/">Home</a>
     <a class="nav-direct" href="/parenting">Parenting</a>
@@ -94,7 +94,7 @@ module.exports = function (eleventyConfig) {
 <footer class="marjan-site-footer" aria-label="MARJAN.IN footer">
   <div class="marjan-footer-top">
     <div class="marjan-footer-about">
-      <a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-master-logo.jpg?v=7" alt="MARJAN.IN" width="450" height="116" loading="lazy" decoding="async"></a>
+      <a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-footer.webp?v=1" alt="MARJAN.IN" width="300" height="82" loading="lazy" decoding="async"></a>
       <p>MARJAN.IN पर Parenting, बच्चों की शिक्षा, रचनात्मक गतिविधियों और सीखने के संसाधनों से जुड़ी उपयोगी जानकारी सरल हिंदी में पढ़ें। हमारा उद्देश्य माता-पिता को बच्चों की सीखने की यात्रा में मदद देना है।</p>
       <div class="marjan-footer-social" aria-label="MARJAN.IN social media links">
         <a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer">Facebook</a>

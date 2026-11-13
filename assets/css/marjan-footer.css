@@ -93,3 +93,24 @@
 @media(prefers-reduced-motion:reduce){
  .marjan-site-footer *{transition:none!important}
 }
+
+
+/* Use the supplied white wordmark directly on the navy footer.
+   Keep the existing footer typography and social-link colour pattern unchanged. */
+.marjan-footer-brand{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  margin:0 0 16px!important;
+}
+.marjan-footer-brand img{
+  width:clamp(170px,22vw,230px)!important;
+  max-width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+@media(max-width:760px){
+  .marjan-footer-brand img{width:clamp(155px,48vw,205px)!important}
+}
