@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   // Keep legacy Markdown drafts as source material, but do not render them: each has a maintained HTML page at the same output route.
   eleventyConfig.ignores.add("baby-names/**/*.md");
   eleventyConfig.ignores.add("posts/**/*.md");
+  eleventyConfig.ignores.add("README.md"); // Repository documentation is not a public website route.
   eleventyConfig.ignores.add("articles/**/*.html");
   eleventyConfig.ignores.add("article.html");
   eleventyConfig.ignores.add("test-results/**");
