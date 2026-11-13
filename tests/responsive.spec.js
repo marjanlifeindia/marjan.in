@@ -229,16 +229,20 @@ test("all page types receive the same central header, logo and complete footer",
   }
 });
 
-test("shared footer logo is fully visible inside its white capsule", async ({ page }) => {
+test("shared white footer logo is fully visible directly on the navy surface", async ({ page }) => {
   await page.goto("/");
   const brand = page.locator(".marjan-footer-brand");
   const image = brand.locator("img");
   await expect(brand).toBeVisible();
   const box = await brand.boundingBox();
   const imageBox = await image.boundingBox();
-  expect(box.width).toBeGreaterThan(imageBox.width);
-  expect(box.height).toBeGreaterThan(imageBox.height);
+  expect(box.width).toBeGreaterThanOrEqual(imageBox.width);
+  expect(box.height).toBeGreaterThanOrEqual(imageBox.height);
   const styles = await brand.evaluate(node => getComputedStyle(node));
-  expect(styles.backgroundColor).toBe("rgb(255, 255, 255)");
+  expect(styles.backgroundColor).toBe("rgba(0, 0, 0, 0)");
   expect(styles.overflow).not.toBe("hidden");
+  await image.evaluate(img => img.decode());
+  const ratio = await image.evaluate(img => img.naturalWidth / img.naturalHeight);
+  expect(ratio).toBeGreaterThan(3.5);
+  expect(ratio).toBeLessThan(4.1);
 });
