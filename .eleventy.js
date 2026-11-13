@@ -44,7 +44,7 @@ module.exports = function (eleventyConfig) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
     const sharedHeader = `
 <header class="marjan-header">
-  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-header.svg" alt="MARJAN.IN" width="300" height="75" decoding="async" fetchpriority="high"></a>
+  <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-header.svg?v=2" alt="MARJAN.IN" width="300" height="75" decoding="async" fetchpriority="high"></a>
   <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
     <a class="nav-home" href="/">Home</a>
     <a class="nav-direct" href="/parenting">Parenting</a>
@@ -94,14 +94,14 @@ module.exports = function (eleventyConfig) {
 <footer class="marjan-site-footer" aria-label="MARJAN.IN footer">
   <div class="marjan-footer-top">
     <div class="marjan-footer-about">
-      <a class="marjan-footer-brand" style="background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-footer.svg" alt="MARJAN.IN" width="300" height="75" loading="lazy" decoding="async"></a>
-      <p>MARJAN.IN पर Parenting, बच्चों की शिक्षा, रचनात्मक गतिविधियों और सीखने के संसाधनों से जुड़ी उपयोगी जानकारी सरल हिंदी में पढ़ें। हमारा उद्देश्य माता-पिता को बच्चों की सीखने की यात्रा में मदद देना है।</p>
-      <div class="marjan-footer-social" aria-label="MARJAN.IN social media links">
-        <a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.youtube.com/@MarjanIndia" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.pinterest.com/MarjanIndia/" target="_blank" rel="noopener noreferrer">Pinterest</a>
-        <a href="https://www.instagram.com/marjan.india/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://x.com/marjanindia" target="_blank" rel="noopener noreferrer">X</a>
+      <p class="footer-follow-line"><a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="/media/marjan-logo-footer.svg?v=2" alt="MARJAN.IN" width="300" height="75" loading="lazy" decoding="async"></a><span>को Follow करें।</span></p>
+      <p class="marjan-footer-description">MARJAN.IN पर Parenting, बच्चों की शिक्षा, रचनात्मक गतिविधियों और सीखने के संसाधनों से जुड़ी उपयोगी जानकारी सरल हिंदी में पढ़ें। हमारा उद्देश्य माता-पिता को बच्चों की सीखने की यात्रा में मदद देना है।</p>
+      <div class="social-links" aria-label="MARJAN.IN social media links">
+        <a href="https://www.facebook.com/marjaninindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook पर MARJAN.IN को Follow करें"><span class="social-mark facebook-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4z"/></svg></span>Facebook</a>
+        <a href="https://www.youtube.com/@MarjanIndia" target="_blank" rel="noopener noreferrer" aria-label="YouTube पर MARJAN.IN को Subscribe करें"><span class="social-mark youtube-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></span>YouTube</a>
+        <a href="https://www.pinterest.com/MarjanIndia/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest पर MARJAN.IN को Follow करें"><span class="social-mark pinterest-mark" aria-hidden="true">P</span>Pinterest</a>
+        <a href="https://www.instagram.com/marjan.india/" target="_blank" rel="noopener noreferrer" aria-label="Instagram पर MARJAN.IN को Follow करें"><span class="social-mark instagram-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm5.8-3.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg></span>Instagram</a>
+        <a href="https://x.com/marjanindia" target="_blank" rel="noopener noreferrer" aria-label="X पर MARJAN.IN को Follow करें"><span class="social-mark x-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2zm-1.1 17.8h1.7L7.3 4.1H5.5z"/></svg></span>X</a>
       </div>
     </div>
     <nav class="marjan-footer-col" aria-label="Explore MARJAN.IN">
