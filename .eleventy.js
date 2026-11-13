@@ -42,8 +42,8 @@ module.exports = function (eleventyConfig) {
     content = content
       .replace(/<link[^>]+href=["'][^"']*marjan-navigation[.]css[^"']*["'][^>]*>\s*/gi, "")
       .replace(/<script[^>]+src=["'][^"']*marjan-navigation[.]js[^"']*["'][^>]*><[/]script>\s*/gi, "");
-    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=4">\n</head>');
-    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=4"></script>\n</body>');
+    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=5">\n</head>');
+    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=5"></script>\n</body>');
     return content;
   });
   // Phase 4: render one crawlable, consistent footer on every generated HTML page.
