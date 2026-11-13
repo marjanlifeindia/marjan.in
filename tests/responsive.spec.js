@@ -246,8 +246,8 @@ test("every generated HTML page uses the exact same shared header and footer", a
   let referenceFooter = null;
   for (const file of files) {
     const html = fs.readFileSync(file, "utf8");
-    const headers = html.match(/<header\\b[\\s\\S]*?<\\/header>/gi) || [];
-    const footers = html.match(/<footer\\b[\\s\\S]*?<\\/footer>/gi) || [];
+    const headers = html.match(/<header\b[\s\S]*?<\/header>/gi) || [];
+    const footers = html.match(/<footer\b[\s\S]*?<\/footer>/gi) || [];
     const relative = path.relative(outputRoot, file).replaceAll(path.sep, "/");
     expect(headers, relative).toHaveLength(1);
     expect(footers, relative).toHaveLength(1);
