@@ -135,20 +135,26 @@ test("Baby Names directory loads 538 names and supports filters and shortlist", 
   expect(pageErrors).toEqual([]);
 });
 
-test("global header search is visible and searches site sections and articles", async ({ page }) => {
+test("global header search opens in place and submits to site results", async ({ page }) => {
   const pageErrors = [];
   page.on("pageerror", error => pageErrors.push(error.message));
   await page.goto("/");
-  const headerDebug = await page.evaluate(() => ({ headerCount: document.querySelectorAll("header").length, navCount: document.querySelectorAll("header #primary-navigation").length, actionCount: document.querySelectorAll("header .marjan-header-actions").length, searchCount: document.querySelectorAll("header .nav-search").length, scriptLoaded: Array.from(document.scripts).map(s => s.src).filter(Boolean) }));
-  console.log("Global header DOM", headerDebug, pageErrors);
   const searchLink = page.locator("header .nav-search");
   await expect(searchLink).toBeVisible();
+  const homeUrl = page.url();
   await searchLink.click();
-  await expect(page).toHaveURL(/\/search\//);
-  await page.locator("#global-search-input").fill("vaccination");
+  await expect(page).toHaveURL(homeUrl);
+  const panel = page.locator("#marjan-search-panel");
+  await expect(panel).toBeVisible();
+  const searchInput = panel.locator("#marjan-header-search-input");
+  await searchInput.fill("vaccination");
+  await searchInput.press("Enter");
+  await expect(page).toHaveURL(/\\/search\\/\\?q=vaccination/);
+  await expect(page.locator("#global-search-input")).toHaveValue("vaccination");
   await expect(page.locator("#search-results a[href='/parenting']")).toBeVisible();
   await page.locator("#global-search-input").fill("Hindi Story Books");
   await expect(page.locator("#search-results a[href='/article-bachon-ke-liye-hindi-story-books']")).toBeVisible();
+  expect(pageErrors).toEqual([]);
 });
 
 test("desktop header has no hamburger and exposes search beside the main navigation", async ({ page }) => {
