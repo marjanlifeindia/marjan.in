@@ -131,10 +131,9 @@ footer.marjan-site-footer a.marjan-footer-brand{
 
 
 /* Preserve the homepage's original follow line and branded social icon pills. */
-.marjan-site-footer .footer-follow-line{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin:8px auto 14px;text-align:center}
-.marjan-site-footer .footer-follow-line>a{display:inline-flex;align-items:center;justify-content:center;margin:0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
-.marjan-site-footer .footer-follow-line>a img{display:block;width:180px!important;max-width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;clip-path:none;border-radius:0;transform:none;margin:0}
-.marjan-site-footer .footer-follow-line>span{color:#fff;font-size:14px;font-weight:600}
+.marjan-site-footer .footer-follow-line{display:flex;justify-content:center;align-items:center;margin:8px auto 14px;text-align:center}
+.marjan-site-footer .footer-follow-line>a.marjan-footer-brand{display:inline-flex;align-items:center;justify-content:center;gap:0;width:auto!important;height:auto!important;max-width:100%;margin:0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{display:block;width:150px!important;max-width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;clip-path:none;border-radius:0;transform:none;margin:0}
 .marjan-site-footer .marjan-footer-description{max-width:360px;margin:0 0 12px;color:#e5eaf2;font-size:14px;line-height:1.8}
 .marjan-site-footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:620px}
 .marjan-site-footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s ease,border-color .2s ease}
