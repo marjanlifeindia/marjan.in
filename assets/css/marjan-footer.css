@@ -146,3 +146,25 @@ footer.marjan-site-footer a.marjan-footer-brand{
 .marjan-site-footer .social-mark.x-mark{background:#000;border-radius:50%}
 @media(min-width:768px){.marjan-site-footer .social-links{flex-flow:row nowrap;justify-content:center;align-items:center;width:max-content;max-width:100%;gap:8px}.marjan-site-footer .social-links a{flex:0 0 auto;gap:6px;padding:8px 10px;font-size:13px}}
 @media(max-width:480px){.marjan-site-footer .social-links{gap:8px}.marjan-site-footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}.marjan-site-footer .footer-follow-line>a img{width:150px!important}}
+
+
+/* Uploaded white MARJAN.IN wordmark: transparent artwork on the existing navy footer. */
+.marjan-site-footer .footer-follow-line>a.marjan-footer-brand{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{
+  display:block!important;
+  width:190px!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+@media(max-width:480px){
+  .marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{width:170px!important}
+}
