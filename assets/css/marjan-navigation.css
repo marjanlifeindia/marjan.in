@@ -77,3 +77,21 @@ header.marjan-header a:focus-visible,header.marjan-header summary:focus-visible,
  .marjan-bottom-more a{padding:11px 9px;border-radius:7px;color:#243047;text-decoration:none;font-size:13px;font-weight:650}
  .marjan-bottom-more a:hover{background:#f4f6f9}
 }
+
+
+/* Uploaded MARJAN.IN blue capsule wordmark — keep its native aspect ratio. */
+header.marjan-header>.brand img,header.marjan-header>a.brand img{
+  width:150px!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+@media(max-width:900px){
+  header.marjan-header>.brand img,header.marjan-header>a.brand img{
+    width:176px!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+  }
+}
