@@ -1,170 +1,35 @@
-/* MARJAN.IN shared footer — Part 4 */
-.marjan-site-footer{margin-top:36px;padding:38px max(5%,calc((100% - 1160px)/2)) 22px;background:#243047;color:#fff;text-align:left;border-top:4px solid #e97885}
+/* MARJAN.IN shared footer — clean, consistent desktop and mobile layout */
 .marjan-site-footer,.marjan-site-footer *{box-sizing:border-box}
+.marjan-site-footer{position:relative;isolation:isolate;overflow:hidden;margin-top:34px;padding:34px max(5%,calc((100% - 1160px)/2)) 20px;background:#243047;color:#fff;text-align:left;border-top:4px solid #e97885}
+.marjan-site-footer::before{content:"";position:absolute;z-index:-1;width:320px;height:320px;top:-220px;right:-90px;border:1px solid rgba(255,255,255,.07);border-radius:50%;box-shadow:0 0 0 34px rgba(255,255,255,.02),0 0 0 68px rgba(255,255,255,.015);pointer-events:none}
 .marjan-site-footer a{color:#fff;text-decoration:none}
 .marjan-site-footer a:hover,.marjan-site-footer a:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .marjan-site-footer a:focus-visible{outline:2px solid #f5c4cc;outline-offset:3px}
-.marjan-footer-top{display:grid;grid-template-columns:1.5fr repeat(3,minmax(0,1fr));gap:28px;padding-bottom:26px}
-.marjan-footer-brand{display:block;position:relative;width:180px;height:42px;overflow:hidden;margin-bottom:14px}.marjan-footer-brand img{display:block;position:relative;left:-22px;top:-5px;width:223px;max-width:none;height:auto;max-height:none;object-fit:fill;object-position:left top}
-.marjan-footer-about p{max-width:330px;margin:0;color:#e2e8f0;font-size:14px;line-height:1.8}
-.marjan-footer-col h2{margin:0 0 12px;color:#fff;font-size:15px;line-height:1.4}
-.marjan-footer-col h2:after{display:none}
-.marjan-footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.marjan-footer-top{display:grid;grid-template-columns:1.45fr repeat(3,minmax(0,1fr));gap:26px;padding-bottom:24px}
+.marjan-site-footer .footer-follow-line{display:flex;justify-content:flex-start;align-items:center;margin:0 0 14px;text-align:left}
+.marjan-site-footer .footer-follow-line>a.marjan-footer-brand{display:inline-flex;align-items:center;justify-content:flex-start;width:auto;height:auto;max-width:100%;margin:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{display:block;position:static;width:190px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:left center;clip-path:none;border-radius:0;transform:none;margin:0}
+.marjan-footer-description{max-width:360px;margin:0 0 14px;color:#e5eaf2;font-size:14px;line-height:1.75}
+.marjan-footer-col h2,.marjan-footer-category h2{margin:0 0 11px;color:#fff;font-size:15px;line-height:1.4}
+.marjan-footer-col ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
 .marjan-footer-col li{margin:0}
 .marjan-footer-col a{color:#e2e8f0;font-size:14px;line-height:1.5}
-.marjan-footer-social{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 16px}
-.marjan-footer-social a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;font-size:13px;font-weight:650}
-.marjan-footer-social a:hover{background:#40516e;text-decoration:none}
-.marjan-footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 20px;padding-top:16px;border-top:1px solid #526078;color:#dbe2ed;font-size:13px}
-.marjan-footer-legal{display:flex;flex-wrap:wrap;gap:8px 16px}
-.marjan-footer-legal a{color:#e2e8f0}
-@media(max-width:760px){.marjan-site-footer{padding:30px 5% 18px}.marjan-footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}.marjan-footer-about{grid-column:1/-1}.marjan-footer-brand{width:160px;height:37px}.marjan-footer-brand img{left:-19px;top:-4px;width:198px}.marjan-footer-bottom{align-items:flex-start;flex-direction:column}}
-@media(max-width:420px){.marjan-footer-top{grid-template-columns:1fr 1fr;gap:22px 12px}.marjan-footer-col h2{font-size:14px}.marjan-footer-col a{font-size:13px}.marjan-footer-about p{font-size:13px}}
-
-
-/* Full Master Plan category navigation in the footer */
-.marjan-footer-category-menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 28px;padding:28px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);text-align:left}
-.marjan-footer-category{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:6px}
-.marjan-footer-category h2{margin:0 0 5px;color:#fff;font-size:15px;line-height:1.4}
-.marjan-footer-category a{margin:0;color:#fff;text-decoration:none;font-size:13px;line-height:1.5;opacity:.9}
-.marjan-footer-category a:hover,.marjan-footer-category a:focus-visible{text-decoration:underline;opacity:1}
-@media(max-width:760px){.marjan-footer-category-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;padding:22px 0}.marjan-footer-category h2{font-size:14px}.marjan-footer-category a{font-size:12px}}
-@media(max-width:380px){.marjan-footer-category-menu{grid-template-columns:1fr 1fr;gap:18px 12px}}
-
-
-/* 2026 shared footer refinement: full, uncropped master logo on a clean white capsule. */
-.marjan-site-footer{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-  background:linear-gradient(145deg,#18243a 0%,#243047 54%,#202e48 100%);
-  border-top:3px solid #e97885;
-}
-.marjan-site-footer::before{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  width:340px;height:340px;
-  top:-230px;right:-90px;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:50%;
-  box-shadow:0 0 0 34px rgba(255,255,255,.025),0 0 0 68px rgba(255,255,255,.018);
-  pointer-events:none;
-}
-.marjan-footer-brand{
-  display:inline-flex!important;
-  align-items:center;
-  justify-content:center;
-  width:auto!important;
-  height:auto!important;
-  max-width:100%;
-  overflow:visible!important;
-  margin:0 0 16px!important;
-  padding:9px 15px;
-  background:#fff;
-  border:1px solid rgba(255,255,255,.86);
-  border-radius:999px;
-  box-shadow:0 8px 24px rgba(0,0,0,.18);
-}
-.marjan-footer-brand img{
-  display:block!important;
-  position:static!important;
-  left:auto!important;top:auto!important;
-  width:clamp(150px,19vw,220px)!important;
-  max-width:100%!important;
-  height:auto!important;
-  max-height:none!important;
-  object-fit:contain!important;
-  object-position:center!important;
-}
-.marjan-footer-about p{max-width:360px;color:#e5eaf2}
-.marjan-footer-col a,.marjan-footer-category a{transition:color .18s ease,opacity .18s ease}
-.marjan-footer-col a:hover,.marjan-footer-category a:hover{color:#ffd5dc;opacity:1}
-.marjan-footer-social a{min-height:40px;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.045);transition:background .18s ease,border-color .18s ease,transform .18s ease}
-.marjan-footer-social a:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.65);transform:translateY(-1px)}
-.marjan-footer-category-menu{border-color:rgba(255,255,255,.14)}
-.marjan-footer-category h2{letter-spacing:.01em}
-.marjan-footer-bottom{border-color:rgba(255,255,255,.17)}
-@media(max-width:760px){
- .marjan-site-footer{padding:28px 5% calc(22px + env(safe-area-inset-bottom,0px))}
- .marjan-footer-brand{padding:8px 13px}
- .marjan-footer-brand img{width:clamp(145px,48vw,190px)!important}
-}
-@media(prefers-reduced-motion:reduce){
- .marjan-site-footer *{transition:none!important}
-}
-
-
-/* Use the supplied white wordmark directly on the navy footer.
-   Keep the existing footer typography and social-link colour pattern unchanged. */
-.marjan-footer-brand{
-  background:transparent!important;
-  border:0!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-  padding:0!important;
-  margin:0 0 16px!important;
-}
-.marjan-footer-brand img{
-  width:clamp(170px,22vw,230px)!important;
-  max-width:100%!important;
-  height:auto!important;
-  object-fit:contain!important;
-}
-@media(max-width:760px){
-  .marjan-footer-brand img{width:clamp(155px,48vw,205px)!important}
-}
-
-footer.marjan-site-footer a.marjan-footer-brand{
-  background:transparent!important;
-  border:0!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-  padding:0!important;
-}
-
-
-/* Use the supplied white wordmark directly on the existing navy footer. */
-.marjan-footer-brand{width:180px!important;height:auto!important;max-width:100%;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
-.marjan-footer-brand img{display:block;width:180px!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;position:static!important;left:auto!important;top:auto!important}
-@media(max-width:760px){.marjan-footer-brand{width:160px!important}.marjan-footer-brand img{width:160px!important}}
-
-
-/* Preserve the homepage's original follow line and branded social icon pills. */
-.marjan-site-footer .footer-follow-line{display:flex;justify-content:center;align-items:center;margin:8px auto 14px;text-align:center}
-.marjan-site-footer .footer-follow-line>a.marjan-footer-brand{display:inline-flex;align-items:center;justify-content:center;gap:0;width:auto!important;height:auto!important;max-width:100%;margin:0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
-.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{display:block;width:150px!important;max-width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;clip-path:none;border-radius:0;transform:none;margin:0}
-.marjan-site-footer .marjan-footer-description{max-width:360px;margin:0 0 12px;color:#e5eaf2;font-size:14px;line-height:1.8}
-.marjan-site-footer .social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:620px}
-.marjan-site-footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #68748a;border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s ease,border-color .2s ease}
-.marjan-site-footer .social-links a:hover,.marjan-site-footer .social-links a:focus-visible{background:#40516e;border-color:#fff;outline-offset:3px}
-.marjan-site-footer .social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;color:#fff;font-weight:800;font-size:17px;line-height:1;background:#1877F2}
+.marjan-site-footer .social-links{display:flex;justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:8px;margin:14px 0 4px;max-width:100%}
+.marjan-site-footer .social-links a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;margin:0;padding:7px 10px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(255,255,255,.04);color:#fff;font-size:13px;font-weight:650;white-space:nowrap}
+.marjan-site-footer .social-links a:hover{background:rgba(255,255,255,.13);text-decoration:none}
+.marjan-site-footer .social-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 23px;width:23px;height:23px;border-radius:50%;color:#fff;font-size:17px;font-weight:800;line-height:1;background:#1877F2}
 .marjan-site-footer .social-mark svg{display:block;width:17px;height:17px;fill:currentColor}
 .marjan-site-footer .social-mark.youtube-mark{background:#FF0033;border-radius:7px}
 .marjan-site-footer .social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
 .marjan-site-footer .social-mark.instagram-mark{background:#C13584}
-.marjan-site-footer .social-mark.x-mark{background:#000;border-radius:50%}
-@media(min-width:768px){.marjan-site-footer .social-links{flex-flow:row nowrap;justify-content:center;align-items:center;width:max-content;max-width:100%;gap:8px}.marjan-site-footer .social-links a{flex:0 0 auto;gap:6px;padding:8px 10px;font-size:13px}}
-@media(max-width:480px){.marjan-site-footer .social-links{gap:8px}.marjan-site-footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}.marjan-site-footer .footer-follow-line>a img{width:150px!important}}
-
-
-/* Uploaded white MARJAN.IN wordmark: transparent artwork on the existing navy footer. */
-.marjan-site-footer .footer-follow-line>a.marjan-footer-brand{
-  background:transparent!important;
-  border:0!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-  padding:0!important;
-}
-.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{
-  display:block!important;
-  width:190px!important;
-  max-width:100%!important;
-  height:auto!important;
-  max-height:none!important;
-  object-fit:contain!important;
-  object-position:center!important;
-}
-@media(max-width:480px){
-  .marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{width:170px!important}
-}
+.marjan-site-footer .social-mark.x-mark{background:#000}
+.marjan-footer-category-menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 26px;padding:24px 0;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16);text-align:left}
+.marjan-footer-category{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:6px}
+.marjan-footer-category h2{margin-bottom:4px}
+.marjan-footer-category a{color:#e2e8f0;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.marjan-footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 20px;padding-top:15px;color:#dbe2ed;font-size:13px}
+.marjan-footer-legal{display:flex;flex-wrap:wrap;gap:8px 16px}
+.marjan-footer-legal a{color:#e2e8f0}
+@media(max-width:760px){.marjan-site-footer{padding:28px 5% 18px}.marjan-footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}.marjan-footer-about{grid-column:1/-1}.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{width:175px}.marjan-footer-category-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 15px;padding:21px 0}.marjan-footer-bottom{align-items:flex-start;flex-direction:column}}
+@media(max-width:420px){.marjan-footer-top{gap:20px 12px}.marjan-footer-col h2,.marjan-footer-category h2{font-size:14px}.marjan-footer-col a{font-size:13px}.marjan-footer-category a{font-size:12px}.marjan-footer-description{font-size:13px}.marjan-site-footer .social-links{gap:7px}.marjan-site-footer .social-links a{min-height:36px;padding:6px 9px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.marjan-site-footer *{transition:none!important}}
