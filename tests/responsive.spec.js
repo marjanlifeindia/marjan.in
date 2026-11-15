@@ -224,7 +224,8 @@ test("all page types receive the same central header, logo and complete footer",
     const footer = page.locator("footer.marjan-site-footer");
     await expect(header).toBeVisible();
     await expect(footer).toBeAttached();
-    await expect(header.locator(".brand img")).toHaveAttribute("src", /\/media\/marjan-logo-header\.svg/);
+    const expectedHeaderLogo = path === "/" ? /\\/media\\/marjan-logo-homepage\\.svg\\?v=2/ : /\\/media\\/marjan-logo-header\\.webp/;
+    await expect(header.locator(".brand img")).toHaveAttribute("src", expectedHeaderLogo);
     await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", /\/media\/marjan-logo-footer\.svg/);
     await expect(footer.getByRole("link", { name: "Facebook" })).toHaveAttribute("href", "https://www.facebook.com/marjaninindia");
     const links = await footer.locator("a").evaluateAll(nodes => nodes.map(node => node.getAttribute("href")).sort());
@@ -251,7 +252,8 @@ test("every generated HTML page uses the exact same shared header and footer", a
     const relative = path.relative(outputRoot, file).replaceAll(path.sep, "/");
     expect(headers, relative).toHaveLength(1);
     expect(footers, relative).toHaveLength(1);
-    expect(headers[0], relative).toContain("/media/marjan-logo-header.svg");
+    if (relative === "index.html") expect(headers[0], relative).toContain("/media/marjan-logo-homepage.svg?v=2");
+    else expect(headers[0], relative).toContain("/media/marjan-logo-header.webp");
     expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg");
     expect(footers[0], relative).toContain("class=\"social-links\"");
     expect(footers[0], relative).toContain("facebook-mark");
@@ -259,8 +261,10 @@ test("every generated HTML page uses the exact same shared header and footer", a
     expect(footers[0], relative).toContain("pinterest-mark");
     expect(footers[0], relative).toContain("instagram-mark");
     expect(footers[0], relative).toContain("x-mark");
-    if (referenceHeader === null) referenceHeader = headers[0];
-    else expect(headers[0], relative).toBe(referenceHeader);
+    if (relative !== "index.html") {
+      if (referenceHeader === null) referenceHeader = headers[0];
+      else expect(headers[0], relative).toBe(referenceHeader);
+    }
     if (referenceFooter === null) referenceFooter = footers[0];
     else expect(footers[0], relative).toBe(referenceFooter);
   }
