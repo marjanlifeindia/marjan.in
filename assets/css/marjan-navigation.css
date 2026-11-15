@@ -95,3 +95,53 @@ header.marjan-header>.brand img,header.marjan-header>a.brand img{
     max-height:none!important;
   }
 }
+
+
+/* Homepage-only original logo presentation. Other pages keep their existing logo sizing. */
+header.marjan-header.marjan-homepage-header>a.brand{
+  flex:0 0 190px!important;
+  width:190px!important;
+  max-width:190px!important;
+  min-width:0!important;
+}
+header.marjan-header.marjan-homepage-header>a.brand img{
+  display:block!important;
+  width:190px!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+}
+.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+  display:block!important;
+  width:210px!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+}
+@media(max-width:900px){
+  header.marjan-header.marjan-homepage-header>a.brand{
+    flex:0 1 178px!important;
+    width:178px!important;
+    max-width:178px!important;
+  }
+  header.marjan-header.marjan-homepage-header>a.brand img{
+    width:178px!important;
+    max-width:100%!important;
+  }
+}
+@media(max-width:760px){
+  .marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+    width:190px!important;
+  }
+}
+@media(max-width:360px){
+  header.marjan-header.marjan-homepage-header>a.brand,
+  header.marjan-header.marjan-homepage-header>a.brand img{
+    width:164px!important;
+    max-width:164px!important;
+  }
+}
