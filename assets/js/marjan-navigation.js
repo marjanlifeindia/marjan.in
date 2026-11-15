@@ -26,19 +26,7 @@ document.addEventListener('click',function(e){if(e.target.closest('.bottom-more'
 var current=location.pathname.replace(/\/?$/,'/')||'/';
 bottom.querySelectorAll('a.bottom-item').forEach(function(a){var target=a.getAttribute('data-path');if(target==='/'?current==='/':current.indexOf(target)===0){a.classList.add('is-active');a.setAttribute('aria-current','page');}});
 
-function marjanLogoMarkup(){return '<span class="marjan-logo-mark" aria-hidden="true"><span>M</span><i></i><b></b><em></em></span><span class="marjan-logo-word" aria-hidden="true">marjan<span>.in</span></span>';}
-if(header){
- var brand=header.querySelector('.brand');
- if(!brand){brand=document.createElement('a');brand.className='brand';brand.href='/';brand.setAttribute('aria-label','MARJAN.IN Home');header.insertBefore(brand,header.firstChild);}
- brand.innerHTML=marjanLogoMarkup();
- brand.setAttribute('aria-label','MARJAN.IN Home');
-}
-document.querySelectorAll('footer').forEach(function(footer){
- var footerBrand=footer.querySelector('.footer-follow-line a,.footer-brand,.marjan-footer-brand');
- if(!footerBrand){footerBrand=document.createElement('a');footerBrand.className='marjan-footer-brand';footerBrand.href='/';footer.insertBefore(footerBrand,footer.firstChild);}
- footerBrand.innerHTML=marjanLogoMarkup();
- footerBrand.setAttribute('aria-label','MARJAN.IN Home');
-});
+/* Keep the original logo image supplied by the shared Eleventy header/footer templates. */
 if(!header||!menu)return;
 var navHTML=`
 <a class="nav-home" href="/">Home</a>
