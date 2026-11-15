@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1226" height="320" viewBox="0 0 1226 320" role="img" aria-labelledby="title">
 <title id="title">MARJAN.IN</title>
 <defs>
-  <clipPath id="left"><rect x="0" y="0" width="1010" height="320"/></clipPath>
-  <clipPath id="right"><rect x="995" y="0" width="245" height="320"/></clipPath>
+  <clipPath id="left" clipPathUnits="userSpaceOnUse"><rect x="0" y="0" width="1010" height="320"/></clipPath>
+  <clipPath id="right" clipPathUnits="userSpaceOnUse"><rect x="995" y="0" width="245" height="320"/></clipPath>
 </defs>
 <image x="0" y="0" width="1240" height="320" href="/media/marjan-logo-transparent-1240x320.png" xlink:href="/media/marjan-logo-transparent-1240x320.png" clip-path="url(#left)"/>
 <g transform="translate(-14 0)">
