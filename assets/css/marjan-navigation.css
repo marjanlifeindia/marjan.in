@@ -95,3 +95,22 @@ header.marjan-header>.brand img,header.marjan-header>a.brand img{
     max-height:none!important;
   }
 }
+
+
+/* Inline MARJAN.IN wordmark — independent of external image files */
+.marjan-header .brand,.marjan-site-footer .marjan-footer-brand{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:7px!important;min-width:0!important;width:auto!important;max-width:100%!important;height:auto!important;overflow:visible!important;text-decoration:none!important;white-space:nowrap}
+.marjan-header .brand{flex:0 0 auto!important;padding:2px 0!important}
+.marjan-logo-mark{position:relative;display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;width:43px;height:43px;border-radius:14px;background:#ed1763;color:#fff;box-shadow:inset 0 -3px 0 rgba(0,0,0,.08)}
+.marjan-logo-mark>span{font-family:Arial,sans-serif;font-size:31px;font-weight:900;line-height:1;letter-spacing:-3px;transform:translateX(-1px)}
+.marjan-logo-mark i,.marjan-logo-mark b,.marjan-logo-mark em{position:absolute;display:block;width:8px;height:15px;border-radius:8px;background:#075bb5;top:-5px;right:7px;transform:rotate(28deg)}
+.marjan-logo-mark b{width:7px;height:12px;top:5px;right:-5px;background:#ed1763;transform:rotate(48deg)}
+.marjan-logo-mark em{width:7px;height:10px;top:12px;right:-7px;background:#075bb5;transform:rotate(75deg)}
+.marjan-logo-word{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:clamp(20px,2vw,27px);font-weight:800;letter-spacing:-1.35px;line-height:1;color:#075bb5}
+.marjan-logo-word>span{color:#ed1763}
+.marjan-site-footer .marjan-footer-brand{margin:0 0 14px!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.marjan-site-footer .marjan-logo-mark{width:38px;height:38px;border-radius:12px}
+.marjan-site-footer .marjan-logo-mark>span{font-size:27px}
+.marjan-site-footer .marjan-logo-word{font-size:24px;color:#fff}
+.marjan-site-footer .marjan-logo-word>span{color:#f28aa1}
+@media(max-width:900px){.marjan-logo-mark{width:38px;height:38px;border-radius:12px}.marjan-logo-mark>span{font-size:27px}.marjan-logo-word{font-size:22px}}
+@media(max-width:420px){.marjan-header .brand{gap:5px!important}.marjan-logo-mark{width:34px;height:34px;border-radius:10px}.marjan-logo-mark>span{font-size:24px}.marjan-logo-word{font-size:19px}}
