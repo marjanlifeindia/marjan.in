@@ -26,7 +26,7 @@ document.addEventListener('click',function(e){if(e.target.closest('.bottom-more'
 var current=location.pathname.replace(/\/?$/,'/')||'/';
 bottom.querySelectorAll('a.bottom-item').forEach(function(a){var target=a.getAttribute('data-path');if(target==='/'?current==='/':current.indexOf(target)===0){a.classList.add('is-active');a.setAttribute('aria-current','page');}});
 
-var headerLogoSrc='/media/marjan-logo-header.svg?v=3';
+var headerLogoSrc=window.location.pathname==='/'?'/media/marjan-logo-homepage.svg?v=2':'/media/marjan-logo-header.svg?v=3';
 var footerLogoSrc='/media/marjan-logo-footer.svg?v=3';
 if(header){
  var brand=header.querySelector('.brand');
