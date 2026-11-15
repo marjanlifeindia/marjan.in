@@ -44,8 +44,8 @@ module.exports = function (eleventyConfig) {
   // Phase 3/10: replace legacy page-specific headers with one shared, crawlable header shell.
   eleventyConfig.addTransform("standardizeMarjanHeader", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
-    const normalizedOutput = outputPath.replace(/\\\\/g, "/").replace(/^\\.\\//, "");
-    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\\/)\\_site\\/index\\.html$/i.test(normalizedOutput);
+    const normalizedOutput = outputPath.replaceAll("\\", "/").replace(/^\.\//, "");
+    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
     const homepageLogo = homepageOutput ? "/media/marjan-logo-homepage.svg?v=2" : "/media/marjan-logo-header.webp?v=4";
     const sharedHeader = `
 <header class="marjan-header">
