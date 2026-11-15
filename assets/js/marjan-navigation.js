@@ -26,14 +26,14 @@ document.addEventListener('click',function(e){if(e.target.closest('.bottom-more'
 var current=location.pathname.replace(/\/?$/,'/')||'/';
 bottom.querySelectorAll('a.bottom-item').forEach(function(a){var target=a.getAttribute('data-path');if(target==='/'?current==='/':current.indexOf(target)===0){a.classList.add('is-active');a.setAttribute('aria-current','page');}});
 
-var headerLogoSrc=(window.location.pathname==='/'||window.location.pathname==='/index.html')?'/media/marjan-logo-homepage.svg?v=2':'/media/marjan-logo-header.webp?v=4';
+var headerLogoSrc=(window.location.pathname==='/'||window.location.pathname==='/index.html')?'/media/marjan-logo-transparent-1240x320.png?v=1':'/media/marjan-logo-header.webp?v=4';
 var footerLogoSrc='/media/marjan-logo-footer.svg?v=3';
 if(header){
  var brand=header.querySelector('.brand');
  if(!brand){brand=document.createElement('a');brand.className='brand';brand.href='/';brand.setAttribute('aria-label','MARJAN.IN Home');header.insertBefore(brand,header.firstChild);}
  var brandLogo=brand.querySelector('img');
  if(!brandLogo){brand.textContent='';brandLogo=document.createElement('img');brand.appendChild(brandLogo);}
- brandLogo.src=headerLogoSrc;brandLogo.alt='MARJAN.IN';brandLogo.width=300;brandLogo.height=83;brandLogo.decoding='async';brandLogo.fetchPriority='high';
+ brandLogo.src=headerLogoSrc;brandLogo.alt='MARJAN.IN';brandLogo.width=310;brandLogo.height=80;brandLogo.decoding='async';brandLogo.fetchPriority='high';
 }
 document.querySelectorAll('footer').forEach(function(footer){
  var logoImages=footer.querySelectorAll('.footer-follow-line img,.footer-brand img,.marjan-footer-brand img');
