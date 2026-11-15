@@ -288,3 +288,17 @@ test("shared white footer logo is fully visible directly on the navy surface", a
   expect(ratio).toBeGreaterThan(3.5);
   expect(ratio).toBeLessThan(4.1);
 });
+
+
+test("homepage-only adjusted MARJAN logo loads correctly", async ({ page }) => {
+  await page.goto("/", { waitUntil: "networkidle" });
+  const logo = page.locator("header.marjan-header .brand img");
+  await expect(logo).toHaveAttribute("src", "/media/marjan-logo-homepage.svg?v=2");
+  await logo.evaluate(img => img.decode());
+  const dimensions = await logo.evaluate(img => ({ width: img.naturalWidth, height: img.naturalHeight, complete: img.complete }));
+  expect(dimensions.complete).toBe(true);
+  expect(dimensions.width).toBeGreaterThan(1000);
+  expect(dimensions.height).toBeGreaterThan(250);
+  expect(dimensions.width / dimensions.height).toBeGreaterThan(3.5);
+  expect(dimensions.width / dimensions.height).toBeLessThan(4.1);
+});
