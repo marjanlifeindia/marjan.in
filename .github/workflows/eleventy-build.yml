@@ -48,6 +48,7 @@ jobs:
         run: npm run test:responsive
       - name: Verify generated navigation assets and category pages
         run: |
+          set -euxo pipefail
           test -f _site/assets/css/marjan-navigation.css
           test -f _site/assets/js/marjan-navigation.js
           test -f _site/assets/css/marjan-footer.css
