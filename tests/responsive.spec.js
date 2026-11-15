@@ -255,7 +255,7 @@ test("every generated HTML page uses the exact same shared header and footer", a
     expect(footers, relative).toHaveLength(1);
     if (relative === "index.html") {
       expect(headers[0], relative).toContain("/media/marjan-logo-header.svg?v=3");
-      expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg?v=3");
+      expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg?v=6");
     } else {
       expect(headers[0], relative).toContain("/media/marjan-logo-header.webp?v=4");
       expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg?v=5");
