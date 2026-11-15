@@ -381,3 +381,23 @@ html body footer.marjan-site-footer .marjan-footer-bottom{
  html body footer.marjan-site-footer .marjan-footer-category-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px 14px!important}
  html body footer.marjan-site-footer .marjan-footer-bottom{align-items:flex-start!important;flex-direction:column!important}
 }
+
+/* Keep the supplied white footer wordmark transparent on the navy footer. */
+html body footer.marjan-site-footer .footer-follow-line>a.marjan-footer-brand{
+ background:transparent!important;
+ border:0!important;
+ border-radius:0!important;
+ box-shadow:none!important;
+ padding:0!important;
+ overflow:visible!important;
+}
+html body footer.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{
+ width:190px!important;
+ max-width:100%!important;
+ height:auto!important;
+ max-height:none!important;
+ object-fit:contain!important;
+}
+@media(max-width:480px){
+ html body footer.marjan-site-footer .footer-follow-line>a.marjan-footer-brand img{width:170px!important}
+}
