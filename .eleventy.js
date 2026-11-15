@@ -95,7 +95,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addTransform("standardizeMarjanFooter", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
-    const homepageOutput = outputPath.replaceAll("\\", "/").replace(/^\.\//, "") === "index.html" || /(?:^|\\/)\_site\\/index\.html$/i.test(outputPath.replaceAll("\\", "/"));
+    const normalizedOutput = outputPath.replaceAll("\\", "/").replace(/^\.\//, "");
+    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
     const footerLogo = homepageOutput ? "/media/marjan-logo-footer.svg?v=3" : "/media/marjan-logo-footer.svg?v=5";
     const footerHtml = `
 <footer class="marjan-site-footer${homepageOutput ? " marjan-homepage-footer" : ""}" aria-label="MARJAN.IN footer">
