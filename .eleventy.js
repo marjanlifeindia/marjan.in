@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
     const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
     const homepageLogo = homepageOutput ? "/media/marjan-logo-header.svg?v=3" : "/media/marjan-logo-header.webp?v=4";
     const sharedHeader = `
-<header class="marjan-header">
+<header class="marjan-header${homepageOutput ? " marjan-homepage-header" : ""}">
   <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="${homepageLogo}" alt="MARJAN.IN" width="310" height="81" decoding="async"></a>
   <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
     <a class="nav-home" href="/">Home</a>
@@ -98,7 +98,7 @@ module.exports = function (eleventyConfig) {
     const homepageOutput = outputPath.replaceAll("\\", "/").replace(/^\.\//, "") === "index.html" || /(?:^|\\/)\_site\\/index\.html$/i.test(outputPath.replaceAll("\\", "/"));
     const footerLogo = homepageOutput ? "/media/marjan-logo-footer.svg?v=3" : "/media/marjan-logo-footer.svg?v=5";
     const footerHtml = `
-<footer class="marjan-site-footer" aria-label="MARJAN.IN footer">
+<footer class="marjan-site-footer${homepageOutput ? " marjan-homepage-footer" : ""}" aria-label="MARJAN.IN footer">
   <div class="marjan-footer-top">
     <div class="marjan-footer-about">
       <p class="footer-follow-line"><a class="marjan-footer-brand" href="/" aria-label="MARJAN.IN Home"><img src="${footerLogo}" alt="MARJAN.IN" width="310" height="81" loading="lazy" decoding="async"></a></p>
