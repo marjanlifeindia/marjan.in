@@ -450,3 +450,13 @@ html body footer.marjan-site-footer.marjan-homepage-footer .social-links{
 html body footer.marjan-site-footer.marjan-homepage-footer .social-links a{
  flex:0 0 auto!important;
 }
+
+
+/* Center the homepage footer copyright line. */
+html body footer.marjan-site-footer.marjan-homepage-footer .footer-legal{
+ display:block!important;
+ width:100%!important;
+ margin:18px auto 0!important;
+ padding:0!important;
+ text-align:center!important;
+}
