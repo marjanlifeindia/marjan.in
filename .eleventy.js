@@ -94,9 +94,10 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addTransform("standardizeMarjanFooter", function(content, outputPath) {
-    if (!outputPath || !outputPath.endsWith(".html")) return content;
-    const normalizedOutput = outputPath.replaceAll("\\", "/").replace(/^\.\//, "");
-    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
+    // Apply the shared footer even if Eleventy omits outputPath for the root homepage.
+    if (outputPath && !String(outputPath).toLowerCase().endsWith(".html")) return content;
+    const normalizedOutput = String(outputPath || "").replaceAll("\\", "/").replace(/^\.\//, "");
+    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)\_site\/index\.html$/i.test(normalizedOutput) || /<title>\s*MARJAN\.IN\s*\|\s*Parenting\s*&\s*Kids Education\s*<\/title>/i.test(content);
     const footerLogo = homepageOutput ? "/media/marjan-logo-footer.svg?v=6" : "/media/marjan-logo-footer.svg?v=5";
     const footerHtml = `
 <footer class="marjan-site-footer${homepageOutput ? " marjan-homepage-footer" : ""}" aria-label="MARJAN.IN footer">
