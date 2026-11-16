@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
     const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
     const homepageLogo = "/media/marjan-logo-header.svg?v=4";
     const sharedHeader = `
-<header class="marjan-header${homepageOutput ? " marjan-homepage-header" : ""}">
+<header class="marjan-header">
   <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="${homepageLogo}" alt="MARJAN.IN" width="310" height="81" decoding="async"></a>
   <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
     <a class="nav-home" href="/">Home</a>
@@ -156,7 +156,7 @@ module.exports = function (eleventyConfig) {
     <div class="footer-col footer-right"><h2>Follow Us</h2>${socialMarkup}</div>
   </div><section class="footer-category-section" aria-label="Explore Categories"><h2>Explore Categories</h2>${categoryMarkup}</section>
   <div class="footer-bottom-bar"><p>© ${new Date().getFullYear()} MARJAN.IN. All rights reserved.</p></div></footer>`;
-    const finalFooterHtml = homepageOutput ? homepageFooterHtml : footerHtml
+    const finalFooterHtml = homepageFooterHtml;
     if (/<footer\b[\s\S]*?<\/footer>/i.test(content)) {
       content = content.replace(/<footer\b[\s\S]*?<\/footer>/i, finalFooterHtml);
     } else {
