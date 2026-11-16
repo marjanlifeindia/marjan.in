@@ -88,10 +88,10 @@ module.exports = function (eleventyConfig) {
   // contains broad legacy footer selectors and must never cascade onto the shared shell.
   eleventyConfig.addTransform("scopeHomepageStyles", function(content, outputPath) {
     if (!outputPath || !String(outputPath).toLowerCase().endsWith(".html")) return content;
-    const normalizedOutput = String(outputPath).replaceAll("\\\\", "/").replace(/^\\.\\//, "");
-    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\\/)\\_site\\/index\\.html$/i.test(normalizedOutput);
+    const normalizedOutput = String(outputPath).replace(/\\/g, "/").replace(/^\.\//, "");
+    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
     if (!homepageOutput) {
-      content = content.replace(/<link\\b(?=[^>]*href=["'][^"']*homepage-header-footer[.]css[^"']*["'])[^>]*>\\s*/gi, "");
+      content = content.replace(/<link\b(?=[^>]*href=["'][^"']*homepage-header-footer[.]css[^"']*["'])[^>]*>\s*/gi, "");
     }
     return content;
   });
