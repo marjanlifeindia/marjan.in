@@ -46,7 +46,7 @@ module.exports = function (eleventyConfig) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
     const normalizedOutput = outputPath.replaceAll("\\", "/").replace(/^\.\//, "");
     const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
-    const homepageLogo = homepageOutput ? "/media/marjan-logo-header.svg?v=3" : "/media/marjan-logo-header.webp?v=4";
+    const homepageLogo = "/media/marjan-logo-header.svg?v=4";
     const sharedHeader = `
 <header class="marjan-header${homepageOutput ? " marjan-homepage-header" : ""}">
   <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="${homepageLogo}" alt="MARJAN.IN" width="310" height="81" decoding="async"></a>
@@ -98,7 +98,7 @@ module.exports = function (eleventyConfig) {
     if (outputPath && !String(outputPath).toLowerCase().endsWith(".html")) return content;
     const normalizedOutput = String(outputPath || "").replaceAll("\\", "/").replace(/^\.\//, "");
     const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)\_site\/index\.html$/i.test(normalizedOutput) || /<title>\s*MARJAN\.IN\s*\|\s*Parenting\s*&\s*Kids Education\s*<\/title>/i.test(content);
-    const footerLogo = "/media/marjan-logo-header.svg?v=3";
+    const footerLogo = "/media/marjan-logo-header.svg?v=4";
     const footerHtml = `
 <footer class="marjan-site-footer${homepageOutput ? " marjan-homepage-footer" : ""}" aria-label="MARJAN.IN footer">
   <div class="marjan-footer-top">
@@ -163,7 +163,7 @@ module.exports = function (eleventyConfig) {
       content = content.replace("</body>", finalFooterHtml + "\n</body>");
     }
     if (!content.includes("/assets/css/marjan-footer.css")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=6">\n</head>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=7">\n</head>');
     }
     return content;
   });
