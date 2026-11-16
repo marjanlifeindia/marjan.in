@@ -80,7 +80,7 @@ module.exports = function (eleventyConfig) {
     content = content
       .replace(/<link[^>]+href=["'][^"']*marjan-navigation[.]css[^"']*["'][^>]*>\s*/gi, "")
       .replace(/<script[^>]+src=["'][^"']*marjan-navigation[.]js[^"']*["'][^>]*><[/]script>\s*/gi, "");
-    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=8">\n</head>');
+    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=9">\n</head>');
     content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=9"></script>\n</body>');
     return content;
   });
