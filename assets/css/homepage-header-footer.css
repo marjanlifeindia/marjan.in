@@ -497,3 +497,29 @@ html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a
     max-height:62px!important;
   }
 }
+
+
+/* Homepage footer: use the transparent original logo at the same width as the header. */
+html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand{
+  width:150px!important;
+  max-width:150px!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+  width:150px!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+}
+@media(max-width:380px){
+  html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand,
+  html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+    width:140px!important;
+  }
+}
