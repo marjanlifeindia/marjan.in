@@ -13,7 +13,8 @@ test("homepage exposes all nine master-plan categories and the shared footer", a
   await page.goto("/");
   await expect(page.locator("#categoryGrid .search-item")).toHaveCount(9);
   await expect(page.locator(".marjan-site-footer")).toBeVisible();
-  await expect(page.locator(".marjan-site-footer a[href='/blog/']")).toBeVisible();
+  await expect(page.locator(".marjan-site-footer .footer-center a[href='/about']")).toBeVisible();
+  await expect(page.locator(".marjan-site-footer .footer-category-section")).toBeVisible();
 });
 
 test("mobile menu opens and reaches the Blog listing", async ({ page }) => {
@@ -230,7 +231,11 @@ test("all page types receive the same central header, logo and complete footer",
     await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", expectedFooterLogo);
     await expect(footer.getByRole("link", { name: "Facebook" })).toHaveAttribute("href", "https://www.facebook.com/marjaninindia");
     const links = await footer.locator("a").evaluateAll(nodes => nodes.map(node => node.getAttribute("href")).sort());
-    if (referenceFooterLinks === null) referenceFooterLinks = links;
+    if (path === "/") {
+      await expect(footer.locator(".footer-main-container > .footer-col")).toHaveCount(3);
+      await expect(footer.locator(".footer-center a[href='/affiliate-disclosure']")).toBeVisible();
+      await expect(footer.locator(".footer-category-section .marjan-footer-category")).toHaveCount(8);
+    } else if (referenceFooterLinks === null) referenceFooterLinks = links;
     else expect(links, path).toEqual(referenceFooterLinks);
     const headerLogo = header.locator(".brand img");
     await headerLogo.evaluate(img => img.decode());
@@ -260,7 +265,7 @@ test("every generated HTML page uses the exact same shared header and footer", a
       expect(headers[0], relative).toContain("/media/marjan-logo-header.webp?v=4");
       expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg?v=5");
     }
-    expect(footers[0], relative).toContain("class=\"social-links\"");
+    expect(footers[0], relative).toContain("class=\"social-links");
     expect(footers[0], relative).toContain("facebook-mark");
     expect(footers[0], relative).toContain("youtube-mark");
     expect(footers[0], relative).toContain("pinterest-mark");
@@ -270,11 +275,15 @@ test("every generated HTML page uses the exact same shared header and footer", a
       if (referenceHeader === null) referenceHeader = headers[0];
       else expect(headers[0], relative).toBe(referenceHeader);
     }
-    const normalizedFooter = footers[0]
-      .replace(/ class="marjan-site-footer marjan-homepage-footer"/, ' class="marjan-site-footer"')
-      .replace(/src="\/media\/(?:marjan-logo-footer\.svg\?v=\d+|marjan-logo-transparent-1240x320\.png\?v=\d+)"/, 'src="/media/footer-logo?v=normalized"');
-    if (referenceFooter === null) referenceFooter = normalizedFooter;
-    else expect(normalizedFooter, relative).toBe(referenceFooter);
+    if (relative === "index.html") {
+      expect(footers[0], relative).toContain('class="footer-main-container"');
+      expect(footers[0], relative).toContain("Quick Links");
+      expect(footers[0], relative).toContain("Explore Categories");
+      expect((footers[0].match(/class="marjan-footer-category"/g) || []).length, relative).toBe(8);
+    } else {
+      if (referenceFooter === null) referenceFooter = footers[0];
+      else expect(footers[0], relative).toBe(referenceFooter);
+    }
   }
 });
 
