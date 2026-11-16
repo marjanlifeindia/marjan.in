@@ -272,7 +272,7 @@ test("every generated HTML page uses the exact same shared header and footer", a
     }
     const normalizedFooter = footers[0]
       .replace(/ class="marjan-site-footer marjan-homepage-footer"/, ' class="marjan-site-footer"')
-      .replace(/src="\/media\/marjan-logo-footer\.svg\?v=\d+"/, 'src="/media/marjan-logo-footer.svg?v=normalized"');
+      .replace(/src="\/media\/(?:marjan-logo-footer\.svg\?v=\d+|marjan-logo-transparent-1240x320\.png\?v=\d+)"/, 'src="/media/footer-logo?v=normalized"');
     if (referenceFooter === null) referenceFooter = normalizedFooter;
     else expect(normalizedFooter, relative).toBe(referenceFooter);
   }
