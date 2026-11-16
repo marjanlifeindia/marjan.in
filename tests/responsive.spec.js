@@ -265,7 +265,7 @@ test("every generated HTML page uses the exact same shared header and footer", a
       expect(headers[0], relative).toContain("/media/marjan-logo-header.webp?v=4");
       expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg?v=5");
     }
-    expect(footers[0], relative).toContain("class=\\"social-links");
+    expect(footers[0], relative).toContain("class=\"social-links");
     expect(footers[0], relative).toContain("facebook-mark");
     expect(footers[0], relative).toContain("youtube-mark");
     expect(footers[0], relative).toContain("pinterest-mark");
