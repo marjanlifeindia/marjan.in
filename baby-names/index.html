@@ -10,20 +10,6 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#fffaf8;color:#303747;line-height:1.7}
 a{color:#244c87}
-.site-header{background:#fff;border-bottom:1px solid #e9eaf0;padding:12px 5% 0}
-.brand{display:inline-flex;align-items:center;text-decoration:none}
-.brand img{display:block;width:200px;height:auto;max-height:76px;object-fit:contain;object-position:left center}
-.mobile-menu-toggle{display:none}
-.primary-navigation{display:flex;flex-wrap:wrap;gap:5px 7px;background:#243047;margin:10px -5.56% 0;padding:9px 5.56%;align-items:center}
-.primary-navigation>a,.primary-navigation summary{color:#fff;text-decoration:none;padding:7px 10px;border-radius:6px;line-height:1.5}
-.primary-navigation>a:hover,.primary-navigation summary:hover{background:#40516e}
-.nav-dropdown{position:relative}
-.nav-dropdown summary{cursor:pointer;list-style:none}
-.nav-dropdown summary::-webkit-details-marker{display:none}
-.nav-dropdown summary::after{content:" ▾";font-size:.8em}
-.nav-menu{position:absolute;top:100%;left:0;z-index:10;min-width:210px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:8px;box-shadow:0 8px 20px #17243a22;display:grid;gap:4px}
-.nav-menu a{color:#243047;text-decoration:none;padding:8px 10px;border-radius:5px}
-.nav-menu a:hover{background:#f0f5ff}
 main{max-width:1000px;margin:0 auto;padding:28px 5% 48px;background:#fff}
 h1,h2{color:#243047;line-height:1.3}
 h1{font-size:clamp(28px,4vw,38px)}
@@ -55,7 +41,6 @@ footer .social-links a{margin:0;flex:0 0 auto}
 @media(min-width:600px){footer .social-links{flex-flow:row nowrap;gap:8px}footer .social-links a{white-space:nowrap;padding:8px 10px}}
 @media(max-width:480px){footer .footer-follow-line a img{width:140px}footer .footer-follow-line a{gap:6px;font-size:14px}footer .social-links{gap:8px}}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:160px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
-@media(max-width:600px){.site-header{padding:12px 5%}.brand{display:flex;flex:0 0 100%;width:100%;max-width:100%}.brand img{width:170px}.mobile-menu-toggle{display:flex;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:10px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}.mobile-menu-toggle .menu-icon{font-size:22px;line-height:1}.primary-navigation{display:none;flex-direction:column;align-items:stretch;gap:2px;margin:0 -5.56%;padding:8px 5.56%}.primary-navigation.is-open{display:flex}.primary-navigation>a,.primary-navigation summary{display:block;padding:10px 12px;font-size:16px}.primary-navigation .nav-dropdown{width:100%}.nav-menu{position:static;min-width:0;box-shadow:none;margin-top:4px}.primary-navigation .nav-dropdown[open] .nav-menu{display:grid}}
  
 /* Baby Names page content: use the same clean card language as the homepage. */
 main{max-width:1100px;margin:0 auto;padding:24px 5%}
@@ -79,18 +64,6 @@ main>p+ul:not(#baby-name-results){margin-top:12px}
 @media(max-width:600px){main{padding:20px 5%}main>section[aria-labelledby="baby-name-search-title"]{padding:15px}.baby-name-filters{grid-template-columns:1fr;gap:7px}.baby-name-filters button{grid-column:1}main>ul:not(#baby-name-results){grid-template-columns:1fr;gap:9px}}
 
 
-/* Header and navigation match the MARJAN.IN homepage */
-.site-header{padding:14px 5% 0;box-shadow:0 4px 18px #24304708}
-.site-header .brand img{width:220px;max-height:76px}
-.primary-navigation{gap:4px 5px;margin:0 -5.56%;padding:7px 5.56%;box-shadow:0 5px 16px #17243a12}
-.primary-navigation>a,.primary-navigation summary{padding:7px 9px;line-height:1.4;border-radius:6px}
-.primary-navigation summary{line-height:1.7}
-.primary-navigation .nav-menu{min-width:220px;padding:8px;border-radius:10px;box-shadow:0 10px 28px #17243a24;gap:4px}
-.primary-navigation .nav-menu a{padding:9px 10px;border-radius:6px;white-space:normal}
-.mobile-menu-toggle{border-color:#d9e0eb;background:#f5f7fb;color:#243047}
-.mobile-menu-toggle:focus-visible{outline:3px solid #e97885;outline-offset:2px}
-@media(max-width:480px){.site-header{padding:12px 4% 0}.site-header .brand img{width:180px;max-height:62px}.primary-navigation{gap:4px 5px;margin:0 -4.35%;padding:8px 4.35%}.primary-navigation>a,.primary-navigation summary{font-size:14px;padding:7px 8px}}
-@media(min-width:601px){.primary-navigation{display:flex}}
 
 
 /* Baby Names footer: align the follow heading, social buttons and legal links consistently */
@@ -145,20 +118,6 @@ footer .social-mark{display:inline-flex!important;align-items:center;justify-con
 </style>
 <style>
 /* MARJAN.IN shared Homepage header, mobile navigation and footer */
-header{background:#fff;color:#243047;padding:14px 5% 0;border-bottom:1px solid #e9eaf0;box-shadow:0 4px 18px #24304708}
-header .brand{display:inline-flex;align-items:center;max-width:100%;text-decoration:none}
-header .brand img{display:block;width:340px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:left center}
-header .tagline{margin:0 0 12px;color:#5c6576;font-size:13px;line-height:1.35;letter-spacing:.15px}
-header>nav.primary-navigation{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;min-width:0;background:#243047;margin:0 -5.56%;padding:7px 5.56%;box-shadow:0 5px 16px #17243a12}
-header>nav.primary-navigation a{color:#fff;text-decoration:none;padding:7px 9px;border-radius:6px;line-height:1.4}
-header>nav.primary-navigation a:hover{background:#40516e}
-header>nav.primary-navigation .nav-dropdown{position:relative}
-header>nav.primary-navigation .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;padding:7px 10px;border-radius:6px;line-height:1.7}
-header>nav.primary-navigation .nav-dropdown summary::-webkit-details-marker{display:none}
-header>nav.primary-navigation .nav-dropdown summary:after{content:" ▾";font-size:.8em}
-header>nav.primary-navigation .nav-dropdown .nav-menu{position:absolute;top:100%;left:0;z-index:100;min-width:220px;padding:8px;background:#fff;border:1px solid #e4e8ef;border-radius:10px;box-shadow:0 10px 28px #17243a24;display:grid;gap:4px}
-header>nav.primary-navigation .nav-dropdown .nav-menu a{display:block;color:#243047;padding:9px 10px}
-header>.menu-toggle{display:none}
 footer{background:#243047;color:#fff;text-align:center;padding:24px 5%;margin-top:25px;border-top:4px solid #e97885}
 footer,footer p,footer a,footer a:link,footer a:visited,footer a:hover,footer a:focus,footer a:active{color:#fff!important}
 footer .footer-brand{display:inline-flex;align-items:center;justify-content:center;max-width:100%;margin:0 auto 12px;text-decoration:none}
@@ -173,8 +132,7 @@ footer .social-mark.youtube-mark{background:#FF0033;border-radius:7px}
 footer .social-mark.pinterest-mark{background:#BD081C;font-family:Georgia,serif;font-size:20px}
 footer .social-mark.instagram-mark{background:#C13584}
 footer .social-mark.x-mark{background:#000;border-radius:50%}
-@media(max-width:760px){header{position:relative;padding:12px 4% 0}header .brand img{width:290px;max-width:100%}header>.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font-size:15px;font-weight:700;cursor:pointer}header>nav.primary-navigation{display:none;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;margin:0 -4.35%;padding:10px 4.35%;background:#243047}header>nav.primary-navigation.is-open{display:flex}header>nav.primary-navigation>a{display:block;width:100%;font-size:15px;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown{position:relative;width:100%;align-self:stretch}header>nav.primary-navigation>.nav-dropdown>summary{display:block;font-size:15px;padding:9px 10px;line-height:1.4}header>nav.primary-navigation>.nav-dropdown>.nav-menu{position:static;top:auto;left:auto;width:100%;min-width:0;max-height:50vh;overflow-y:auto;margin:4px 0 5px;padding:8px;background:#fff;border-radius:8px;box-shadow:none}header>nav.primary-navigation>.nav-dropdown>.nav-menu a{font-size:14px;padding:8px 10px;line-height:1.4}footer{padding:22px 4%}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
-@media(min-width:761px){header>nav.primary-navigation{display:flex}}
+@media(max-width:760px){footer{padding:22px 4%}footer .footer-brand img{width:140px;max-height:56px}footer .footer-nav{gap:4px 12px}footer .social-links{gap:8px}footer .social-links a{font-size:13px;padding:7px 10px;min-height:38px}}
 </style>
 <style>
 /* JSON-powered Baby Names cards and shortlist */
@@ -298,13 +256,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .baby-name-filters button{justify-self:start;padding:10px 14px;border:0;border-radius:8px;background:#243047;color:#fff;font:inherit;cursor:pointer}
 #baby-name-results li{margin:8px 0}
 @media(min-width:600px){.baby-name-filters{grid-template-columns:150px minmax(0,1fr);align-items:center}.baby-name-filters button{grid-column:2}}
-
-/* Unified mobile header: logo on its own row and compact menu directly below. */
-@media(max-width:760px){
- header>.brand,header>a.brand{display:flex!important;flex:0 0 100%;width:100%;max-width:100%;align-items:center}
- header>.brand img,header>a.brand img{display:block;width:180px;max-width:100%;height:auto;max-height:62px;object-fit:contain;object-position:left center}
- header>.menu-toggle,header>.mobile-menu-toggle{display:inline-flex!important;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-width:0;margin:8px 0 12px;padding:9px 13px;border:1px solid #d9e0eb;border-radius:8px;background:#f5f7fb;color:#243047;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
-}
 </style>
 <script>
 (function () {
@@ -425,38 +376,7 @@ Directory में कुल 538 unique नाम हैं। फिलहा�
 <p><a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
 <p>© 2026 MARJAN.IN. All rights reserved.</p>
 </footer>
-<script>
 
-(function(){
-  var menu=document.getElementById('primary-navigation');
-  var toggle=document.querySelector('.menu-toggle');
-  if(!menu||!toggle)return;
-  function closeMenu(){
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded','false');
-    toggle.setAttribute('aria-label','Open main menu');
-  }
-  toggle.addEventListener('click',function(){
-    var open=!menu.classList.contains('is-open');
-    menu.classList.toggle('is-open',open);
-    toggle.setAttribute('aria-expanded',String(open));
-    toggle.setAttribute('aria-label',open?'Close main menu':'Open main menu');
-  });
-  menu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click',function(){closeMenu();});
-  });
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'){
-      closeMenu();
-      var dropdown=menu.querySelector('.nav-dropdown[open]');
-      if(dropdown)dropdown.removeAttribute('open');
-      toggle.focus();
-    }
-  });
-  window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
-})();
-
-</script>
 
 <script src="/assets/js/marjan-navigation.js?v=5" defer></script>
 </body>
