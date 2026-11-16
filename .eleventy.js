@@ -84,6 +84,18 @@ module.exports = function (eleventyConfig) {
     content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=9"></script>\n</body>');
     return content;
   });
+  // Keep homepage-only visual overrides off every inner page. The homepage stylesheet
+  // contains broad legacy footer selectors and must never cascade onto the shared shell.
+  eleventyConfig.addTransform("scopeHomepageStyles", function(content, outputPath) {
+    if (!outputPath || !String(outputPath).toLowerCase().endsWith(".html")) return content;
+    const normalizedOutput = String(outputPath).replaceAll("\\\\", "/").replace(/^\\.\\//, "");
+    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\\/)\\_site\\/index\\.html$/i.test(normalizedOutput);
+    if (!homepageOutput) {
+      content = content.replace(/<link\\b(?=[^>]*href=["'][^"']*homepage-header-footer[.]css[^"']*["'])[^>]*>\\s*/gi, "");
+    }
+    return content;
+  });
+
   // Phase 4: render one crawlable, consistent footer on every generated HTML page.
   eleventyConfig.addTransform("ensureMarjanSearchControl", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
