@@ -460,3 +460,40 @@ html body footer.marjan-site-footer.marjan-homepage-footer .footer-legal{
  padding:0!important;
  text-align:center!important;
 }
+
+
+/* Match the homepage footer logo to the header logo: same asset sizing and image treatment. */
+html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:220px!important;
+  max-width:100%!important;
+  min-height:0!important;
+  margin:0 auto 14px!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+  display:block!important;
+  width:220px!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:76px!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+  margin:0!important;
+  padding:0!important;
+}
+@media(max-width:480px){
+  html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand,
+  html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+    width:180px!important;
+  }
+  html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+    max-height:62px!important;
+  }
+}
