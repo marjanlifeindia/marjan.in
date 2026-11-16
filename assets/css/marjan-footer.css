@@ -38,13 +38,13 @@
 /* Homepage-only three-column footer; all other pages retain the shared footer. */
 .marjan-homepage-footer .footer-main-container{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:30px;max-width:1200px;margin:0 auto;padding:12px 0 34px}
 .marjan-homepage-footer .footer-col{min-width:0;max-width:none}
-.marjan-homepage-footer .footer-left{text-align:left}
+.marjan-homepage-footer .footer-left{text-align:center}
 .marjan-homepage-footer .footer-center{text-align:center}
 .marjan-homepage-footer .footer-right{text-align:right}
-.marjan-homepage-footer .footer-logo-line{margin:0 0 10px;text-align:left}
-.marjan-homepage-footer .footer-logo-line .marjan-footer-brand{display:inline-flex;align-items:center;justify-content:flex-start;width:auto;height:auto;margin:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
-.marjan-homepage-footer .footer-logo-line .marjan-footer-brand img{display:block;position:static;width:210px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:left center;filter:brightness(0) invert(1)}
-.marjan-homepage-footer .footer-tagline{max-width:360px;margin:0;color:#e5eaf2;font-size:14px;line-height:1.7;text-align:left}
+.marjan-homepage-footer .footer-logo-line{display:flex;justify-content:center;margin:0 0 10px;text-align:center}
+.marjan-homepage-footer .footer-logo-line .marjan-footer-brand{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;margin:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.marjan-homepage-footer .footer-logo-line .marjan-footer-brand img{display:block;position:static;width:210px;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;filter:brightness(0) invert(1)}
+.marjan-homepage-footer .footer-tagline{max-width:360px;margin:0 auto;color:#e5eaf2;font-size:14px;line-height:1.7;text-align:center}
 .marjan-homepage-footer .footer-center h2,.marjan-homepage-footer .footer-right h2,.marjan-homepage-footer .footer-category-section>h2{margin:0 0 14px;color:#fff;font-size:16px;line-height:1.4}
 .marjan-homepage-footer .footer-links{display:inline-block;margin:0;padding:0;list-style:none;text-align:left}
 .marjan-homepage-footer .footer-links li{margin:0 0 9px}
