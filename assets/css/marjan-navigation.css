@@ -298,8 +298,25 @@ footer.marjan-site-footer.marjan-homepage-footer .social-links{
   margin:8px auto 12px!important;
 }
 footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-col,
+footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-category-menu,
+footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-category{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-top,
 footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-category-menu{
-  display:none!important;
+  justify-content:center!important;
+}
+footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-col ul{
+  padding:0!important;
+  list-style:none!important;
+  text-align:center!important;
+}
+footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-col a,
+footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-category a{
+  text-align:center!important;
 }
 footer.marjan-site-footer.marjan-homepage-footer .marjan-footer-bottom{
   display:flex!important;
