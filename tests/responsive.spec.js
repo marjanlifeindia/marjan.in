@@ -9,6 +9,17 @@ function listHtmlFiles(dir) {
   });
 }
 
+test("homepage-only stylesheet is not loaded by inner pages", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator('link[rel="stylesheet"][href*="homepage-header-footer.css"]')).toHaveCount(1);
+  for (const route of ["/about", "/contact", "/baby-names/", "/blog/", "/privacy-policy"]) {
+    await page.goto(route);
+    await expect(page.locator('link[rel="stylesheet"][href*="homepage-header-footer.css"]'), route).toHaveCount(0);
+    await expect(page.locator("header.marjan-header")).toBeVisible();
+    await expect(page.locator("footer.marjan-site-footer")).toBeAttached();
+  }
+});
+
 test("homepage exposes all nine master-plan categories and the shared footer", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#categoryGrid .search-item")).toHaveCount(9);
