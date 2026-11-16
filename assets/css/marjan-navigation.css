@@ -185,3 +185,41 @@ header.marjan-header.marjan-homepage-header>a.brand img{
 @media(max-width:760px){
   .marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{width:190px!important}
 }
+
+
+/* Homepage footer: centered brand block and a single-line tagline. */
+.marjan-site-footer.marjan-homepage-footer{
+  text-align:center!important;
+}
+.marjan-site-footer.marjan-homepage-footer .footer-follow-line{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  width:100%!important;
+  margin:0 0 10px!important;
+}
+.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand{
+  justify-content:center!important;
+  margin-inline:auto!important;
+}
+.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{
+  object-position:center!important;
+  margin-inline:auto!important;
+}
+.marjan-site-footer.marjan-homepage-footer .footer-description{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto 18px!important;
+  padding:0 8px!important;
+  color:#fff!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+  font-size:clamp(9px,2.4vw,14px)!important;
+  line-height:1.5!important;
+}
+.marjan-site-footer.marjan-homepage-footer .social-links,
+.marjan-site-footer.marjan-homepage-footer .footer-nav{
+  justify-content:center!important;
+  text-align:center!important;
+}
