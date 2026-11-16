@@ -163,7 +163,7 @@ module.exports = function (eleventyConfig) {
       content = content.replace("</body>", finalFooterHtml + "\n</body>");
     }
     if (!content.includes("/assets/css/marjan-footer.css")) {
-      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=5">\n</head>');
+      content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-footer.css?v=6">\n</head>');
     }
     return content;
   });
