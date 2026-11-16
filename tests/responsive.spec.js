@@ -225,10 +225,9 @@ test("all page types receive the same central header, logo and complete footer",
     const footer = page.locator("footer.marjan-site-footer");
     await expect(header).toBeVisible();
     await expect(footer).toBeAttached();
-    const expectedHeaderLogo = path === "/" ? /\/media\/marjan-logo-header\.svg\?v=3/ : /\/media\/marjan-logo-header\.webp\?v=4/;
-    const expectedFooterLogo = path === "/" ? /marjan-logo-transparent-1240x320\.png\?v=1/ : /marjan-logo-footer\.svg\?v=5/;
-    await expect(header.locator(".brand img")).toHaveAttribute("src", expectedHeaderLogo);
-    await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", expectedFooterLogo);
+    const expectedSharedLogo = /\/media\/marjan-logo-header\.svg\?v=4/;
+    await expect(header.locator(".brand img")).toHaveAttribute("src", expectedSharedLogo);
+    await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", expectedSharedLogo);
     await expect(footer.getByRole("link", { name: "Facebook" })).toHaveAttribute("href", "https://www.facebook.com/marjaninindia");
     const links = await footer.locator("a").evaluateAll(nodes => nodes.map(node => node.getAttribute("href")).sort());
     if (path === "/") {
@@ -259,11 +258,11 @@ test("every generated HTML page uses the exact same shared header and footer", a
     expect(headers, relative).toHaveLength(1);
     expect(footers, relative).toHaveLength(1);
     if (relative === "index.html") {
-      expect(headers[0], relative).toContain("/media/marjan-logo-header.svg?v=3");
-      expect(footers[0], relative).toContain("/media/marjan-logo-transparent-1240x320.png?v=1");
+      expect(headers[0], relative).toContain("/media/marjan-logo-header.svg?v=4");
+      expect(footers[0], relative).toContain("/media/marjan-logo-header.svg?v=4");
     } else {
-      expect(headers[0], relative).toContain("/media/marjan-logo-header.webp?v=4");
-      expect(footers[0], relative).toContain("/media/marjan-logo-footer.svg?v=5");
+      expect(headers[0], relative).toContain("/media/marjan-logo-header.svg?v=4");
+      expect(footers[0], relative).toContain("/media/marjan-logo-header.svg?v=4");
     }
     expect(footers[0], relative).toContain("class=\"social-links");
     expect(footers[0], relative).toContain("facebook-mark");
@@ -307,10 +306,10 @@ test("shared white footer logo is fully visible directly on the navy surface", a
 });
 
 
-test("homepage-only adjusted MARJAN logo loads correctly", async ({ page }) => {
+test("shared MARJAN header logo loads correctly", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
   const logo = page.locator("header.marjan-header .brand img");
-  await expect(logo).toHaveAttribute("src", "/media/marjan-logo-header.svg?v=3");
+  await expect(logo).toHaveAttribute("src", "/media/marjan-logo-header.svg?v=4");
   await logo.evaluate(img => img.decode());
   const dimensions = await logo.evaluate(img => ({ width: img.naturalWidth, height: img.naturalHeight, complete: img.complete }));
   expect(dimensions.complete).toBe(true);
