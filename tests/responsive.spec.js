@@ -225,7 +225,7 @@ test("all page types receive the same central header, logo and complete footer",
     await expect(header).toBeVisible();
     await expect(footer).toBeAttached();
     const expectedHeaderLogo = path === "/" ? /\/media\/marjan-logo-header\.svg\?v=3/ : /\/media\/marjan-logo-header\.webp\?v=4/;
-    const expectedFooterLogo = path === "/" ? /\/media\/marjan-logo-footer\.svg\?v=6/ : /\/media\/marjan-logo-footer\.svg\?v=5/;
+    const expectedFooterLogo = path === "/" ? /\\/media\\/marjan-logo-transparent-1240x320\\.png\\?v=1/ : /\\/media\\/marjan-logo-footer\\.svg\\?v=5/;
     await expect(header.locator(".brand img")).toHaveAttribute("src", expectedHeaderLogo);
     await expect(footer.locator(".marjan-footer-brand img")).toHaveAttribute("src", expectedFooterLogo);
     await expect(footer.getByRole("link", { name: "Facebook" })).toHaveAttribute("href", "https://www.facebook.com/marjaninindia");
