@@ -433,3 +433,20 @@ html body footer.marjan-site-footer.marjan-homepage-footer .footer-description{
  html body footer.marjan-site-footer.marjan-homepage-footer .footer-follow-line>a.marjan-footer-brand img{width:170px!important}
  html body footer.marjan-site-footer.marjan-homepage-footer .footer-description{margin-left:auto!important;margin-right:auto!important}
 }
+
+ 
+/* Center social media buttons in the actual homepage footer. */
+html body footer.marjan-site-footer.marjan-homepage-footer .social-links{
+ display:flex!important;
+ justify-content:center!important;
+ align-items:center!important;
+ flex-wrap:wrap!important;
+ width:100%!important;
+ max-width:100%!important;
+ margin:14px auto 18px!important;
+ padding:0!important;
+ text-align:center!important;
+}
+html body footer.marjan-site-footer.marjan-homepage-footer .social-links a{
+ flex:0 0 auto!important;
+}
