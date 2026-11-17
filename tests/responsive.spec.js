@@ -48,10 +48,10 @@ test("Blog pagination moves between pages", async ({ page }) => {
   await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(4);
   await expect(page.locator("#blogNext")).toBeEnabled();
   await page.locator("#blogNext").click();
-  await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 2");
-  await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(2);
+  await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 5");
+  await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(4);
   await page.locator("#blogPrev").click();
-  await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 2");
+  await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 5");
 });
 
 test("Blog category filter updates visible articles", async ({ page }) => {
@@ -61,8 +61,8 @@ test("Blog category filter updates visible articles", async ({ page }) => {
   await category.dispatchEvent("input");
   await category.dispatchEvent("change");
   await expect(category).toHaveValue("Parenting");
-  await expect(page.locator("#blogCount")).toHaveText("1 लेख मिले");
-  await expect(page.locator(".blog-card:not([hidden])")).toHaveCount(1);
+  await expect(page.locator("#blogCount")).toHaveText("3 लेख मिले");
+  await expect(page.locator(".blog-card:not([hidden])")).toHaveCount(3);
 });
 
 test("Blog search shows an empty state when no article matches", async ({ page }) => {
