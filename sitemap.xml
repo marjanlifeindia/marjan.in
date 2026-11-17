@@ -7,10 +7,22 @@
     <loc>https://marjan.in/about</loc>
   </url>
   <url>
+    <loc>https://marjan.in/blog</loc>
+  </url>
+  <url>
     <loc>https://marjan.in/parenting</loc>
   </url>
   <url>
     <loc>https://marjan.in/kids-education</loc>
+  </url>
+  <url>
+    <loc>https://marjan.in/worksheets</loc>
+  </url>
+  <url>
+    <loc>https://marjan.in/art-creativity</loc>
+  </url>
+  <url>
+    <loc>https://marjan.in/ebooks-pdfs</loc>
   </url>
   <url>
     <loc>https://marjan.in/activities</loc>
@@ -62,53 +74,5 @@
   </url>
   <url>
     <loc>https://marjan.in/article-bachon-ke-liye-hindi-story-books</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/parenting-positive-discipline</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/parenting-age-wise-routine</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/kids-foundational-learning</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/worksheets-hindi-varnamala</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/worksheets-maths-practice</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/kids-painting-tips</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/handwriting-calligraphy-practice</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/kids-stories-poems-ebooks</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/baby-name-choosing-guide</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/educational-toys-buying-guide</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/parent-weekly-learning-planner</loc>
-  </url>
-  <url><loc>https://marjan.in/child-immunization-vaccination</loc></url>
-  <url><loc>https://marjan.in/printable-learning-sheets</loc></url>
-  <url><loc>https://marjan.in/digital-products/</loc></url>
-  <url>
-    <loc>https://marjan.in/blog</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/worksheets</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/art-creativity</loc>
-  </url>
-  <url>
-    <loc>https://marjan.in/ebooks-pdfs</loc>
   </url>
 </urlset>
