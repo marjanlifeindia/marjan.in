@@ -106,7 +106,7 @@ test("legacy homepage markup is upgraded to the shared global navigation", async
   const header = page.locator("header.marjan-header");
   await expect(header).toBeVisible();
   await expect(header.locator("#primary-navigation.primary-navigation")).toBeAttached();
-  await expect(header.locator("#primary-navigation .nav-group")).toHaveCount(5);
+  await expect(header.locator("#primary-navigation .nav-group")).toHaveCount(8);
   await expect(header.locator(".nav-search")).toHaveAttribute("href", "/search/");
 });
 
@@ -183,7 +183,7 @@ test("desktop header has no hamburger and exposes search beside the main navigat
   await page.goto("/");
   await expect(page.locator("header .menu-toggle")).toBeHidden();
   await expect(page.locator("header .nav-search")).toBeVisible();
-  await expect(page.locator("#primary-navigation .nav-group")).toHaveCount(5);
+  await expect(page.locator("#primary-navigation .nav-group")).toHaveCount(8);
   await expect(page.locator("#primary-navigation > .nav-home")).toHaveCount(1);
   await expect(page.locator("#primary-navigation > .nav-direct")).toHaveCount(0);
   const navBox = await page.locator("#primary-navigation").boundingBox();
