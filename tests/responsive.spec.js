@@ -81,6 +81,9 @@ test("article pages provide breadcrumbs, a generated contents list and related r
 });
 
 test("Digital Products page distinguishes available and planned products", async ({ page }) => {
+  const slashResponse = await page.goto("/digital-products/");
+  expect(slashResponse?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/digital-products$/);
   const response = await page.goto("/digital-products");
   expect(response?.status()).toBe(200);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://marjan.in/digital-products");
