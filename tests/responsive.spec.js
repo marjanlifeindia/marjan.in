@@ -362,7 +362,7 @@ test("automatic SEO metadata is present on existing page types", async ({ page }
   const routes = ["/", "/parenting", "/kids-education", "/blog", "/baby-names/", "/article-reading-habit", "/child-immunization-vaccination", "/digital-products"];
   for (const route of routes) {
     await page.goto(route);
-    await expect(page.locator("head title"), route).not.toHaveText("");
+    await expect(page.locator("head title"), route).toHaveText(/.+/);
     await expect(page.locator('meta[name="description"]'), route).toHaveAttribute("content", /.+/);
     await expect(page.locator('meta[property="og:title"]'), route).toHaveAttribute("content", /.+/);
     await expect(page.locator('meta[property="og:description"]'), route).toHaveAttribute("content", /.+/);
@@ -376,4 +376,6 @@ test("article pages include Article structured data", async ({ page }) => {
   await page.goto("/article-reading-habit");
   const schema = JSON.parse(await page.locator('script[data-marjan-seo="true"]').textContent());
   expect(schema["@graph"].some(item => item["@type"] === "Article")).toBeTruthy();
+  const faq = schema["@graph"].find(item => item["@type"] === "FAQPage");
+  expect(faq?.mainEntity?.length).toBeGreaterThanOrEqual(2);
 });
