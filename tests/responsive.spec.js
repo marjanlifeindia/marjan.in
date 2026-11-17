@@ -81,11 +81,11 @@ test("article pages provide breadcrumbs, a generated contents list and related r
 });
 
 test("Digital Products page distinguishes available and planned products", async ({ page }) => {
-  const response = await page.goto("/digital-products/");
+  const response = await page.goto("/digital-products");
   expect(response?.status()).toBe(200);
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://marjan.in/digital-products/");
-  await expect(page.locator('.marjan-footer-category a[href="/digital-products/"]')).toHaveCount(1);
-  await expect(page.locator('.marjan-footer-category a[href="/digital-products"]')).toHaveCount(0);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://marjan.in/digital-products");
+  await expect(page.locator('.marjan-footer-category a[href="/digital-products"]')).toHaveCount(1);
+  await expect(page.locator('.marjan-footer-category a[href="/digital-products/"]')).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "बच्चों के सीखने के लिए Digital Products" })).toBeVisible();
   await expect(page.locator(".product-status.available")).toHaveCount(3);
   await expect(page.locator(".product-card")).toHaveCount(9);
@@ -96,7 +96,7 @@ test("Digital Products page distinguishes available and planned products", async
 
 test("mobile pages do not create horizontal overflow", async ({ page }) => {
   test.skip(test.info().project.name !== "mobile");
-  for (const path of ["/", "/blog/", "/digital-products/", "/worksheets/", "/ebooks-pdfs/"]) {
+  for (const path of ["/", "/blog/", "/digital-products", "/worksheets/", "/ebooks-pdfs/"]) {
     await page.goto(path, { waitUntil: "networkidle" });
     await page.locator("body").waitFor();
     const dimensions = await page.evaluate(() => ({
@@ -118,7 +118,7 @@ test("legacy homepage markup is upgraded to the shared global navigation", async
 
 test("mobile bottom navigation is present across key page types", async ({ page }) => {
   test.skip(test.info().project.name !== "mobile");
-  for (const path of ["/", "/blog/", "/parenting", "/kids-education", "/worksheets", "/baby-names/", "/digital-products/"]) {
+  for (const path of ["/", "/blog/", "/parenting", "/kids-education", "/worksheets", "/baby-names/", "/digital-products"]) {
     await page.goto(path, { waitUntil: "load" });
     await expect(page.locator(".marjan-mobile-bottom")).toBeVisible();
     await expect(page.locator(".marjan-mobile-bottom .bottom-more")).toBeVisible();
