@@ -81,7 +81,11 @@ test("article pages provide breadcrumbs, a generated contents list and related r
 });
 
 test("Digital Products page distinguishes available and planned products", async ({ page }) => {
-  await page.goto("/digital-products/");
+  const response = await page.goto("/digital-products/");
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://marjan.in/digital-products/");
+  await expect(page.locator('.marjan-footer-category a[href="/digital-products/"]')).toHaveCount(1);
+  await expect(page.locator('.marjan-footer-category a[href="/digital-products"]')).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "बच्चों के सीखने के लिए Digital Products" })).toBeVisible();
   await expect(page.locator(".product-status.available")).toHaveCount(3);
   await expect(page.locator(".product-card")).toHaveCount(9);
