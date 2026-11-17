@@ -356,3 +356,24 @@ test("Vaccination record PDF is served from the static site", async ({ request }
   const bytes = await response.body();
   expect(bytes.subarray(0, 4).toString()).toBe("%PDF");
 });
+
+
+test("automatic SEO metadata is present on existing page types", async ({ page }) => {
+  const routes = ["/", "/parenting", "/kids-education", "/blog", "/baby-names/", "/article-reading-habit", "/child-immunization-vaccination", "/digital-products"];
+  for (const route of routes) {
+    await page.goto(route);
+    await expect(page.locator("head title"), route).not.toHaveText("");
+    await expect(page.locator('meta[name="description"]'), route).toHaveAttribute("content", /.+/);
+    await expect(page.locator('meta[property="og:title"]'), route).toHaveAttribute("content", /.+/);
+    await expect(page.locator('meta[property="og:description"]'), route).toHaveAttribute("content", /.+/);
+    await expect(page.locator('meta[property="og:url"]'), route).toHaveAttribute("content", /https:\/\/marjan\.in\//);
+    await expect(page.locator('link[rel="canonical"]'), route).toHaveCount(1);
+    await expect(page.locator('script[data-marjan-seo="true"][type="application/ld+json"]'), route).toHaveCount(1);
+  }
+});
+
+test("article pages include Article structured data", async ({ page }) => {
+  await page.goto("/article-reading-habit");
+  const schema = JSON.parse(await page.locator('script[data-marjan-seo="true"]').textContent());
+  expect(schema["@graph"].some(item => item["@type"] === "Article")).toBeTruthy();
+});
