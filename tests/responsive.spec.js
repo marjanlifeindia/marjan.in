@@ -83,9 +83,11 @@ test("article pages provide breadcrumbs, a generated contents list and related r
 test("Digital Products page distinguishes available and planned products", async ({ page }) => {
   await page.goto("/digital-products/");
   await expect(page.getByRole("heading", { name: "बच्चों के सीखने के लिए Digital Products" })).toBeVisible();
-  await expect(page.locator(".product-status.available")).toHaveCount(1);
-  await expect(page.locator(".product-card")).toHaveCount(7);
+  await expect(page.locator(".product-status.available")).toHaveCount(3);
+  await expect(page.locator(".product-card")).toHaveCount(9);
   await expect(page.getByRole("link", { name: /Free PDF डाउनलोड करें/ })).toHaveAttribute("href", /script\.google\.com/);
+  await expect(page.getByRole("link", { name: /Vaccination Record PDF डाउनलोड करें/ })).toHaveAttribute("href", "/media/marjan-child-vaccination-record.pdf");
+  await expect(page.getByRole("link", { name: /Learning Sheets खोलें/ })).toHaveAttribute("href", "/printable-learning-sheets");
 });
 
 test("mobile pages do not create horizontal overflow", async ({ page }) => {
