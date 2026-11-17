@@ -62,8 +62,8 @@ jobs:
           grep -q '/assets/js/marjan-navigation.js' _site/digital-products/index.html
           grep -q 'noindex,follow' _site/search/index.html
           grep -q '120 Baby Names' _site/ebooks-pdfs/index.html
-          test -f _site/child-immunization-vaccination.html
-          test -f _site/printable-learning-sheets.html
+          test -f _site/child-immunization-vaccination/index.html
+          test -f _site/printable-learning-sheets/index.html
           test -s _site/media/marjan-child-vaccination-record.pdf
           test -f _site/index.html
           for page in worksheets art-creativity ebooks-pdfs products-reviews resources parenting kids-education; do
