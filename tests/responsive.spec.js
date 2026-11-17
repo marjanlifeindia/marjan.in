@@ -362,7 +362,9 @@ test("automatic SEO metadata is present on existing page types", async ({ page }
   const routes = ["/", "/parenting", "/kids-education", "/blog", "/baby-names/", "/article-reading-habit", "/child-immunization-vaccination", "/digital-products"];
   for (const route of routes) {
     await page.goto(route);
-    await expect(page.locator("head title"), route).toHaveText(/.+/);
+    await expect(page.locator("head title"), route).toHaveCount(1);
+    const pageTitle = await page.locator("head title").textContent();
+    expect(pageTitle?.trim().length, route).toBeGreaterThan(0);
     await expect(page.locator('meta[name="description"]'), route).toHaveAttribute("content", /.+/);
     await expect(page.locator('meta[property="og:title"]'), route).toHaveAttribute("content", /.+/);
     await expect(page.locator('meta[property="og:description"]'), route).toHaveAttribute("content", /.+/);
