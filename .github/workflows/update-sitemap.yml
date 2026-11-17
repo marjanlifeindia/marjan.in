@@ -32,7 +32,8 @@ jobs:
           base = "https://marjan.in/"
           # List only preferred, non-redirecting public URLs in the sitemap.
           static_pages = [
-              "", "about", "parenting", "kids-education",
+              "", "about", "blog", "parenting", "kids-education",
+              "worksheets", "art-creativity", "ebooks-pdfs",
               "activities", "mobile-habit", "kids-corner", "baby-names/",
               "baby-names/a-letter-hindu-boy-names/",
               "baby-names/a-letter-muslim-boy-names/",
