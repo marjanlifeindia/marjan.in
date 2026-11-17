@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
     const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
     const homepageLogo = "/media/marjan-logo-header.svg?v=4";
     const sharedHeader = `
-<header class="marjan-header${homepageOutput ? " marjan-homepage-header" : ""}">
+<header class="marjan-header">
   <a class="brand" href="/" aria-label="MARJAN.IN Home"><img src="${homepageLogo}" alt="MARJAN.IN" width="310" height="81" decoding="async"></a>
   <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
     <a class="nav-home" href="/">Home</a>
@@ -80,10 +80,22 @@ module.exports = function (eleventyConfig) {
     content = content
       .replace(/<link[^>]+href=["'][^"']*marjan-navigation[.]css[^"']*["'][^>]*>\s*/gi, "")
       .replace(/<script[^>]+src=["'][^"']*marjan-navigation[.]js[^"']*["'][^>]*><[/]script>\s*/gi, "");
-    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=9">\n</head>');
-    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=9"></script>\n</body>');
+    content = content.replace("</head>", '<link rel="stylesheet" href="/assets/css/marjan-navigation.css?v=10">\n</head>');
+    content = content.replace("</body>", '<script src="/assets/js/marjan-navigation.js?v=10"></script>\n</body>');
     return content;
   });
+  // Keep homepage-only visual overrides off every inner page. The homepage stylesheet
+  // contains broad legacy footer selectors and must never cascade onto the shared shell.
+  eleventyConfig.addTransform("scopeHomepageStyles", function(content, outputPath) {
+    if (!outputPath || !String(outputPath).toLowerCase().endsWith(".html")) return content;
+    const normalizedOutput = String(outputPath).replace(/\\/g, "/").replace(/^\.\//, "");
+    const homepageOutput = normalizedOutput === "index.html" || /(?:^|\/)_site\/index\.html$/i.test(normalizedOutput);
+    if (!homepageOutput) {
+      content = content.replace(/<link\b(?=[^>]*href=["'][^"']*homepage-header-footer[.]css[^"']*["'])[^>]*>\s*/gi, "");
+    }
+    return content;
+  });
+
   // Phase 4: render one crawlable, consistent footer on every generated HTML page.
   eleventyConfig.addTransform("ensureMarjanSearchControl", function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
@@ -156,7 +168,7 @@ module.exports = function (eleventyConfig) {
     <div class="footer-col footer-right"><h2>Follow Us</h2>${socialMarkup}</div>
   </div><section class="footer-category-section" aria-label="Explore Categories"><h2>Explore Categories</h2>${categoryMarkup}</section>
   <div class="footer-bottom-bar"><p>© ${new Date().getFullYear()} MARJAN.IN. All rights reserved.</p></div></footer>`;
-    const finalFooterHtml = homepageOutput ? homepageFooterHtml : footerHtml
+    const finalFooterHtml = homepageFooterHtml;
     if (/<footer\b[\s\S]*?<\/footer>/i.test(content)) {
       content = content.replace(/<footer\b[\s\S]*?<\/footer>/i, finalFooterHtml);
     } else {
