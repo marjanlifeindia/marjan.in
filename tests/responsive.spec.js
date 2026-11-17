@@ -323,3 +323,27 @@ test("shared MARJAN header logo loads correctly", async ({ page }) => {
   expect(dimensions.width / dimensions.height).toBeGreaterThan(3.5);
   expect(dimensions.width / dimensions.height).toBeLessThan(4.1);
 });
+
+
+test("Child Immunization guide shows the official schedule and safety guidance", async ({ page }) => {
+  await page.goto("/child-immunization-vaccination");
+  await expect(page.locator("h1")).toContainText("टीकाकरण");
+  await expect(page.locator("table")).toContainText("जन्म के समय");
+  await expect(page.getByRole("link", { name: /U-WIN आधिकारिक वेबसाइट/ })).toHaveAttribute("href", "https://uwin.mohfw.gov.in/home");
+  await expect(page.getByRole("link", { name: /Vaccination Record PDF डाउनलोड/ })).toHaveAttribute("href", "/media/marjan-child-vaccination-record.pdf");
+});
+
+test("Printable learning sheets provide three print-ready activity pages", async ({ page }) => {
+  await page.goto("/printable-learning-sheets");
+  await expect(page.locator("h1")).toContainText("Printable Learning Sheets");
+  await expect(page.getByRole("button", { name: "Print / Save as PDF" })).toBeVisible();
+  await expect(page.locator(".sheet")).toHaveCount(3);
+});
+
+test("Vaccination record PDF is served from the static site", async ({ request }) => {
+  const response = await request.get("/media/marjan-child-vaccination-record.pdf");
+  expect(response.ok()).toBeTruthy();
+  expect(response.headers()["content-type"]).toContain("application/pdf");
+  const bytes = await response.body();
+  expect(bytes.subarray(0, 4).toString()).toBe("%PDF");
+});
