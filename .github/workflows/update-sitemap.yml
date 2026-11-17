@@ -7,6 +7,10 @@ on:
       - 'posts/**/*.md'
       - 'posts/*.md'
       - '.pages.yml'
+      - '*.html'
+      - '**/*.html'
+      - '.eleventy.js'
+      - '_templates/**'
       - 'article.html'
       - '.github/workflows/update-sitemap.yml'
   workflow_dispatch:
@@ -41,6 +45,33 @@ jobs:
               "privacy-policy", "contact", "terms", "affiliate-disclosure"
           ]
           urls = [base + page for page in static_pages]
+          # Discover public HTML pages automatically. Prefer each page's canonical
+          # URL, so duplicate legacy files collapse to one sitemap entry.
+          excluded = {"404.html", "search.html", "article.html"}
+          for page in sorted(Path(".").rglob("*.html")):
+              rel = page.as_posix()
+              if rel.startswith(("_templates/", "node_modules/", ".git/")) or rel in excluded:
+                  continue
+              raw = page.read_text(encoding="utf-8", errors="ignore")
+              canonical = re.search(r'<link\b(?=[^>]*rel=["\']canonical["\'])[^>]*href=["\']([^"\']+)["\']', raw, re.I)
+              if not canonical:
+                  canonical = re.search(r'<link\b(?=[^>]*href=["\'][^"\']+["\'])(?=[^>]*rel=["\']canonical["\'])[^>]*>', raw, re.I)
+                  if canonical:
+                      href = re.search(r'href=["\']([^"\']+)["\']', canonical.group(0), re.I)
+                      canonical_url = href.group(1) if href else ""
+                  else:
+                      canonical_url = ""
+              else:
+                  canonical_url = canonical.group(1)
+              if not canonical_url:
+                  if rel == "index.html":
+                      canonical_url = base
+                  elif rel.endswith("/index.html"):
+                      canonical_url = base + rel[:-10]
+                  else:
+                      canonical_url = base + rel[:-5]
+              if canonical_url.startswith(base) and canonical_url not in urls:
+                  urls.append(canonical_url)
           posts_dir = Path("posts")
           slug_index = {}
 

@@ -267,4 +267,84 @@ module.exports = function (eleventyConfig) {
     }
     return content;
   });
+
+  // Permanent SEO layer: fill missing metadata on every generated HTML page,
+  // preserve page-authored values, and add truthful Article/FAQ structured data.
+  eleventyConfig.addTransform("automaticMarjanSEO", function(content, outputPath) {
+    if (!outputPath || !String(outputPath).toLowerCase().endsWith(".html") || !content.includes("</head>")) return content;
+    const routePath = String(outputPath).replace(/\\/g, "/").replace(/^_site\//, "");
+    const route = routePath === "index.html" ? "/" : routePath.replace(/index\.html$/i, "").replace(/\.html$/i, "");
+    const absoluteUrl = "https://marjan.in" + (route.startsWith("/") ? route : "/" + route);
+    const decode = value => String(value || "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/<[^>]*>/g, "").trim();
+    const attr = (tag, name) => {
+      const m = tag.match(new RegExp(name + "=[\"']([^\"']*)", "i"));
+      return m ? decode(m[1]) : "";
+    };
+    const titleMatch = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    const h1Match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    const title = decode(titleMatch && titleMatch[1] || h1Match && h1Match[1] || route.replace(/[\/-]+/g, " ") + " | MARJAN.IN") || "MARJAN.IN";
+    const existingDescription = content.match(/<meta\b[^>]*name=["']description["'][^>]*>/i);
+    const firstParagraph = content.match(/<main[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i) || content.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+    const description = (existingDescription && attr(existingDescription[0], "content")) ||
+      decode(firstParagraph && firstParagraph[1]).replace(/\s+/g, " ").slice(0, 155) ||
+      title + " — Parenting, Kids Education और Learning Resources की उपयोगी जानकारी हिंदी में।";
+    const escapeAttr = value => String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+    const addMeta = (key, value, property) => {
+      const attrName = property ? "property" : "name";
+      const re = new RegExp("<meta\\b(?=[^>]*" + attrName + "=[\"']" + key + "[\"'])[^>]*>", "i");
+      if (!re.test(content)) content = content.replace("</head>", '<meta ' + attrName + '="' + key + '" content="' + escapeAttr(value) + '">\n</head>');
+    };
+    if (!titleMatch) content = content.replace("</head>", "<title>" + escapeAttr(title) + "</title>\n</head>");
+    addMeta("description", description, false);
+    const isArticle = /(?:^|\/)article-[^/]+|^articles\//i.test(routePath) || /property=["']og:type["']\s+content=["']article["']/i.test(content);
+    addMeta("og:type", isArticle ? "article" : "website", true);
+    addMeta("og:site_name", "MARJAN.IN", true);
+    addMeta("og:title", title, true);
+    addMeta("og:description", description, true);
+    addMeta("og:url", absoluteUrl, true);
+    if (!/<link\b[^>]*rel=["']canonical["']/i.test(content)) {
+      content = content.replace("</head>", '<link rel="canonical" href="' + escapeAttr(absoluteUrl) + '">\n</head>');
+    }
+    // Keep Blog aligned with its canonical clean route.
+    if (/\/blog\/index\.html$/i.test(routePath) || /<title>[^<]*Blog/i.test(content)) {
+      content = content.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/i, '<link rel="canonical" href="https://marjan.in/blog">');
+      content = content.replace(/<meta\b(?=[^>]*property=["']og:url["'])[^>]*>/i, '<meta property="og:url" content="https://marjan.in/blog">');
+    }
+    const canonicalMatch = content.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/i);
+    const canonical = canonicalMatch ? attr(canonicalMatch[0], "href") : absoluteUrl;
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {"@type":"Organization","@id":"https://marjan.in/#organization","name":"MARJAN.IN","url":"https://marjan.in/","founder":{"@type":"Person","name":"S Nafees"}},
+        {"@type":"WebSite","@id":"https://marjan.in/#website","url":"https://marjan.in/","name":"MARJAN.IN","inLanguage":"hi-IN","publisher":{"@id":"https://marjan.in/#organization"}}
+      ]
+    };
+    if (isArticle) {
+      const article = {"@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":canonical},"headline":title,"description":description,"author":{"@type":"Person","name":"S Nafees"},"publisher":{"@id":"https://marjan.in/#organization"},"inLanguage":"hi-IN"};
+      const image = content.match(/<meta\b[^>]*property=["']og:image["'][^>]*>/i);
+      if (image) article.image = attr(image[0], "content");
+      const date = content.match(/<time[^>]+datetime=["']([^"']+)["']/i);
+      if (date) article.datePublished = date[1];
+      schema["@graph"].push(article);
+    }
+    const faqHeading = content.search(/अक्सर पूछे जाने वाले सवाल|Frequently Asked Questions|FAQ(?:s)?/i);
+    if (faqHeading >= 0) {
+      const faqHtml = content.slice(faqHeading);
+      const pairs = [];
+      const pairRe = /<h[2-4][^>]*>([\s\S]*?)<\/h[2-4]>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+      let pair;
+      while ((pair = pairRe.exec(faqHtml)) && pairs.length < 12) {
+        const question = decode(pair[1]), answer = decode(pair[2]);
+        if (question && answer && question.length < 180 && answer.length > 12) {
+          pairs.push({"@type":"Question","name":question,"acceptedAnswer":{"@type":"Answer","text":answer}});
+        }
+      }
+      if (pairs.length >= 2) schema["@graph"].push({"@type":"FAQPage","mainEntity":pairs});
+    }
+    if (!content.includes('data-marjan-seo="true"')) {
+      content = content.replace("</head>", '<script type="application/ld+json" data-marjan-seo="true">' + JSON.stringify(schema).replace(/</g, "\\u003c") + '</script>\n</head>');
+    }
+    return content;
+  });
+
 };
