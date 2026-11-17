@@ -292,7 +292,6 @@ module.exports = function (eleventyConfig) {
     const addMeta = (key, value, property) => {
       const attrName = property ? "property" : "name";
       const re = new RegExp("<meta\\b(?=[^>]*" + attrName + "=[\"']" + key + "[\"'])[^>]*>", "i");
-      const re = new RegExp("<meta\\b(?=[^>]*" + attrName + "=[\"']" + safeKey + "[\"'])[^>]*>", "i");
       if (!re.test(content)) content = content.replace("</head>", '<meta ' + attrName + '="' + key + '" content="' + escapeAttr(value) + '">\n</head>');
     };
     if (!titleMatch) content = content.replace("</head>", "<title>" + escapeAttr(title) + "</title>\n</head>");
