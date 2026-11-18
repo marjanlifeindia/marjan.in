@@ -374,6 +374,15 @@ test("automatic SEO metadata is present on existing page types", async ({ page }
   }
 });
 
+test("sitemap includes canonical article URLs and excludes legacy redirect URLs", async ({ request }) => {
+  const response = await request.get("/sitemap.xml");
+  expect(response.ok()).toBeTruthy();
+  const sitemap = await response.text();
+  expect(sitemap).toContain("<loc>https://marjan.in/article-reading-habit</loc>");
+  expect(sitemap).not.toContain("<loc>https://marjan.in/reading-habit</loc>");
+  expect(sitemap).not.toContain("<loc>https://marjan.in/reading-habit.html</loc>");
+});
+
 test("article pages include Article structured data", async ({ page }) => {
   await page.goto("/article-reading-habit");
   const schema = JSON.parse(await page.locator('script[data-marjan-seo="true"]').textContent());
