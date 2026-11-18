@@ -390,14 +390,14 @@ test("every generated HTML page has complete SEO metadata and valid JSON-LD", as
   for (const file of files) {
     const html = fs.readFileSync(file, "utf8");
     const relative = path.relative(outputRoot, file).replaceAll(path.sep, "/");
-    expect((html.match(/<title\\b[^>]*>[\\s\\S]*?<\\/title>/gi) || []), relative).toHaveLength(1);
-    const hasMeta = (attribute, key) => new RegExp("<meta\\\\b(?=[^>]*" + attribute + "=[\\\"']" + key + "[\\\"'])[^>]*>", "i").test(html);
+    expect((html.match(/<title\b[^>]*>[\s\S]*?<\/title>/gi) || []), relative).toHaveLength(1);
+    const hasMeta = (attribute, key) => new RegExp("<meta\\b(?=[^>]*" + attribute + "=[\"']" + key + "[\"'])[^>]*>", "i").test(html);
     expect(hasMeta("name", "description"), relative).toBeTruthy();
     for (const key of ["og:type", "og:site_name", "og:title", "og:description", "og:url"]) {
       expect(hasMeta("property", key), relative + " " + key).toBeTruthy();
     }
-    expect((html.match(/<link\\b[^>]*rel=[\\\"']canonical[\\\"'][^>]*>/gi) || []), relative).toHaveLength(1);
-    const schemas = [...html.matchAll(/<script\\b(?=[^>]*data-marjan-seo=[\\\"']true[\\\"'])[^>]*>([\\s\\S]*?)<\\/script>/gi)];
+    expect((html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi) || []), relative).toHaveLength(1);
+    const schemas = [...html.matchAll(/<script\b(?=[^>]*data-marjan-seo=["']true["'])[^>]*>([\s\S]*?)<\/script>/gi)];
     expect(schemas, relative).toHaveLength(1);
     expect(() => JSON.parse(schemas[0][1]), relative).not.toThrow();
   }
