@@ -379,6 +379,9 @@ test("sitemap includes canonical article URLs and excludes legacy redirect URLs"
   expect(response.ok()).toBeTruthy();
   const sitemap = await response.text();
   expect(sitemap).toContain("<loc>https://marjan.in/article-reading-habit</loc>");
+  for (const route of ["/parenting", "/kids-education", "/activities", "/mobile-habit", "/kids-corner", "/privacy-policy", "/contact", "/terms", "/affiliate-disclosure"]) {
+    expect(sitemap).toContain("<loc>https://marjan.in" + route + "</loc>");
+  }
   expect(sitemap).not.toContain("<loc>https://marjan.in/reading-habit</loc>");
   expect(sitemap).not.toContain("<loc>https://marjan.in/reading-habit.html</loc>");
 });
