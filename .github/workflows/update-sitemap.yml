@@ -45,6 +45,21 @@ jobs:
               "privacy-policy", "contact", "terms", "affiliate-disclosure"
           ]
           urls = [base + page for page in static_pages]
+          # Read Cloudflare Pages redirects so legacy source URLs are never
+          # re-added by the automatic HTML-page discovery below.
+          redirect_paths = set()
+          redirects_file = Path("_redirects")
+          if redirects_file.exists():
+              for line in redirects_file.read_text(encoding="utf-8").splitlines():
+                  parts = line.strip().split()
+                  if len(parts) < 2 or parts[0].startswith("#"):
+                      continue
+                  source = parts[0]
+                  redirect_paths.add(source)
+                  # Legacy .html URLs are normalized to clean extensionless paths
+                  # by the fallback canonical builder below.
+                  if source.endswith(".html"):
+                      redirect_paths.add(source[:-5])
           # Discover public HTML pages automatically. Prefer each page's canonical
           # URL, so duplicate legacy files collapse to one sitemap entry.
           excluded = {"404.html", "search.html", "article.html"}
@@ -72,6 +87,13 @@ jobs:
                       canonical_url = base + rel[:-5]
               if canonical_url.startswith(base) and canonical_url not in urls:
                   urls.append(canonical_url)
+          # Final safety filter: sitemap entries must not match a redirect source.
+          from urllib.parse import urlsplit
+          urls = [
+              url for url in dict.fromkeys(urls)
+              if urlsplit(url).path not in redirect_paths
+          ]
+
           posts_dir = Path("posts")
           slug_index = {}
 
