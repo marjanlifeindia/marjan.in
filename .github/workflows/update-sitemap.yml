@@ -47,7 +47,7 @@ jobs:
           urls = [base + page for page in static_pages]
           # Read Cloudflare Pages redirects so legacy source URLs are never
           # re-added by the automatic HTML-page discovery below.
-          redirect_paths = set()
+          redirect_source_files = set()
           redirects_file = Path("_redirects")
           if redirects_file.exists():
               for line in redirects_file.read_text(encoding="utf-8").splitlines():
@@ -55,17 +55,20 @@ jobs:
                   if len(parts) < 2 or parts[0].startswith("#"):
                       continue
                   source = parts[0]
-                  redirect_paths.add(source)
-                  # Legacy .html URLs are normalized to clean extensionless paths
-                  # by the fallback canonical builder below.
+                  relative_source = source.lstrip("/")
                   if source.endswith(".html"):
-                      redirect_paths.add(source[:-5])
+                      redirect_source_files.add(relative_source)
+                  elif source.endswith("/"):
+                      redirect_source_files.add(relative_source + "index.html")
+                  else:
+                      redirect_source_files.add(relative_source + ".html")
+                      redirect_source_files.add(relative_source + "/index.html")
           # Discover public HTML pages automatically. Prefer each page's canonical
           # URL, so duplicate legacy files collapse to one sitemap entry.
           excluded = {"404.html", "search.html", "article.html"}
           for page in sorted(Path(".").rglob("*.html")):
               rel = page.as_posix()
-              if rel.startswith(("_templates/", "node_modules/", ".git/")) or rel in excluded:
+              if rel.startswith(("_templates/", "node_modules/", ".git/")) or rel in excluded or rel in redirect_source_files:
                   continue
               raw = page.read_text(encoding="utf-8", errors="ignore")
               canonical = re.search(r'<link\b(?=[^>]*rel=["\']canonical["\'])[^>]*href=["\']([^"\']+)["\']', raw, re.I)
@@ -87,13 +90,6 @@ jobs:
                       canonical_url = base + rel[:-5]
               if canonical_url.startswith(base) and canonical_url not in urls:
                   urls.append(canonical_url)
-          # Final safety filter: sitemap entries must not match a redirect source.
-          from urllib.parse import urlsplit
-          urls = [
-              url for url in dict.fromkeys(urls)
-              if urlsplit(url).path not in redirect_paths
-          ]
-
           posts_dir = Path("posts")
           slug_index = {}
 
