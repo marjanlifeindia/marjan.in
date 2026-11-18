@@ -2,6 +2,7 @@
 module.exports = function (eleventyConfig) {
   // 1. Cloudflare redirects (यह आपका पुराना कोड है)
   eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("sitemap.xml"); // Publish the generated sitemap from the Eleventy output directory.
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("media"); // Serve the official brand assets and page media explicitly.
 
