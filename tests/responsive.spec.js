@@ -419,7 +419,7 @@ test("Blog page 2 can be opened directly and pagination state is reflected in th
   await page.goto("/blog/?page=2");
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 5");
   await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(4);
-  await expect(page).toHaveURL(/\\/blog\\/?\\?page=2$/);
+  await expect(page).toHaveURL(/\/blog\/?\?page=2$/);
   await page.locator("#blogPrev").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 5");
   await expect(page).toHaveURL(/\\/blog\\/?$/);
