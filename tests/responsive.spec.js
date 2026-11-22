@@ -434,3 +434,27 @@ test("Cloudflare Pages pagination redirect rule is present and newline-separated
   const redirects = fs.readFileSync(path.join(process.cwd(), "_redirects"), "utf8");
   expect(redirects.split(/\r?\n/)).toContain("/blog/page/2 /blog?page=2 301");
 });
+
+test("Baby Names search, letter filter, reset and Load More controls", async ({ page }) => {
+  await page.goto("/baby-names/");
+  await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
+  const cards = page.locator("#baby-name-results .baby-name-card");
+  await expect(cards).toHaveCount(48);
+  await page.locator("#baby-name-load-more").click();
+  await expect(cards).toHaveCount(96);
+
+  const letter = page.locator("#baby-name-letter");
+  await letter.selectOption("a");
+  await letter.dispatchEvent("change");
+  const filteredCount = Number((await page.locator("#baby-name-result-count").textContent()).match(/\d+/)?.[0]);
+  expect(filteredCount).toBeGreaterThan(0);
+  expect(filteredCount).toBeLessThan(538);
+  await expect(cards).toHaveCount(Math.min(filteredCount, 48));
+
+  await page.locator("#baby-name-search").fill("xyz-no-name-match");
+  await expect(page.locator("#baby-name-no-results")).toBeVisible();
+  await expect(cards).toHaveCount(0);
+  await page.locator("#baby-name-reset").click();
+  await expect(page.locator("#baby-name-result-count")).toHaveText("538 names");
+  await expect(cards).toHaveCount(48);
+});
