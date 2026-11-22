@@ -369,6 +369,10 @@ test("automatic SEO metadata is present on existing page types", async ({ page }
     await expect(page.locator('meta[property="og:title"]'), route).toHaveAttribute("content", /.+/);
     await expect(page.locator('meta[property="og:description"]'), route).toHaveAttribute("content", /.+/);
     await expect(page.locator('meta[property="og:url"]'), route).toHaveAttribute("content", /https:\/\/marjan\.in\//);
+    const canonicalUrl = await page.locator('link[rel="canonical"]').getAttribute("href");
+    const openGraphUrl = await page.locator('meta[property="og:url"]').getAttribute("content");
+    expect(openGraphUrl, route).toBe(canonicalUrl);
+    expect(openGraphUrl, route).not.toMatch(/\/\.\/_site\//);
     await expect(page.locator('link[rel="canonical"]'), route).toHaveCount(1);
     await expect(page.locator('script[data-marjan-seo="true"][type="application/ld+json"]'), route).toHaveCount(1);
   }
