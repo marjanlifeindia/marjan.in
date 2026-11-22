@@ -422,7 +422,7 @@ test("Blog page 2 can be opened directly and pagination state is reflected in th
   await expect(page).toHaveURL(/\/blog\/?\?page=2$/);
   await page.locator("#blogPrev").click();
   await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 5");
-  await expect(page).toHaveURL(/\\/blog\\/?$/);
+  await expect(page).toHaveURL(/\/blog\/?$/);
 });
 
 test("Search page uses the clean canonical route", async ({ page }) => {
