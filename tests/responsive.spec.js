@@ -432,5 +432,5 @@ test("Search page uses the clean canonical route", async ({ page }) => {
 
 test("Cloudflare Pages pagination redirect rule is present and newline-separated", async () => {
   const redirects = fs.readFileSync(path.join(process.cwd(), "_redirects"), "utf8");
-  expect(redirects.split(/\\r?\\n/)).toContain("/blog/page/2 /blog?page=2 301");
+  expect(redirects.split(/\r?\n/)).toContain("/blog/page/2 /blog?page=2 301");
 });
