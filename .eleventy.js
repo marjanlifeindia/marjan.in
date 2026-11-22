@@ -273,7 +273,7 @@ module.exports = function (eleventyConfig) {
   // preserve page-authored values, and add truthful Article/FAQ structured data.
   eleventyConfig.addTransform("automaticMarjanSEO", function(content, outputPath) {
     if (!outputPath || !String(outputPath).toLowerCase().endsWith(".html") || !content.includes("</head>")) return content;
-    const routePath = String(outputPath).replace(/\\/g, "/").replace(/^_site\//, "");
+    const routePath = String(outputPath).replace(/\\/g, "/").replace(/^\.\/+/, "").replace(/^_site\//, "");
     const route = routePath === "index.html" ? "/" : routePath.replace(/index\.html$/i, "").replace(/\.html$/i, "");
     const absoluteUrl = "https://marjan.in" + (route.startsWith("/") ? route : "/" + route);
     const decode = value => String(value || "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/<[^>]*>/g, "").trim();
