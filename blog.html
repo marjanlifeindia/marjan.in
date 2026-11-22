@@ -135,12 +135,12 @@ main{max-width:1160px;margin:auto;padding:34px 5% 48px}
  const search=document.getElementById("blogSearch"),category=document.getElementById("blogCategory");
  const count=document.getElementById("blogCount"),empty=document.getElementById("blogEmpty");
  const prev=document.getElementById("blogPrev"),next=document.getElementById("blogNext"),status=document.getElementById("blogPageStatus");
- const pageSize=4;let page=1,filtered=cards.slice();
+ const pageSize=4;const initialPage=Number(new URLSearchParams(window.location.search).get("page"));let page=Number.isFinite(initialPage)&&initialPage>1?initialPage:1,filtered=cards.slice();\n function syncPageUrl(){const url=new URL(window.location.href);if(page>1)url.searchParams.set("page",String(page));else url.searchParams.delete("page");window.history.replaceState({}, "", url.pathname+(url.search?url.search:"")+url.hash);}\n
  function render(){
   const query=search.value.trim().toLocaleLowerCase();
   const selected=category.value;
   filtered=cards.filter(card=>(selected==="all"||card.dataset.category===selected)&&(!query||(card.innerText+" "+card.dataset.search).toLocaleLowerCase().includes(query)));
-  const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);
+  const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.max(1,Math.min(page,pages));syncPageUrl();
   cards.forEach(card=>{card.setAttribute("hidden","");card.style.display="none";});
   filtered.slice((page-1)*pageSize,page*pageSize).forEach(card=>{card.removeAttribute("hidden");card.style.display="flex";});
   count.textContent=filtered.length+" लेख मिले";
