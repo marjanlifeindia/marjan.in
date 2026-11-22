@@ -413,3 +413,24 @@ test("article pages include Article structured data", async ({ page }) => {
   const faq = schema["@graph"].find(item => item["@type"] === "FAQPage");
   expect(faq?.mainEntity?.length).toBeGreaterThanOrEqual(2);
 });
+
+
+test("Blog page 2 can be opened directly and pagination state is reflected in the URL", async ({ page }) => {
+  await page.goto("/blog/?page=2");
+  await expect(page.locator("#blogPageStatus")).toHaveText("Page 2 of 5");
+  await expect(page.locator("#blogGrid .blog-card:not([hidden])")).toHaveCount(4);
+  await expect(page).toHaveURL(/\/blog\/?\?page=2$/);
+  await page.locator("#blogPrev").click();
+  await expect(page.locator("#blogPageStatus")).toHaveText("Page 1 of 5");
+  await expect(page).toHaveURL(/\/blog\/?$/);
+});
+
+test("Search page uses the clean canonical route", async ({ page }) => {
+  await page.goto("/search/");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://marjan.in/search");
+});
+
+test("Cloudflare Pages pagination redirect rule is present and newline-separated", async () => {
+  const redirects = fs.readFileSync(path.join(process.cwd(), "_redirects"), "utf8");
+  expect(redirects.split(/\r?\n/)).toContain("/blog/page/2 /blog?page=2 301");
+});
