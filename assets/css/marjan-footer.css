@@ -72,3 +72,22 @@
 .marjan-homepage-footer .social-icons-wrapper{gap:7px}
 .marjan-homepage-footer .social-icons-wrapper a{padding:6px 8px;font-size:11px}
 }
+
+
+/* Phase 4 responsive footer guard: prevent grid/flex children from forcing horizontal overflow. */
+.marjan-site-footer,
+.marjan-footer-top,
+.marjan-footer-about,
+.marjan-footer-col,
+.marjan-footer-category-menu,
+.marjan-footer-category,
+.marjan-footer-bottom,
+.marjan-footer-legal{min-width:0;max-width:100%}
+.marjan-footer-category-menu>*{min-width:0}
+.marjan-footer-category a,
+.marjan-footer-col a,
+.marjan-footer-legal a{overflow-wrap:anywhere;word-break:normal}
+@media(max-width:760px){
+ .marjan-footer-top,.marjan-footer-category-menu{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .marjan-footer-category-menu{column-gap:clamp(10px,3vw,15px)}
+}
