@@ -16,6 +16,7 @@ on:
       - work/phase-10-mobile-bottom-nav
       - work/phase-11-bottom-nav-init-fix
       - work/phase-12-legacy-header-fix
+      - fix/footer-category-accordions-mobile
   push:
     branches:
       - main
