@@ -385,7 +385,7 @@ module.exports = function (eleventyConfig) {
  });
 })();
 </script>`;
-    return content.replace("</body>", footerAccordionAssets + "\\n</body>");
+    return content.replace("</body>", footerAccordionAssets + "\n</body>");
   });
 
 };
