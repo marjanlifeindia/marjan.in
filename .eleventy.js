@@ -348,4 +348,44 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  // Footer category accordions: collapse the expanded category lists on small screens.
+  eleventyConfig.addTransform("collapseMarjanFooterCategories", function(content, outputPath) {
+    if (!outputPath || !String(outputPath).toLowerCase().endsWith(".html") || !content.includes("marjan-footer-category-menu")) return content;
+    const footerAccordionAssets = `
+<style>
+@media(max-width:760px){
+.marjan-footer-category-menu .marjan-footer-category>details{width:100%;min-width:0}
+.marjan-footer-category-menu .marjan-footer-category>details>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;list-style:none;color:#fff;font-weight:700;padding:7px 0}
+.marjan-footer-category-menu .marjan-footer-category>details>summary::-webkit-details-marker{display:none}
+.marjan-footer-category-menu .marjan-footer-category>details>summary::after{content:"+";font-size:20px;line-height:1}
+.marjan-footer-category-menu .marjan-footer-category>details[open]>summary::after{content:"−"}
+.marjan-footer-category-menu .marjan-footer-category>details .footer-category-links{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:4px 0 8px}
+}
+@media(min-width:761px){.marjan-footer-category-menu .marjan-footer-category>details>summary{display:none}.marjan-footer-category-menu .marjan-footer-category>details{display:contents}}
+</style>
+<script>
+(function(){
+ var menu=document.querySelector(".marjan-footer-category-menu");
+ if(!menu)return;
+ menu.querySelectorAll(".marjan-footer-category").forEach(function(nav){
+   var heading=nav.querySelector("h2");
+   if(!heading||nav.querySelector("details"))return;
+   var details=document.createElement("details");
+   details.className="footer-category-accordion";
+   details.open=window.matchMedia("(min-width:761px)").matches;
+   var summary=document.createElement("summary");
+   summary.textContent=heading.textContent.trim();
+   var links=document.createElement("div");
+   links.className="footer-category-links";
+   Array.from(nav.querySelectorAll("a")).forEach(function(a){links.appendChild(a);});
+   heading.remove();
+   details.appendChild(summary);
+   details.appendChild(links);
+   nav.appendChild(details);
+ });
+})();
+</script>`;
+    return content.replace("</body>", footerAccordionAssets + "\\n</body>");
+  });
+
 };
